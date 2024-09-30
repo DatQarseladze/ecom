@@ -12,7 +12,6 @@ import { RootState } from '../store';
 
 export default function Header() {
   const theme = useSelector((state: RootState) => state.theme.value);
-
   const [search, setSearch] = useState('');
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();

@@ -15,7 +15,6 @@ i18n.use(initReactI18next).init({
       impex: ge,
     },
   },
-  // Additional options can go here
 });
 
 export const useTranslation = () => useBaseTranslation('impex');

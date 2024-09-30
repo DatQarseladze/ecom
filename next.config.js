@@ -8,6 +8,9 @@ const nextConfig = {
     publicRuntimeConfig: {
       // Your public configuration
     },
+    images: {
+      domains: ['placehold.co'],
+    },
   };
   
   module.exports = nextConfig;

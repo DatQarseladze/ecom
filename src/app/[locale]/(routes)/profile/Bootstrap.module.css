@@ -1,0 +1,29 @@
+.carousel {
+  max-width: 800px;
+  margin: auto;
+}
+
+.item {
+  position: relative;
+}
+
+.image {
+  height: auto;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  left: 15%;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.button {
+  margin-top: 10px;
+}
+
+.carousel-inner {
+  display: none !important;
+}
+
