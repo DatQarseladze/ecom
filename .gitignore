@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Logs
+*.log
+
+# Dependency directories
+yarn-error.log
+npm-debug.log
+
+# System files
+.DS_Store
+*.swp
+
+# TypeScript build results
+*.tsbuildinfo
+
+# VSCode settings
+.vscode/
+
+# Miscellaneous
+*.env
+*.local
+
+# Ignore specific files and folders
+src/app/favicon.ico
+src/app/globals.css
+src/app/layout.tsx
+src/app/page.tsx
+
+# Ignore all .next cache and static files
+.next/cache/
+.next/static/
