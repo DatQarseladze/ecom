@@ -1,20 +1,28 @@
-'use client';
-import Image from 'next/image';
-import { useState } from 'react';
-import { Menu } from '@headlessui/react';
-import { FaUser, FaHeart, FaShoppingCart } from 'react-icons/fa';
-import { TextField, IconButton, Button, Switch } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import Modal from '@mui/material/Modal';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../store/slices/themeSlice';
-import { RootState } from '../store';
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import { Menu } from "@headlessui/react";
+import { FaUser, FaHeart, FaShoppingCart } from "react-icons/fa";
+import { TextField, IconButton, Button, Switch } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import Modal from "@mui/material/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../store/slices/themeSlice";
+import { RootState } from "../store";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const theme = useSelector((state: RootState) => state.theme.value);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
+  const user = useSession();
+  const router = useRouter();
+
+  const redirectToProfile = () => {
+    router.push("/profile");
+  };
 
   const handleTheme = () => {
     dispatch(toggleTheme());
@@ -29,7 +37,8 @@ export default function Header() {
             alt="PSP"
             height={50}
             width={50}
-            className="rounded-[50%]"
+            className="rounded-[50%] cursor-pointer"
+            onClick={() => router.push("/")}
           />
 
           <div className="flex-grow max-w-md">
@@ -64,17 +73,28 @@ export default function Header() {
 
           {/* Icons */}
           <div className="flex items-center space-x-4">
-            <Switch checked={theme === 'dark'} onChange={handleTheme} />
+            <Switch checked={theme === "dark"} onChange={handleTheme} />
             <IconButton color="inherit" className="text-gray-500">
               <FaHeart />
             </IconButton>
-            <IconButton
-              onClick={() => setOpen(true)}
-              color="inherit"
-              className="text-gray-500"
-            >
-              <FaUser />
-            </IconButton>
+            {user?.data ? (
+              <Image
+                src={user?.data?.user?.image || ""}
+                width={50}
+                alt="user image"
+                onClick={redirectToProfile}
+                height={50}
+                className="cursor-pointer rounded-[50%]"
+              />
+            ) : (
+              <IconButton
+                onClick={() => setOpen(true)}
+                color="inherit"
+                className="text-gray-500"
+              >
+                <FaUser />
+              </IconButton>
+            )}
             <IconButton color="inherit" className="text-gray-500">
               <FaShoppingCart />
             </IconButton>
@@ -89,7 +109,7 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={`block px-4 py-2 ${active ? 'bg-gray-100' : 'bg-gray-500'}`}
+                      className={`block px-4 py-2 ${active ? "bg-gray-100" : "bg-gray-500"}`}
                     >
                       კატეგორიები
                     </a>
@@ -99,7 +119,7 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={`block px-4 py-2 ${active ? 'bg-gray-100' : ''}`}
+                      className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                     >
                       მედიკამენტები
                     </a>
@@ -109,7 +129,7 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={`block px-4 py-2 ${active ? 'bg-gray-100' : ''}`}
+                      className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                     >
                       კოსმეტიკა
                     </a>
@@ -119,7 +139,7 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={`block px-4 py-2 ${active ? 'bg-gray-100' : ''}`}
+                      className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                     >
                       დედა & ბავშვი
                     </a>
@@ -129,7 +149,7 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={`block px-4 py-2 ${active ? 'bg-gray-100' : ''} text-pink-500`}
+                      className={`block px-4 py-2 ${active ? "bg-gray-100" : ""} text-pink-500`}
                     >
                       BLOG
                     </a>

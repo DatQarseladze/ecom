@@ -8,7 +8,6 @@ import styles from './Bootstrap.module.css';
 
 const BootstrapCarousel = () => {
   const { bootstrap } = items;
-  console.log(items, 'tems');
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
