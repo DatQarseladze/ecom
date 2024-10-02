@@ -10,13 +10,16 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { GoogleMap, Marker, useJsApiLoader, InfoWindow } from "@react-google-maps/api";
 
-// function highlightMarker(marker, highlight) {
-//   var color = "#FE7569";
-//   if (highlight) {
-//     color = "#0000FF";
-//   }
-//   marker.setImage(getIcon(color).image);
-// }
+// Define the Office interface
+interface Office {
+  id: number;
+  position: {
+    lat: number;
+    lng: number;
+  };
+  name: string;
+  info: string;
+}
 
 const containerStyle = {
   width: "100%",
@@ -29,16 +32,16 @@ const center = {
 };
 
 // Example office locations with some info
-const offices = [
-  { id: 1, position: { lat: 41.72562829536133, lng: 44.76167826503837 }, name: "", info: "This is Office 1" },
-  { id: 2, position: { lat: 41.726442, lng: 44.7549162 }, name: "", info: "This is Office 2" },
-  { id: 3, position: { lat: 41.7195921, lng: 44.7593418 }, name: "", info: "This is Office 3" },
+const offices: Office[] = [
+  { id: 1, position: { lat: 41.72562829536133, lng: 44.76167826503837 }, name: "Office 1", info: "This is Office 1" },
+  { id: 2, position: { lat: 41.726442, lng: 44.7549162 }, name: "Office 2", info: "This is Office 2" },
+  { id: 3, position: { lat: 41.7195921, lng: 44.7593418 }, name: "Office 3", info: "This is Office 3" },
 ];
 
 const Page = () => {
   const { t } = useTranslation();
   const { data } = useSession();
-  const [selectedMarker, setSelectedMarker] = useState(null); // State for selected marker
+  const [selectedMarker, setSelectedMarker] = useState<Office | null>(null); // Explicitly type the state
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM", // Use your API key
