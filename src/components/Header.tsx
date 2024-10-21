@@ -18,8 +18,19 @@ import personIcon from "../assets/images/person.svg";
 import burgerIcon from "../assets/images/burger.svg";
 
 const Navigation = () => {
+  const items = [
+    "მედიკამენტები",
+    "სილამზე და მოვლა",
+    "დედა და ბავშვი",
+    "ივენთები",
+    "ბლოგი",
+    "აქციები",
+    "AUTLET",
+    "ფილიალები",
+  ];
+
   return (
-    <nav className="container mx-auto px-4 py-2 flex items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="w-full flex container mx-auto px-4 py-2 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex gap-[8px] px-[16px] h-[48px] items-center justify-center"
@@ -33,24 +44,21 @@ const Navigation = () => {
         />
         <div className="self-center text-[#fff]">კატეგორიები</div>
       </a>
-      {[
-        "მედიკამენტები",
-        "სილამაზე და მოვლა",
-        "დედა და ბავშვი",
-        "ივენთები",
-        "ბლოგი",
-        "აქციები",
-        "AUTLET",
-        "ფილიალები",
-      ].map((item) => (
-        <a
-          key={item}
-          href="#"
-          className="relative group hover:text-[#8255E3] transition-colors duration-300"
-        >
-          <span className="relative z-10">{item}</span>
-          <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-        </a>
+
+      {items.map((item, index) => (
+        <React.Fragment key={item}>
+          <a
+            href="#"
+            className="relative text-[20px] group hover:text-[#8255E3] transition-colors duration-300 flex items-center"
+          >
+            <span className="relative z-10">{item}</span>
+            <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+          </a>
+          {/* Add separator after each item except the last one */}
+          {index < items.length - 1 && (
+            <div className="w-[1px] h-[14px] bg-[#0000000D] mx-2 self-center" />
+          )}
+        </React.Fragment>
       ))}
     </nav>
   );
@@ -75,8 +83,8 @@ const Header = () => {
   return (
     <header className="bg-[#ffffff] shadow-sm">
       {/* <div className="container mx-auto px-4 py-2"> */}
-      <div>
-        <div className="flex items-center justify-between pb-[12px] border-b-[1px] border-[#1B1D200F]">
+      <div className="w-full">
+        <div className="flex items-center justify-between pt-[20px] pb-[12px] border-b-[1px] border-[#1B1D200F]">
           <div className="container mx-auto px-4 py-2 flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Image
@@ -129,7 +137,7 @@ const Header = () => {
                   }}
                 />
               </div>
-              <div className="cursor-pointer w-[176px] h-[56px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+              <div className="cursor-pointer text-[#101840] w-[176px] h-[56px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
                 <Image
                   src={creditCardIcon}
                   alt="cart"
@@ -137,7 +145,7 @@ const Header = () => {
                   width={24}
                   height={24}
                 />
-                <span>ზე ბარათი</span>
+                <span className="text-[20px]">ზე ბარათი</span>
               </div>
               <div className="cursor-pointer w-[56px] h-[56px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
                 <Image src={cartIcon} alt="cart" width={24} height={24} />
