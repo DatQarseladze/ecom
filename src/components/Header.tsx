@@ -67,6 +67,9 @@ const Header = () => {
 
   return (
     <header className="bg-[#ffffff] shadow-sm">
+      <div className="text-[16px] leading-[28px] text-[#ffffff] text-center py-[8px] bg-[#7148CA]">
+        უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
+      </div>
       {/* Full-width border */}
       <div className="border-b border-[#1B1D200F]">
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
@@ -135,7 +138,6 @@ const Header = () => {
               <Image src={personIcon} alt="person" width={24} height={24} />
             </div>
           </div>
-          
         </div>
       </div>
 
