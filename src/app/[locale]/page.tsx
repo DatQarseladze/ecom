@@ -8,7 +8,13 @@ import {
 } from "../../components/authButtons";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { GoogleMap, Marker, useJsApiLoader, InfoWindow } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  useJsApiLoader,
+  InfoWindow,
+} from "@react-google-maps/api";
+import BrandList from "@/src/components/BrandList";
 
 // Define the Office interface
 interface Office {
@@ -33,9 +39,24 @@ const center = {
 
 // Example office locations with some info
 const offices: Office[] = [
-  { id: 1, position: { lat: 41.72562829536133, lng: 44.76167826503837 }, name: "Office 1", info: "This is Office 1" },
-  { id: 2, position: { lat: 41.726442, lng: 44.7549162 }, name: "Office 2", info: "This is Office 2" },
-  { id: 3, position: { lat: 41.7195921, lng: 44.7593418 }, name: "Office 3", info: "This is Office 3" },
+  {
+    id: 1,
+    position: { lat: 41.72562829536133, lng: 44.76167826503837 },
+    name: "Office 1",
+    info: "This is Office 1",
+  },
+  {
+    id: 2,
+    position: { lat: 41.726442, lng: 44.7549162 },
+    name: "Office 2",
+    info: "This is Office 2",
+  },
+  {
+    id: 3,
+    position: { lat: 41.7195921, lng: 44.7593418 },
+    name: "Office 3",
+    info: "This is Office 3",
+  },
 ];
 
 const Page = () => {
@@ -52,47 +73,50 @@ const Page = () => {
   }
 
   return (
-    <Container>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={13} // Zoom level to fit multiple locations
-      >
-        {offices.map((office) => (
-          <Marker
-            key={office.id}
-            position={office.position}
-            label={office.name ?? ""}
-            onClick={() => setSelectedMarker(office)} // Set selected marker on click
-          />
-        ))}
+    <>
+      <BrandList />
+      <Container>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={13} // Zoom level to fit multiple locations
+        >
+          {offices.map((office) => (
+            <Marker
+              key={office.id}
+              position={office.position}
+              label={office.name ?? ""}
+              onClick={() => setSelectedMarker(office)} // Set selected marker on click
+            />
+          ))}
 
-        {selectedMarker && (
-          <InfoWindow
-            position={selectedMarker.position}
-            onCloseClick={() => setSelectedMarker(null)} // Clear selection on close
-          >
-            <div>
-              <h3>{selectedMarker.name}</h3>
-              <p>{selectedMarker.info}</p>
-            </div>
-          </InfoWindow>
-        )}
-      </GoogleMap>
-      <GoogleSignInButton />
-      <GithubSignInButton />
-      {data && <SignOutButton />}
+          {selectedMarker && (
+            <InfoWindow
+              position={selectedMarker.position}
+              onCloseClick={() => setSelectedMarker(null)} // Clear selection on close
+            >
+              <div>
+                <h3>{selectedMarker.name}</h3>
+                <p>{selectedMarker.info}</p>
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
+        <GoogleSignInButton />
+        <GithubSignInButton />
+        {data && <SignOutButton />}
 
-      <Typography variant="h3" component="h3">
-        {t("title")}
-      </Typography>
-      <Button onClick={() => i18n.changeLanguage("ge")}>
-        Switch to Georgian
-      </Button>
-      <Button onClick={() => i18n.changeLanguage("en")}>
-        Switch to English
-      </Button>
-    </Container>
+        <Typography variant="h3" component="h3">
+          {t("title")}
+        </Typography>
+        <Button onClick={() => i18n.changeLanguage("ge")}>
+          Switch to Georgian
+        </Button>
+        <Button onClick={() => i18n.changeLanguage("en")}>
+          Switch to English
+        </Button>
+      </Container>
+    </>
   );
 };
 
