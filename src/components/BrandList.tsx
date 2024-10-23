@@ -64,16 +64,16 @@ const BrandList = () => {
                   style={{
                     fontSize: "16px",
                     color: "#172B4D",
-                    marginRight: "4px", // Space between text and icon
+                    marginRight: "10px",
                   }}
                 >
                   ყველა ბრენდი
                 </div>
                 <Image
                   src={rightIcon}
-                  width={18}
+                  width={6.75}
                   alt="right icon"
-                  height={18}
+                  height={12.38}
                 />
               </div>
             ) : (
