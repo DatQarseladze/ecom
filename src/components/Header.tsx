@@ -89,7 +89,7 @@ const Header = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 sx={{
-                  height: 56,
+                  height: 48,
                   borderRadius: "8px",
                   border: "1px solid #1B1D201A",
                   "& .MuiOutlinedInput-root": {
