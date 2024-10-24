@@ -26,3 +26,7 @@ html body {
     text-wrap: balance;
   }
 }
+
+img {
+  max-width: unset;
+}

@@ -22,12 +22,13 @@ const Navigation = () => {
     "ივენთები",
     "ბლოგი",
     "აქციები",
-    "AUTLET",
+    "OUTLET",
+    "კატეგორიები",
     "ფილიალები",
   ];
 
   return (
-    <nav className="w-full justify-around flex container mx-auto px-4 py-2 items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="mx-[168px] justify-between flex py-2 items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex gap-[8px] px-[16px] h-[48px] items-center justify-center"
@@ -71,7 +72,7 @@ const Header = () => {
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
       </div>
       {/* Full-width border */}
-      <div className="border-b border-[#1B1D200F]">
+      <div className="border-b mx-[168px] border-[#1B1D200F]">
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           {/* Logo */}
           <Image

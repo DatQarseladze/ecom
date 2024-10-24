@@ -24,32 +24,33 @@ const brandLogos = [
 
 const BrandList = () => {
   return (
-    <div className="container mx-auto px-4 py-2">
+    <div className="mr-[168px] ml-[168px] py-2">
       <Box
         sx={{
           display: "flex",
           width: "100%",
-          border: "1px solid #1B1D201A",
+          borderTop: "1px solid #1B1D201A",
+          borderBottom: "1px solid #1B1D201A",
           "@media (max-width: 768px)": {
-            justifyContent: "center", // Center align for small screens
+            justifyContent: "center",
           },
+          borderLeft: "unset",
+          boxSizing: "border-box",
         }}
       >
         {brandLogos.map((brand, index) => (
           <Box
             key={brand.id}
             sx={{
-              padding:
-                index !== brandLogos.length - 1 ? "16px 27px" : "16px 25px", // Top & bottom: 16px, left & right: 26px
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              borderRight:
-                index !== brandLogos.length - 1 ? "1px solid #1B1D201A" : "",
-              width: `${100 / brandLogos.length}%`, // Use percentage for equal width
-              minWidth: "148px", // Ensure a minimum width for logos
-              boxSizing: "border-box", // Include padding in width calculation
+              borderLeft: "1px solid #1B1D201A",
+              borderRight: "1px solid #1B1D201A",
+              flex: 1,
+              padding: "16px",
+              boxSizing: "border-box",
               cursor: "pointer",
             }}
           >
@@ -57,7 +58,7 @@ const BrandList = () => {
               <div
                 className="flex items-center justify-center"
                 style={{
-                  whiteSpace: "nowrap", // Prevent text from wrapping
+                  whiteSpace: "nowrap",
                 }}
               >
                 <div
@@ -74,15 +75,21 @@ const BrandList = () => {
                   width={6.75}
                   alt="right icon"
                   height={12.38}
+                  className="mr-[5px]"
                 />
               </div>
             ) : (
               <Image
                 src={brand.src}
                 alt={brand.name}
-                width={148}
+                width={148} // Maintain image width
                 height={48}
-                style={{ objectFit: "contain" }}
+                layout="fixed"
+                style={{
+                  objectFit: "contain",
+                  width: "148px", // Allow image to fit the box
+                  height: "48px",
+                }}
               />
             )}
           </Box>
