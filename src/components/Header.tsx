@@ -73,7 +73,7 @@ const Header = () => {
       </div>
       {/* Full-width border */}
       <div className="border-b mx-[168px] border-[#1B1D200F]">
-        <div className="mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="py-2 flex items-center justify-between">
           {/* Logo */}
           <Image
             src="/logo.svg"
@@ -84,8 +84,8 @@ const Header = () => {
             onClick={() => router.push("/")}
           />
           {/* Search bar and buttons */}
-          <div className="flex items-center space-x-4">
-            <div className="flex-grow w-[568px] max-w-md">
+          <div className="flex items-center space-x-[16px]">
+            <div className="flex-grow">
               <TextField
                 fullWidth
                 variant="outlined"
@@ -95,6 +95,7 @@ const Header = () => {
                 sx={{
                   height: 48,
                   borderRadius: "8px",
+                  width: 568,
                   border: "1px solid #1B1D201A",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": { borderColor: "transparent" },
@@ -129,14 +130,16 @@ const Header = () => {
               />
               <span className="text-[16px]">ზე ბარათი</span>
             </div>
-            <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
-              <Image src={cartIcon} alt="cart" width={24} height={24} />
-            </div>
-            <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
-              <Image src={heartIcon} alt="heart" width={24} height={24} />
-            </div>
-            <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
-              <Image src={personIcon} alt="person" width={24} height={24} />
+            <div className="flex space-x-[8px]">
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+                <Image src={cartIcon} alt="cart" width={24} height={24} />
+              </div>
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+                <Image src={heartIcon} alt="heart" width={24} height={24} />
+              </div>
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+                <Image src={personIcon} alt="person" width={24} height={24} />
+              </div>
             </div>
           </div>
         </div>
