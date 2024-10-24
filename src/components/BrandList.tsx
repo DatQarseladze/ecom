@@ -24,7 +24,7 @@ const brandLogos = [
 
 const BrandList = () => {
   return (
-    <div className="mr-[168px] ml-[168px] py-2">
+    <div className="xl:mx-[168px] mx-auto py-2">
       <Box
         sx={{
           display: "flex",
@@ -36,6 +36,7 @@ const BrandList = () => {
           },
           borderLeft: "unset",
           boxSizing: "border-box",
+          overflow: "auto",
         }}
       >
         {brandLogos.map((brand, index) => (

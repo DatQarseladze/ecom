@@ -1,12 +1,16 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx}'],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      screens: {
+        ...require('tailwindcss/defaultTheme').screens,
+        "3xl": "1800px",
       },
     },
   },

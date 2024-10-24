@@ -28,7 +28,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="mx-[168px] justify-between flex py-2 items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="xl:mx-[168px] mx-auto justify-between flex py-2 items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex gap-[8px] px-[16px] h-[48px] items-center justify-center"
@@ -72,7 +72,7 @@ const Header = () => {
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
       </div>
       {/* Full-width border */}
-      <div className="border-b mx-[168px] border-[#1B1D200F]">
+      <div className="mx-[168px]">
         <div className="py-2 flex items-center justify-between">
           {/* Logo */}
           <Image
@@ -144,7 +144,9 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <div className="border-b  border-[#1B1D200F] ">
 
+      </div>
       {/* Navigation */}
       <Navigation />
     </header>
