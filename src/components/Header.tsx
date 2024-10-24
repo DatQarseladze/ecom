@@ -73,7 +73,7 @@ const Header = () => {
       </div>
       {/* Full-width border */}
       <div className="border-b mx-[168px] border-[#1B1D200F]">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="mx-auto px-4 py-2 flex items-center justify-between">
           {/* Logo */}
           <Image
             src="/logo.svg"
