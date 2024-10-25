@@ -9,6 +9,7 @@ import styles from "../app/[locale]/(routes)/profile/Bootstrap.module.css"; // Y
 import Image from "next/image";
 import "../app/[locale]/(routes)/profile/Bootstrap.module.css";
 import rightArrow from "../assets/images/right-arrow.png";
+import leftArrow from "../assets/images/left-arrow.svg";
 // import "./test.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -43,8 +44,8 @@ const Page = () => {
       <div className="swiper-button mr-[10px] image-swiper-button-next">
         <Image src={rightArrow} alt="right arrow" width={24} height={44} />
       </div>
-      <div className="swiper-button image-swiper-button-prev">
-        <Image src={rightArrow} alt="right arrow" />
+      <div className="swiper-button ml-[10px] image-swiper-button-prev">
+        <Image src={leftArrow} alt="left arrow" width={24} height={44} />
       </div>
       <Swiper
         navigation={{
