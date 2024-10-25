@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 import carouselImg from "../assets/images/carousel.png";
 import styles from "../app/[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
 import Image from "next/image";
-import "../app/[locale]/(routes)/profile/Bootstrap.module.css";
 import rightArrow from "../assets/images/right-arrow.png";
 import leftArrow from "../assets/images/left-arrow.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import "./styles.css";
-
 
 const Page = () => {
   const { bootstrap } = items;
   const [index, setIndex] = useState(0);
+
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
   };
@@ -36,16 +36,19 @@ const Page = () => {
           prevEl: ".image-swiper-button-prev",
           disabledClass: "swiper-button-disabled",
         }}
-        modules={[Navigation]}
+        pagination={{ clickable: true }} // Enable pagination
+        modules={[Navigation, Pagination]}
         className="mySwiper"
+        onSlideChange={(swiper) => setIndex(swiper.activeIndex)} // Update index on slide change
       >
-        {bootstrap.map((item) => (
-          <SwiperSlide>
+        {bootstrap.map((item, slideIndex) => (
+          <SwiperSlide key={slideIndex}> {/* Unique key for each slide */}
             <Image
               className={styles.image}
               src={carouselImg}
               alt="slides"
-              layout="responsive"
+              fill // Use fill or any other appropriate layout prop
+              style={{ objectFit: 'cover' }} // Adjust how the image fits
             />
           </SwiperSlide>
         ))}
