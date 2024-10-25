@@ -78,7 +78,7 @@ const Header = () => {
           <Image
             src="/logo.svg"
             alt="PSP"
-            height={56}
+            height={48}
             width={170}
             className="cursor-pointer"
             onClick={() => router.push("/")}
