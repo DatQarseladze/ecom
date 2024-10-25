@@ -18,7 +18,7 @@ import BrandList from "@/src/components/BrandList";
 
 import { items } from "../../Items.json";
 // import { Carousel } from "react-bootstrap";
-import Carousel from '../../components/Carousel'
+import Carousel from "../../components/Carousel";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import carouselImg from "../../assets/images/carousel.png";
 import styles from "../[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
@@ -88,8 +88,8 @@ const Page = () => {
 
   return (
     <>
-      <BrandList />
       <Carousel />
+      <BrandList />
     </>
   );
 };
