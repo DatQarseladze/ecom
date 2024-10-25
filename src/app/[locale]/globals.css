@@ -30,3 +30,10 @@ html body {
 img {
   max-width: unset;
 }
+
+
+
+.carousel-control-next {
+  justify-content: flex-end !important;
+  right: 34px !important;
+}

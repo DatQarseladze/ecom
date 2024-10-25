@@ -16,6 +16,15 @@ import {
 } from "@react-google-maps/api";
 import BrandList from "@/src/components/BrandList";
 
+import { items } from "../../Items.json";
+// import { Carousel } from "react-bootstrap";
+import Carousel from '../../components/Carousel'
+// import "bootstrap/dist/css/bootstrap.min.css";
+import carouselImg from "../../assets/images/carousel.png";
+import styles from "../[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
+import Image from "next/image";
+import "../[locale]/(routes)/profile/Bootstrap.module.css";
+import rightArrow from "../../assets/images/right-arrow.png";
 // Define the Office interface
 interface Office {
   id: number;
@@ -33,7 +42,7 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 41.72669982910156, // Default center point (e.g., New York)
+  lat: 41.72669982910156,
   lng: 44.72,
 };
 
@@ -60,12 +69,17 @@ const offices: Office[] = [
 ];
 
 const Page = () => {
+  const { bootstrap } = items;
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex: number) => {
+    setIndex(selectedIndex);
+  };
   const { t } = useTranslation();
   const { data } = useSession();
-  const [selectedMarker, setSelectedMarker] = useState<Office | null>(null); // Explicitly type the state
+  const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM", // Use your API key
+    googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
   });
 
   if (!isLoaded) {
@@ -75,47 +89,7 @@ const Page = () => {
   return (
     <>
       <BrandList />
-      <Container>
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={13} // Zoom level to fit multiple locations
-        >
-          {offices.map((office) => (
-            <Marker
-              key={office.id}
-              position={office.position}
-              label={office.name ?? ""}
-              onClick={() => setSelectedMarker(office)} // Set selected marker on click
-            />
-          ))}
-
-          {selectedMarker && (
-            <InfoWindow
-              position={selectedMarker.position}
-              onCloseClick={() => setSelectedMarker(null)} // Clear selection on close
-            >
-              <div>
-                <h3>{selectedMarker.name}</h3>
-                <p>{selectedMarker.info}</p>
-              </div>
-            </InfoWindow>
-          )}
-        </GoogleMap>
-        <GoogleSignInButton />
-        <GithubSignInButton />
-        {data && <SignOutButton />}
-
-        <Typography variant="h3" component="h3">
-          {t("title")}
-        </Typography>
-        <Button onClick={() => i18n.changeLanguage("ge")}>
-          Switch to Georgian
-        </Button>
-        <Button onClick={() => i18n.changeLanguage("en")}>
-          Switch to English
-        </Button>
-      </Container>
+      <Carousel />
     </>
   );
 };
