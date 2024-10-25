@@ -28,7 +28,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="xl:mx-[168px] mx-auto justify-between flex py-2 items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="xl:mx-[168px] mx-auto justify-between flex items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex gap-[8px] px-[16px] h-[48px] items-center justify-center"
@@ -67,13 +67,13 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="bg-[#ffffff] shadow-sm">
+    <header className="bg-[#ffffff] ">
       <div className="text-[16px] leading-[28px] text-[#ffffff] text-center py-[8px] bg-[#7148CA]">
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
       </div>
       {/* Full-width border */}
       <div className="mx-[168px]">
-        <div className="py-2 flex items-center justify-between">
+        <div className="my-[8px] flex items-center justify-between">
           {/* Logo */}
           <Image
             src="/logo.svg"
@@ -147,7 +147,6 @@ const Header = () => {
       <div className="border-b  border-[#1B1D200F] ">
 
       </div>
-      {/* Navigation */}
       <Navigation />
     </header>
   );

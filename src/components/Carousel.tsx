@@ -2,35 +2,18 @@
 
 import { items } from "../Items.json";
 import { useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
-// import "bootstrap/dist/css/carousel.css";
 import carouselImg from "../assets/images/carousel.png";
 import styles from "../app/[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
 import Image from "next/image";
 import "../app/[locale]/(routes)/profile/Bootstrap.module.css";
 import rightArrow from "../assets/images/right-arrow.png";
 import leftArrow from "../assets/images/left-arrow.svg";
-// import "./test.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "./styles.css";
 
-const images = [
-  {
-    original: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-    thumbnail: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-  },
-  {
-    original: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-    thumbnail: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-  },
-  {
-    original: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-    thumbnail: "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
-  },
-];
 
 const Page = () => {
   const { bootstrap } = items;
@@ -40,7 +23,7 @@ const Page = () => {
   };
 
   return (
-    <div style={{ height: "500px", position: "relative" }}>
+    <div className="mt-[24px]" style={{ height: "500px", position: "relative" }}>
       <div className="swiper-button mr-[10px] image-swiper-button-next">
         <Image src={rightArrow} alt="right arrow" width={24} height={44} />
       </div>
