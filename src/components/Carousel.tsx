@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import Autoplay module
 import "./styles.css";
 
 const Page = () => {
@@ -31,13 +31,18 @@ const Page = () => {
         <Image src={leftArrow} alt="left arrow" width={24} height={44} />
       </div>
       <Swiper
+        loop={true} // Enable infinite loop
+        autoplay={{
+          delay: 3000, // Slide transition interval in milliseconds
+          disableOnInteraction: false, // Keeps autoplay active even after interactions
+        }}
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
           disabledClass: "swiper-button-disabled",
         }}
         pagination={{ clickable: true }} // Enable pagination
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]} // Include Autoplay module
         className="mySwiper"
         onSlideChange={(swiper) => setIndex(swiper.activeIndex)} // Update index on slide change
       >

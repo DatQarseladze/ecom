@@ -83,12 +83,12 @@ const BrandList = () => {
               <Image
                 src={brand.src}
                 alt={brand.name}
-                width={148} // Maintain image width
+                width={148}
                 height={48}
                 layout="fixed"
                 style={{
                   objectFit: "contain",
-                  width: "148px", // Allow image to fit the box
+                  width: "148px",
                   height: "48px",
                 }}
               />
