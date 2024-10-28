@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import { Box, Tab, Tabs } from "@mui/material";
-import productImg1 from "../assets/images/picture.png";
+import productImg1 from "../assets/images/picture.jpeg";
 import productImg2 from "../assets/images/picture1.png";
 import productImg3 from "../assets/images/picture2.png";
 import productImg4 from "../assets/images/picture3.png";
+import clockImg from "../assets/images/clock.png";
 
 const products = [
   {
@@ -86,13 +87,16 @@ const Promotions = () => {
               "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
             }}
           >
+            <div className="absolute left-[24px] top-[24px] flex items-center justify-center cursor rounded-[8px] bg-[#FFD000] w-[32px] h-[32px]">
+              <Image src={clockImg} width={16} height={16} alt="clock" />
+            </div>
             <Image
               src={product.img}
               alt={product.title}
               width={378}
               height={296}
-              style={{ objectFit: "cover", }}
-              className="w-full h-auto rounded-md"
+              style={{ objectFit: "cover", height: "296px" }}
+              className="w-full rounded-md"
             />
             <div className="flex p-[24px] flex-col">
               <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold text-gray-800">
