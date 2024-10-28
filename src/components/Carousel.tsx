@@ -23,7 +23,7 @@ const Page = () => {
   };
 
   return (
-    <div className="mt-[24px]" style={{ height: "500px", position: "relative" }}>
+    <div className="mt-[24px]" style={{ height: "552px", position: "relative" }}>
       <div className="swiper-button mr-[10px] image-swiper-button-next">
         <Image src={rightArrow} alt="right arrow" width={24} height={44} />
       </div>
