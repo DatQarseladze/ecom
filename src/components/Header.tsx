@@ -31,7 +31,7 @@ const Navigation = () => {
     <nav className="xl:mx-[168px] mx-auto justify-between flex items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
-        className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex gap-[8px] px-[16px] h-[48px] items-center justify-center"
+        className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
       >
         <Image
           src={burgerIcon}
@@ -46,15 +46,20 @@ const Navigation = () => {
         <React.Fragment key={item}>
           <a
             href="#"
-            className="relative text-[18px] group hover:text-[#8255E3] transition-colors duration-300"
+            className="relative text-[18px] leading-[24px] py-[12px] px-[8px] group hover:bg-[#1B1D2008] transition-colors duration-300"
           >
             <span className="relative z-10">{item}</span>
-            <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300" />
           </a>
           {index < items.length - 1 && (
-            <span className="text-[14px] mx-2 self-center text-[#0000000D]">
-              |
-            </span>
+            <div
+              className="mx-2 self-center"
+              style={{
+                width: "1px", // Adjust for thickness
+                height: "15px", // Adjust height to match other items
+                backgroundColor: "#0000000D", // Divider color
+              }}
+            ></div>
           )}
         </React.Fragment>
       ))}
@@ -120,7 +125,7 @@ const Header = () => {
               />
             </div>
             {/* Action buttons */}
-            <div className="cursor-pointer px-[12px] text-[#101840] w-[139px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+            <div className="cursor-pointer px-[12px] text-[#101840] w-[139px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center hover:bg-[#1B1D2008] justify-center">
               <Image
                 src={creditCardIcon}
                 alt="cart"
@@ -131,22 +136,20 @@ const Header = () => {
               <span className="text-[16px]">ზე ბარათი</span>
             </div>
             <div className="flex space-x-[8px]">
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
                 <Image src={cartIcon} alt="cart" width={24} height={24} />
               </div>
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
                 <Image src={heartIcon} alt="heart" width={24} height={24} />
               </div>
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center justify-center">
+              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
                 <Image src={personIcon} alt="person" width={24} height={24} />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="border-b  border-[#1B1D200F] ">
-
-      </div>
+      <div className="border-b  border-[#1B1D200F] "></div>
       <Navigation />
     </header>
   );

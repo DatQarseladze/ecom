@@ -15,6 +15,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import BrandList from "@/src/components/BrandList";
+import PromotionsList from "@/src/components/PromotionsList";
 
 import { items } from "../../Items.json";
 // import { Carousel } from "react-bootstrap";
@@ -87,10 +88,11 @@ const Page = () => {
   }
 
   return (
-    <>
+    <div className='pb-[40px] bg-[#fbfbfd]'>
       <Carousel />
       <BrandList />
-    </>
+      <PromotionsList />
+    </div>
   );
 };
 

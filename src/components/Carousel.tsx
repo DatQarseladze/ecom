@@ -2,7 +2,7 @@
 
 import { items } from "../Items.json";
 import { useEffect, useState } from "react";
-import carouselImg from "../assets/images/carousel.png";
+import carouselImg from "../assets/images/carousel.jpg";
 import styles from "../app/[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
 import Image from "next/image";
 import rightArrow from "../assets/images/right-arrow.png";
@@ -33,7 +33,7 @@ const Page = () => {
       <Swiper
         loop={true} // Enable infinite loop
         autoplay={{
-          delay: 3000, // Slide transition interval in milliseconds
+          delay: 4000, // Slide transition interval in milliseconds
           disableOnInteraction: false, // Keeps autoplay active even after interactions
         }}
         navigation={{
