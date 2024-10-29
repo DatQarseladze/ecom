@@ -42,16 +42,15 @@ const Promotions = () => {
 
   return (
     <div className="xl:mx-[168px] mx-auto mt-12">
-      {/* Tabs */}
-      <Box sx={{ width: "100%", maxWidth: "100%" }}>
+      <Box>
         <Tabs
           value={tabIndex}
           onChange={handleTabChange}
           variant="fullWidth"
-          className="mb-4"
+          className="mb-[60px]"
           TabIndicatorProps={{
             style: {
-              backgroundColor: "#8255E3", // Active tab underline color
+              backgroundColor: "#8255E3",
               height: "3px",
             },
           }}
@@ -62,13 +61,14 @@ const Promotions = () => {
                 key={label}
                 label={label}
                 sx={{
-                  borderBottom: "2px solid #e8e8e9", // Default inactive border color
-                  color: tabIndex === index ? "#8255E3 !important" : "#8F95B2", // Color based on active tab
+                  borderBottom: "2px solid #e8e8e9",
+                  color: tabIndex === index ? "#8255E3 !important" : "#8F95B2",
                   fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "28px",
+                  paddingBottom: '9px',
                   "&.Mui-selected": {
-                    borderBottom: "3px solid #8255E3", // Active tab border color
+                    borderBottom: "3px solid #8255E3",
                   },
                 }}
               />
@@ -77,7 +77,6 @@ const Promotions = () => {
         </Tabs>
       </Box>
 
-      {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
         {products.map((product) => (
           <Box
