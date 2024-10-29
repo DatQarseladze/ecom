@@ -17,7 +17,7 @@ import burgerIcon from "../assets/images/burger.svg";
 const Navigation = () => {
   const items = [
     "მედიკამენტები",
-    "სილამაზე და მოვლა",
+    "სილამზე და მოვლა",
     "დედა და ბავშვი",
     "ივენთები",
     "ბლოგი",
@@ -26,6 +26,9 @@ const Navigation = () => {
     "კონტაქტი",
     "ფილიალები",
   ];
+
+  // Step 1: Create a state variable for the active tab
+  const [activeTab, setActiveTab] = useState(items[0]); // Default to the first item
 
   return (
     <nav className="xl:mx-[168px] mx-auto justify-between flex items-center space-x-4 text-gray-700 font-medium mt-2">
@@ -46,7 +49,13 @@ const Navigation = () => {
         <React.Fragment key={item}>
           <a
             href="#"
-            className="relative text-[18px] leading-[24px] py-[12px] px-[8px] group hover:bg-[#1B1D2008] transition-colors duration-300"
+            className={`relative text-[18px] leading-[24px] py-[12px] px-[8px] group transition-colors duration-300 ${
+              activeTab === item
+                ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
+                : "text-gray-700"
+            }`}
+            // Step 2: Update the active tab on click
+            onClick={() => setActiveTab(item)}
           >
             <span className="relative z-10">{item}</span>
             <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300" />
@@ -116,7 +125,7 @@ const Header = () => {
                     lineHeight: "24px",
                     textAlign: "left",
                     color: "#474D66",
-                    opacity: 1
+                    opacity: 1,
                   },
                 }}
                 InputProps={{
