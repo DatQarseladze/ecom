@@ -82,7 +82,7 @@ const Promotions = () => {
         {products.map((product) => (
           <Box
             key={product.id}
-            className="rounded-lg shadow-sm relative bg-[#FFFFFF]"
+            className="rounded-lg cursor-pointer shadow-sm relative bg-[#FFFFFF]"
             sx={{
               "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
             }}

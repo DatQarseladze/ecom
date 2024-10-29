@@ -24,11 +24,11 @@ const Page = () => {
 
   return (
     <div className="mt-[24px]" style={{ height: "552px", position: "relative" }}>
-      <div className="swiper-button mr-[10px] image-swiper-button-next">
-        <Image src={rightArrow} alt="right arrow" width={24} height={44} />
+      <div className="swiper-button image-swiper-button-next">
+        <Image src={rightArrow} alt="right arrow" width={24} height={44} style={{height: '44px'}} />
       </div>
-      <div className="swiper-button ml-[10px] image-swiper-button-prev">
-        <Image src={leftArrow} alt="left arrow" width={24} height={44} />
+      <div className="swiper-button image-swiper-button-prev">
+        <Image src={leftArrow} alt="left arrow" width={24} height={44} style={{height: '44px'}} />
       </div>
       <Swiper
         loop={true} // Enable infinite loop

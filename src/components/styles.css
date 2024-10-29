@@ -65,10 +65,10 @@ body {
   height: 1.5rem;
 }
 .image-swiper-button-prev {
-  left: 5px;
+  left: 34px;
 }
 .image-swiper-button-next {
-  right: 5px;
+  right: 34px;
 }
 .swiper-button-disabled {
   opacity: 0.5;
