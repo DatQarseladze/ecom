@@ -110,6 +110,14 @@ const Header = () => {
                   "& .MuiInputBase-root": {
                     height: "100%",
                   },
+                  "& input::placeholder": {
+                    fontSize: "16px",
+                    fontWeight: 400,
+                    lineHeight: "24px",
+                    textAlign: "left",
+                    color: "#474D66",
+                    opacity: 1
+                  },
                 }}
                 InputProps={{
                   endAdornment: (
