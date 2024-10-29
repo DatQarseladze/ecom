@@ -42,6 +42,7 @@ const BrandList = () => {
         {brandLogos.map((brand, index) => (
           <Box
             key={brand.id}
+            className="hover:bg-[#1B1D200F]"
             sx={{
               display: "flex",
               alignItems: "center",
