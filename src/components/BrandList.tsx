@@ -24,7 +24,7 @@ const brandLogos = [
 
 const BrandList = () => {
   return (
-    <div className="xl:mx-[168px] mx-auto mt-[48px]">
+    <div className="xl:mx-[168px] px-auto py-[48px]">
       <Box
         sx={{
           display: "flex",

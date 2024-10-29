@@ -25,6 +25,7 @@ import carouselImg from "../../assets/images/carousel.png";
 import styles from "../[locale]/(routes)/profile/Bootstrap.module.css"; // Your CSS module
 import Image from "next/image";
 import "../[locale]/(routes)/profile/Bootstrap.module.css";
+import TopSales from "@/src/components/TopSales";
 import rightArrow from "../../assets/images/right-arrow.png";
 // Define the Office interface
 interface Office {
@@ -88,10 +89,11 @@ const Page = () => {
   }
 
   return (
-    <div className='pb-[40px] bg-[#fbfbfd]'>
+    <div className="bg-[#fbfbfd]">
       <Carousel />
       <BrandList />
       <PromotionsList />
+      <TopSales />
     </div>
   );
 };

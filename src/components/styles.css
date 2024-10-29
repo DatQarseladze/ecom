@@ -18,6 +18,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  letter-spacing: 0 !important;
 }
 
 .swiper {
@@ -79,13 +80,13 @@ body {
   border: 1px solid #edeff5 !important;
   height: 12px;
   width: 12px;
-  background: #1B1D200F !important;
+  background: #1b1d200f !important;
   opacity: 1 !important;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    height: 12px;
-    width: 32px !important;
-    background: #fff !important;
-    border-radius: 8px !important;  
+  height: 12px;
+  width: 32px !important;
+  background: #fff !important;
+  border-radius: 8px !important;
 }
