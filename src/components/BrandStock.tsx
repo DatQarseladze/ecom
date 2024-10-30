@@ -42,7 +42,7 @@ const PromotionBanner = () => {
           <span className="font-bold">PYTORELAX</span>-ის თავის მოვლის
           საშუალებები დიდი ფასდაკლებით
         </p>
-        <button className="flex items-center text-[16px] max-w-max text-[#fff] text-[20px] leading-[28px] rounded-[8px] p-[16px] bg-[#8255E3] rounded-[8px]">
+        <button className=" flex items-center text-[16px] max-w-max text-[#fff] text-[20px] leading-[28px] rounded-[8px] p-[16px] bg-[#8255E3] hover:bg-[#503095] rounded-[8px]">
           გაიგე მეტი
           <div className="ml-[16.25px]">
             <Image src={caretRight} alt="caret right" width={24} height={24} />
