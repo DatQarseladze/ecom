@@ -48,7 +48,7 @@ const products = [
 
 const ProductList = () => {
   return (
-    <div className="xl:mx-[168px] px-auto pt-[64px] pb-[80px]">
+    <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
       <div className="py-[4px] flex items-center justify-between mb-[48px]">
         <h2 className="text-[24px] leading-[32px] text-[#474D66] font-bold">
           ტოპ გაყიდვადი

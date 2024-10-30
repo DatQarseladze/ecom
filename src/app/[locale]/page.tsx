@@ -15,6 +15,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import BrandList from "@/src/components/BrandList";
+import BrandStock from "@/src/components/BrandStock";
 import PromotionsList from "@/src/components/PromotionsList";
 
 import { items } from "../../Items.json";
@@ -94,6 +95,7 @@ const Page = () => {
       <BrandList />
       <PromotionsList />
       <TopSales />
+      <BrandStock />
     </div>
   );
 };
