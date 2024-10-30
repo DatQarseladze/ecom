@@ -86,14 +86,7 @@ const ProductList = () => {
                 {product.discount}
               </div>
               <div className="flex space-x-2">
-                <div className="cursor-pointer bg-[#FFD000] w-[32px] h-[32px] flex items-center justify-center rounded-[8px]">
-                  <Image
-                    src={starIcon}
-                    width={16}
-                    height={16}
-                    alt="star icon"
-                  />
-                </div>
+                <StarButton />
                 <VeganButton />
               </div>
             </div>
@@ -135,12 +128,43 @@ const ProductList = () => {
   );
 };
 
+const StarButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  //   <div className="cursor-pointer bg-[#FFD000] w-[32px] h-[32px] flex items-center justify-center rounded-[8px]">
+  //     <Image src={starIcon} width={16} height={16} alt="star icon" />
+  //   </div>;
+  return (
+    <div
+      className={`flex items-center border-[1px] border-solid border-[#ffd000] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#FFD000] overflow-hidden ${
+        isHovered ? "max-w-[150px] bg-[#E4AA16] border-[#e4aa16]" : "max-w-[32px]"
+      }
+          `}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={starIcon} width={16} height={16} alt="star icon" />
+      </div>
+      {isHovered && (
+        <div
+          className={`ml-[4px] text-[16px] leading-[28px] text-white transition-transform duration-500 ${
+            isHovered ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
+        >
+          ექსკლუზივი
+        </div>
+      )}
+    </div>
+  );
+};
+
 const VeganButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className={`flex items-center border-[1px] border-solid border-[#94C748] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#82B536] overflow-hidden ${
+      className={`flex items-center border-[1px] border-solid border-[#94C748] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#82B536] overflow-hidden ${
         isHovered ? "max-w-[150px]" : "max-w-[32px]"
       }
         `}
