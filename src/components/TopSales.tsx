@@ -76,11 +76,9 @@ const ProductList = () => {
         {products.map((product) => (
           <Box
             key={product.id}
-            className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF] transition-transform duration-300 hover:scale-105 flex flex-col items-center"
+            className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
             sx={{
               "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
-              maxWidth: "350px", // Set a max width for uniformity
-              margin: "0 auto", // Center the Box
             }}
           >
             <div className="flex items-center justify-between w-full">
@@ -100,20 +98,17 @@ const ProductList = () => {
               </div>
             </div>
 
-            {/* Image Wrapper with Overflow Hidden */}
-            <div className="overflow-hidden rounded-md transition-transform duration-300 hover:scale-110">
-              <Image
-                src={product.img}
-                alt={product.title}
-                width={378}
-                height={296}
-                style={{ objectFit: "cover" }}
-                className="w-full"
-              />
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis line-clamp-2">
+            <Image
+              src={product.img}
+              alt={product.title}
+              width={378}
+              height={296}
+              style={{ objectFit: "cover", height: "296px" }}
+              className="w-full rounded-md"
+            />
+            <div className="flex flex-col">
+              {/* Product Title with Ellipsis */}
+              <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
                 {product.title}
               </h3>
               <div className="flex items-center mt-[8px] ">
@@ -128,7 +123,7 @@ const ProductList = () => {
                 <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
                   კალათაში დამატება
                 </button>
-                <div className="p-[11px] border-[1px] border-solid border-[#1B1D201A] mr-[4px] rounded-[8px] hover:bg-[#1B1D2008]">
+                <div className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]">
                   <Image src={heartIcon} alt="heart" width={24} height={24} />
                 </div>
               </div>
