@@ -91,14 +91,16 @@ const ProductList = () => {
               </div>
             </div>
 
-            <Image
-              src={product.img}
-              alt={product.title}
-              width={378}
-              height={296}
-              style={{ objectFit: "cover", height: "296px" }}
-              className="w-full rounded-md"
-            />
+            <div className="overflow-hidden rounded-md">
+              <Image
+                src={product.img}
+                alt={product.title}
+                width={378}
+                height={296}
+                style={{ objectFit: "cover", height: "296px" }}
+                className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
+              />
+            </div>
             <div className="flex flex-col">
               {/* Product Title with Ellipsis */}
               <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
@@ -137,7 +139,9 @@ const StarButton = () => {
   return (
     <div
       className={`flex items-center border-[1px] border-solid border-[#ffd000] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#FFD000] overflow-hidden ${
-        isHovered ? "max-w-[150px] bg-[#E4AA16] border-[#e4aa16]" : "max-w-[32px]"
+        isHovered
+          ? "max-w-[150px] bg-[#E4AA16] border-[#e4aa16]"
+          : "max-w-[32px]"
       }
           `}
       onMouseEnter={() => setIsHovered(true)}
