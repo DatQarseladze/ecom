@@ -66,7 +66,7 @@ const Promotions = () => {
                   fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "28px",
-                  paddingBottom: '9px',
+                  paddingBottom: "9px",
                   "&.Mui-selected": {
                     borderBottom: "3px solid #8255E3",
                   },
@@ -83,7 +83,10 @@ const Promotions = () => {
             key={product.id}
             className="rounded-lg cursor-pointer shadow-sm relative bg-[#FFFFFF]"
             sx={{
-              "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
+              boxShadow: "0px 8px 40px -8px #172B4D14",
+              "&:hover": {
+                background: "#1B1D200F",
+              },
             }}
           >
             <div className="absolute left-[24px] top-[24px] flex items-center justify-center cursor rounded-[8px] bg-[#FFD000] w-[32px] h-[32px]">

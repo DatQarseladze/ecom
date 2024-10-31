@@ -119,7 +119,10 @@ const ProductList = () => {
                   კალათაში დამატება
                 </button>
                 <div className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]">
-                  <Image src={heartIcon} alt="heart" width={24} height={24} />
+                  <Image src={heartIcon} 
+                  
+                  style={{ fill: 'red',}}
+                  alt="heart" width={24} height={24} />
                 </div>
               </div>
             </div>
