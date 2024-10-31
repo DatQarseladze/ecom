@@ -10,6 +10,14 @@ import caretLeft from "../assets/images/caret-left.svg";
 import heartIcon from "../assets/images/heart.svg";
 import leafIcon from "../assets/images/leaf.svg";
 import starIcon from "../assets/images/star.svg";
+import clockIcon from "../assets/images/clock.svg";
+import organIcon from "../assets/images/organ.svg";
+import ratingIcon from "../assets/images/rating.svg";
+import bestsellerIcon from "../assets/images/bestseller.svg";
+import dotIcon from "../assets/images/dot.svg";
+import voltIcon from "../assets/images/volt.svg";
+import truckIcon from "../assets/images/truck.svg";
+import wastingTimeIcon from "../assets/images/wasting-time.svg";
 
 const products = [
   {
@@ -73,7 +81,7 @@ const ProductList = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products.map((product, index) => (
           <Box
             key={product.id}
             className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
@@ -86,8 +94,10 @@ const ProductList = () => {
                 {product.discount}
               </div>
               <div className="flex space-x-2">
-                <StarButton />
-                <VeganButton />
+                {index === 0 ? <OrganButton /> : index === 1 ? <WastingTimeButton /> : index === 2 ? <DotButton /> : <StarButton />}
+                {index === 0 ? <RatingButton /> : index === 1 ? <BestsellerButton /> : index === 2 ? <VoltButton /> : <VeganButton />}
+                {index === 3 && <TruckButton />}
+                {index === 2 && <ClockButton />}
               </div>
             </div>
 
@@ -119,10 +129,13 @@ const ProductList = () => {
                   კალათაში დამატება
                 </button>
                 <div className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]">
-                  <Image src={heartIcon} 
-                  
-                  style={{ fill: 'red',}}
-                  alt="heart" width={24} height={24} />
+                  <Image
+                    src={heartIcon}
+                    style={{ fill: "red" }}
+                    alt="heart"
+                    width={24}
+                    height={24}
+                  />
                 </div>
               </div>
             </div>
@@ -133,12 +146,238 @@ const ProductList = () => {
   );
 };
 
+
+
+const VoltButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#9A6DF9] border-solid border-[#CBB2FF] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={voltIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>სიახლე</span>
+      </div>
+    </div>
+  );
+};
+
+
+const BestsellerButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#ED55C2] border-solid border-[#F499DA] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={bestsellerIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>ბესტსელერი</span>
+      </div>
+    </div>
+  );
+};
+
+const WastingTimeButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#D14343] border-solid border-[#EE9191] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={wastingTimeIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>შეზღუდული მარაგი</span>
+      </div>
+    </div>
+  );
+};
+
+const TruckButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#3366FF] border-solid border-[#9DB5FF] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={truckIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>უფასო მიწოდება</span>
+      </div>
+    </div>
+  );
+};
+
+const DotButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#219653] border-solid border-[#A3E6CD] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={dotIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>მხოლოდ ონლაინ</span>
+      </div>
+    </div>
+  );
+};
+const RatingButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex items-center border-[1px] bg-[#F18D13] border-solid border-[#FAA53D] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={ratingIcon} width={16} height={16} alt="star icon" />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden", 
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
+        <span>ყველას რეიტინგული</span>
+      </div>
+    </div>
+  );
+};
+
+
+const OrganButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`flex items-center border-[1px] bg-[#01B21E] border-solid border-[#A3E6CD] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#FFD000] overflow-hidden ${
+        isHovered ? "max-w-[150px]" : "max-w-[32px]"
+      }
+          `}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={organIcon} width={16} height={16} alt="star icon" />
+      </div>
+      {isHovered && (
+        <div
+          className={`ml-[4px] text-[16px] leading-[28px] text-white transition-transform duration-500 ${
+            isHovered ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
+        >
+          ორგანული
+        </div>
+      )}
+    </div>
+  );
+};
+
+const ClockButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`flex items-center border-[1px] border-solid border-[#ffd000] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#FFD000] overflow-hidden ${
+        isHovered
+          ? "max-w-[150px] bg-[#E4AA16] border-[#e4aa16]"
+          : "max-w-[32px]"
+      }
+          `}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={clockIcon} width={16} height={16} alt="star icon" />
+      </div>
+      {isHovered && (
+        <div
+          className={`ml-[4px] text-[16px] leading-[28px] text-white transition-transform duration-500 ${
+            isHovered ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
+        >
+          21 ოქტ - 30 ოქტ
+        </div>
+      )}
+    </div>
+  );
+};
+
 const StarButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  //   <div className="cursor-pointer bg-[#FFD000] w-[32px] h-[32px] flex items-center justify-center rounded-[8px]">
-  //     <Image src={starIcon} width={16} height={16} alt="star icon" />
-  //   </div>;
   return (
     <div
       className={`flex items-center border-[1px] border-solid border-[#ffd000] h-[32px] px-[8px] transition-all duration-500 ease-in-out rounded-[8px] bg-[#FFD000] overflow-hidden ${
