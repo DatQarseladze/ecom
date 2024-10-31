@@ -31,7 +31,6 @@ const Page = () => {
         <Image src={leftArrow} alt="left arrow" width={24} height={44} style={{height: '44px'}} />
       </div>
       <Swiper
-        loop={true} // Enable infinite loop
         autoplay={{
           delay: 4000, // Slide transition interval in milliseconds
           disableOnInteraction: false, // Keeps autoplay active even after interactions
