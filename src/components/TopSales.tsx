@@ -18,6 +18,7 @@ import dotIcon from "../assets/images/dot.svg";
 import voltIcon from "../assets/images/volt.svg";
 import truckIcon from "../assets/images/truck.svg";
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
+import filledHeart from "../assets/images/filled-heart.svg";
 
 const products = [
   {
@@ -81,72 +82,110 @@ const ProductList = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product, index) => (
-          <Box
-            key={product.id}
-            className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
-            sx={{
-              "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
-            }}
-          >
-            <div className="flex items-center justify-between w-full">
-              <div className="bg-[#8A2BE2] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
-                {product.discount}
-              </div>
-              <div className="flex space-x-2">
-                {index === 0 ? <OrganButton /> : index === 1 ? <WastingTimeButton /> : index === 2 ? <DotButton /> : <StarButton />}
-                {index === 0 ? <RatingButton /> : index === 1 ? <BestsellerButton /> : index === 2 ? <VoltButton /> : <VeganButton />}
-                {index === 3 && <TruckButton />}
-                {index === 2 && <ClockButton />}
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-md">
-              <Image
-                src={product.img}
-                alt={product.title}
-                width={378}
-                height={296}
-                style={{ objectFit: "cover", height: "296px" }}
-                className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
-              />
-            </div>
-            <div className="flex flex-col">
-              {/* Product Title with Ellipsis */}
-              <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
-                {product.title}
-              </h3>
-              <div className="flex items-center mt-[8px] ">
-                <span className="text-[#101840] font-bold text-[24px] leading-[32px]">
-                  {product.price}
-                </span>
-                <span className="line-through text-[#8F95B2] text-[20px] ml-[8px]">
-                  {product.originalPrice}
-                </span>
-              </div>
-              <div className="flex mt-[16px] items-center py-[4px]">
-                <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
-                  კალათაში დამატება
-                </button>
-                <div className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]">
-                  <Image
-                    src={heartIcon}
-                    style={{ fill: "red" }}
-                    alt="heart"
-                    width={24}
-                    height={24}
-                  />
+        {products.map((product, index) => {
+          const [filled, setFilled] = useState(false);
+          return (
+            <Box
+              key={product.id}
+              className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
+              sx={{
+                "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
+              }}
+            >
+              <div className="flex items-center justify-between w-full">
+                <div className="bg-[#8A2BE2] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
+                  {product.discount}
+                </div>
+                <div className="flex space-x-2">
+                  {index === 0 ? (
+                    <OrganButton />
+                  ) : index === 1 ? (
+                    <WastingTimeButton />
+                  ) : index === 2 ? (
+                    <DotButton />
+                  ) : (
+                    <StarButton />
+                  )}
+                  {index === 0 ? (
+                    <RatingButton />
+                  ) : index === 1 ? (
+                    <BestsellerButton />
+                  ) : index === 2 ? (
+                    <VoltButton />
+                  ) : (
+                    <VeganButton />
+                  )}
+                  {index === 3 && <TruckButton />}
+                  {index === 2 && <ClockButton />}
                 </div>
               </div>
-            </div>
-          </Box>
-        ))}
+
+              <div className="overflow-hidden rounded-md">
+                <Image
+                  src={product.img}
+                  alt={product.title}
+                  width={378}
+                  height={296}
+                  style={{ objectFit: "cover", height: "296px" }}
+                  className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
+                />
+              </div>
+              <div className="flex flex-col">
+                {/* Product Title with Ellipsis */}
+                <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
+                  {product.title}
+                </h3>
+                <div className="flex items-center mt-[8px] ">
+                  <span className="text-[#101840] font-bold text-[24px] leading-[32px]">
+                    {product.price}
+                  </span>
+                  <span className="line-through text-[#8F95B2] text-[20px] ml-[8px]">
+                    {product.originalPrice}
+                  </span>
+                </div>
+                <div className="flex mt-[16px] items-center py-[4px]">
+                  <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
+                    კალათაში დამატება
+                  </button>
+                  <div
+                    onClick={() => setFilled((prevState) => !prevState)}
+                    className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
+                  >
+                    {filled ? (
+                      <Image
+                        src={filledHeart}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    ) : (
+                      <Image
+                        src={heartIcon}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Box>
+          );
+        })}
       </div>
     </div>
   );
 };
-
-
 
 const VoltButton = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -162,10 +201,12 @@ const VoltButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -175,7 +216,6 @@ const VoltButton = () => {
     </div>
   );
 };
-
 
 const BestsellerButton = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -191,10 +231,12 @@ const BestsellerButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -219,10 +261,12 @@ const WastingTimeButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -247,10 +291,12 @@ const TruckButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -275,10 +321,12 @@ const DotButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -302,10 +350,12 @@ const RatingButton = () => {
       </div>
       <div
         className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered ? "opacity-100 max-w-xs transform scale-100" : "opacity-0 max-w-0 transform scale-0"
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
         }`}
         style={{
-          visibility: isHovered ? "visible" : "hidden", 
+          visibility: isHovered ? "visible" : "hidden",
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden", // Prevent overflow
         }}
@@ -315,7 +365,6 @@ const RatingButton = () => {
     </div>
   );
 };
-
 
 const OrganButton = () => {
   const [isHovered, setIsHovered] = useState(false);
