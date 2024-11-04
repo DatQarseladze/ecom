@@ -9,7 +9,11 @@ const nextConfig = {
     // Your public configuration
   },
   images: {
-    domains: ["lh3.googleusercontent.com", "platform-lookaside.fbsbx.com"],
+    domains: [
+      "s3-alpha-sig.figma.com",
+      "lh3.googleusercontent.com",
+      "platform-lookaside.fbsbx.com",
+    ],
   },
 };
 

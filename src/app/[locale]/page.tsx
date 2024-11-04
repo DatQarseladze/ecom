@@ -17,6 +17,7 @@ import {
 import BrandList from "@/src/components/BrandList";
 import BrandStock from "@/src/components/BrandStock";
 import PromotionsList from "@/src/components/PromotionsList";
+import WeekSales from "@/src/components/WeekSales";
 
 import { items } from "../../Items.json";
 // import { Carousel } from "react-bootstrap";
@@ -96,6 +97,7 @@ const Page = () => {
       <PromotionsList />
       <TopSales />
       <BrandStock />
+      <WeekSales />
     </div>
   );
 };
