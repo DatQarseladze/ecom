@@ -8,16 +8,12 @@ import {
 } from "../../components/authButtons";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import {
-  GoogleMap,
-  Marker,
-  useJsApiLoader,
-  InfoWindow,
-} from "@react-google-maps/api";
+import { useJsApiLoader } from "@react-google-maps/api";
 import BrandList from "@/src/components/BrandList";
 import BrandStock from "@/src/components/BrandStock";
 import PromotionsList from "@/src/components/PromotionsList";
 import WeekSales from "@/src/components/WeekSales";
+import Events from "@/src/components/Events";
 
 import { items } from "../../Items.json";
 // import { Carousel } from "react-bootstrap";
@@ -98,6 +94,7 @@ const Page = () => {
       <TopSales />
       <BrandStock />
       <WeekSales />
+      <Events />
     </div>
   );
 };
