@@ -2,26 +2,13 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import productImg1 from "../assets/images/zhana.jpeg";
-import productImg2 from "../assets/images/product.png";
-import productImg3 from "../assets/images/product1.png";
-import productImg4 from "../assets/images/product2.png";
+import productImg2 from "../assets/images/zhana2.jpeg";
+import productImg3 from "../assets/images/zhana3.jpeg";
 import caretRight from "../assets/images/caret-right.svg";
 import grayClock from "../assets/images/gray_clock.svg";
 import grayLocation from "../assets/images/gray_location.svg";
 import grayCalendar from "../assets/images/gray_calendar.svg";
 import caretLeft from "../assets/images/caret-left.svg";
-import heartIcon from "../assets/images/heart.svg";
-import leafIcon from "../assets/images/leaf.svg";
-import starIcon from "../assets/images/star.svg";
-import clockIcon from "../assets/images/clock.svg";
-import organIcon from "../assets/images/organ.svg";
-import ratingIcon from "../assets/images/rating.svg";
-import bestsellerIcon from "../assets/images/bestseller.svg";
-import dotIcon from "../assets/images/dot.svg";
-import voltIcon from "../assets/images/volt.svg";
-import truckIcon from "../assets/images/truck.svg";
-import wastingTimeIcon from "../assets/images/wasting-time.svg";
-import filledHeart from "../assets/images/filled-heart.svg";
 
 const products = [
   {
@@ -38,7 +25,7 @@ const products = [
     title: "KORRES-ის ბრენდის პრეზენტაცია ჟანეტ ქერდიყოშვილთან ერთად",
     price: "₾58.48",
     originalPrice: "₾97.47",
-    img: productImg1,
+    img: productImg2,
   },
   {
     id: 3,
@@ -46,7 +33,7 @@ const products = [
     title: "KORRES-ის ბრენდის პრეზენტაცია ჟანეტ ქერდიყოშვილთან ერთად",
     price: "₾58.48",
     originalPrice: "₾97.47",
-    img: productImg1,
+    img: productImg3,
   },
 ];
 
