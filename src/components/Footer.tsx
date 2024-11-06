@@ -82,7 +82,7 @@ const Footer = () => {
       <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
 
       {/* Middle Section with Columns */}
-      <Box className="flex justify-between my-[64px]">
+      <Box className="flex my-[64px]">
         {/* Logo and Description */}
         <Box>
           <Image src={logo} alt="Impex Logo" width={264} height={88} />
@@ -95,7 +95,7 @@ const Footer = () => {
         </Box>
 
         {/* Links Columns */}
-        <Box display="flex" gap="40px">
+        <Box className="justify-between ml-[218px]" display="flex" gap="40px">
           <Box className="flex gap-[16px] flex-col">
             <Typography
               className="mb-[8px]"

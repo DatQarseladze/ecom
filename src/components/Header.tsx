@@ -49,12 +49,11 @@ const Navigation = () => {
         <React.Fragment key={item}>
           <a
             href="#"
-            className={`relative text-[18px] hover:text-[#8255E3] hover:border-b-[2px] hover:border-b-[#dfd2ff] leading-[24px] py-[12px] px-[8px] group transition-colors duration-300 ${
+            className={`relative text-[18px]  hover:text-[#8255E3] hover:border-b-[2px] hover:border-b-[#dfd2ff] leading-[24px] py-[12px] px-[8px] group transition-colors duration-300 ${
               activeTab === item
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700"
-            }`}
-            // Step 2: Update the active tab on click
+            } ${item === 'OUTLET' ? "font-semibold" : ""}`}
             onClick={() => setActiveTab(item)}
           >
             <span className="relative z-10">{item}</span>
@@ -64,9 +63,9 @@ const Navigation = () => {
             <div
               className="mx-2 self-center"
               style={{
-                width: "1px", // Adjust for thickness
-                height: "15px", // Adjust height to match other items
-                backgroundColor: "#0000000D", // Divider color
+                width: "1px",
+                height: "15px",
+                backgroundColor: "#0000000D",
               }}
             ></div>
           )}
