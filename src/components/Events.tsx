@@ -75,7 +75,7 @@ const ProductList = () => {
             return (
               <Box
                 key={product.id}
-                className="rounded-lg rounded-[8px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
+                className="cursor-pointer rounded-lg rounded-[8px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
                 sx={{
                   "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
                 }}
@@ -87,28 +87,6 @@ const ProductList = () => {
                   <div className=" text-white rounded-lg font-bold text-[20px] pb-[8px] leading-[28px] font-bold">
                     ოქტ
                   </div>
-                  <div className="flex space-x-2">
-                    {/* {index === 0 ? (
-                    <OrganButton />
-                  ) : index === 1 ? (
-                    <WastingTimeButton />
-                  ) : index === 2 ? (
-                    <DotButton />
-                  ) : (
-                    <StarButton />
-                  )}
-                  {index === 0 ? (
-                    <RatingButton />
-                  ) : index === 1 ? (
-                    <BestsellerButton />
-                  ) : index === 2 ? (
-                    <VoltButton />
-                  ) : (
-                    <VeganButton />
-                  )}
-                  {index === 3 && <TruckButton />}
-                  {index === 2 && <ClockButton />} */}
-                  </div>
                 </div>
 
                 <div className="overflow-hidden rounded-md">
@@ -118,7 +96,7 @@ const ProductList = () => {
                     width={512}
                     height={296}
                     style={{ objectFit: "cover", height: "296px" }}
-                    className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
+                    className="w-full transition"
                   />
                 </div>
                 <div
