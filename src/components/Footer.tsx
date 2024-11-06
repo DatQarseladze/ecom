@@ -79,10 +79,10 @@ const Footer = () => {
         </Box>
       </Box>
 
-      <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2, mb: 3 }} />
+      <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
 
       {/* Middle Section with Columns */}
-      <Box display="flex" justifyContent="space-between" mb={3}>
+      <Box className="flex justify-between my-[64px]">
         {/* Logo and Description */}
         <Box>
           <Image src={logo} alt="Impex Logo" width={264} height={88} />
