@@ -3,13 +3,13 @@ import Header from "../../components/Header";
 import dynamic from "next/dynamic";
 import { Providers } from "../../providers/Providers";
 import SessionWrapper from "@/src/components/SessionWrapper";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AppThemeProvider = dynamic(() => import("../../utils/AppThemeProvider"), {
   ssr: false,
 });
 
 import "./globals.css";
+import Footer from "@/src/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
             <AppThemeProvider attribute="class">
               <Header />
               {children}
+              <Footer />
             </AppThemeProvider>
           </SessionWrapper>
         </Providers>
