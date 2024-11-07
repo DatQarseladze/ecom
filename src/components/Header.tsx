@@ -2,11 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TextField } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../store/slices/themeSlice";
-import { RootState } from "../store";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+
 import cartIcon from "../assets/images/cart.svg";
 import heartIcon from "../assets/images/heart.svg";
 import creditCardIcon from "../assets/images/credit-card.svg";
@@ -43,7 +40,7 @@ const Navigation = () => {
           alt="burger"
           className="self-center"
         />
-        <div className="self-center ml-[8px] text-[#fff]">კატეგორიები</div>
+        <div className="self-center text-[18px] ml-[8px] text-[#fff]">კატეგორიები</div>
       </a>
       {items.map((item, index) => (
         <React.Fragment key={item}>
