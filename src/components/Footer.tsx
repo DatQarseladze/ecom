@@ -81,16 +81,13 @@ const Footer = () => {
 
       <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
 
-      {/* Middle Section with Columns */}
       <Box className="flex my-[64px]">
-        {/* Logo and Description */}
         <Box>
           <Image src={logo} alt="Impex Logo" width={264} height={88} />
           <Typography
             variant="body2"
             sx={{ marginTop: "8px", color: "#FFFFFF" }}
           >
-            განაწილება ხორციელდება საქართველოში
           </Typography>
         </Box>
 
