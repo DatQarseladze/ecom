@@ -19,6 +19,8 @@ import {
   wastingTimeIcon,
 } from "./constants";
 
+import ReusableBadge from "./ReusableBadge";
+
 const ProductList = () => {
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
@@ -62,28 +64,28 @@ const ProductList = () => {
                 </div>
                 <div className="flex space-x-2">
                   {index === 0 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={organIcon}
                       bgColor={"#01B21E"}
                       borderColor={"#A3E6CD"}
                       label={"ორგანული"}
                     />
                   ) : index === 1 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={wastingTimeIcon}
                       bgColor={"#D14343"}
                       borderColor={"#EE9191"}
                       label={"შეზღუდული მარაგი"}
                     />
                   ) : index === 2 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={dotIcon}
                       bgColor={"#219653"}
                       borderColor={"#A3E6CD"}
                       label={"მხოლოდ ონლაინ"}
                     />
                   ) : (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={starIcon}
                       bgColor={"#FFD000"}
                       borderColor={"#ffd000"}
@@ -91,28 +93,28 @@ const ProductList = () => {
                     />
                   )}
                   {index === 0 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={ratingIcon}
                       bgColor={"#F18D13"}
                       borderColor={"#FAA53D"}
                       label={"ყველაზე რეიტინგული"}
                     />
                   ) : index === 1 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={bestsellerIcon}
                       bgColor={"#ED55C2"}
                       borderColor={"#F499DA"}
                       label={"ბესტსელერი"}
                     />
                   ) : index === 2 ? (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={voltIcon}
                       bgColor={"#9A6DF9"}
                       borderColor={"#CBB2FF"}
                       label={"სიახლე"}
                     />
                   ) : (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={leafIcon}
                       bgColor={"#82B536"}
                       borderColor={"#94C748"}
@@ -120,7 +122,7 @@ const ProductList = () => {
                     />
                   )}
                   {index === 3 && (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={truckIcon}
                       bgColor={"#3366FF"}
                       borderColor={"#9DB5FF"}
@@ -128,7 +130,7 @@ const ProductList = () => {
                     />
                   )}
                   {index === 2 && (
-                    <HoverButton
+                    <ReusableBadge
                       iconSrc={clockIcon}
                       bgColor={"#FFD000"}
                       borderColor={"#ffd000"}
@@ -204,34 +206,6 @@ const ProductList = () => {
   );
 };
 
-const HoverButton = ({ iconSrc, bgColor, borderColor, label }) => {
-  const [isHovered, setIsHovered] = useState(false);
 
-  return (
-    <div
-      className={`flex items-center border-[1px] bg-[${bgColor}] border-solid border-[${borderColor}] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="flex items-center justify-center">
-        <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
-      </div>
-      <div
-        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
-          isHovered
-            ? "opacity-100 max-w-xs transform scale-100"
-            : "opacity-0 max-w-0 transform scale-0"
-        }`}
-        style={{
-          visibility: isHovered ? "visible" : "hidden",
-          marginLeft: isHovered ? "8px" : "0",
-          overflow: "hidden",
-        }}
-      >
-        <span>{label}</span>
-      </div>
-    </div>
-  );
-};
 
 export default ProductList;

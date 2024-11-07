@@ -43,7 +43,7 @@ const Navigation = () => {
           alt="burger"
           className="self-center"
         />
-        <div className="self-center text-[#fff]">კატეგორიები</div>
+        <div className="self-center ml-[8px] text-[#fff]">კატეგორიები</div>
       </a>
       {items.map((item, index) => (
         <React.Fragment key={item}>
@@ -53,7 +53,7 @@ const Navigation = () => {
               activeTab === item
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700"
-            } ${item === 'OUTLET' ? "font-semibold" : ""}`}
+            } ${item === "OUTLET" ? "font-semibold" : ""}`}
             onClick={() => setActiveTab(item)}
           >
             <span className="relative z-10">{item}</span>

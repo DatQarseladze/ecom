@@ -1,0 +1,34 @@
+import React from "react";
+import Image from "next/image";
+
+const ReusableBadge = ({ iconSrc, bgColor, borderColor, label }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <div
+      className={`flex items-center border-[1px] bg-[${bgColor}] border-solid border-[${borderColor}] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center justify-center">
+        <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
+      </div>
+      <div
+        className={`text-[16px] leading-[28px] text-white transition-all duration-500 ease-in-out ${
+          isHovered
+            ? "opacity-100 max-w-xs transform scale-100"
+            : "opacity-0 max-w-0 transform scale-0"
+        }`}
+        style={{
+          visibility: isHovered ? "visible" : "hidden",
+          marginLeft: isHovered ? "8px" : "0",
+          overflow: "hidden",
+        }}
+      >
+        <span>{label}</span>
+      </div>
+    </div>
+  );
+};
+
+export default ReusableBadge;
