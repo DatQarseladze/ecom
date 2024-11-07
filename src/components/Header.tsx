@@ -17,7 +17,7 @@ import burgerIcon from "../assets/images/burger.svg";
 const Navigation = () => {
   const items = [
     "მედიკამენტები",
-    "სილამზე და მოვლა",
+    "სილამაზე და მოვლა",
     "დედა და ბავშვი",
     "ივენთები",
     "ბლოგი",
