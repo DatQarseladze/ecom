@@ -227,9 +227,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography variant="body2" color="#FFFFFFB2">
+          <div className="text-[16px] leading-[24px]" color="#FFFFFFB2">
             &copy; 2024 IMPEX. All rights reserved.
-          </Typography>
+          </div>
           <Box display="flex" gap="16px">
             <Image
               className="cursor-pointer"
