@@ -92,7 +92,7 @@ const Footer = () => {
         </Box>
 
         {/* Links Columns */}
-        <Box className="justify-between ml-[218px]" display="flex" gap="40px">
+        <Box className="justify-between ml-[218px] w-full" display="flex" gap="40px">
           <Box className="flex gap-[16px] flex-col">
             <Typography
               className="mb-[8px]"
@@ -110,8 +110,8 @@ const Footer = () => {
             <Link href="#" color="#FFFFFF" underline="none">
               ჩვენი მიზანი
             </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              კარიერა
+            <Link href="#"  className="flex items-center gap-[8px]" color="#FFFFFF" underline="none">
+              კარიერა <div className="text-[14px] bg-[#FFFFFF1A] py-[1px] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] "> ახალი ვაკანსიები </div>
             </Link>
             <Link href="#" color="#FFFFFF" underline="none">
               მენეჯმენტი
