@@ -227,7 +227,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <div className="text-[16px] leading-[24px]" color="#FFFFFFB2">
+          <div className="text-[16px] leading-[24px] text-[#FFFFFFB2]" color="#FFFFFFB2">
             &copy; 2024 IMPEX. All rights reserved.
           </div>
           <Box display="flex" gap="16px">
