@@ -19,7 +19,7 @@ const Footer = () => {
       sx={{
         backgroundColor: "#6D4CBA",
         color: "#FFFFFF",
-        padding: "40px 168px",
+        padding: "40px 0",
       }}
     >
       {/* Top Section */}
@@ -28,6 +28,9 @@ const Footer = () => {
         justifyContent="space-between"
         alignItems="center"
         mb={3}
+        sx={{
+          padding: "0 168px",
+        }}
       >
         <div className="flex-col">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
@@ -79,131 +82,186 @@ const Footer = () => {
         </Box>
       </Box>
 
-      <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
+      <Divider
+        className="w-full"
+        sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }}
+      />
+      <div className="px-[168px]">
+        <Box className="flex my-[64px]">
+          <Box>
+            <Image src={logo} alt="Impex Logo" width={264} height={88} />
+            <Typography
+              variant="body2"
+              sx={{ marginTop: "8px", color: "#FFFFFF" }}
+            ></Typography>
+          </Box>
 
-      <Box className="flex my-[64px]">
-        <Box>
-          <Image src={logo} alt="Impex Logo" width={264} height={88} />
-          <Typography
-            variant="body2"
-            sx={{ marginTop: "8px", color: "#FFFFFF" }}
+          {/* Links Columns */}
+          <Box
+            className="justify-between ml-[218px] w-full"
+            display="flex"
+            gap="40px"
           >
+            <Box className="flex gap-[16px] flex-col">
+              <Typography
+                className="mb-[8px]"
+                variant="subtitle1"
+                fontWeight="bold"
+              >
+                იმპექსის შესახებ
+              </Typography>
+              <Link href="#" color="#FFFFFF" underline="none">
+                კომპანიის შესახებ
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                სიახლეები
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                ჩვენი მიზანი
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-[8px]"
+                color="#FFFFFF"
+                underline="none"
+              >
+                კარიერა{" "}
+                <div className="text-[14px] bg-[#FFFFFF1A] py-[1px] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] ">
+                  {" "}
+                  ახალი ვაკანსიები{" "}
+                </div>
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                მენეჯმენტი
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                ჩვენი ბრენდები
+              </Link>
+            </Box>
+
+            <Box className="flex gap-[16px] flex-col">
+              <Typography
+                className="mb-[8px]"
+                variant="subtitle1"
+                fontWeight="bold"
+              >
+                My Impex
+              </Typography>
+              <Link href="#" color="#FFFFFF" underline="none">
+                აქციები
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                ივენთები
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                ზე ბარათი
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                რეგისტრაცია
+              </Link>
+            </Box>
+            <Box className="flex gap-[16px] flex-col">
+              <Typography
+                className="mb-[8px]"
+                variant="subtitle1"
+                fontWeight="bold"
+              >
+                კონფიდენციალობა და პირობები
+              </Typography>
+              <Link href="#" color="#FFFFFF" underline="none">
+                მომხმარებელთა მომსახურება
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                მიწოდება სახლში
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                იყიდე და აიღე აფთიაქში
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                წესები და პირობები
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                კონფიდენციალობა
+              </Link>
+            </Box>
+            <Box className="flex gap-[16px] flex-col">
+              <Typography
+                className="mb-[8px]"
+                variant="subtitle1"
+                fontWeight="bold"
+              >
+                კონტაქტი
+              </Typography>
+              <Link
+                className="flex items-center gap-[3px]"
+                href="#"
+                color="#FFFFFF"
+                underline="none"
+              >
+                <Image src={phone} alt="phone" width={18} height={18} />
+                <div>+995 322 313 100</div>
+              </Link>
+              <Link
+                className="flex items-center gap-[3px]"
+                href="#"
+                color="#FFFFFF"
+                underline="none"
+              >
+                <Image src={envelope} alt="envelope" width={18} height={18} />
+                <div>office@myimpex.ge</div>
+              </Link>
+              <Link
+                className="flex items-center gap-[3px]"
+                href="#"
+                color="#FFFFFF"
+                underline="none"
+              >
+                <Image src={pin} alt="pin" width={18} height={18} />
+                <div>თბილისი</div>
+              </Link>
+            </Box>
+          </Box>
+        </Box>
+
+        <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2, mb: 3 }} />
+
+        {/* Bottom Section */}
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Typography variant="body2" color="#FFFFFFB2">
+            &copy; 2024 IMPEX. All rights reserved.
           </Typography>
-        </Box>
-
-        {/* Links Columns */}
-        <Box className="justify-between ml-[218px] w-full" display="flex" gap="40px">
-          <Box className="flex gap-[16px] flex-col">
-            <Typography
-              className="mb-[8px]"
-              variant="subtitle1"
-              fontWeight="bold"
-            >
-              იმპექსის შესახებ
-            </Typography>
-            <Link href="#" color="#FFFFFF" underline="none">
-              კომპანიის შესახებ
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              სიახლეები
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              ჩვენი მიზანი
-            </Link>
-            <Link href="#"  className="flex items-center gap-[8px]" color="#FFFFFF" underline="none">
-              კარიერა <div className="text-[14px] bg-[#FFFFFF1A] py-[1px] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] "> ახალი ვაკანსიები </div>
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              მენეჯმენტი
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              ჩვენი ბრენდები
-            </Link>
-          </Box>
-
-          <Box className="flex gap-[16px] flex-col">
-            <Typography
-              className="mb-[8px]"
-              variant="subtitle1"
-              fontWeight="bold"
-            >
-              My Impex
-            </Typography>
-            <Link href="#" color="#FFFFFF" underline="none">
-              აქციები
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              ივენთები
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              ზე ბარათი
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              რეგისტრაცია
-            </Link>
-          </Box>
-          <Box className="flex gap-[16px] flex-col">
-            <Typography
-              className="mb-[8px]"
-              variant="subtitle1"
-              fontWeight="bold"
-            >
-              კონფიდენციალობა და პირობები
-            </Typography>
-            <Link href="#" color="#FFFFFF" underline="none">
-              მომხმარებელთა მომსახურება
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              მიწოდება სახლში
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              იყიდე და აიღე აფთიაქში
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              წესები და პირობები
-            </Link>
-            <Link href="#" color="#FFFFFF" underline="none">
-              კონფიდენციალობა
-            </Link>
-          </Box>
-          <Box className="flex gap-[16px] flex-col">
-            <Typography
-              className="mb-[8px]"
-              variant="subtitle1"
-              fontWeight="bold"
-            >
-              კონტაქტი
-            </Typography>
-            <Link className="flex items-center gap-[3px]" href="#" color="#FFFFFF" underline="none">
-              <Image src={phone} alt="phone" width={18} height={18} />
-              <div>+995 322 313 100</div>
-            </Link>
-            <Link className="flex items-center gap-[3px]" href="#" color="#FFFFFF" underline="none">
-              <Image src={envelope} alt="envelope" width={18} height={18} />
-              <div>office@myimpex.ge</div>
-            </Link>
-            <Link className="flex items-center gap-[3px]" href="#" color="#FFFFFF" underline="none">
-              <Image src={pin} alt="pin" width={18} height={18} />
-              <div>თბილისი</div>
-            </Link>
+          <Box display="flex" gap="16px">
+            <Image
+              className="cursor-pointer"
+              src={MessengerIcon}
+              alt="Viber"
+              width={32}
+              height={32}
+            />
+            <Image
+              className="cursor-pointer"
+              src={FacebookIcon}
+              alt="Facebook"
+              width={32}
+              height={32}
+            />
+            <Image
+              className="cursor-pointer"
+              src={WhatsAppIcon}
+              alt="WhatsApp"
+              width={32}
+              height={32}
+            />
+            <Image
+              className="cursor-pointer"
+              src={InstagramIcon}
+              alt="Instagram"
+              width={32}
+              height={32}
+            />
           </Box>
         </Box>
-      </Box>
-
-      <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2, mb: 3 }} />
-
-      {/* Bottom Section */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Typography variant="body2" color="#FFFFFFB2">
-          &copy; 2024 IMPEX. All rights reserved.
-        </Typography>
-        <Box display="flex" gap="16px">
-          <Image className="cursor-pointer" src={MessengerIcon} alt="Viber" width={32} height={32} />
-          <Image className="cursor-pointer" src={FacebookIcon} alt="Facebook" width={32} height={32} />
-          <Image className="cursor-pointer" src={WhatsAppIcon} alt="WhatsApp" width={32} height={32} />
-          <Image className="cursor-pointer" src={InstagramIcon} alt="Instagram" width={32} height={32} />
-        </Box>
-      </Box>
+      </div>
     </Box>
   );
 };
