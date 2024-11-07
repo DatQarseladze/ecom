@@ -115,7 +115,7 @@ const ProductList = () => {
                     />
                   ) : (
                     <ReusableBadge
-                      iconSrc={leafIcon}
+                      iconSrc={clockIcon}
                       bgColor={"#82B536"}
                       borderColor={"#94C748"}
                       label={"ვეგანური"}

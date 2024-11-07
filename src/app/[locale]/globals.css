@@ -14,7 +14,6 @@
     url("/fonts/FiraGO-Bold.woff") format("woff");
   font-weight: 700; /* Bold */
   font-style: normal;
-  text-transform: uppercase;
 }
 
 /* Tailwind Imports */
@@ -36,6 +35,8 @@
 
 html,
 body {
+    font-family: "Fira GO", sans-serif !important;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
