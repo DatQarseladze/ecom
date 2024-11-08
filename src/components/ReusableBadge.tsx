@@ -13,7 +13,7 @@ const ReusableBadge = ({
 
   return (
     <div
-      className="flex items-center border h-[32px] px-[8px] rounded-[8px] border-[1px] border-solid transition-all duration-500 ease-in-out"
+      className="flex items-center border h-[32px] px-[7px] rounded-[8px] border-[1px] border-solid transition-all duration-500 ease-in-out"
       style={{
         backgroundColor: isHovered ? hoverBgColor || bgColor : bgColor,
         borderColor: isHovered ? hoverBorderColor || borderColor : borderColor,
