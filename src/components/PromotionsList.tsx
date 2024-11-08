@@ -12,7 +12,7 @@ const products = [
   {
     id: 1,
     title:
-      "50%-ზე ფასდაკლება CeraVe-ს ბრენდის პროდუქტის ხაზის მრავალფეროვნებაზე",
+      "r-ზე ფასდაკლება CeraVe-ს ბრენდის პროდუქტის ხაზის მრავალფეროვნებაზე",
     img: productImg1,
   },
   {
@@ -59,13 +59,7 @@ const Promotions = () => {
           }}
           TabIndicatorProps={{
             style: {
-              backgroundColor: "#8255E3", // Active tab indicator color
-              // height: "2px", // The height of the indicator matches the border height
-              // position: "absolute",
-              // bottom: "0px", // Place it at the bottom of the Tabs container
-              // left: 0, // Align it with the left side
-              // right: 0, // Ensure it spans the full width
-              // zIndex: 10, // Bring the indicator above the border
+              backgroundColor: "#8255E3",
             },
           }}
         >
