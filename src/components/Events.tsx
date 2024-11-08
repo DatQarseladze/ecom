@@ -165,7 +165,7 @@ const ProductList = () => {
                     </span>
                   </div>
                   <div className="flex mt-[24px] items-center gap-[8px]">
-                    <button className="p-[12px] w-1/2 text-[16px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
+                    <button className="p-[12px] w-1/2 text-[16px] leading-[24px] bg-[#8255E3] hover:bg-[#503095] text-white rounded-lg font-medium">
                       რეგისტრაცია
                     </button>
                     <button
