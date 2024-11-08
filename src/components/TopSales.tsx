@@ -59,7 +59,7 @@ const ProductList = () => {
               }}
             >
               <div className="flex items-center justify-between w-full">
-                <div className="bg-[#8A2BE2] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
+                <div className="bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
                   {product.discount}
                 </div>
                 <div className="flex space-x-2">
