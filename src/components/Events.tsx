@@ -80,7 +80,7 @@ const ProductList = () => {
                   "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
                 }}
               >
-                <div className="absolute border-[2px] border-solid border-[#7143D1] top-[24px] px-[6px] bg-[#8A2BE2] left-[24px] flex items-center flex-col rounded-[8px] ">
+                <div className="absolute border-[2px] border-solid border-[#7143D1] top-[24px] px-[6px] bg-[#7143D1] left-[24px] flex items-center flex-col rounded-[8px] ">
                   <div className="text-white text-[32px] font-bold leading-[28px] pt-[8px] pb-[4px] font-bold">
                     24
                   </div>
