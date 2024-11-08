@@ -30,7 +30,7 @@ const PromotionBanner = () => {
       <div className=" lg:w-1/2 flex flex-col px-auto justify-center text-center lg:text-left">
         <div className="rounded-[8px] py-[2px] border-[2px] border-[#8255E3]  mb-[10px] px-[8px] max-w-max">
           <p className="text-[#8255E3] text-[20px] leading-[28px] font-bold m-none">
-            -50%-ზე ფასდაკლება
+            -50%-მდე ფასდაკლება
           </p>
         </div>
 

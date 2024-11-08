@@ -65,10 +65,10 @@ const ProductList = () => {
                 <div className="flex space-x-2">
                   {index === 0 ? (
                     <ReusableBadge
-                      iconSrc={organIcon}
-                      bgColor={"#01B21E"}
+                      iconSrc={dotIcon}
+                      bgColor={"#219653"}
                       borderColor={"#A3E6CD"}
-                      label={"ორგანული"}
+                      label={"მხოლოდ ონლაინ"}
                     />
                   ) : index === 1 ? (
                     <ReusableBadge
@@ -79,10 +79,10 @@ const ProductList = () => {
                     />
                   ) : index === 2 ? (
                     <ReusableBadge
-                      iconSrc={dotIcon}
-                      bgColor={"#219653"}
+                      iconSrc={organIcon}
+                      bgColor={"#01B21E"}
                       borderColor={"#A3E6CD"}
-                      label={"მხოლოდ ონლაინ"}
+                      label={"ორგანული"}
                     />
                   ) : (
                     <ReusableBadge
@@ -205,7 +205,5 @@ const ProductList = () => {
     </div>
   );
 };
-
-
 
 export default ProductList;
