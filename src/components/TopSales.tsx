@@ -33,10 +33,10 @@ const ProductList = () => {
             ყველას ნახვა
           </h3>
           <div className="flex items-center">
-            <div className="cursor-pointer border-[1px] p-[20px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
+            <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
               <Image src={caretLeft} width={20} height={20} alt="caret-left" />
             </div>
-            <div className="cursor-pointer border-[1px] p-[20px] border-[#1B1D201A] flex items-center justify-center rounded-[8px]">
+            <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D201A] flex items-center justify-center rounded-[8px]">
               <Image
                 src={caretRight}
                 width={20}
