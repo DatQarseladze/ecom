@@ -49,6 +49,9 @@ const Promotions = () => {
           onChange={handleTabChange}
           variant="fullWidth"
           className="mb-[60px]"
+          sx={{
+            borderBottom: "2px solid #e8e8e9",
+          }}
           TabIndicatorProps={{
             style: {
               backgroundColor: "#8255E3",
@@ -62,14 +65,14 @@ const Promotions = () => {
                 key={label}
                 label={label}
                 sx={{
-                  borderBottom: "2px solid #e8e8e9",
                   color: tabIndex === index ? "#8255E3 !important" : "#8F95B2",
                   fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
+                  marginRight: "18px",
                   "&.Mui-selected": {
-                    borderBottom: "3px solid #8255E3",
+                    borderBottom: "1px solid #8255E3",
                   },
                 }}
               />
