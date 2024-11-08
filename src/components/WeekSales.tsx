@@ -146,6 +146,8 @@ const ProductList = () => {
                       iconSrc={starIcon}
                       bgColor={"#FFD000"}
                       borderColor={"#ffd000"}
+                      hoverBorderColor={"#E4AA16"}
+                      hoverBgColor={"#D8A219"}
                       label={"ექსკლუზივი"}
                     />
                   )}
@@ -190,7 +192,9 @@ const ProductList = () => {
                     <ReusableBadge
                       iconSrc={clockIcon}
                       bgColor={"#FFD000"}
-                      borderColor={"#ffd000"}
+                      borderColor={"#FFD000"}
+                      hoverBorderColor={"#E4AA16"}
+                      hoverBgColor={"#D8A219"}
                       label={"21 ოქტ - 30 ოქტ"}
                     />
                   )}

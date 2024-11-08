@@ -98,6 +98,8 @@ const Promotions = () => {
                 iconSrc={clockImg}
                 bgColor={"#FFD000"}
                 borderColor={"#FFD000"}
+                hoverBorderColor={"#E4AA16"}
+                hoverBgColor={"#D8A219"}
                 label={"21 ოქტ - 30 ოქტ"}
               />
             </div>

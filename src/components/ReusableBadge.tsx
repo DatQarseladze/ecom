@@ -1,17 +1,25 @@
 import React from "react";
 import Image from "next/image";
 
-const ReusableBadge = ({ iconSrc, bgColor, borderColor, label }) => {
+const ReusableBadge = ({
+  iconSrc,
+  bgColor,
+  borderColor,
+  hoverBgColor,
+  hoverBorderColor,
+  label,
+}: any): any => {
   const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <div
-      className={`flex items-center border-[1px] bg-[${bgColor}] border-solid border-[${borderColor}] h-[32px] px-[8px] rounded-[8px] transition-all duration-500 ease-in-out`}
+      className="flex items-center border h-[32px] px-[8px] rounded-[8px] border-[1px] border-solid transition-all duration-500 ease-in-out"
+      style={{
+        backgroundColor: isHovered ? hoverBgColor || bgColor : bgColor,
+        borderColor: isHovered ? hoverBorderColor || borderColor : borderColor,
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        backgroundColor: bgColor,
-        borderColor: borderColor,
-      }}
     >
       <div className="flex items-center justify-center">
         <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
