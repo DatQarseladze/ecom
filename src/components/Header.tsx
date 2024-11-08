@@ -28,7 +28,7 @@ const Navigation = () => {
   const [activeTab, setActiveTab] = useState(items[0]); // Default to the first item
 
   return (
-    <nav className="xl:mx-[168px] mx-auto justify-between flex items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="xl:mx-[168px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
