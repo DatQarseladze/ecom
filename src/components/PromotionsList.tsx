@@ -51,6 +51,9 @@ const Promotions = () => {
           className="mb-[60px]"
           sx={{
             borderBottom: "2px solid #e8e8e9",
+            ".MuiTabs-flexContainer": {
+              gap: "24px",
+            },
           }}
           TabIndicatorProps={{
             style: {
@@ -70,7 +73,6 @@ const Promotions = () => {
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
-                  marginRight: "18px",
                   "&.Mui-selected": {
                     borderBottom: "1px solid #8255E3",
                   },
