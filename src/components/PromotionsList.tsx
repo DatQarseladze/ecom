@@ -6,6 +6,7 @@ import productImg2 from "../assets/images/picture1.png";
 import productImg3 from "../assets/images/picture2.png";
 import productImg4 from "../assets/images/picture3.png";
 import clockImg from "../assets/images/clock.png";
+import ReusableBadge from "./ReusableBadge";
 
 const products = [
   {
@@ -89,9 +90,15 @@ const Promotions = () => {
               },
             }}
           >
-            <div className="absolute left-[24px] top-[24px] flex items-center justify-center cursor rounded-[8px] bg-[#FFD000] w-[32px] h-[32px]">
-              <Image src={clockImg} width={16} height={16} alt="clock" />
+            <div className="absolute left-[24px] top-[24px] ">
+              <ReusableBadge
+                iconSrc={clockImg}
+                bgColor={"#FFD000"}
+                borderColor={"#FFD000"}
+                label={"21 ოქტ - 30 ოქტ"}
+              />
             </div>
+
             <Image
               src={product.img}
               alt={product.title}
