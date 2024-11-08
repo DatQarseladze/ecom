@@ -108,7 +108,7 @@ const Promotions = () => {
               className="w-full rounded-md"
             />
             <div className="flex p-[24px] flex-col">
-              <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold text-gray-800">
+              <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold">
                 {product.title}
               </h3>
               <p className="text-[#474D66] mt-[8px] text-[16px] leading-[24px]">
