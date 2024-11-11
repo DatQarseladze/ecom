@@ -49,7 +49,7 @@ const Footer = () => {
             sx={{
               height: 56,
               borderRadius: "8px",
-              width: 568,
+              width: 347,
               border: "1px solid #9A6DF9",
               "& .MuiOutlinedInput-root": {
                 "& fieldset": { borderColor: "transparent" },
