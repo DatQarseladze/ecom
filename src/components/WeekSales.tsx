@@ -47,7 +47,7 @@ const WeekSales = () => {
           კვირის ფასდაკლებები
         </h2>
         <div className="flex items-center gap-[16px]">
-          <h3 className="text-[16px] text-[#101840] leading-[24px]">
+          <h3 className="cursor-pointer text-[16px] text-[#101840] leading-[24px] border-b-[1px] border-transparent hover:border-[#474D66] hover:text-[#474D66]">
             ყველას ნახვა
           </h3>
         </div>
