@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import productImg4 from "../assets/images/product_img_container.png";
-import productImg2 from "../assets/images/product_img_container_2.png";
-import productImg3 from "../assets/images/product_img_container_3.png";
-import productImg6 from "../assets/images/product_img_container_4.png";
-import productImg from "../assets/images/product_img_container_6.png";
-import productImg5 from "../assets/images/product_img_container_5.png";
-import productImg7 from "../assets/images/product_img_container_7.png";
-import productImg8 from "../assets/images/product_img_container_8.png";
 import heartIcon from "../assets/images/heart.svg";
 import leafIcon from "../assets/images/leaf.svg";
 import starIcon from "../assets/images/star.svg";
@@ -22,76 +14,14 @@ import truckIcon from "../assets/images/truck.svg";
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
 import ReusableBadge from "./ReusableBadge";
+import { products } from "./constants";
+import MinusIcon from "@/src/icons/MinusIcon";
+import PlusIcon from "@/src/icons/PlusIcon";
 
-const products = [
-  {
-    id: 1,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg,
-  },
-  {
-    id: 2,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg4,
-  },
-  {
-    id: 3,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg2,
-    // img: "https://s3-alpha-sig.figma.com/img/2588/fd0c/d8dc0d6771382686d844189da17c77d0?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mwEiACW7rJMBGznYAHUo1Q0U03809XsZJvt8onn6j~Ayms2Eg7SCHDJosKMc9uUExb4yOII9pwhFuupTobGPg1Vdw9uuj44A6RKIGKeZ64gqrPsUiwDht2u5RNF0Fw5UeDC0cVifOUyRs6~lTIWpofLGL2PU0cIG1w7i4tMGTCV-oh3TTiAj0OmZKs0CwhEug8pWAn~RRlSLyRQ5lu~aEL8bRRIFhVEau468YKVD4TR0AK5mCTig7rQGYXNv-Bo8ig6SHF67DAdgF7HiapxBwqFxV0NsDwRybURF4W52IJzjamlxYNSx0SPG8j81BkjHOSkCwvbxKDiY-1EEtkFgtw__",
-  },
-  {
-    id: 4,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg7,
-  },
-  {
-    id: 5,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg6,
-  },
-  {
-    id: 6,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg5,
-  },
-  {
-    id: 7,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg8,
-  },
-  {
-    id: 7,
-    discount: "-42%",
-    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
-    price: "₾58.48",
-    originalPrice: "₾97.47",
-    img: productImg3,
-  },
-];
 
 const ProductList = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
       <div className="py-[4px] flex items-center justify-between mb-[48px]">
@@ -225,9 +155,35 @@ const ProductList = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center py-[4px]">
-                  <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium">
-                    კალათაში დამატება
-                  </button>
+                  {!count ? (
+                    <button
+                      onClick={() => setCount(1)}
+                      className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                    >
+                      კალათაში დამატება
+                    </button>
+                  ) : (
+                    <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
+                      <button
+                        onClick={() => setCount((prev) => prev - 1)}
+                        className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
+                      >
+                        <MinusIcon />
+                      </button>
+                      <div className="text-[#101840] text-[16px] leading-[24px]">
+                        {count} შეკვრა
+                      </div>
+                      <button
+                        onClick={() => setCount((prev) => prev + 1)}
+                        disabled={count === 10}
+                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${count === 10 ? "bg-[#f8f8f8]" : ""}`}
+                      >
+                        <PlusIcon
+                          fillColor={count === 10 ? "#1018404F" : "#474D66"}
+                        />
+                      </button>
+                    </div>
+                  )}
                   <div
                     onClick={() => setFilled((prevState) => !prevState)}
                     className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
