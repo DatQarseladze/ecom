@@ -4,7 +4,7 @@ import Image from "next/image";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
-import shoppingCartIcon from '../assets/images/shopping-cart.svg'
+import shoppingCartIcon from "../assets/images/shopping-cart.svg";
 import {
   products,
   heartIcon,
@@ -25,7 +25,25 @@ import PlusIcon from "@/src/icons/PlusIcon";
 import ReusableBadge from "./ReusableBadge";
 
 const ProductList = () => {
-  const [count, setCount] = useState(0);
+  const [counts, setCounts] = useState({});
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleMouseDown = (index, event) => {
+    if (event.target.closest("button")) return;
+    setActiveIndex(index);
+  };
+
+  const handleMouseUp = () => {
+    setActiveIndex(null);
+  };
+
+  const handleCountChange = (index, change) => {
+    setCounts((prevCounts) => {
+      const currentCount = prevCounts[index] || 0;
+      const newCount = Math.max(0, Math.min(10, currentCount + change));
+      return { ...prevCounts, [index]: newCount };
+    });
+  };
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
       <div className="py-[4px] flex items-center justify-between mb-[48px]">
@@ -57,10 +75,11 @@ const ProductList = () => {
           return (
             <Box
               key={product.id}
-              className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
-              sx={{
-                boxShadow: "0px 8px 40px -8px #172B4D14",
-              }}
+              onMouseDown={(e) => handleMouseDown(index, e)}
+              onMouseUp={handleMouseUp}
+              className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
+                activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
+              }`}
             >
               <div className="flex items-center justify-between w-full">
                 <div className="bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
@@ -171,9 +190,9 @@ const ProductList = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center">
-                  {!count ? (
+                  {!counts[index] ? (
                     <button
-                      onClick={() => setCount(1)}
+                      onClick={() => handleCountChange(index, 1)} // Instead of setCounts(1), we update the count
                       className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
                       <Image
@@ -187,30 +206,31 @@ const ProductList = () => {
                         width={20}
                         height={20}
                       />
-                      <div className='ml-[8px]'>
-
-                      კალათაში დამატება
-                      </div>
+                      <div className="ml-[8px]">კალათაში დამატება</div>
                     </button>
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
                       <button
-                        onClick={() => setCount((prev) => prev - 1)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleCountChange(index, -1);
+                        }}
                         className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
                       >
                         <MinusIcon />
                       </button>
                       <div className="text-[#101840] text-[16px] leading-[24px]">
-                        {count} შეკვრა
+                        {counts[index]} შეკვრა
                       </div>
                       <button
-                        onClick={() => setCount((prev) => prev + 1)}
-                        disabled={count === 10}
-                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${count === 10 ? "bg-[#f8f8f8]" : ""}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCountChange(index, 1);
+                        }}
+                        disabled={counts[index] === 10}
+                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${counts[index] === 10 ? "opacity-50" : ""}`}
                       >
-                        <PlusIcon
-                          fillColor={count === 10 ? "#1018404F" : "#474D66"}
-                        />
+                        <PlusIcon />
                       </button>
                     </div>
                   )}

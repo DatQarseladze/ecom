@@ -11,7 +11,7 @@ import bestsellerIcon from "../assets/images/bestseller.svg";
 import dotIcon from "../assets/images/dot.svg";
 import voltIcon from "../assets/images/volt.svg";
 import truckIcon from "../assets/images/truck.svg";
-import shoppingCartIcon from '../assets/images/shopping-cart.svg'
+import shoppingCartIcon from "../assets/images/shopping-cart.svg";
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
 import ReusableBadge from "./ReusableBadge";
@@ -23,7 +23,8 @@ const WeekSales = () => {
   const [counts, setCounts] = useState({});
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleMouseDown = (index) => {
+  const handleMouseDown = (index, event) => {
+    if (event.target.closest("button")) return;
     setActiveIndex(index);
   };
 
@@ -57,7 +58,7 @@ const WeekSales = () => {
           return (
             <Box
               key={product.id}
-              onMouseDown={() => handleMouseDown(index)}
+              onMouseDown={(e) => handleMouseDown(index, e)}
               onMouseUp={handleMouseUp}
               className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
                 activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
@@ -93,8 +94,8 @@ const WeekSales = () => {
                     <ReusableBadge
                       iconSrc={starIcon}
                       bgColor={"#FFD000"}
-                      borderColor={"#ffd000"}
-                      hoverBorderColor={"#FFDE4D"}
+                      borderColor={"#FFDE4D"}
+                      hoverBorderColor={"#FFD000"}
                       hoverBgColor={"#D8A219"}
                       label={"ექსკლუზივი"}
                     />
@@ -141,7 +142,7 @@ const WeekSales = () => {
                       iconSrc={clockIcon}
                       bgColor={"#FFD000"}
                       borderColor={"#FFD000"}
-                      hoverBorderColor={"#E4AA16"}
+                      hoverBorderColor={"#FFD000"}
                       hoverBgColor={"#D8A219"}
                       label={"21 ოქტ - 30 ოქტ"}
                     />
@@ -174,7 +175,7 @@ const WeekSales = () => {
                 <div className="flex mt-[16px] items-center">
                   {!counts[index] ? (
                     <button
-                      onClick={() => setCounts(1)}
+                      onClick={() => handleCountChange(index, 1)} // Instead of setCounts(1), we update the count
                       className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
                       <Image
@@ -193,7 +194,10 @@ const WeekSales = () => {
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
                       <button
-                        onClick={() => handleCountChange(index, -1)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCountChange(index, -1);
+                        }}
                         className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
                       >
                         <MinusIcon />
@@ -202,7 +206,10 @@ const WeekSales = () => {
                         {counts[index]} შეკვრა
                       </div>
                       <button
-                        onClick={() => handleCountChange(index, 1)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCountChange(index, 1);
+                        }}
                         disabled={counts[index] === 10}
                         className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${counts[index] === 10 ? "opacity-50" : ""}`}
                       >
