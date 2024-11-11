@@ -18,9 +18,18 @@ import { products } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
 
-
 const ProductList = () => {
   const [count, setCount] = useState(0);
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleMouseDown = (index) => {
+    setActiveIndex(index); // Change background on mouse down
+  };
+
+  const handleMouseUp = () => {
+    setActiveIndex(null); // Revert background on mouse up
+  };
 
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
@@ -40,10 +49,11 @@ const ProductList = () => {
           return (
             <Box
               key={product.id}
-              className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
-              sx={{
-                "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
-              }}
+              onMouseDown={() => handleMouseDown(index)}
+              onMouseUp={handleMouseUp}
+              className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
+                activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
+              }`}
             >
               <div className="flex items-center justify-between w-full">
                 <div className="bg-[#8255E3] w-[63px] border-[1px] border-solid border-[#8255E3] text-white rounded-lg px-[6px] text-[20px] leading-[28px] font-bold">
