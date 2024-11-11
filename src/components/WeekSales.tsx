@@ -159,7 +159,7 @@ const WeekSales = () => {
                   className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col mt-[16px]">
                 <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
                   {product.title}
                 </h3>
@@ -171,10 +171,10 @@ const WeekSales = () => {
                     {product.originalPrice}
                   </span>
                 </div>
-                <div className="flex mt-[16px] items-center py-[4px]">
+                <div className="flex mt-[16px] items-center">
                   {!counts[index] ? (
                     <button
-                      onClick={() => setCount(1)}
+                      onClick={() => setCounts(1)}
                       className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
                       <Image

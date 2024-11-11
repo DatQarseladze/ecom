@@ -158,7 +158,7 @@ const ProductList = () => {
                   className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col mt-[16px]">
                 <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
                   {product.title}
                 </h3>
@@ -170,7 +170,7 @@ const ProductList = () => {
                     {product.originalPrice}
                   </span>
                 </div>
-                <div className="flex mt-[16px] items-center py-[4px]">
+                <div className="flex mt-[16px] items-center">
                   {!count ? (
                     <button
                       onClick={() => setCount(1)}
