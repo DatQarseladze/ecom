@@ -11,6 +11,7 @@ import bestsellerIcon from "../assets/images/bestseller.svg";
 import dotIcon from "../assets/images/dot.svg";
 import voltIcon from "../assets/images/volt.svg";
 import truckIcon from "../assets/images/truck.svg";
+import shoppingCartIcon from '../assets/images/shopping-cart.svg'
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
 import ReusableBadge from "./ReusableBadge";
@@ -173,10 +174,21 @@ const WeekSales = () => {
                 <div className="flex mt-[16px] items-center py-[4px]">
                   {!counts[index] ? (
                     <button
-                      onClick={() => handleCountChange(index, 1)}
-                      className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                      onClick={() => setCount(1)}
+                      className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
-                      კალათაში დამატება
+                      <Image
+                        src={shoppingCartIcon}
+                        style={{
+                          outline: "none",
+                          height: "20px",
+                          width: "20px",
+                        }}
+                        alt="cart"
+                        width={20}
+                        height={20}
+                      />
+                      <div className="ml-[8px]">კალათაში დამატება</div>
                     </button>
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">

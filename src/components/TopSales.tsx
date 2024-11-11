@@ -4,6 +4,7 @@ import Image from "next/image";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
+import shoppingCartIcon from '../assets/images/shopping-cart.svg'
 import {
   products,
   heartIcon,
@@ -173,9 +174,23 @@ const ProductList = () => {
                   {!count ? (
                     <button
                       onClick={() => setCount(1)}
-                      className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                      className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
+                      <Image
+                        src={shoppingCartIcon}
+                        style={{
+                          outline: "none",
+                          height: "20px",
+                          width: "20px",
+                        }}
+                        alt="cart"
+                        width={20}
+                        height={20}
+                      />
+                      <div className='ml-[8px]'>
+
                       კალათაში დამატება
+                      </div>
                     </button>
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
