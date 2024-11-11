@@ -9,8 +9,8 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       screens: {
-        ...require('tailwindcss/defaultTheme').screens,
-        "3xl": "1800px",
+        ...require("tailwindcss/defaultTheme").screens,
+        "web-xl": { max: "1890px" },
       },
     },
   },

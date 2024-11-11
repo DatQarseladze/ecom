@@ -41,7 +41,7 @@ const Promotions = () => {
   };
 
   return (
-    <div className="xl:mx-[168px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
+    <div className="xl:mx-[168px] web-xl:mx-[80px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
       <Box>
         <Tabs
           value={tabIndex}
