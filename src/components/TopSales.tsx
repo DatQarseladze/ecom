@@ -51,14 +51,15 @@ const ProductList = () => {
           ტოპ გაყიდვადი
         </h2>
         <div className="flex items-center gap-[16px]">
-          <h3 className="text-[16px] text-[#101840] leading-[24px]">
+          <h3 className="cursor-pointer text-[16px] text-[#101840] leading-[24px] border-b-[1px] border-transparent hover:border-[#474D66] hover:text-[#474D66]">
             ყველას ნახვა
           </h3>
+
           <div className="flex items-center">
             <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
               <Image src={caretLeft} width={20} height={20} alt="caret-left" />
             </div>
-            <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D201A] flex items-center justify-center rounded-[8px]">
+            <div className="cursor-pointer hover:bg-[#1B1D2008] border-[1px] p-[9px] border-[#1B1D201A] flex items-center justify-center rounded-[8px]">
               <Image
                 src={caretRight}
                 width={20}
