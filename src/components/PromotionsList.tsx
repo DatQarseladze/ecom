@@ -34,7 +34,7 @@ const products = [
 ];
 
 const Promotions = () => {
-  const [tabIndex, setTabIndex] = React.useState(0);
+  const [tabIndex, setTabIndex] = React.useState(null);
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
