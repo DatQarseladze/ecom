@@ -93,7 +93,7 @@ const ProductList = () => {
                       iconSrc={starIcon}
                       bgColor={"#FFD000"}
                       borderColor={"#ffd000"}
-                      hoverBorderColor={"#E4AA16"}
+                      hoverBorderColor={"#FFDE4D"}
                       hoverBgColor={"#D8A219"}
                       label={"ექსკლუზივი"}
                     />
