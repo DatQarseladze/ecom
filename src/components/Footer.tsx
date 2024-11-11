@@ -19,20 +19,11 @@ const Footer = () => {
       sx={{
         backgroundColor: "#6D4CBA",
         color: "#FFFFFF",
-        padding: "40px 0",
       }}
     >
       {/* Top Section */}
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        mb={3}
-        sx={{
-          padding: "0 168px",
-        }}
-      >
-        <div className="flex-col">
+      <div className="flex justify-between items-center px-[168px] web-xl:px-[80px] pt-[48px] pb-[47px]">
+        <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
             გამოიწერე ჩვენი სერვისები
           </div>
@@ -80,7 +71,7 @@ const Footer = () => {
             გამოწერა
           </button>
         </Box>
-      </Box>
+      </div>
 
       <Divider
         className="w-full"
@@ -103,13 +94,9 @@ const Footer = () => {
             gap="40px"
           >
             <Box className="flex gap-[16px] flex-col">
-              <Typography
-                className="mb-[8px]"
-                variant="subtitle1"
-                fontWeight="bold"
-              >
+              <div className="mb-[8px] leading-[20px] font-bold">
                 იმპექსის შესახებ
-              </Typography>
+              </div>
               <Link href="#" color="#FFFFFF" underline="none">
                 კომპანიის შესახებ
               </Link>
@@ -126,13 +113,16 @@ const Footer = () => {
                 underline="none"
               >
                 კარიერა{" "}
-                <div className="text-[14px] bg-[#FFFFFF1A] py-[1px] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] ">
+                <div className="text-[14px] bg-[#FFFFFF1A] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] ">
                   {" "}
                   ახალი ვაკანსიები{" "}
                 </div>
               </Link>
               <Link href="#" color="#FFFFFF" underline="none">
                 მენეჯმენტი
+              </Link>
+              <Link href="#" color="#FFFFFF" underline="none">
+                ვაკანსიები
               </Link>
               <Link href="#" color="#FFFFFF" underline="none">
                 ჩვენი ბრენდები
@@ -223,11 +213,14 @@ const Footer = () => {
           </Box>
         </Box>
 
-        <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2, mb: 3 }} />
+        <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
 
         {/* Bottom Section */}
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-          <div className="text-[16px] leading-[24px] text-[#FFFFFFB2]" color="#FFFFFFB2">
+        <div className="flex justify-between items-center pb-[56px] pt-[39px]">
+          <div
+            className="text-[16px] leading-[24px] text-[#FFFFFFB2]"
+            color="#FFFFFFB2"
+          >
             &copy; 2024 IMPEX. All rights reserved.
           </div>
           <Box display="flex" gap="16px">
@@ -260,7 +253,7 @@ const Footer = () => {
               height={32}
             />
           </Box>
-        </Box>
+        </div>
       </div>
     </Box>
   );
