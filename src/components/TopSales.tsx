@@ -24,11 +24,23 @@ import ReusableBadge from "./ReusableBadge";
 
 const TopSales = () => {
   const [counts, setCounts] = useState({});
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleMouseDown = (index) => {
+    setActiveIndex(index);
+  };
+
+  const handleMouseUp = () => {
+    setActiveIndex(null);
+  };
 
   const handleCountChange = (index, operation) => {
     setCounts((prev) => {
       const newCounts = { ...prev };
-      if (operation === "increment" && (!newCounts[index] || newCounts[index] < 10)) {
+      if (
+        operation === "increment" &&
+        (!newCounts[index] || newCounts[index] < 10)
+      ) {
         newCounts[index] = (newCounts[index] || 0) + 1;
       } else if (operation === "decrement" && newCounts[index] > 0) {
         newCounts[index] = newCounts[index] - 1;
@@ -68,10 +80,11 @@ const TopSales = () => {
           return (
             <Box
               key={product.id}
-              className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
-              sx={{
-                boxShadow: "0px 8px 40px -8px #172B4D14",
-              }}
+              onMouseDown={() => handleMouseDown(index)}
+              onMouseUp={handleMouseUp}
+              className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
+                activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
+              }`}
             >
               <div className="flex items-center justify-between w-full">
                 <div className="bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
