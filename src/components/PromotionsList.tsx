@@ -11,8 +11,7 @@ import ReusableBadge from "./ReusableBadge";
 const products = [
   {
     id: 1,
-    title:
-      "r-ზე ფასდაკლება CeraVe-ს ბრენდის პროდუქტის ხაზის მრავალფეროვნებაზე",
+    title: "r-ზე ფასდაკლება CeraVe-ს ბრენდის პროდუქტის ხაზის მრავალფეროვნებაზე",
     img: productImg1,
   },
   {
@@ -51,10 +50,9 @@ const Promotions = () => {
           className="mb-[60px]"
           sx={{
             position: "relative", // Ensures the Tabs have a positioning context
-            // borderBottom: "2px solid #e8e8e9", // Retain the bottom border
             ".MuiTabs-flexContainer": {
               gap: "24px",
-              borderBottom: '1px solid #e8e8e9'
+              borderBottom: "1px solid #e8e8e9",
             },
           }}
           TabIndicatorProps={{
@@ -74,6 +72,10 @@ const Promotions = () => {
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
+                  // Hover effect for gray border
+                  "&:hover": {
+                    borderBottom: "1px solid #e8e8e9",
+                  },
                 }}
               />
             )
