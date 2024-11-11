@@ -24,7 +24,7 @@ const Navigation = () => {
     "ფილიალები",
   ];
 
-  const [activeTab, setActiveTab] = useState(items[0]); // Default to the first item
+  const [activeTab, setActiveTab] = useState(null);
 
   return (
     <nav className="xl:mx-[168px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
