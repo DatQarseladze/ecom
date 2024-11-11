@@ -94,8 +94,8 @@ const WeekSales = () => {
                     <ReusableBadge
                       iconSrc={starIcon}
                       bgColor={"#FFD000"}
-                      borderColor={"#FFDE4D"}
-                      hoverBorderColor={"#FFD000"}
+                      borderColor={"#ffd000"}
+                      hoverBorderColor={"#E4AA16"}
                       hoverBgColor={"#D8A219"}
                       label={"ექსკლუზივი"}
                     />
