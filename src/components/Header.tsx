@@ -48,7 +48,7 @@ const Navigation = () => {
         <React.Fragment key={item}>
           <a
             href="#"
-            className={`relative text-[18px]  hover:text-[#8255E3] hover:border-b-[2px] hover:border-b-[#dfd2ff] leading-[24px] py-[12px] px-[8px] group transition-colors duration-300 ${
+            className={`relative text-[18px] hover:bg-[#1B1D2008] rounded-[4px] leading-[24px] py-[12px] px-[8px] group transition-colors duration-300 ${
               activeTab === item
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700"
