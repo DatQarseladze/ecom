@@ -18,17 +18,24 @@ import { products } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
 
-const ProductList = () => {
-  const [count, setCount] = useState(0);
-
+const WeekSales = () => {
+  const [counts, setCounts] = useState({});
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleMouseDown = (index) => {
-    setActiveIndex(index); // Change background on mouse down
+    setActiveIndex(index);
   };
 
   const handleMouseUp = () => {
-    setActiveIndex(null); // Revert background on mouse up
+    setActiveIndex(null);
+  };
+
+  const handleCountChange = (index, change) => {
+    setCounts((prevCounts) => {
+      const currentCount = prevCounts[index] || 0;
+      const newCount = Math.max(0, Math.min(10, currentCount + change));
+      return { ...prevCounts, [index]: newCount };
+    });
   };
 
   return (
@@ -152,7 +159,6 @@ const ProductList = () => {
                 />
               </div>
               <div className="flex flex-col">
-                {/* Product Title with Ellipsis */}
                 <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
                   {product.title}
                 </h3>
@@ -165,9 +171,9 @@ const ProductList = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center py-[4px]">
-                  {!count ? (
+                  {!counts[index] ? (
                     <button
-                      onClick={() => setCount(1)}
+                      onClick={() => handleCountChange(index, 1)}
                       className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
                       კალათაში დამატება
@@ -175,55 +181,23 @@ const ProductList = () => {
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
                       <button
-                        onClick={() => setCount((prev) => prev - 1)}
+                        onClick={() => handleCountChange(index, -1)}
                         className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
                       >
                         <MinusIcon />
                       </button>
                       <div className="text-[#101840] text-[16px] leading-[24px]">
-                        {count} შეკვრა
+                        {counts[index]} შეკვრა
                       </div>
                       <button
-                        onClick={() => setCount((prev) => prev + 1)}
-                        disabled={count === 10}
-                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${count === 10 ? "bg-[#f8f8f8]" : ""}`}
+                        onClick={() => handleCountChange(index, 1)}
+                        disabled={counts[index] === 10}
+                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${counts[index] === 10 ? "opacity-50" : ""}`}
                       >
-                        <PlusIcon
-                          fillColor={count === 10 ? "#1018404F" : "#474D66"}
-                        />
+                        <PlusIcon />
                       </button>
                     </div>
                   )}
-                  <div
-                    onClick={() => setFilled((prevState) => !prevState)}
-                    className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
-                  >
-                    {filled ? (
-                      <Image
-                        src={filledHeart}
-                        style={{
-                          outline: "none",
-                          height: "24px",
-                          width: "24px",
-                        }}
-                        alt="heart"
-                        width={24}
-                        height={24}
-                      />
-                    ) : (
-                      <Image
-                        src={heartIcon}
-                        style={{
-                          outline: "none",
-                          height: "24px",
-                          width: "24px",
-                        }}
-                        alt="heart"
-                        width={24}
-                        height={24}
-                      />
-                    )}
-                  </div>
                 </div>
               </div>
             </Box>
@@ -234,4 +208,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default WeekSales;
