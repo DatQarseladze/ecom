@@ -232,28 +232,28 @@ const Footer = () => {
           </div>
           <Box display="flex" gap="16px">
             <Image
-              className="cursor-pointer"
+              className="cursor-pointer hover:bg-[#7143D1]"
               src={MessengerIcon}
               alt="Viber"
               width={32}
               height={32}
             />
             <Image
-              className="cursor-pointer"
+              className="cursor-pointer hover:bg-[#7143D1]"
               src={FacebookIcon}
               alt="Facebook"
               width={32}
               height={32}
             />
             <Image
-              className="cursor-pointer"
+              className="cursor-pointer hover:bg-[#7143D1]"
               src={WhatsAppIcon}
               alt="WhatsApp"
               width={32}
               height={32}
             />
             <Image
-              className="cursor-pointer"
+              className="cursor-pointer hover:bg-[#7143D1]"
               src={InstagramIcon}
               alt="Instagram"
               width={32}

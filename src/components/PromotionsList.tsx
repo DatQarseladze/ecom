@@ -49,7 +49,7 @@ const Promotions = () => {
           variant="fullWidth"
           className="mb-[60px]"
           sx={{
-            position: "relative", // Ensures the Tabs have a positioning context
+            position: "relative",
             ".MuiTabs-flexContainer": {
               gap: "24px",
               borderBottom: "1px solid #e8e8e9",
@@ -72,7 +72,6 @@ const Promotions = () => {
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
-                  // Use ::after to add the hover border without affecting height
                   "&::after": {
                     content: '""',
                     position: "absolute",
@@ -85,7 +84,6 @@ const Promotions = () => {
                     transition: "transform 0.3s ease-in-out",
                     transformOrigin: "center",
                   },
-                  // On hover, reveal the border
                   "&:hover::after": {
                     transform: "scaleX(1)",
                   },
