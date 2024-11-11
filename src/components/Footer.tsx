@@ -70,7 +70,7 @@ const Footer = () => {
             }}
           />
           <button
-            className="text-[16px] bg-[#F8F4FF] text-[#101840] py-[15px] px-[20px] leading-[24px]"
+            className="text-[16px] bg-[#F8F4FF] hover:bg-[#ede3ff] text-[#101840] py-[15px] px-[20px] leading-[24px]"
             style={{
               border: "1px solid #FFFFFF",
               borderRadius: "4px",
