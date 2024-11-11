@@ -72,9 +72,22 @@ const Promotions = () => {
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
-                  // Hover effect for gray border
-                  "&:hover": {
-                    borderBottom: "1px solid #e8e8e9",
+                  // Use ::after to add the hover border without affecting height
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "2px",
+                    backgroundColor: "#696F8C",
+                    transform: "scaleX(0)",
+                    transition: "transform 0.3s ease-in-out",
+                    transformOrigin: "center",
+                  },
+                  // On hover, reveal the border
+                  "&:hover::after": {
+                    transform: "scaleX(1)",
                   },
                 }}
               />
