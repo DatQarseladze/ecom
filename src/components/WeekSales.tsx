@@ -14,7 +14,7 @@ import truckIcon from "../assets/images/truck.svg";
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
 import filledHeart from "../assets/images/filled-heart.svg";
 import ReusableBadge from "./ReusableBadge";
-import { products } from "./constants";
+import { weekProducts } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
 
@@ -51,7 +51,7 @@ const WeekSales = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product, index) => {
+        {weekProducts.map((product, index) => {
           const [filled, setFilled] = useState(false);
           return (
             <Box
@@ -198,6 +198,36 @@ const WeekSales = () => {
                       </button>
                     </div>
                   )}
+                  <div
+                    onClick={() => setFilled((prevState) => !prevState)}
+                    className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
+                  >
+                    {filled ? (
+                      <Image
+                        src={filledHeart}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    ) : (
+                      <Image
+                        src={heartIcon}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </Box>

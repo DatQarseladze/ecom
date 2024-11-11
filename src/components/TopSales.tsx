@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
+import filledHeart from "../assets/images/filled-heart.svg";
 import {
   products,
   heartIcon,
@@ -22,33 +23,8 @@ import PlusIcon from "@/src/icons/PlusIcon";
 
 import ReusableBadge from "./ReusableBadge";
 
-const TopSales = () => {
-  const [counts, setCounts] = useState({});
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const handleMouseDown = (index) => {
-    setActiveIndex(index);
-  };
-
-  const handleMouseUp = () => {
-    setActiveIndex(null);
-  };
-
-  const handleCountChange = (index, operation) => {
-    setCounts((prev) => {
-      const newCounts = { ...prev };
-      if (
-        operation === "increment" &&
-        (!newCounts[index] || newCounts[index] < 10)
-      ) {
-        newCounts[index] = (newCounts[index] || 0) + 1;
-      } else if (operation === "decrement" && newCounts[index] > 0) {
-        newCounts[index] = newCounts[index] - 1;
-      }
-      return newCounts;
-    });
-  };
-
+const ProductList = () => {
+  const [count, setCount] = useState(0);
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
       <div className="py-[4px] flex items-center justify-between mb-[48px]">
@@ -80,11 +56,10 @@ const TopSales = () => {
           return (
             <Box
               key={product.id}
-              onMouseDown={() => handleMouseDown(index)}
-              onMouseUp={handleMouseUp}
-              className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
-                activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
-              }`}
+              className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
+              sx={{
+                boxShadow: "0px 8px 40px -8px #172B4D14",
+              }}
             >
               <div className="flex items-center justify-between w-full">
                 <div className="bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
@@ -195,9 +170,9 @@ const TopSales = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center py-[4px]">
-                  {!counts[index] ? (
+                  {!count ? (
                     <button
-                      onClick={() => handleCountChange(index, "increment")}
+                      onClick={() => setCount(1)}
                       className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
                     >
                       კალათაში დამატება
@@ -205,23 +180,55 @@ const TopSales = () => {
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
                       <button
-                        onClick={() => handleCountChange(index, "decrement")}
+                        onClick={() => setCount((prev) => prev - 1)}
                         className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
                       >
                         <MinusIcon />
                       </button>
                       <div className="text-[#101840] text-[16px] leading-[24px]">
-                        {counts[index]} შეკვრა
+                        {count} შეკვრა
                       </div>
                       <button
-                        onClick={() => handleCountChange(index, "increment")}
-                        disabled={counts[index] === 10}
-                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${counts[index] === 10 ? "cursor-not-allowed" : ""}`}
+                        onClick={() => setCount((prev) => prev + 1)}
+                        disabled={count === 10}
+                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${count === 10 ? "bg-[#f8f8f8]" : ""}`}
                       >
-                        <PlusIcon />
+                        <PlusIcon
+                          fillColor={count === 10 ? "#1018404F" : "#474D66"}
+                        />
                       </button>
                     </div>
                   )}
+                  <div
+                    onClick={() => setFilled((prevState) => !prevState)}
+                    className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
+                  >
+                    {filled ? (
+                      <Image
+                        src={filledHeart}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    ) : (
+                      <Image
+                        src={heartIcon}
+                        style={{
+                          outline: "none",
+                          height: "24px",
+                          width: "24px",
+                        }}
+                        alt="heart"
+                        width={24}
+                        height={24}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </Box>
@@ -232,4 +239,4 @@ const TopSales = () => {
   );
 };
 
-export default TopSales;
+export default ProductList;
