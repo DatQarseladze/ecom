@@ -225,7 +225,7 @@ const ProductList = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center py-[4px]">
-                  <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
+                  <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium">
                     კალათაში დამატება
                   </button>
                   <div

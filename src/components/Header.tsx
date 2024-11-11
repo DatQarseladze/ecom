@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import cartIcon from "../assets/images/cart.svg";
 import heartIcon from "../assets/images/heart.svg";
 import creditCardIcon from "../assets/images/credit-card.svg";
-import SearchIcon from "../assets/images/search.svg";
 import personIcon from "../assets/images/person.svg";
 import burgerIcon from "../assets/images/burger.svg";
+import SearchIcon from "../icons/SearchIcon";
 
 const Navigation = () => {
   const items = [
@@ -24,7 +24,6 @@ const Navigation = () => {
     "ფილიალები",
   ];
 
-  // Step 1: Create a state variable for the active tab
   const [activeTab, setActiveTab] = useState(items[0]); // Default to the first item
 
   return (
@@ -32,6 +31,7 @@ const Navigation = () => {
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
+        aria-label="Open categories"
       >
         <Image
           src={burgerIcon}
@@ -40,7 +40,9 @@ const Navigation = () => {
           alt="burger"
           className="self-center"
         />
-        <div className="self-center text-[18px] ml-[8px] text-[#fff]">კატეგორიები</div>
+        <div className="self-center text-[18px] ml-[8px] text-[#fff]">
+          კატეგორიები
+        </div>
       </a>
       {items.map((item, index) => (
         <React.Fragment key={item}>
@@ -52,19 +54,23 @@ const Navigation = () => {
                 : "text-gray-700"
             } ${item === "OUTLET" ? "font-semibold" : ""}`}
             onClick={() => setActiveTab(item)}
+            role="tab"
+            aria-selected={activeTab === item}
+            aria-label={item}
           >
             <span className="relative z-10">{item}</span>
             <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300" />
           </a>
           {index < items.length - 1 && (
-            <div
+            <span
               className="mx-2 self-center"
+              aria-hidden="true"
               style={{
                 width: "1px",
                 height: "15px",
                 backgroundColor: "#0000000D",
               }}
-            ></div>
+            ></span>
           )}
         </React.Fragment>
       ))}
@@ -74,25 +80,24 @@ const Navigation = () => {
 
 const Header = () => {
   const [search, setSearch] = useState("");
-  const router = useRouter();
 
   return (
-    <header className="bg-[#ffffff] ">
-      <div className="text-[16px] leading-[28px] text-[#ffffff] text-center py-[8px] bg-[#7148CA]">
+    <header>
+      <section
+        className="text-[16px] leading-[28px] text-[#ffffff] text-center py-[8px] bg-[#7148CA]"
+        aria-live="polite"
+      >
+        <h2 className="sr-only">Free Shipping Offer</h2>
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
-      </div>
-      {/* Full-width border */}
+      </section>
+
       <div className="mx-[168px]">
         <div className="my-[8px] flex items-center justify-between">
           {/* Logo */}
-          <Image
-            src="/logo.svg"
-            alt="PSP"
-            height={48}
-            width={170}
-            className="cursor-pointer"
-            onClick={() => router.push("/")}
-          />
+          <a href="/" aria-label="Home" className="cursor-pointer">
+            <Image src="/logo.svg" alt="PSP" height={48} width={170} />
+          </a>
+
           {/* Search bar and buttons */}
           <div className="flex items-center space-x-[16px]">
             <div className="flex-grow">
@@ -106,14 +111,25 @@ const Header = () => {
                   height: 48,
                   borderRadius: "8px",
                   width: 568,
-                  border: "1px solid #1B1D201A",
+                  border: "transparent",
+                  "&:hover": {
+                    backgroundColor: "#f8f8f8",
+                  },
                   "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "transparent" },
-                    "&:hover fieldset": { borderColor: "transparent" },
-                    "&.Mui-focused fieldset": { borderColor: "transparent" },
+                    "& fieldset": {
+                      border: "1px solid #1B1D201A",
+                    },
+                    "&:hover fieldset": { borderColor: "#1B1D201A" },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#8255E3",
+                    },
+                    "&.Mui-focused": {
+                      backgroundColor: "#fff",
+                    },
                   },
                   "& .MuiInputBase-root": {
                     height: "100%",
+                    paddingRight: "3px  ",
                   },
                   "& input::placeholder": {
                     fontSize: "16px",
@@ -125,20 +141,16 @@ const Header = () => {
                   },
                 }}
                 InputProps={{
-                  endAdornment: (
-                    <Image
-                      src={SearchIcon}
-                      alt="search"
-                      width={40}
-                      height={40}
-                      className="cursor-pointer"
-                    />
-                  ),
+                  endAdornment: <SearchIcon />,
                 }}
               />
             </div>
+
             {/* Action buttons */}
-            <div className="cursor-pointer px-[12px] text-[#101840] w-[139px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center hover:bg-[#1B1D2008] justify-center">
+            <div
+              className="cursor-pointer px-[12px] text-[#101840] w-[139px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center hover:bg-[#1B1D2008] justify-center"
+              aria-label="Add to cart"
+            >
               <Image
                 src={creditCardIcon}
                 alt="cart"
@@ -148,21 +160,33 @@ const Header = () => {
               />
               <span className="text-[16px]">ზე ბარათი</span>
             </div>
+
             <div className="flex space-x-[8px]">
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
+              <div
+                className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center"
+                aria-label="View cart"
+              >
                 <Image src={cartIcon} alt="cart" width={24} height={24} />
               </div>
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
+              <div
+                className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center"
+                aria-label="View wishlist"
+              >
                 <Image src={heartIcon} alt="heart" width={24} height={24} />
               </div>
-              <div className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center">
+              <div
+                className="cursor-pointer w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] hover:bg-[#1B1D2008] flex items-center justify-center"
+                aria-label="User profile"
+              >
                 <Image src={personIcon} alt="person" width={24} height={24} />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="border-b  border-[#1B1D200F] "></div>
+      <div className="border-b border-[#1B1D200F]" aria-hidden="true"></div>
+
+      {/* Navigation bar */}
       <Navigation />
     </header>
   );

@@ -18,10 +18,13 @@ import {
   truckIcon,
   wastingTimeIcon,
 } from "./constants";
+import MinusIcon from "@/src/icons/MinusIcon";
+import PlusIcon from "@/src/icons/PlusIcon";
 
 import ReusableBadge from "./ReusableBadge";
 
 const ProductList = () => {
+  const [count, setCount] = useState(0);
   return (
     <div className="xl:mx-[168px] bg-[#FBFBFD] px-auto pt-[64px] pb-[80px]">
       <div className="py-[4px] flex items-center justify-between mb-[48px]">
@@ -55,7 +58,7 @@ const ProductList = () => {
               key={product.id}
               className="rounded-lg p-[24px] cursor-pointer shadow-sm relative bg-[#FFFFFF]"
               sx={{
-                "&:hover": { boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" },
+                boxShadow: "0px 8px 40px -8px #172B4D14",
               }}
             >
               <div className="flex items-center justify-between w-full">
@@ -167,9 +170,35 @@ const ProductList = () => {
                   </span>
                 </div>
                 <div className="flex mt-[16px] items-center py-[4px]">
-                  <button className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] text-white rounded-lg font-medium">
-                    კალათაში დამატება
-                  </button>
+                  {!count ? (
+                    <button
+                      onClick={() => setCount(1)}
+                      className="p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                    >
+                      კალათაში დამატება
+                    </button>
+                  ) : (
+                    <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
+                      <button
+                        onClick={() => setCount((prev) => prev - 1)}
+                        className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tl-[7px] rounded-bl-[7px]"
+                      >
+                        <MinusIcon />
+                      </button>
+                      <div className="text-[#101840] text-[16px] leading-[24px]">
+                        {count} შეკვრა
+                      </div>
+                      <button
+                        onClick={() => setCount((prev) => prev + 1)}
+                        disabled={count === 10}
+                        className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] p-[14px] rounded-tr-[7px] rounded-br-[7px] ${count === 10 ? "bg-[#f8f8f8]" : ""}`}
+                      >
+                        <PlusIcon
+                          fillColor={count === 10 ? "#1018404F" : "#474D66"}
+                        />
+                      </button>
+                    </div>
+                  )}
                   <div
                     onClick={() => setFilled((prevState) => !prevState)}
                     className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
