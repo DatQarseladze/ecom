@@ -22,7 +22,7 @@ const Footer = () => {
       }}
     >
       {/* Top Section */}
-      <div className="flex justify-between items-center px-[168px] web-xl:px-[80px] pt-[48px] pb-[47px]">
+      <div className="flex justify-between items-center xl:mx-[168px] web-xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
         <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
             გამოიწერე ჩვენი სერვისები
@@ -77,7 +77,7 @@ const Footer = () => {
         className="w-full"
         sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }}
       />
-      <div className="px-[168px]">
+      <div className="xl:mx-[168px] web-xl:mx-[80px] mx-auto">
         <Box className="flex my-[64px]">
           <Box>
             <Image src={logo} alt="Impex Logo" width={264} height={88} />
