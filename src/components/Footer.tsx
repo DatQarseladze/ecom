@@ -1,4 +1,5 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import { Box, Typography, Link, Divider } from "@mui/material";
 import Image from "next/image";
 import logo from "../assets/images/logo.png"; // Path to your logo image
@@ -14,6 +15,8 @@ import MessengerIcon from "../assets/images/messenger.svg";
 import InstagramIcon from "../assets/images/instagram.svg";
 
 const Footer = () => {
+  const [search, setSearch] = useState("");
+
   return (
     <Box
       sx={{
@@ -36,15 +39,14 @@ const Footer = () => {
             fullWidth
             variant="outlined"
             placeholder="დაგვიტოვე საკონტაქტო ნომერი"
-            value={""}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             sx={{
               height: 56,
               borderRadius: "8px",
               width: 347,
-              cursor: "pointer",
               border: "1px solid #9A6DF9",
               "& .MuiOutlinedInput-root": {
-                cursor: "pointer",
                 "& fieldset": { borderColor: "transparent" },
                 "&:hover fieldset": { borderColor: "transparent" },
                 "&.Mui-focused fieldset": { borderColor: "transparent" },
@@ -52,19 +54,26 @@ const Footer = () => {
               "& .MuiInputBase-root": {
                 height: "100%",
               },
-              "& input::placeholder": {
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "24px",
-                textAlign: "left",
-                color: "#FFFFFF",
-                opacity: 1,
-              },
-              "&:hover input::placeholder": {
-                color: "#474D66",
+              "& .MuiInputBase-input": {
+                cursor: "pointer", // Cursor pointer on input
+                "&::placeholder": {
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  lineHeight: "24px",
+                  textAlign: "left",
+                  color: "#FFFFFF", // Default placeholder color
+                  opacity: 1,
+                },
+                "&:hover::placeholder": {
+                  color: "#474D66", // Placeholder color on hover
+                },
+                "&:focus::placeholder": {
+                  color: "#474D66", // Placeholder color when focused (gray)
+                },
               },
             }}
           />
+
           <button
             className="text-[16px] bg-[#F8F4FF] hover:bg-[#ede3ff] text-[#101840] py-[15px] px-[20px] leading-[24px]"
             style={{
