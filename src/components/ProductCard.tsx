@@ -70,7 +70,7 @@ const ProductCard = ({ product }) => {
             <div className="text-[#696F8C] text-[16px]">19:00</div>
           </div>
         </div>
-        <h3 className="text-[20px] text-[#101840] font-bold overflow-hidden text-ellipsis line-clamp-2">
+        <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis line-clamp-2">
           {product.title}
         </h3>
         <div className="flex items-center mt-[8px]">
