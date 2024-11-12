@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TextField } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 import cartIcon from "../assets/images/cart.svg";
 import heartIcon from "../assets/images/heart.svg";
@@ -24,6 +25,7 @@ const Navigation = () => {
   ];
 
   const [activeTab, setActiveTab] = useState<any>(null);
+  const route = useRouter();
 
   return (
     <nav className="xl:mx-[168px] web-xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
@@ -52,7 +54,12 @@ const Navigation = () => {
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700"
             } ${item === "OUTLET" ? "font-semibold" : ""}`}
-            onClick={() => setActiveTab(item)}
+            onClick={() => {
+              if (item === "ივენთები") {
+                route.push("/events");
+              }
+              setActiveTab(item);
+            }}
             role="tab"
             aria-selected={activeTab === item}
             aria-label={item}

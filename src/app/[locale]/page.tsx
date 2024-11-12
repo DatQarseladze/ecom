@@ -69,22 +69,22 @@ const offices: Office[] = [
 ];
 
 const Page = () => {
-  const { bootstrap } = items;
-  const [index, setIndex] = useState(0);
-  const handleSelect = (selectedIndex: number) => {
-    setIndex(selectedIndex);
-  };
-  const { t } = useTranslation();
-  const { data } = useSession();
-  const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
+  // const { bootstrap } = items;
+  // const [index, setIndex] = useState(0);
+  // const handleSelect = (selectedIndex: number) => {
+  //   setIndex(selectedIndex);
+  // };
+  // const { t } = useTranslation();
+  // const { data } = useSession();
+  // const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
 
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
-  });
+  // const { isLoaded } = useJsApiLoader({
+  //   googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
+  // });
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
+  // if (!isLoaded) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div className="bg-[#fbfbfd]">
