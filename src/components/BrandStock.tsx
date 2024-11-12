@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Box, Button } from "@mui/material";
-import productImage from "../assets/images/product-image.png";
+import productImage from "../assets/images/phytorelax.svg";
 import caretRight from "../assets/images/caretright.svg";
 
 const RightArrow = () => {
@@ -24,7 +24,7 @@ const RightArrow = () => {
 const PromotionBanner = () => {
   return (
     <Box
-      className="xl:px-[168px]  bg-[#EBE8FD] rounded-lg flex flex-row lg:flex-row items-center"
+      className="xl:px-[168px]  bg-[#EBE8FD] rounded-lg flex flex-row justify-between lg:flex-row items-center"
       sx={{ height: "652px" }}
     >
       <div className=" lg:w-1/2 flex flex-col px-auto justify-center text-center lg:text-left">
@@ -50,15 +50,26 @@ const PromotionBanner = () => {
         </button>
       </div>
 
-      <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
-        <Image
-          src={productImage}
-          alt="Promotion Product"
-          width={720}
-          height={596}
-          style={{ objectFit: "contain" }}
-          className="rounded-lg shadow-md"
-        />
+      <div className="relative w-[680px] h-[560px]">
+        <div
+          style={{ width: "680px", height: "560px" }}
+          className="absolute top-0 right-[20px] top-[22.26px] w-[5px] h-full w-[680px] h-[560px] border-[5px] border-solid border-[#fff]"
+        ></div>
+
+        <div
+          style={{ width: "680px", height: "560px" }}
+          className="absolute top-0 left-[20px] top-[-18px] w-[5px] h-full w-[680px] h-[560px] border-[5px] border-solid border-[#fff]"
+        ></div>
+
+        <div className="w-[680px] h-[560px] bg-[#fff] relative">
+          <Image
+            src={productImage}
+            alt="Promotion Product"
+            width={505}
+            height={505}
+            className="rounded-lg shadow-md mx-auto my-auto"
+          />
+        </div>
       </div>
     </Box>
   );
