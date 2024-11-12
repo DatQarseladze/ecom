@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
         activeIndex ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
       }`}
     >
-      <div className="absolute border-[2px] border-solid border-[#7143D1] top-[24px] px-[6px] bg-[#7143D1] left-[24px] flex items-center flex-col rounded-[8px] ">
+      <div className="absolute border-[2px] border-solid border-[#9A6DF9] top-[24px] px-[6px] bg-[#754FD1] left-[24px] flex items-center flex-col rounded-[8px] ">
         <div className="text-white text-[32px] font-bold leading-[28px] pt-[8px] pb-[4px]">
           24
         </div>
