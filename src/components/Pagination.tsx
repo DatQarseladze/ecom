@@ -21,14 +21,15 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
 
         // Numeric page buttons: Set default width, height, font size, and line height
         "& .MuiPaginationItem-root:not(.MuiPaginationItem-previousNext)": {
-          width: "40px", // Default width for numeric page items
-          height: "40px", // Default height for numeric page items
+          width: "48px", // Default width for numeric page items
+          height: "48px", // Default height for numeric page items
           display: "flex", // Flexbox for centering content
           alignItems: "center", // Vertically center content
           justifyContent: "center", // Horizontally center content
           fontSize: "20px", // Set font size
           lineHeight: "28px", // Set line height (leading)
           transition: "background-color 0.3s ease", // Smooth transition for hover effect
+          color: '#696F8C'
         },
 
         // Active page: 48px width and height with red background
