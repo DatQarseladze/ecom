@@ -33,7 +33,7 @@ const Footer = () => {
             გამოიწერე ჩვენი სერვისები
           </div>
           <div className="text-[#FFFFFFB2] text-[16px] leading-[24px]">
-            ჩვეენ ყოველკვირეულად გამოგიგზავნით მნიშვნელოვან სიახლეებს.
+            ჩვენ ყოველკვირეულად გამოგიგზავნით მნიშვნელოვან სიახლეებს.
           </div>
         </div>
         <Box display="flex" gap="16px">
@@ -94,7 +94,7 @@ const Footer = () => {
         sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }}
       />
       <div className="xl:mx-[168px] web-xl:mx-[80px] mx-auto">
-        <Box className="flex my-[64px]">
+        <Box className="flex my-[64px] justify-between">
           <Box>
             <Image src={logo} alt="Impex Logo" width={264} height={88} />
             <Typography
@@ -104,11 +104,7 @@ const Footer = () => {
           </Box>
 
           {/* Links Columns */}
-          <Box
-            className="justify-between ml-[218px] w-full"
-            display="flex"
-            gap="40px"
-          >
+          <div className="flex flex gap-[106px] justify-between">
             <Box className="flex cursor-pointer gap-[16px] flex-col">
               <div className="mb-[8px] leading-[20px] font-bold">
                 იმპექსის შესახებ
@@ -129,10 +125,6 @@ const Footer = () => {
                 underline="none"
               >
                 კარიერა{" "}
-                <div className="text-[14px] bg-[#FFFFFF1A] px-[7px] rounded-[20px]  text-[#fff] leading-[22px] border-[1px] border-solid border-[#FFFFFF4D] ">
-                  {" "}
-                  ახალი ვაკანსიები{" "}
-                </div>
               </Link>
               <Link href="#" color="#FFFFFF" underline="none">
                 მენეჯმენტი
@@ -230,7 +222,7 @@ const Footer = () => {
                 <div>თბილისი</div>
               </Link>
             </Box>
-          </Box>
+          </div>
         </Box>
 
         <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
