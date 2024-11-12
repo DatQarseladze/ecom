@@ -29,7 +29,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           fontSize: "20px", // Set font size
           lineHeight: "28px", // Set line height (leading)
           transition: "background-color 0.3s ease", // Smooth transition for hover effect
-          color: '#696F8C'
+          color: "#696F8C",
         },
 
         // Active page: 48px width and height with red background
@@ -83,8 +83,8 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
             ),
             next: (props) => (
               <button
-                className="text-[16px] leading-[24px] text-[#1018404F] py-[8px] px-[16px] border-none"
                 {...props}
+                className="text-[16px] leading-[24px] text-[#101840] py-[8px] px-[16px] border-none"
                 style={{
                   border: "none", // Remove border
                   minWidth: "auto", // Let it grow based on content

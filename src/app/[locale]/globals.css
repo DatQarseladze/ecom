@@ -34,7 +34,8 @@
 }
 
 html,
-body {
+body,
+button {
     font-family: "Fira GO", sans-serif !important;
 
   -webkit-font-smoothing: antialiased;
