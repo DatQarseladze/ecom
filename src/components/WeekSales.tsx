@@ -57,7 +57,7 @@ const WeekSales = () => {
           const [filled, setFilled] = useState(false);
           return (
             <Box
-              key={product.id}
+              key={product.id + index}
               onMouseDown={(e) => handleMouseDown(index, e)}
               onMouseUp={handleMouseUp}
               className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${

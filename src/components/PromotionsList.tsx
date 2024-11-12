@@ -34,7 +34,7 @@ const products = [
 ];
 
 const Promotions = () => {
-  const [tabIndex, setTabIndex] = React.useState(null);
+  const [tabIndex, setTabIndex] = React.useState(-1);
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
@@ -44,7 +44,7 @@ const Promotions = () => {
     <div className="xl:mx-[168px] web-xl:mx-[80px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
       <Box>
         <Tabs
-          value={tabIndex}
+          value={tabIndex === -1 ? false : tabIndex}
           onChange={handleTabChange}
           variant="fullWidth"
           className="mb-[60px]"

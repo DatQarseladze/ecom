@@ -2,11 +2,11 @@
 import Image from "next/image";
 import React from "react";
 import { Box } from "@mui/material";
-import farmonaImg from "../assets/images/farmona.png";
-import topicremImg from "../assets/images/topicrem.png";
-import soskinImg from "../assets/images/soskin.png";
-import kloraneImg from "../assets/images/klorane.png";
-import alphanovaImg from "../assets/images/alphanova.png";
+import farmonaImg from "../assets/images/farmona.svg";
+import topicremImg from "../assets/images/topicrem.svg";
+import soskinImg from "../assets/images/soskin.svg";
+import kloraneImg from "../assets/images/klorane.svg";
+import alphanovaImg from "../assets/images/alphanova.svg";
 import sunkissedImg from "../assets/images/sunkissed.png";
 import phytorelaxImg from "../assets/images/phytorelax.png";
 import rightIcon from "../assets/images/right.svg";
@@ -54,6 +54,11 @@ const BrandList = () => {
               padding: "16px",
               boxSizing: "border-box",
               cursor: "pointer",
+              filter: "grayscale(100%)",
+              transition: "filter 0.3s ease",
+              "&:hover": {
+                filter: "none",
+              },
             }}
           >
             {index === brandLogos.length - 1 ? (
