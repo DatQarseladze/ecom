@@ -1,9 +1,10 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { Box, Typography, Link, Divider } from "@mui/material";
 import Image from "next/image";
 import logo from "../assets/images/logo.png"; // Path to your logo image
 import { TextField } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 import envelope from "../assets/images/envelope.svg"; // Path to your logo image
 import phone from "../assets/images/phone.svg"; // Path to your logo image
@@ -16,6 +17,7 @@ import InstagramIcon from "../assets/images/instagram.svg";
 
 const Footer = () => {
   const [search, setSearch] = useState("");
+  const route = useRouter();
 
   return (
     <Box
@@ -107,7 +109,7 @@ const Footer = () => {
             display="flex"
             gap="40px"
           >
-            <Box className="flex gap-[16px] flex-col">
+            <Box className="flex cursor-pointer gap-[16px] flex-col">
               <div className="mb-[8px] leading-[20px] font-bold">
                 იმპექსის შესახებ
               </div>
@@ -143,7 +145,7 @@ const Footer = () => {
               </Link>
             </Box>
 
-            <Box className="flex gap-[16px] flex-col">
+            <Box className="flex cursor-pointer gap-[16px] flex-col">
               <Typography
                 className="mb-[8px]"
                 variant="subtitle1"
@@ -154,7 +156,11 @@ const Footer = () => {
               <Link href="#" color="#FFFFFF" underline="none">
                 აქციები
               </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
+              <Link
+                onClick={() => route.push("events")}
+                color="#FFFFFF"
+                underline="none"
+              >
                 ივენთები
               </Link>
               <Link href="#" color="#FFFFFF" underline="none">
