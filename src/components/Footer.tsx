@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="flex justify-between items-center xl:mx-[168px] web-xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
         <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
-            გამოიწერე ჩვენი სერვისები
+          გამოიწერე ჩვენი სიახლეები
           </div>
           <div className="text-[#FFFFFFB2] text-[16px] leading-[24px]">
             ჩვენ ყოველკვირეულად გამოგიგზავნით მნიშვნელოვან სიახლეებს.
