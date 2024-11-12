@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TextField } from "@mui/material";
-import { useRouter } from "next/navigation";
 
 import cartIcon from "../assets/images/cart.svg";
 import heartIcon from "../assets/images/heart.svg";
