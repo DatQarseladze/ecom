@@ -94,22 +94,10 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
                 შემდეგი გვერდი
               </button>
             ),
-            first: (props) => (
-              <button
-                className="text-[16px] leading-[24px] text-[#1018404F] py-[8px] px-[16px] border-none"
-                {...props}
-                style={{
-                  border: "none", // Remove border
-                  minWidth: "auto", // Let it grow based on content
-                  padding: "8px 16px", // Add padding for better layout
-                }}
-              >
-                First
-              </button>
-            ),
+
             previous: (props) => (
               <button
-                className="text-[16px] leading-[24px] text-[#1018404F] py-[8px] px-[16px] border-none"
+                className="text-[16px] leading-[24px] text-[#101840] py-[8px] px-[16px] border-none"
                 {...props}
                 style={{
                   border: "none", // Remove border
