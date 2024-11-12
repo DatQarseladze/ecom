@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
   const [filled, setFilled] = useState(false);
   const [activeIndex, setActiveIndex] = useState(false);
 
-  const handleMouseDown = (index, event) => {
+  const handleMouseDown = () => {
     setActiveIndex(true);
   };
 
