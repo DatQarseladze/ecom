@@ -41,8 +41,10 @@ const Footer = () => {
               height: 56,
               borderRadius: "8px",
               width: 347,
+              cursor: "pointer",
               border: "1px solid #9A6DF9",
               "& .MuiOutlinedInput-root": {
+                cursor: "pointer",
                 "& fieldset": { borderColor: "transparent" },
                 "&:hover fieldset": { borderColor: "transparent" },
                 "&.Mui-focused fieldset": { borderColor: "transparent" },
@@ -57,6 +59,9 @@ const Footer = () => {
                 textAlign: "left",
                 color: "#FFFFFF",
                 opacity: 1,
+              },
+              "&:hover input::placeholder": {
+                color: "#474D66",
               },
             }}
           />

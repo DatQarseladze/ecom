@@ -157,11 +157,11 @@ const WeekSales = () => {
                   width={378}
                   height={296}
                   style={{ objectFit: "cover", height: "296px" }}
-                  className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top" // Adjust scale and set origin to top
+                  className="w-full transition-transform duration-300 hover:scale-150 hover:origin-top"
                 />
               </div>
               <div className="flex flex-col mt-[16px]">
-                <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
+                <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-words line-clamp-2">
                   {product.title}
                 </h3>
                 <div className="flex items-center mt-[8px] ">

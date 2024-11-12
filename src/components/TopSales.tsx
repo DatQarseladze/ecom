@@ -179,7 +179,7 @@ const ProductList = () => {
                 />
               </div>
               <div className="flex flex-col mt-[16px]">
-                <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-all line-clamp-2">
+                <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold overflow-hidden text-ellipsis break-words line-clamp-2">
                   {product.title}
                 </h3>
                 <div className="flex items-center mt-[8px] ">
