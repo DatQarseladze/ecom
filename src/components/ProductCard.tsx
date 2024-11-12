@@ -10,10 +10,23 @@ import caretRight from "../assets/images/caret-right.svg";
 // Define the ProductCard component
 const ProductCard = ({ product }) => {
   const [filled, setFilled] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(false);
+
+  const handleMouseDown = (index, event) => {
+    setActiveIndex(true);
+  };
+
+  const handleMouseUp = () => {
+    setActiveIndex(false);
+  };
   return (
     <Box
       key={product.id}
-      className="cursor-pointer rounded-lg shadow-sm relative bg-[#FFFFFF]"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      className={`cursor-pointer rounded-lg shadow-sm relative ${
+        activeIndex ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
+      }`}
     >
       <div className="absolute border-[2px] border-solid border-[#7143D1] top-[24px] px-[6px] bg-[#7143D1] left-[24px] flex items-center flex-col rounded-[8px] ">
         <div className="text-white text-[32px] font-bold leading-[28px] pt-[8px] pb-[4px]">
@@ -58,12 +71,7 @@ const ProductCard = ({ product }) => {
             <div className="text-[#696F8C] text-[16px]">24 ოქტომბერი</div>
           </div>
           <div className="flex items-center gap-[4px]">
-            <Image
-              src={grayClock}
-              alt={"gray clock"}
-              width={20}
-              height={20}
-            />
+            <Image src={grayClock} alt={"gray clock"} width={20} height={20} />
             <div className="text-[#696F8C] text-[16px]">19:00</div>
           </div>
         </div>
@@ -72,7 +80,9 @@ const ProductCard = ({ product }) => {
         </h3>
         <div className="flex items-center mt-[8px]">
           <span className="text-[#44546F] text-[16px]">
-            გლობალური პრემიუმ ბრენდის, <span className="text-[#474D66]">𝐊𝐎𝐑𝐑𝐄𝐒</span> -ის ივენთი ექსკლუზიურად 𝐈𝐌𝐏𝐄𝐗-ში
+            გლობალური პრემიუმ ბრენდის,{" "}
+            <span className="text-[#474D66]">𝐊𝐎𝐑𝐑𝐄𝐒</span> -ის ივენთი
+            ექსკლუზიურად 𝐈𝐌𝐏𝐄𝐗-ში
           </span>
         </div>
         <div className="flex mt-[24px] items-center gap-[8px]">
