@@ -228,7 +228,7 @@ const Footer = () => {
         <Divider sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }} />
 
         {/* Bottom Section */}
-        <div className="flex justify-between items-center pb-[56px] pt-[39px]">
+        <div className="flex justify-between items-center pb-[48px] pt-[31px]">
           <div
             className="text-[16px] leading-[24px] text-[#FFFFFFB2]"
             color="#FFFFFFB2"
