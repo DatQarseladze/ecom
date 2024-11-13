@@ -263,7 +263,7 @@ const Footer = () => {
                 height={32}
               />
             </div>
-            <div className="p-[8px] hover:bg-[7143D1]">
+            <div className="p-[8px] hover:bg-[#7143D1]">
               <Image
                 className="cursor-pointer"
                 src={InstagramIcon}
