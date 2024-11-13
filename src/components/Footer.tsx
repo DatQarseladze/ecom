@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="flex justify-between items-center xl:mx-[168px] web-xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
         <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
-          გამოიწერე ჩვენი სიახლეები
+            გამოიწერე ჩვენი სიახლეები
           </div>
           <div className="text-[#FFFFFFB2] text-[16px] leading-[24px]">
             ჩვენ ყოველკვირეულად გამოგიგზავნით მნიშვნელოვან სიახლეებს.
@@ -235,35 +235,43 @@ const Footer = () => {
           >
             &copy; 2024 IMPEX. All rights reserved.
           </div>
-          <Box display="flex" gap="16px">
-            <Image
-              className="cursor-pointer hover:bg-[#7143D1]"
-              src={MessengerIcon}
-              alt="Viber"
-              width={32}
-              height={32}
-            />
-            <Image
-              className="cursor-pointer hover:bg-[#7143D1]"
-              src={FacebookIcon}
-              alt="Facebook"
-              width={32}
-              height={32}
-            />
-            <Image
-              className="cursor-pointer hover:bg-[#7143D1]"
-              src={WhatsAppIcon}
-              alt="WhatsApp"
-              width={32}
-              height={32}
-            />
-            <Image
-              className="cursor-pointer hover:bg-[#7143D1]"
-              src={InstagramIcon}
-              alt="Instagram"
-              width={32}
-              height={32}
-            />
+          <Box display="flex" gap="4px">
+            <div className="p-[8px] hover:bg-[#7143D1]">
+              <Image
+                className="cursor-pointer"
+                src={MessengerIcon}
+                alt="Viber"
+                width={32}
+                height={32}
+              />
+            </div>
+            <div className="p-[8px] hover:bg-[#7143D1]">
+              <Image
+                className="cursor-pointer"
+                src={FacebookIcon}
+                alt="Facebook"
+                width={32}
+                height={32}
+              />
+            </div>
+            <div className="p-[8px] hover:bg-[#7143D1]">
+              <Image
+                className="cursor-pointer"
+                src={WhatsAppIcon}
+                alt="WhatsApp"
+                width={32}
+                height={32}
+              />
+            </div>
+            <div className="p-[8px] hover:bg-[7143D1]">
+              <Image
+                className="cursor-pointer"
+                src={InstagramIcon}
+                alt="Instagram"
+                width={32}
+                height={32}
+              />
+            </div>
           </Box>
         </div>
       </div>
