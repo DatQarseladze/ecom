@@ -10,6 +10,16 @@
 @font-face {
   font-family: "Fira GO";
   src:
+    url("/fonts/FiraGO-Medium.woff2") format("woff2"),
+    url("/fonts/FiraGO-Medium.woff") format("woff");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Fira GO";
+  src:
     url("/fonts/FiraGO-Bold.woff2") format("woff2"),
     url("/fonts/FiraGO-Bold.woff") format("woff");
   font-weight: 700; /* Bold */
