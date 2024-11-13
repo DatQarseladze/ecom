@@ -92,7 +92,7 @@ const Events = () => {
   return (
     <div className="bg-[#FBFBFD] pt-[56px] pb-[40px]">
       <div className="xl:mx-[168px] web-xl:mx-[80px] ">
-        <h1 className="mt-[56px] mb-[40px] text-center text-[40px] text-[#474D66] leading-[48px] font-bold">
+        <h1 className="mb-[40px] text-center text-[40px] text-[#474D66] leading-[48px] font-bold">
           ივენთები
         </h1>
         <div className="flex items-center justify-center gap-[24px]">
