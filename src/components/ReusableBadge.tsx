@@ -17,6 +17,7 @@ const ReusableBadge = ({
       style={{
         backgroundColor: isHovered ? hoverBgColor || bgColor : bgColor,
         borderColor: isHovered ? hoverBorderColor || borderColor : borderColor,
+        whiteSpace: 'nowrap'
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -25,18 +26,17 @@ const ReusableBadge = ({
         <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
       </div>
       <p
-        className={`leading-[28px] text-white text-[14px] transition-all duration-500 ease-in-out ${
-          isHovered ? "" : "opacity-0"
-        }`}
+        className={`leading-[28px] text-white text-[14px]`}
         style={{
           overflow: "hidden",
           // padding: isHovered ? "8px" : "0",
-          marginLeft: '8px',
+          marginLeft: "8px",
           marginRight: isHovered ? "8px" : "0",
-          maxWidth: isHovered ? "260px" : "0px",
+          maxWidth: isHovered ? "300px" : "0px",
+          transition: "0.5s ease-in-out",
         }}
       >
-        {label}
+        <span>{label}</span>
       </p>
     </div>
   );
