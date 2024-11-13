@@ -25,9 +25,9 @@ const ReusableBadge = ({
         <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
       </div>
       <div
-        className={`leading-[28px] text-white text-[14px] transition-all duration-500 ease-in-out ${
+        className={`leading-[28px] text-white text-[14px] transition-all ${
           isHovered
-            ? "opacity-100 max-w-xs transform scale-100"
+            ? "opacity-100 max-w-xs scale-100"
             : "opacity-0 max-w-0"
         }`}
         style={{
