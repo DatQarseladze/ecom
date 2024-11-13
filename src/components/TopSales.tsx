@@ -170,7 +170,7 @@ const ProductList = () => {
                       hoverBorderColor={"#E4AA16"}
                       hoverBgColor={"#D8A219"}
                       label={
-                        "21 ოქტ - 30 ქწეოჯი1ჯ 12ოი3ჯ1ოიჯქოიწჯეოq qwe ექ ოქტ"
+                        "21 ოქტ - 30 ოქტ"
                       }
                     />
                   )}
