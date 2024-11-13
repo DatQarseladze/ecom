@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { Box, Typography, Link, Divider } from "@mui/material";
 import Image from "next/image";
-import logo from "../assets/images/logo.png"; // Path to your logo image
+import logo from "../assets/images/logo3.svg"; // Path to your logo image
+
 import { TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 
