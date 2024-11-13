@@ -82,11 +82,18 @@ const ProductList = () => {
                 activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
               }`}
             >
-              <div className="flex items-center justify-between w-full">
-                <div className="bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
+              <div className="flex items-center flex-end w-full">
+                <div className="absolute top-[40px] left-[24px] w-[63px] bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
                   {product.discount}
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex justify-end w-full space-x-2 pt-[16px]">
+                  <ReusableBadge
+                    iconSrc={dotIcon}
+                    bgColor={"#219653"}
+                    borderColor={"#A3E6CD"}
+                    label={"მხოლოდ ონლაინ"}
+                  />
+                
                   {index === 0 ? (
                     <ReusableBadge
                       iconSrc={dotIcon}
@@ -162,7 +169,9 @@ const ProductList = () => {
                       borderColor={"#ffd000"}
                       hoverBorderColor={"#E4AA16"}
                       hoverBgColor={"#D8A219"}
-                      label={"21 ოქტ - 30 ოქტ"}
+                      label={
+                        "21 ოქტ - 30 ქწეოჯი1ჯ 12ოი3ჯ1ოიჯქოიწჯეოq qwe ექ ოქტ"
+                      }
                     />
                   )}
                 </div>

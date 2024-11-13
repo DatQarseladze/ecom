@@ -13,7 +13,7 @@ const ReusableBadge = ({
 
   return (
     <div
-      className="flex items-center border h-[32px] px-[7px] rounded-[8px] border-[1px] border-solid transition-all duration-500 ease-in-out"
+      className="flex relative z-40 items-center border h-[32px] px-[7px] rounded-[8px] border-[1px] border-solid transition-all duration-500 ease-in-out"
       style={{
         backgroundColor: isHovered ? hoverBgColor || bgColor : bgColor,
         borderColor: isHovered ? hoverBorderColor || borderColor : borderColor,
@@ -24,19 +24,21 @@ const ReusableBadge = ({
       <div className="flex items-center justify-center">
         <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
       </div>
-      <div
+      <p
         className={`leading-[28px] text-white text-[14px] transition-all duration-500 ease-in-out ${
-          isHovered
-            ? "max-w-xs scale-100"
-            : "max-w-0"
+          isHovered ? "opacity-100 scale-100" : "opacity-0"
         }`}
         style={{
           marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden",
+          padding: isHovered ? "8px" : "0",
+          maxWidth: isHovered ? "260px" : "0px",
+          lineHeight: "9px",
+          fontWeight: 400,
         }}
       >
-        <span>{label}</span>
-      </div>
+        {label}
+      </p>
     </div>
   );
 };
