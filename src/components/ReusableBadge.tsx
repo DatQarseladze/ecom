@@ -29,7 +29,6 @@ const ReusableBadge = ({
           isHovered ? "opacity-100 scale-100" : "opacity-0"
         }`}
         style={{
-          marginLeft: isHovered ? "8px" : "0",
           overflow: "hidden",
           padding: isHovered ? "8px" : "0",
           maxWidth: isHovered ? "260px" : "0px",
