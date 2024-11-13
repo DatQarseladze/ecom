@@ -32,7 +32,6 @@ const ReusableBadge = ({
           overflow: "hidden",
           padding: isHovered ? "8px" : "0",
           maxWidth: isHovered ? "260px" : "0px",
-          lineHeight: "9px",
           fontWeight: 400,
         }}
       >
