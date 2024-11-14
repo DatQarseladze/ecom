@@ -98,7 +98,7 @@ const Header = () => {
       </section>
 
       <div className="mx-[168px] web-xl:mx-[80px]">
-        <div className="my-[8px] flex items-center justify-between">
+        <div className="mb-[8px] mt-[24px] flex items-center justify-between">
           {/* Logo */}
           <a href="/" aria-label="Home" className="cursor-pointer">
             <Image src="/logo.svg" alt="PSP" height={48} width={170} />
