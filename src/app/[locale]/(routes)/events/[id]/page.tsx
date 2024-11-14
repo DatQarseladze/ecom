@@ -101,7 +101,7 @@ const Events = () => {
                   width={20}
                   height={20}
                 />
-                <div className="text-[#696F8C] text-[16px]">
+                <div className="text-[#44546F] text-[16px]">
                   თბილისი, ჰუალინგ პლაზა
                 </div>
                 <div className="flex cursor-pointer ml-[2px] items-center text-[#8255E3]">
@@ -121,7 +121,7 @@ const Events = () => {
                   width={20}
                   height={20}
                 />
-                <div className="text-[#696F8C] text-[16px]">24 ოქტომბერი</div>
+                <div className="text-[#44546F] text-[16px]">24 ოქტომბერი</div>
               </div>
               <div className="flex items-center gap-[4px]">
                 <Image
@@ -130,7 +130,7 @@ const Events = () => {
                   width={20}
                   height={20}
                 />
-                <div className="text-[#696F8C] text-[16px]">
+                <div className="text-[#44546F] text-[16px]">
                   19:00 - 22:00 საათი
                 </div>
               </div>
@@ -141,8 +141,8 @@ const Events = () => {
                   width={20}
                   height={20}
                 />
-                <div className="text-[#696F8C] text-[16px]">
-                  40₾ | 355 ზე ქულა{" "}
+                <div className="text-[#44546F] text-[16px]">
+                  40₾ | 355 ზე ქულა
                 </div>
               </div>
             </div>
