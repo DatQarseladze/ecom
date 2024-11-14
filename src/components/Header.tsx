@@ -53,7 +53,7 @@ const Navigation = () => {
               activeTab === item
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700"
-            } ${item === "OUTLET" ? "font-semibold" : ""}`}
+            } ${item === "OUTLET" ? "font-medium" : ""}`}
             onClick={() => {
               if (item === "ივენთები") {
                 route.push("/events");

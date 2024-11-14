@@ -1,29 +1,22 @@
 @font-face {
   font-family: "Fira GO";
   src:
-    url("/fonts/FiraGO-Regular.woff2") format("woff2"),
-    url("/fonts/FiraGO-Regular.woff") format("woff");
-  font-weight: 400; /* Regular */
-  font-style: normal;
+    url("/fonts/FiraGO-Regular.woff2") format("woff2");
+  font-weight: 400;
 }
 
 @font-face {
   font-family: "Fira GO";
   src:
-    url("/fonts/FiraGO-Medium.woff2") format("woff2"),
-    url("/fonts/FiraGO-Medium.woff") format("woff");
-  font-weight: 500; /* Medium */
-  font-style: normal;
+    url("/fonts/FiraGO-Medium.woff2") format("woff2");
+  font-weight: 500;
 }
-
 
 @font-face {
   font-family: "Fira GO";
   src:
-    url("/fonts/FiraGO-Bold.woff2") format("woff2"),
     url("/fonts/FiraGO-Bold.woff") format("woff");
-  font-weight: 700; /* Bold */
-  font-style: normal;
+  font-weight: 700; 
 }
 
 /* Tailwind Imports */
@@ -43,19 +36,19 @@
   }
 }
 
-html,
-body,
-button {
-    font-family: "Fira GO", sans-serif !important;
-
+html, body, button {
+  font-family: "Fira GO", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-variant-ligatures: none;
+
 }
 
 * {
   font-family: "Fira GO", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
 }
 
 @layer utilities {
