@@ -4,6 +4,8 @@ import { Box, Typography, Link, Divider } from "@mui/material";
 import Image from "next/image";
 
 import ProductCard from "@/src/components/ProductCard";
+import productImg from "../../../../../assets/images/event1.jpeg";
+
 import productImg1 from "../../../../../assets/images/zhana.jpeg";
 import productImg2 from "../../../../../assets/images/zhana2.jpeg";
 import productImg3 from "../../../../../assets/images/zhana3.jpeg";
@@ -69,13 +71,23 @@ const Events = () => {
           </div>
         </Box>
         <div className="mt-[40px] mb-[48px] flex gap-[48px]">
-          <Image
-            src={productImg1}
-            alt={"product"}
-            className="rounded-[8px]"
-            width={512}
-            height={512}
-          />
+          <div className="relative">
+            <Image
+              src={productImg}
+              alt={"product"}
+              className="rounded-[8px]"
+              width={512}
+              height={512}
+            />
+            <div className="absolute w-[58px] border-[1px] border-solid border-[#9A6DF9] top-[24px] px-[7px] bg-[#754FD1] left-[24px] flex items-center flex-col rounded-[8px] ">
+              <div className="text-white text-[32px] font-bold leading-[28px] pt-[9px] pb-[4px]">
+                24
+              </div>
+              <div className=" text-white rounded-lg font-bold text-[20px] pb-[9px] leading-[28px]">
+                ოქტ
+              </div>
+            </div>
+          </div>
           <div>
             <h1 className="text-[40px] font-bold heading-[48px] text-[#101840]">
               გლობალური პრემიუმ ბრენდის, 𝐊𝐎𝐑𝐑𝐄𝐒-ის ტესტირების დღეები 𝐈𝐌𝐏𝐄𝐗-ში
@@ -140,7 +152,9 @@ const Events = () => {
               "საქართველოს სილამაზის დილერთა ასოციაციის" ორგანიზებით. წელს
               გამოფენას საიუბილეო თარიღი აქვს.
             </div>
-            <div className="text-[#8255E3] cursor-pointer mb-[24px]">იხილე სრული აღწერა</div>
+            <div className="text-[#8255E3] cursor-pointer mb-[24px]">
+              იხილე სრული აღწერა
+            </div>
             <button className="p-[12px] w-[156px] text-[16px] bg-[#8255E3] hover:bg-[#503095] text-white rounded-lg">
               რეგისტრაცია
             </button>

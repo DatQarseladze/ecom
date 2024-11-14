@@ -26,7 +26,7 @@ const ProductCard = ({ product, handleDetail }: any) => {
       sx={{
         boxShadow: "0px 8px 40px -8px #172B4D14",
       }}
-      className={`cursor-pointer rounded-lg shadow-sm relative ${
+      className={`cursor-pointer rounded-lg relative ${
         activeIndex ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
       }`}
     >

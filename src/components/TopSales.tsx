@@ -78,7 +78,10 @@ const ProductList = () => {
               key={product.id}
               onMouseDown={(e) => handleMouseDown(index, e)}
               onMouseUp={handleMouseUp}
-              className={`rounded-lg p-[24px] cursor-pointer shadow-sm relative ${
+              sx={{
+                boxShadow: "0px 8px 40px -8px #172B4D14",
+              }}
+              className={`rounded-lg p-[24px] cursor-pointer relative ${
                 activeIndex === index ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
               }`}
             >
