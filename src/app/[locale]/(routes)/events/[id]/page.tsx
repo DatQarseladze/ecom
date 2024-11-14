@@ -54,19 +54,19 @@ const Events = () => {
   };
 
   return (
-    <div className="bg-[#FBFBFD]">
+    <div>
       <div className="xl:mx-[168px] web-xl:mx-[80px] pt-[48px]">
         <Box display="flex" alignItems="center">
           <div className="text-[14px] text-[#8255E3] leading-[22px]">
             მთავარი
           </div>
-          <Typography color="#1B1D203D" mx={1}>
+          <Typography color="#1B1D203D" mx={'8px'}>
             /
           </Typography>
           <div className="text-[14px] text-[#8255E3] leading-[22px]">
             ივენთები
           </div>
-          <Typography mx={1}>/</Typography>
+          <Typography mx={'8px'} color="#1B1D203D">/</Typography>
           <div className="text-[#696F8C] text-[14px] leading-[22px]">
             გლობალური პრემიუმ ბრენდის, <span className="">KORRESS</span>-ის
             ტესტირების დღეები IMPEX-ში გრძელდება!
@@ -199,7 +199,9 @@ const Events = () => {
             </div>
           </div>
         </div>
-        <div className="py-[80px]">
+      </div>
+      <div className="py-[80px] bg-[#FBFBFD]">
+        <div className='xl:mx-[168px] web-xl:mx-[80px]'>
           <div className="justify-between items-center flex mb-[48px]">
             <h1 className="text-[24px] leading-[32px] font-bold text-[#474D66]">
               სხვა ივენთები
