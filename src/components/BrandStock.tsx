@@ -24,7 +24,7 @@ const RightArrow = () => {
 const PromotionBanner = () => {
   return (
     <Box
-      className="xl:px-[168px]  bg-[#EBE8FD] rounded-lg flex flex-row justify-between lg:flex-row items-center"
+      className="xl:px-[168px]  bg-[#EBE8FD] flex flex-row justify-between lg:flex-row items-center"
       sx={{ height: "652px" }}
     >
       <div className=" lg:w-1/2 flex flex-col px-auto justify-center text-center lg:text-left">
