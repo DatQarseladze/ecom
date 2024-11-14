@@ -208,7 +208,7 @@ const Footer = () => {
           </div>
           <Box display="flex" gap="4px">
             {icons.map((icon, index) => (
-              <div key={index} className="p-[8px] hover:bg-[#7143D1]">
+              <div key={index} className="p-[8px] rounded-[8px] hover:bg-[#7143D1]">
                 <Image
                   className="cursor-pointer"
                   src={icon.src}
