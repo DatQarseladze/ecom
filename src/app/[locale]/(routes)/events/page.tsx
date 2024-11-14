@@ -6,6 +6,7 @@ import productImg1 from "../../../../assets/images/event1.jpeg";
 import productImg2 from "../../../../assets/images/zhanet.jpeg";
 import productImg3 from "../../../../assets/images/zhanet3.jpeg";
 import PaginationComponent from "@/src/components/Pagination";
+import { useRouter } from "next/navigation";
 
 const products = [
   {
@@ -84,6 +85,7 @@ const products = [
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
+  const route = useRouter();
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab); // Update active tab on click
@@ -144,7 +146,13 @@ const Events = () => {
 
         <div className="mt-[40px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              handleDetail={() => {
+                route.push("/events/2");
+              }}
+            />
           ))}
         </div>
         <div className="flex justify-center mt-[36px]">

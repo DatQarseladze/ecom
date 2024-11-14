@@ -101,7 +101,7 @@ const Footer = () => {
           </Box>
 
           <div className="flex flex gap-[106px] justify-between">
-            <Box className="flex cursor-pointer gap-[16px] flex-col">
+            <Box className="flex gap-[16px] flex-col">
               <div className="mb-[8px] leading-[20px] font-bold">
                 იმპექსის შესახებ
               </div>
@@ -118,7 +118,7 @@ const Footer = () => {
               ))}
             </Box>
 
-            <Box className="flex cursor-pointer gap-[16px] flex-col">
+            <Box className="flex gap-[16px] flex-col">
               <Typography
                 className="mb-[8px]"
                 variant="subtitle1"
