@@ -14,6 +14,8 @@ import grayCalendar from "../../../../../assets/images/gray_calendar.svg";
 import grayClock from "../../../../../assets/images/gray_clock.svg";
 import rightPurple from "../../../../../assets/images/right_purple.svg";
 import saleIcon from "../../../../../assets/images/sale.svg";
+import caretRight from "../../../../../assets/images/caret-right.svg";
+import caretLeft from "../../../../../assets/images/caret-left.svg";
 
 import PaginationComponent from "@/src/components/Pagination";
 
@@ -198,9 +200,36 @@ const Events = () => {
           </div>
         </div>
         <div className="py-[80px]">
-          <h1 className="text-[24px] leading-[32px] font-bold text-[#474D66] mb-[52px]">
-            სხვა ივენთები
-          </h1>
+          <div className="justify-between items-center flex mb-[48px]">
+            <h1 className="text-[24px] leading-[32px] font-bold text-[#474D66]">
+              სხვა ივენთები
+            </h1>
+
+            <div className="flex items-center gap-[16px]">
+              <h3 className="cursor-pointer text-[16px] text-[#101840] leading-[24px] border-b-[1px] border-transparent hover:border-[#474D66] hover:text-[#474D66]">
+                ყველას ნახვა
+              </h3>
+
+              <div className="flex items-center">
+                <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
+                  <Image
+                    src={caretLeft}
+                    width={20}
+                    height={20}
+                    alt="caret-left"
+                  />
+                </div>
+                <div className="cursor-pointer hover:bg-[#1B1D2008] border-[1px] p-[9px] border-[#1B1D201A] flex items-center justify-center rounded-[8px]">
+                  <Image
+                    src={caretRight}
+                    width={20}
+                    height={20}
+                    alt="caret-right"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {products.map((product) => (
