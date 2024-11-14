@@ -8,8 +8,7 @@ import caretLeft from "../assets/images/caret-left.svg";
 import caretRight from "../assets/images/caret-right.svg";
 
 // Define the ProductCard component
-const ProductCard = ({ product }) => {
-  const [filled, setFilled] = useState(false);
+const ProductCard = ({ product, handleDetail  }: any) => {
   const [activeIndex, setActiveIndex] = useState(false);
 
   const handleMouseDown = () => {
@@ -90,7 +89,7 @@ const ProductCard = ({ product }) => {
             რეგისტრაცია
           </button>
           <button
-            onClick={() => setFilled((prevState) => !prevState)}
+            onClick={() => handleDetail(product.id)}
             className="p-[11px] text-[#101840] text-center w-1/2 border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
           >
             დეტალურად
