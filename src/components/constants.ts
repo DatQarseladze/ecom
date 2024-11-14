@@ -70,7 +70,7 @@ export const links = [
   { href: "#", text: "კომპანიის შესახებ" },
   { href: "#", text: "სიახლეები" },
   { href: "#", text: "ჩვენი მიზანი" },
-  { href: "#", text: "კარიერა", className: "flex items-center gap-[8px]" },
+  { href: "#", text: "კარიერა", redirect: "careers" },
   { href: "#", text: "მენეჯმენტი" },
   { href: "#", text: "ვაკანსიები" },
   { href: "#", text: "ჩვენი ბრენდები" },
