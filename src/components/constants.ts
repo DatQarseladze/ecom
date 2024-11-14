@@ -24,6 +24,11 @@ import voltIcon from "../assets/images/volt.svg";
 import truckIcon from "../assets/images/truck.svg";
 import wastingTimeIcon from "../assets/images/wasting-time.svg";
 
+import WhatsAppIcon from "../assets/images/whatsapp.svg";
+import FacebookIcon from "../assets/images/facebook.svg";
+import MessengerIcon from "../assets/images/messenger.svg";
+import InstagramIcon from "../assets/images/instagram.svg";
+
 export {
   heartIcon,
   leafIcon,
@@ -37,6 +42,39 @@ export {
   truckIcon,
   wastingTimeIcon,
 };
+
+export const promoLinks = [
+  { href: "#", text: "აქციები" },
+  { href: "events", text: "ივენთები", redirect: "events" },
+  { href: "#", text: "ზე ბარათი" },
+  { href: "#", text: "რეგისტრაცია" },
+];
+
+
+export const icons = [
+  { src: MessengerIcon, alt: "Messenger" },
+  { src: FacebookIcon, alt: "Facebook" },
+  { src: WhatsAppIcon, alt: "WhatsApp" },
+  { src: InstagramIcon, alt: "Instagram" },
+];
+
+export const serviceLinks = [
+  { href: "#", text: "მომხმარებელთა მომსახურება" },
+  { href: "#", text: "მიწოდება სახლში" },
+  { href: "#", text: "იყიდე და აიღე აფთიაქში" },
+  { href: "#", text: "წესები და პირობები" },
+  { href: "#", text: "კონფიდენციალობა" },
+];
+
+export const links = [
+  { href: "#", text: "კომპანიის შესახებ" },
+  { href: "#", text: "სიახლეები" },
+  { href: "#", text: "ჩვენი მიზანი" },
+  { href: "#", text: "კარიერა", className: "flex items-center gap-[8px]" },
+  { href: "#", text: "მენეჯმენტი" },
+  { href: "#", text: "ვაკანსიები" },
+  { href: "#", text: "ჩვენი ბრენდები" },
+];
 
 export const weekProducts = [
     {

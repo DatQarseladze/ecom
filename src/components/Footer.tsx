@@ -2,19 +2,16 @@
 import React, { useState } from "react";
 import { Box, Typography, Link, Divider } from "@mui/material";
 import Image from "next/image";
-import logo from "../assets/images/logo3.svg"; // Path to your logo image
 
 import { TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-import envelope from "../assets/images/envelope.svg"; // Path to your logo image
-import phone from "../assets/images/phone.svg"; // Path to your logo image
-import pin from "../assets/images/pin.svg"; // Path to your logo image
+import envelope from "../assets/images/envelope.svg";
+import phone from "../assets/images/phone.svg";
+import pin from "../assets/images/pin.svg";
+import logo from "../assets/images/logo3.svg";
 
-import WhatsAppIcon from "../assets/images/whatsapp.svg"; // Path to social media icons
-import FacebookIcon from "../assets/images/facebook.svg";
-import MessengerIcon from "../assets/images/messenger.svg";
-import InstagramIcon from "../assets/images/instagram.svg";
+import { serviceLinks, icons, links, promoLinks } from "./constants";
 
 const Footer = () => {
   const [search, setSearch] = useState("");
@@ -27,7 +24,6 @@ const Footer = () => {
         color: "#FFFFFF",
       }}
     >
-      {/* Top Section */}
       <div className="flex justify-between items-center xl:mx-[168px] web-xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
         <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
@@ -58,20 +54,20 @@ const Footer = () => {
                 height: "100%",
               },
               "& .MuiInputBase-input": {
-                cursor: "pointer", // Cursor pointer on input
+                cursor: "pointer",
                 "&::placeholder": {
                   fontSize: "16px",
                   fontWeight: 400,
                   lineHeight: "24px",
                   textAlign: "left",
-                  color: "#FFFFFF", // Default placeholder color
+                  color: "#FFFFFF",
                   opacity: 1,
                 },
                 "&:hover::placeholder": {
-                  color: "#474D66", // Placeholder color on hover
+                  color: "#474D66",
                 },
                 "&:focus::placeholder": {
-                  color: "#474D66", // Placeholder color when focused (gray)
+                  color: "#474D66",
                 },
               },
             }}
@@ -104,38 +100,22 @@ const Footer = () => {
             ></Typography>
           </Box>
 
-          {/* Links Columns */}
           <div className="flex flex gap-[106px] justify-between">
             <Box className="flex cursor-pointer gap-[16px] flex-col">
               <div className="mb-[8px] leading-[20px] font-bold">
                 იმპექსის შესახებ
               </div>
-              <Link href="#" color="#FFFFFF" underline="none">
-                კომპანიის შესახებ
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                სიახლეები
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                ჩვენი მიზანი
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-[8px]"
-                color="#FFFFFF"
-                underline="none"
-              >
-                კარიერა{" "}
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                მენეჯმენტი
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                ვაკანსიები
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                ჩვენი ბრენდები
-              </Link>
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  color="#FFFFFF"
+                  underline="none"
+                  className={link.className || ""}
+                >
+                  {link.text}
+                </Link>
+              ))}
             </Box>
 
             <Box className="flex cursor-pointer gap-[16px] flex-col">
@@ -146,22 +126,17 @@ const Footer = () => {
               >
                 My Impex
               </Typography>
-              <Link href="#" color="#FFFFFF" underline="none">
-                აქციები
-              </Link>
-              <Link
-                onClick={() => route.push("events")}
-                color="#FFFFFF"
-                underline="none"
-              >
-                ივენთები
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                ზე ბარათი
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                რეგისტრაცია
-              </Link>
+              {promoLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  color="#FFFFFF"
+                  underline="none"
+                  onClick={() => link?.redirect && route.push("events")}
+                >
+                  {link.text}
+                </Link>
+              ))}
             </Box>
             <Box className="flex gap-[16px] flex-col">
               <Typography
@@ -171,21 +146,16 @@ const Footer = () => {
               >
                 კონფიდენციალობა და პირობები
               </Typography>
-              <Link href="#" color="#FFFFFF" underline="none">
-                მომხმარებელთა მომსახურება
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                მიწოდება სახლში
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                იყიდე და აიღე აფთიაქში
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                წესები და პირობები
-              </Link>
-              <Link href="#" color="#FFFFFF" underline="none">
-                კონფიდენციალობა
-              </Link>
+              {serviceLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  color="#FFFFFF"
+                  underline="none"
+                >
+                  {link.text}
+                </Link>
+              ))}
             </Box>
             <Box className="flex gap-[16px] flex-col">
               <Typography
@@ -237,42 +207,17 @@ const Footer = () => {
             &copy; 2024 IMPEX. All rights reserved.
           </div>
           <Box display="flex" gap="4px">
-            <div className="p-[8px] hover:bg-[#7143D1]">
-              <Image
-                className="cursor-pointer"
-                src={MessengerIcon}
-                alt="Viber"
-                width={32}
-                height={32}
-              />
-            </div>
-            <div className="p-[8px] hover:bg-[#7143D1]">
-              <Image
-                className="cursor-pointer"
-                src={FacebookIcon}
-                alt="Facebook"
-                width={32}
-                height={32}
-              />
-            </div>
-            <div className="p-[8px] hover:bg-[#7143D1]">
-              <Image
-                className="cursor-pointer"
-                src={WhatsAppIcon}
-                alt="WhatsApp"
-                width={32}
-                height={32}
-              />
-            </div>
-            <div className="p-[8px] hover:bg-[#7143D1]">
-              <Image
-                className="cursor-pointer"
-                src={InstagramIcon}
-                alt="Instagram"
-                width={32}
-                height={32}
-              />
-            </div>
+            {icons.map((icon, index) => (
+              <div key={index} className="p-[8px] hover:bg-[#7143D1]">
+                <Image
+                  className="cursor-pointer"
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={32}
+                  height={32}
+                />
+              </div>
+            ))}
           </Box>
         </div>
       </div>
