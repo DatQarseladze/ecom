@@ -75,7 +75,7 @@ const Events = () => {
             <Image
               src={productImg}
               alt={"product"}
-              className="rounded-[8px]"
+              className="rounded-[16px]"
               width={512}
               height={512}
             />
