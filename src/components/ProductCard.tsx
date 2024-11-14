@@ -83,8 +83,8 @@ const ProductCard = ({ product, handleDetail }: any) => {
         <div className="flex items-center mt-[8px]">
           <span className="text-[#44546F] text-[16px]">
             გლობალური პრემიუმ ბრენდის,{" "}
-            <span className="text-[#474D66]">𝐊𝐎𝐑𝐑𝐄𝐒</span> -ის ივენთი
-            ექსკლუზიურად 𝐈𝐌𝐏𝐄𝐗-ში
+            <span className="text-[#474D66]">KORRESS</span> -ის ივენთი
+            ექსკლუზიურად IMPEX-ში
           </span>
         </div>
         <div className="flex mt-[24px] items-center gap-[8px]">

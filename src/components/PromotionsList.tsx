@@ -130,8 +130,8 @@ const Promotions = () => {
                 {product.title}
               </h3>
               <p className="text-[#474D66] mt-[8px] text-[16px] leading-[24px]">
-                გლობალური პრემიუმ ბრენდის, 𝐊𝐎𝐑𝐑𝐄𝐒-ის ივენთი ექსკლუზიურად
-                𝐈𝐌𝐏𝐄𝐗-ში
+                გლობალური პრემიუმ ბრენდის, KORRESS-ის ივენთი ექსკლუზიურად
+                IMPEX-ში
               </p>
             </div>
           </Box>
