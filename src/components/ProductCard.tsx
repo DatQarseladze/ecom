@@ -8,7 +8,7 @@ import caretLeft from "../assets/images/caret-left.svg";
 import caretRight from "../assets/images/caret-right.svg";
 
 // Define the ProductCard component
-const ProductCard = ({ product, handleDetail  }: any) => {
+const ProductCard = ({ product, handleDetail }: any) => {
   const [activeIndex, setActiveIndex] = useState(false);
 
   const handleMouseDown = () => {
@@ -23,6 +23,9 @@ const ProductCard = ({ product, handleDetail  }: any) => {
       key={product.id}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
+      sx={{
+        boxShadow: "0px 8px 40px -8px #172B4D14",
+      }}
       className={`cursor-pointer rounded-lg shadow-sm relative ${
         activeIndex ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
       }`}
