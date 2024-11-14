@@ -52,7 +52,7 @@ const Navigation = () => {
             className={`relative text-[18px] web-xl:text-[16px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] web-xl:py-[6px] group transition-colors duration-300 ${
               activeTab === item
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
-                : "text-gray-700"
+                : "text-gray-700 border-b-[2px] border-b-transparent"
             } ${item === "OUTLET" ? "font-medium" : ""}`}
             onClick={() => {
               if (item === "ივენთები") {
@@ -65,7 +65,6 @@ const Navigation = () => {
             aria-label={item}
           >
             <span className="relative z-10 text-center">{item}</span>
-            <span className="absolute left-0 right-0 bottom-[-10px] h-[1px] bg-[#E0D1FF] scale-x-0 transition-transform duration-300" />
           </a>
           {index < items.length - 1 && (
             <span
