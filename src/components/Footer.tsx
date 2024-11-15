@@ -129,7 +129,6 @@ const Footer = () => {
               {promoLinks.map((link, index) => (
                 <Link
                   key={index}
-                  href={link.href}
                   color="#FFFFFF"
                   underline="none"
                   onClick={() => link?.redirect && route.push(link?.redirect)}
