@@ -253,7 +253,7 @@ const CareersList = () => {
             </button>
             <div className="flex gap-[8px]">
               {selectedFilters?.map((selectedFilter) => (
-                <div className="items-center cursor-pointer flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]">
+                <div className="items-center cursor-pointer flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] hover:bg-[#1B1D200F]">
                   {selectedFilter}
                   <Image
                     onClick={() => handleFilter(selectedFilter)}
