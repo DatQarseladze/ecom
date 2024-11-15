@@ -81,7 +81,7 @@ const CareersList = () => {
           <div className="flex  mt-[48px] gap-[16px]">
             {/* Filter Button */}
             <div
-              className="cursor-pointer filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
+              className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
               onClick={(e) => {
                 e.stopPropagation(); // Prevent the click from propagating to the outside click handler
                 setShowData((prevState) => !prevState);
@@ -89,8 +89,8 @@ const CareersList = () => {
             >
               <Image
                 src={filterIcon}
-                width={18}
-                height={18}
+                width={20}
+                height={20}
                 alt="filter icon"
               />
               <div>ფილტრი</div>
