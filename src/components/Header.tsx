@@ -41,7 +41,7 @@ const Navigation = () => {
           alt="burger"
           className="self-center"
         />
-        <div className="self-center text-[18px] web-xl:text-[16px] ml-[8px] text-[#fff]">
+        <div className="self-center text-[18px] web-xl:text-[16px] ml-[8px] font-[400] text-[#fff]">
           კატეგორიები
         </div>
       </a>
