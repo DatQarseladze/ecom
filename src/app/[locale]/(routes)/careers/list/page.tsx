@@ -47,32 +47,8 @@ const Events = () => {
             />
           </div>
         </div>
-        <div className="pt-[64px] pb-[96px] flex gap-[64px]">
-          <div className=""></div>
-          <div className="flex justify-center flex-col">
-            <h1 className="text-[32px] font-bold leading-[40px] text-[#101840]">
-              რატომ უნდა იმუშაოთ ჩვენთან
-            </h1>
 
-            <h4 className="text-[16px] leading-[24px] text-[#474D66]">
-              ჩვენ ვთვლით, რომ თანამშრომლები ყველაზე მნიშვნელოვანი აქტივია.
-              ვქმნით თანაბარ შესაძლებლობებს, სადაც სხვადასხვა კულტურისა და
-              ღირებულებების მქონე ადამიანებისთვის მუშაობა საინტერესო და
-              გამოწვევებით სავსეა. <br />
-              ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვვითარდებით. არასდროს
-              ვკმაყოფილდებით მიღწეული შედეგებით და ყოველთვის ვცდილობთ ვიყოთ
-              იმაზე უკეთესი, ვიდრე დღეს ვართ. ამაში მუდმივი სწავლა, ერთმანეთის
-              მხარდაჭერა და მიზნის მიღწევაზე ორიენტირებული გარემო გვეხმარება.
-            </h4>
-          </div>
-        </div>
         <div className="py-[96px]">
-          <h1 className="text-[32px] text-center leading-[40px] text-[#101840] font-bold mb-[16px]">
-            ჩვენთან მუშაობის უპირატესობები
-          </h1>
-          <h3 className="text-[16px] text-center leading-[24px] text-[#474D66]">
-            ჩვენთან იპოვი შენთვის სასურველ ვაკანსიას. შემოგვიერთდი!
-          </h3>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-[24px] mt-[32px]">
             {jobs.map((job, index) => (
               <JobPost key={index} {...job} />
