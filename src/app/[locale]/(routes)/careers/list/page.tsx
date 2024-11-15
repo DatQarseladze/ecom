@@ -53,9 +53,9 @@ const CareersList = () => {
       <div className="xl:mx-[168px] web-xl:mx-[80px]">
         <div className="pt-[80px] flex flex-col gap-[48px]">
           <div className="flex items-center justify-center w-full flex-col">
-            <button className="text-[16px] leading-[24px] py-[1px] px-[8px] mb-[8px] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] w-auto">
+            <div className="text-[16px] leading-[24px] py-[1px] px-[8px] mb-[8px] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] w-auto">
               ვაკანსიები
-            </button>
+            </div>
             <h1 className="text-[40px] font-bold leading-[48px] text-[#101840]">
               ვეძებთ გუნდის ახალ წევრებს
             </h1>
