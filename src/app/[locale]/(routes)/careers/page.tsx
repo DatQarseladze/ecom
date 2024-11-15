@@ -20,6 +20,7 @@ import rightArrow from "../../../../assets/images/right-arrow.svg";
 // import caretLeft from '../../../../assets/images/caret-left.svg";
 import caretLeft from "../../../../assets/images/caret-left.svg";
 import InfoCard from "@/src/components/InfoCard";
+import { useRouter } from "next/navigation";
 
 const cardData = [
   {
@@ -75,6 +76,7 @@ const products = [
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
+  const route = useRouter();
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab); // Update active tab on click
@@ -101,7 +103,10 @@ const Events = () => {
               იმაზე უკეთესი, ვიდრე დღეს ვართ. ამაში მუდმივი სწავლა, ერთმანეთის
               მხარდაჭერა და მიზნის მიღწევაზე ორიენტირებული გარემო გვეხმარება.
             </h4>
-            <button className="py-[14px] pl-[24px] hover:bg-[#EDE3FF] pr-[12px] items-center flex mt-[24px] text-[20px] leading-[28px] text-[#101840] bg-[#F8F4FF] rounded-[8px] self-start">
+            <button
+              onClick={() => route.push("/careers/list")}
+              className="py-[14px] pr-[15px] pl-[23px] hover:bg-[#EDE3FF] pr-[12px] items-center flex mt-[24px] text-[20px] leading-[28px] text-[#101840] bg-[#F8F4FF] rounded-[8px] gap-[8px] self-start"
+            >
               იხილეთ ვაკანსიები
               <Image
                 src={rightArrow}
@@ -114,19 +119,31 @@ const Events = () => {
           </div>
 
           <div className="">
-            <Image src={productImg} alt={"product"} width={792} height={560} />
+            <Image
+              src={productImg}
+              alt={"product"}
+              className="rounded-[8px]"
+              width={792}
+              height={560}
+            />
           </div>
         </div>
         <div className="pt-[64px] pb-[96px] flex gap-[64px]">
           <div className="">
-            <Image src={careersImg} alt={"product"} width={792} height={560} />
+            <Image
+              src={careersImg}
+              alt={"product"}
+              className="rounded-[8px]"
+              width={792}
+              height={560}
+            />
           </div>
           <div className="flex justify-center flex-col">
             <h1 className="text-[32px] font-bold leading-[40px] text-[#101840]">
               რატომ უნდა იმუშაოთ ჩვენთან
             </h1>
 
-            <h4 className="text-[16px] leading-[24px] text-[#474D66]">
+            <h4 className="text-[16px] leading-[24px] mt-[16px] text-[#474D66]">
               ჩვენ ვთვლით, რომ თანამშრომლები ყველაზე მნიშვნელოვანი აქტივია.
               ვქმნით თანაბარ შესაძლებლობებს, სადაც სხვადასხვა კულტურისა და
               ღირებულებების მქონე ადამიანებისთვის მუშაობა საინტერესო და
