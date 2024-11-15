@@ -98,12 +98,10 @@ const Header = () => {
 
       <div className="mx-[168px] web-xl:mx-[80px]">
         <div className="mb-[8px] mt-[24px] flex items-center justify-between">
-          {/* Logo */}
           <a href="/" aria-label="Home" className="cursor-pointer">
             <Image src="/logo.svg" alt="PSP" height={48} width={170} />
           </a>
 
-          {/* Search bar and buttons */}
           <div className="flex items-center space-x-[16px]">
             <div className="flex-grow">
               <TextField
@@ -155,7 +153,6 @@ const Header = () => {
               />
             </div>
 
-            {/* Action buttons */}
             <div
               className="cursor-pointer px-[12px] text-[#101840] w-[139px] h-[48px] rounded-[8px] border-[1px] border-[#1B1D201A] flex items-center hover:bg-[#1B1D2008] justify-center"
               aria-label="Add to cart"
@@ -195,7 +192,6 @@ const Header = () => {
       </div>
       <div className="border-b border-[#1B1D200F]" aria-hidden="true"></div>
 
-      {/* Navigation bar */}
       <Navigation />
     </header>
   );
