@@ -27,7 +27,7 @@ const JobPost = ({
         <div className="flex items-center gap-[4px]">
           <a
             href={link}
-            className="text-sm text-[#8255E3]"
+            className="text-[#8255E3]"
             target="_blank"
             rel="noopener noreferrer"
           >

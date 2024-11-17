@@ -103,7 +103,7 @@ const CareersList = () => {
               InputLabelProps={{ shrink: false }}
               onChange={(e) => setSearch(e.target.value)}
               sx={{
-                width: 527,
+                width: 537,
                 "& .MuiOutlinedInput-root": {
                   height: "56px", // Fix the input height to match the container
                   borderRadius: "8px", // Add border radius
@@ -157,7 +157,7 @@ const CareersList = () => {
               className="absolute flex flex-col z-[30] bg-[#fff] w-[1200px] cursor-pointer rounded-[6px] border-[1px] gap-[24px] p-[24px] border-solid border-[#1B1D201A] top-[64px]"
             >
               <div>
-                <h3 className="text-[#474D66] pl-[4px] mb-[8px]">
+                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
                   სამუშაო დროის მიხედვით
                 </h3>
                 <div className="flex gap-[8px]">
@@ -204,7 +204,7 @@ const CareersList = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-[#474D66] pl-[4px] mb-[8px]">
+                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
                   მდებარეობის მიხედვით
                 </h3>
                 <div className="flex gap-[8px]">
