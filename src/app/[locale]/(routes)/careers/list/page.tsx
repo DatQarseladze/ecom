@@ -59,7 +59,7 @@ const CareersList = () => {
             <h1 className="text-[40px] font-bold leading-[48px] text-[#101840]">
               ვეძებთ გუნდის ახალ წევრებს
             </h1>
-            <h3 className="text-[16px] leading-[24px] text-[#474D66] mt-[8px] mb-[24px]">
+            <h3 className="text-[16px] leading-[24px] text-[#474D66] mt-[8px]">
               ჩვენთან იპოვი შენთვის სასურველ ვაკანსიას. შემოგვიერთდი!
             </h3>
           </div>
