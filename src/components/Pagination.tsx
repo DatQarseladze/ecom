@@ -88,11 +88,9 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
             next: (props) => (
               <button
                 {...props}
-                className="text-[16px] leading-[24px] text-[#101840] py-[8px] px-[16px] border-none"
+                className="text-[16px] leading-[24px] rounded-[4px] text-[#101840] py-[8px] border-none"
                 style={{
-                  border: "none",
                   minWidth: "auto",
-                  padding: "8px 16px",
                 }}
               >
                 შემდეგი გვერდი
@@ -102,11 +100,9 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
             previous: (props) => (
               <button
                 {...props}
-                className="text-[16px] leading-[24px] text-[#101840] py-[8px] px-[16px] border-none"
+                className="text-[16px] leading-[24px] rounded-[4px] text-[#101840] py-[8px] border-none "
                 style={{
-                  border: "none",
                   minWidth: "auto",
-                  padding: "8px 16px",
                 }}
               >
                 წინა გვერდი
