@@ -217,7 +217,7 @@ const ProductList = () => {
                         width={20}
                         height={20}
                       />
-                      <div className="ml-[8px]">კალათაში დამატება</div>
+                      <div className="ml-[8px] font-normal">კალათაში დამატება</div>
                     </button>
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
