@@ -39,7 +39,7 @@ const ProductCard = ({ product, handleDetail }: any) => {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-md">
+      <div className="overflow-hidden rounded-tl-[16px] rounded-tr-[16px]">
         <Image
           src={product.img}
           alt={product.title}
