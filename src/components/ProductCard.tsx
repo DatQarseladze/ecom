@@ -88,7 +88,7 @@ const ProductCard = ({ product, handleDetail }: any) => {
           </span>
         </div>
         <div className="flex mt-[24px] items-center gap-[8px]">
-          <button className="p-[12px] w-1/2 text-[16px] bg-[#8255E3] hover:bg-[#503095] text-white rounded-lg">
+          <button className="p-[12px] w-1/2 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg">
             რეგისტრაცია
           </button>
           <button

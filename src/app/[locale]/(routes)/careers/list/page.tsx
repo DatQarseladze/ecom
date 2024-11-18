@@ -10,6 +10,7 @@ import SearchIcon from "@/src/icons/SearchIcon";
 import PaginationComponent from "@/src/components/Pagination";
 import JobPost from "@/src/components/JobPost";
 import { jobs } from "@/src/components/constants";
+import CloseTagIcon from "@/src/icons/CloseTagIcon";
 
 const CareersList = () => {
   const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
@@ -261,15 +262,11 @@ const CareersList = () => {
             </button>
             <div className="flex gap-[8px]">
               {selectedFilters?.map((selectedFilter) => (
-                <div className="items-center cursor-pointer flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] hover:bg-[#1B1D200F]">
+                <div className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]">
                   {selectedFilter}
-                  <Image
-                    onClick={() => handleFilter(selectedFilter)}
-                    src={closeTag}
-                    width={22}
-                    height={22}
-                    alt="close tag"
-                  />
+                  <div className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]">
+                    <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
+                  </div>
                 </div>
               ))}
             </div>

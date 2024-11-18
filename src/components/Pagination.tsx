@@ -40,7 +40,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           borderColor: "#8255E3",
           // Hover effect for active page
           "&:hover": {
-            backgroundColor: "#503095 !important", // Hover background for active page
+            backgroundColor: "#7143D1 !important", // Hover background for active page
           },
         },
 

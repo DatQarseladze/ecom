@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import imageUpRight from "../assets/images/arrow_up_right.svg";
-import pinIcon from "../assets/images/pin.svg";
 
 import grayClock from "../assets/images/gray_clock.svg";
 import grayLocation from "../assets/images/gray_location.svg";
