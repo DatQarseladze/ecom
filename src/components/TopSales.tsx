@@ -96,7 +96,7 @@ const ProductList = () => {
                     borderColor={"#A3E6CD"}
                     label={"მხოლოდ ონლაინ"}
                   />
-                
+
                   {index === 0 ? (
                     <ReusableBadge
                       iconSrc={dotIcon}
@@ -121,10 +121,10 @@ const ProductList = () => {
                   ) : (
                     <ReusableBadge
                       iconSrc={starIcon}
-                      bgColor={"#FFD000"}
-                      borderColor={"#ffd000"}
-                      hoverBorderColor={"#FFDE4D"}
+                      bgColor={"#F1C604"}
+                      borderColor={"#FFDE40"}
                       hoverBgColor={"#D8A219"}
+                      hoverBorderColor={"#FFD000"}
                       label={"ექსკლუზივი"}
                     />
                   )}
@@ -168,13 +168,11 @@ const ProductList = () => {
                   {index === 2 && (
                     <ReusableBadge
                       iconSrc={clockIcon}
-                      bgColor={"#FFD000"}
-                      borderColor={"#ffd000"}
-                      hoverBorderColor={"#E4AA16"}
+                      bgColor={"#F1C604"}
+                      borderColor={"#FFDE40"}
                       hoverBgColor={"#D8A219"}
-                      label={
-                        "21 ოქტ - 30 ოქტ"
-                      }
+                      hoverBorderColor={"#FFD000"}
+                      label={"21 ოქტ - 30 ოქტ"}
                     />
                   )}
                 </div>

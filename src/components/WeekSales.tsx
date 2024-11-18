@@ -96,10 +96,10 @@ const WeekSales = () => {
                   ) : (
                     <ReusableBadge
                       iconSrc={starIcon}
-                      bgColor={"#FFD000"}
-                      borderColor={"#ffd000"}
-                      hoverBorderColor={"#E4AA16"}
+                      bgColor={"#F1C604"}
+                      borderColor={"#FFDE40"}
                       hoverBgColor={"#D8A219"}
+                      hoverBorderColor={"#FFD000"}
                       label={"ექსკლუზივი"}
                     />
                   )}
@@ -143,10 +143,10 @@ const WeekSales = () => {
                   {index === 2 && (
                     <ReusableBadge
                       iconSrc={clockIcon}
-                      bgColor={"#FFD000"}
-                      borderColor={"#FFD000"}
-                      hoverBorderColor={"#FFD000"}
+                      bgColor={"#F1C604"}
+                      borderColor={"#FFDE40"}
                       hoverBgColor={"#D8A219"}
+                      hoverBorderColor={"#FFD000"}
                       label={"21 ოქტ - 30 ოქტ"}
                     />
                   )}

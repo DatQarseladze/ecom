@@ -109,10 +109,10 @@ const Promotions = () => {
             <div className="absolute left-[24px] top-[24px] ">
               <ReusableBadge
                 iconSrc={clockImg}
-                bgColor={"#FFD000"}
-                borderColor={"#FFD000"}
-                hoverBorderColor={"#E4AA16"}
+                bgColor={"#F1C604"}
+                borderColor={"#FFDE40"}
                 hoverBgColor={"#D8A219"}
+                hoverBorderColor={"#FFD000"}
                 label={"21 ოქტ - 30 ოქტ"}
               />
             </div>
