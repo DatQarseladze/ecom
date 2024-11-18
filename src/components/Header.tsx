@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TextField } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 import cartIcon from "../assets/images/cart.svg";
 import heartIcon from "../assets/images/heart.svg";
@@ -13,19 +13,21 @@ import SearchIcon from "../icons/SearchIcon";
 
 const Navigation = () => {
   const items = [
-    "მედიკამენტები",
-    "სილამაზე და მოვლა",
-    "დედა და ბავშვი",
-    "ივენთები",
-    "ბლოგი",
-    "აქციები",
-    "OUTLET",
-    "კონტაქტი",
-    "ფილიალები",
+    { url: "en/meds", name: "მედიკამენტები" },
+    { url: "en/beauty", name: "სილამაზე და მოვლა" },
+    { url: "/en/parents", name: "დედა და ბავშვი" },
+    { url: "/en/events", name: "ივენთები" },
+    { url: "/en/blogs", name: "ბლოგი" },
+    { url: "en/spots", name: "აქციები" },
+    { url: "en/outlets", name: "OUTLET" },
+    { url: "en/contacts", name: "კონტაქტი" },
+    { url: "en/filials", name: "ფილიალები" },
   ];
 
-  const [activeTab, setActiveTab] = useState<any>(null);
   const route = useRouter();
+  const path = usePathname();
+  const [activeTab, setActiveTab] = useState<any>(path);
+  console.log(path, "path");
 
   return (
     <nav className="xl:mx-[168px] web-xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
@@ -46,26 +48,26 @@ const Navigation = () => {
         </div>
       </a>
       {items.map((item, index) => (
-        <React.Fragment key={item}>
+        <React.Fragment key={item?.name}>
           <a
             href="#"
             className={`relative text-[18px] web-xl:text-[16px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] web-xl:py-[6px] group transition-colors duration-300 ${
-              activeTab === item
+              path === item?.url
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700 border-b-[2px] border-b-transparent"
-            } ${item === "OUTLET" ? "font-medium" : ""}`}
+            } ${item?.name === "OUTLET" ? "font-medium" : ""}`}
             onClick={() => {
-              if (item === "ივენთები") {
+              if (item?.url === "/en/events") {
                 route.push("/events");
               }
-              setActiveTab(item);
+              setActiveTab(item?.url);
             }}
             role="tab"
-            aria-selected={activeTab === item}
-            aria-label={item}
+            aria-selected={path === item?.url}
+            aria-label={item?.name}
           >
             <span className="relative z-10 text-center whitespace-nowrap overflow-hidden text-ellipsis">
-              {item}
+              {item?.name}
             </span>
           </a>
           {index < items.length - 1 && (
