@@ -32,12 +32,16 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           color: "#696F8C",
         },
 
-        // Active page: 48px width and height with red background
         "& .MuiPaginationItem-root.Mui-selected": {
-          backgroundColor: "#8255E3", // Active page background color
+          backgroundColor: "#8255E3 !important", // Active page background color
           color: "white", // White text color for active page
           width: "48px", // Increased width for active page
           height: "48px", // Increased height for active page
+          borderColor: "#8255E3",
+          // Hover effect for active page
+          "&:hover": {
+            backgroundColor: "#503095 !important", // Hover background for active page
+          },
         },
 
         // Previous/Next buttons: Adjust height only (width will remain auto)
@@ -57,7 +61,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
 
         // Hover effect on all page buttons
         "& .MuiPaginationItem-root:hover": {
-          backgroundColor: "#1B1D200F", // Hover background color
+          backgroundColor: "#1B1D201F", // Hover background color
         },
 
         // Hover effect on previous/next buttons
