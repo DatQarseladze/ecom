@@ -5,28 +5,28 @@
         "id": 1,
         "title": "Photography",
         "body": "Bootstrap Carousel Example",
-        "imageUrl": "https://mdbcdn.b-cdn.net/img/new/slides/043.webp",
+        "imageUrl": "https://app.psp.ge/media/wysiwyg/brendis_dge_vichy_laroche_cerave_30_oqt_web_1.jpg",
         "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
       },
       {
         "id": 2,
         "title": "City Views",
         "body": "Bootstrap Carousel Example",
-        "imageUrl": "https://mdbcdn.b-cdn.net/img/new/slides/042.webp",
+        "imageUrl": "https://app.psp.ge/media/wysiwyg/brendis_dge_vichy_laroche_cerave_30_oqt_web_1.jpg",
         "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
       },
       {
         "id": 3,
         "title": "Wild Life",
         "body": "Bootstrap Carousel Example",
-        "imageUrl": "https://mdbcdn.b-cdn.net/img/new/slides/040.webp",
+        "imageUrl": "https://app.psp.ge/media/wysiwyg/brendis_dge_vichy_laroche_cerave_30_oqt_web_1.jpg",
         "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
       },
       {
         "id": 4,
         "title": "Foods and Culture",
         "body": "Bootstrap Carousel Example",
-        "imageUrl": "https://mdbcdn.b-cdn.net/img/new/slides/039.webp",
+        "imageUrl": "https://app.psp.ge/media/wysiwyg/brendis_dge_vichy_laroche_cerave_30_oqt_web_1.jpg",
         "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
       }
     ]

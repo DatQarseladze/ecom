@@ -102,15 +102,15 @@ const Footer = () => {
 
           <div className="flex flex gap-[106px] justify-between">
             <Box className="flex gap-[16px] flex-col">
-              <div className="mb-[8px] leading-[20px] font-bold">
+              <div className="mb-[8px] leading-[20px] font-semibold">
                 იმპექსის შესახებ
               </div>
               {links.map((link, index) => (
                 <Link
                   key={index}
-                  href={link.href}
                   color="#FFFFFF"
                   underline="none"
+                  className="cursor-pointer"
                   onClick={() => link?.redirect && route.push(link?.redirect)}
                 >
                   {link.text}
@@ -119,18 +119,15 @@ const Footer = () => {
             </Box>
 
             <Box className="flex gap-[16px] flex-col">
-              <Typography
-                className="mb-[8px]"
-                variant="subtitle1"
-                fontWeight="bold"
-              >
+              <div className="mb-[8px] leading-[20px] font-semibold">
                 My Impex
-              </Typography>
+              </div>
               {promoLinks.map((link, index) => (
                 <Link
                   key={index}
                   color="#FFFFFF"
                   underline="none"
+                  className="cursor-pointer"
                   onClick={() => link?.redirect && route.push(link?.redirect)}
                 >
                   {link.text}
@@ -138,13 +135,9 @@ const Footer = () => {
               ))}
             </Box>
             <Box className="flex gap-[16px] flex-col">
-              <Typography
-                className="mb-[8px]"
-                variant="subtitle1"
-                fontWeight="bold"
-              >
+              <div className="mb-[8px] leading-[20px] font-semibold">
                 კონფიდენციალობა და პირობები
-              </Typography>
+              </div>
               {serviceLinks.map((link, index) => (
                 <Link
                   key={index}
@@ -157,13 +150,9 @@ const Footer = () => {
               ))}
             </Box>
             <Box className="flex gap-[16px] flex-col">
-              <Typography
-                className="mb-[8px]"
-                variant="subtitle1"
-                fontWeight="bold"
-              >
+              <div className="mb-[8px] leading-[20px] font-semibold">
                 კონტაქტი
-              </Typography>
+              </div>
               <Link
                 className="flex items-center gap-[3px]"
                 href="#"

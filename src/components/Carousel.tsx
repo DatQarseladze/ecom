@@ -23,37 +23,53 @@ const Page = () => {
   };
 
   return (
-    <div className="mt-[24px]" style={{ height: "552px", position: "relative" }}>
+    <div
+      className="mt-[24px]"
+      style={{ height: "552px", position: "relative" }}
+    >
       <div className="swiper-button image-swiper-button-next">
-        <Image src={rightArrow} alt="right arrow" width={24} height={44} style={{height: '44px'}} />
+        <Image
+          src={rightArrow}
+          alt="right arrow"
+          width={24}
+          height={44}
+          style={{ height: "44px" }}
+        />
       </div>
       <div className="swiper-button image-swiper-button-prev">
-        <Image src={leftArrow} alt="left arrow" width={24} height={44} style={{height: '44px'}} />
+        <Image
+          src={leftArrow}
+          alt="left arrow"
+          width={24}
+          height={44}
+          style={{ height: "44px" }}
+        />
       </div>
       <Swiper
-        loop={true} // Enable infinite loop
-        autoplay={{
-          delay: 4000, // Slide transition interval in milliseconds
-          disableOnInteraction: false, // Keeps autoplay active even after interactions
-        }}
+        // loop={true} // Enable infinite loop
+        // autoplay={{
+        //   // delay: 4000, // Slide transition interval in milliseconds
+        //   // disableOnInteraction: false, // Keeps autoplay active even after interactions
+        // }}
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
           disabledClass: "swiper-button-disabled",
         }}
         pagination={{ clickable: true }} // Enable pagination
-        modules={[Navigation, Pagination, Autoplay]} // Include Autoplay module
+        modules={[Navigation, Pagination]} // Include Autoplay module
         className="mySwiper"
         onSlideChange={(swiper) => setIndex(swiper.activeIndex)} // Update index on slide change
       >
         {bootstrap.map((item, slideIndex) => (
-          <SwiperSlide key={slideIndex}> {/* Unique key for each slide */}
+          <SwiperSlide key={slideIndex}>
+            {/* Unique key for each slide */}
+            {/* <img className={styles.image} src={item.imageUrl} /> */}
             <Image
-              className={styles.image}
               src={carouselImg}
               alt="slides"
               fill // Use fill or any other appropriate layout prop
-              style={{ objectFit: 'cover' }} // Adjust how the image fits
+              style={{ objectFit: "cover", height: "100%" }} // Adjust how the image fits
             />
           </SwiperSlide>
         ))}

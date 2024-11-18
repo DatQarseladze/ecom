@@ -13,6 +13,8 @@ const nextConfig = {
       "s3-alpha-sig.figma.com",
       "lh3.googleusercontent.com",
       "platform-lookaside.fbsbx.com",
+      "app.psp.ge",
+      "mdbcdn.b-cdn.net",
     ],
   },
 };

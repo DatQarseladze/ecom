@@ -38,10 +38,6 @@ const JobPost = ({
             alt="image up right"
             width={18}
             height={18}
-            // style={{
-            //     width: '18px',
-            //     height:'18px'
-            // }}
           />
         </div>
       </div>

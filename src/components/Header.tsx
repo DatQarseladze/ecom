@@ -64,7 +64,9 @@ const Navigation = () => {
             aria-selected={activeTab === item}
             aria-label={item}
           >
-            <span className="relative z-10 text-center">{item}</span>
+            <span className="relative z-10 text-center whitespace-nowrap overflow-hidden text-ellipsis">
+              {item}
+            </span>
           </a>
           {index < items.length - 1 && (
             <span
