@@ -107,6 +107,7 @@ const CareersList = () => {
                 "& .MuiOutlinedInput-root": {
                   height: "56px", // Fix the input height to match the container
                   borderRadius: "8px", // Add border radius
+                  paddingRight: '4px',
                   "& fieldset": {
                     border: "1px solid #1B1D201A", // Default border color
                   },
@@ -116,18 +117,20 @@ const CareersList = () => {
                   "&.Mui-focused fieldset": {
                     borderColor: "#8255E3", // Focus border color
                   },
+                  // Add hover background color for the input root
+                  "&:hover": {
+                    backgroundColor: "#1B1D2008", // Background color on hover
+                  },
                 },
                 "& .MuiInputBase-input": {
                   height: "100%", // Ensure input takes full height
-                  padding: "16px 14px", // Proper padding for text alignment
+                  padding: "16px 14px",
                 },
                 "& .MuiInputLabel-root": {
-                  backgroundColor: "#fff", // White background to cover the border
                   color: "#474D66",
                   fontSize: "16px",
                   lineHeight: "24px",
                   transition: "all 0.2s ease-in-out",
-                  // No transform here to keep the placeholder in place
                 },
                 "& .MuiInputLabel-root.Mui-focused": {
                   transform: "translate(14px, 4px) scale(0.85)", // Keep label inside borders on focus

@@ -27,7 +27,6 @@ const Navigation = () => {
   const route = useRouter();
   const path = usePathname();
   const [activeTab, setActiveTab] = useState<any>(path);
-  console.log(path, "path");
 
   return (
     <nav className="xl:mx-[168px] web-xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
