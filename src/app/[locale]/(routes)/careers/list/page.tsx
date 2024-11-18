@@ -17,6 +17,7 @@ const CareersList = () => {
   const [showData, setShowData] = useState(false); // State to toggle visibility of the data
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const dataRef = useRef<any>(null); // Reference for the element to detect outside clicks
+  const [fillColor, setFillColor] = useState("white");
 
   console.log(showData, "SHOW DATA");
 
@@ -107,7 +108,7 @@ const CareersList = () => {
                 "& .MuiOutlinedInput-root": {
                   height: "56px", // Fix the input height to match the container
                   borderRadius: "8px", // Add border radius
-                  paddingRight: '4px',
+                  paddingRight: "4px",
                   "& fieldset": {
                     border: "1px solid #1B1D201A", // Default border color
                   },
@@ -142,8 +143,12 @@ const CareersList = () => {
               }}
               InputProps={{
                 endAdornment: (
-                  <div className="cursor-pointer">
-                    <SearchIcon />
+                  <div
+                    className="cursor-pointer"
+                    onMouseEnter={() => setFillColor("#1B1D200F")}
+                    onMouseLeave={() => setFillColor("white")}
+                  >
+                    <SearchIcon fillColor={fillColor} />
                   </div>
                 ),
               }}
