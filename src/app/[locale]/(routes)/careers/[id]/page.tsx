@@ -16,7 +16,6 @@ import JobPost from "@/src/components/JobPost";
 import { jobs } from "@/src/components/constants";
 import CloseTagIcon from "@/src/icons/CloseTagIcon";
 import { Check } from "@mui/icons-material";
-import MuiPhoneNumber from "mui-phone-number";
 import PhoneNumberInput from "@/src/components/PhoneInput";
 
 const CareersList = () => {
