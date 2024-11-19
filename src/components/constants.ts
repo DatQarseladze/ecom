@@ -51,7 +51,7 @@ export const jobs = [
     location: "თბილისი",
     company: "დისტანციური",
     employmentType: "სრული განაკვეთი",
-    link: "#",
+    link: "/careers/2",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -60,7 +60,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/3",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -69,7 +69,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/4",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -78,7 +78,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/5",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -87,7 +87,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/6",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -96,7 +96,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/7",
   },
   {
     title: "მარკეტინგის მენეჯერი",
@@ -105,7 +105,7 @@ export const jobs = [
     location: "ქუთაისი",
     company: "დისტანციური",
     employmentType: "ნახევარი განაკვეთი",
-    link: "#",
+    link: "/careers/8",
   },
 ];
 

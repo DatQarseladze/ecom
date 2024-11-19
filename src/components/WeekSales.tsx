@@ -76,21 +76,21 @@ const WeekSales = () => {
                   {index === 0 ? (
                     <ReusableBadge
                       iconSrc={organIcon}
-                      bgColor={"#01B21E"}
+                      bgColor={"#03A222"}
                       borderColor={"#A3E6CD"}
                       label={"ორგანული"}
                     />
                   ) : index === 1 ? (
                     <ReusableBadge
                       iconSrc={wastingTimeIcon}
-                      bgColor={"#D14343"}
+                      bgColor={"#BB3F43"}
                       borderColor={"#EE9191"}
                       label={"შეზღუდული მარაგი"}
                     />
                   ) : index === 2 ? (
                     <ReusableBadge
                       iconSrc={dotIcon}
-                      bgColor={"#219653"}
+                      bgColor={"#1F8951"}
                       borderColor={"#A3E6CD"}
                       label={"მხოლოდ ონლაინ"}
                     />
@@ -107,28 +107,28 @@ const WeekSales = () => {
                   {index === 0 ? (
                     <ReusableBadge
                       iconSrc={ratingIcon}
-                      bgColor={"#F18D13"}
+                      bgColor={"#D88119"}
                       borderColor={"#FAA53D"}
                       label={"ყველაზე რეიტინგული"}
                     />
                   ) : index === 1 ? (
                     <ReusableBadge
                       iconSrc={bestsellerIcon}
-                      bgColor={"#ED55C2"}
+                      bgColor={"#D44FB4"}
                       borderColor={"#F499DA"}
                       label={"ბესტსელერი"}
                     />
                   ) : index === 2 ? (
                     <ReusableBadge
                       iconSrc={voltIcon}
-                      bgColor={"#9A6DF9"}
+                      bgColor={"#8A65E4"}
                       borderColor={"#CBB2FF"}
                       label={"სიახლე"}
                     />
                   ) : (
                     <ReusableBadge
                       iconSrc={leafIcon}
-                      bgColor={"#82B536"}
+                      bgColor={"#75A438"}
                       borderColor={"#94C748"}
                       label={"ვეგანური"}
                     />
@@ -136,7 +136,7 @@ const WeekSales = () => {
                   {index === 3 && (
                     <ReusableBadge
                       iconSrc={truckIcon}
-                      bgColor={"#3366FF"}
+                      bgColor={"#2F5EEA"}
                       borderColor={"#9DB5FF"}
                       label={"უფასო მიწოდება"}
                     />

@@ -27,7 +27,6 @@ const JobPost = ({
           <a
             href={link}
             className="text-[#8255E3]"
-            target="_blank"
             rel="noopener noreferrer"
           >
             გაეცანი ვაკანსიას
