@@ -111,7 +111,7 @@ const Events = () => {
             </span>
             {/* Border/Underline Logic */}
             <span
-              className={`absolute bottom-0 left-0 h-[2px] transition-all duration-200 ease-in-out ${
+              className={`absolute bottom-[-1px] left-0 h-[2px] transition-all duration-200 ease-in-out ${
                 activeTab === "ongoing"
                   ? "w-full bg-[#8255E3]" // Active state border color
                   : "group-hover:w-full bg-[#696F8C]" // Hover state border color
@@ -131,7 +131,7 @@ const Events = () => {
             </span>
             {/* Border/Underline Logic */}
             <span
-              className={`absolute bottom-0 left-0 h-[2px] transition-all duration-200 ease-in-out ${
+              className={`absolute bottom-[-1px] left-0 h-[2px] transition-all duration-200 ease-in-out ${
                 activeTab === "archive"
                   ? "w-full bg-[#8255E3]" // Active state border color
                   : "group-hover:w-full bg-[#696F8C]" // Hover state border color
@@ -141,7 +141,7 @@ const Events = () => {
         </div>
         <Divider
           className="w-full"
-          sx={{ backgroundColor: "#1B1D201A", opacity: 1 }}
+          sx={{ backgroundColor: "#1B1D201A"}}
         />
 
         <div className="mt-[40px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">

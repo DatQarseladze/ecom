@@ -123,7 +123,7 @@ const Promotions = () => {
               width={378}
               height={296}
               style={{ objectFit: "cover", height: "296px" }}
-              className="w-full rounded-md"
+              className="w-full rounded-tl-[8px] rounded-tr-[8px]"
             />
             <div className="flex p-[24px] flex-col">
               <h3 className="text-[20px] leading-[28px] text-[#101840] font-bold">
