@@ -84,11 +84,11 @@ const products = [
 ];
 
 const Events = () => {
-  const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
+  const [activeTab, setActiveTab] = useState<string>("ongoing");
   const route = useRouter();
 
   const handleTabClick = (tab: string) => {
-    setActiveTab(tab); // Update active tab on click
+    setActiveTab(tab);
   };
 
   return (
@@ -109,17 +109,16 @@ const Events = () => {
             >
               მიმდინარე
             </span>
-            {/* Border/Underline Logic */}
             <span
               className={`absolute bottom-[-1px] left-0 h-[2px] transition-all duration-200 ease-in-out ${
                 activeTab === "ongoing"
-                  ? "w-full bg-[#8255E3]" // Active state border color
-                  : "group-hover:w-full bg-[#696F8C]" // Hover state border color
+                  ? "w-full bg-[#8255E3]"
+                  : "group-hover:w-full bg-[#696F8C]"
               }`}
             ></span>
           </span>
           <span
-            className="relative text-[20px] cursor-pointer leading-[28px] font-[500] inline-block group pb-[8px]" // Add padding-bottom here
+            className="relative text-[20px] cursor-pointer leading-[28px] font-[500] inline-block group pb-[8px]"
             onClick={() => handleTabClick("archive")}
           >
             <span
@@ -129,20 +128,16 @@ const Events = () => {
             >
               არქივი
             </span>
-            {/* Border/Underline Logic */}
             <span
               className={`absolute bottom-[-1px] left-0 h-[2px] transition-all duration-200 ease-in-out ${
                 activeTab === "archive"
-                  ? "w-full bg-[#8255E3]" // Active state border color
-                  : "group-hover:w-full bg-[#696F8C]" // Hover state border color
+                  ? "w-full bg-[#8255E3]"
+                  : "group-hover:w-full bg-[#696F8C]"
               }`}
             ></span>
           </span>
         </div>
-        <Divider
-          className="w-full"
-          sx={{ backgroundColor: "#1B1D201A"}}
-        />
+        <Divider className="w-full" sx={{ backgroundColor: "#1B1D201A" }} />
 
         <div className="mt-[40px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {products.map((product) => (
