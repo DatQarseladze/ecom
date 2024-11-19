@@ -198,7 +198,7 @@ const WeekSales = () => {
                       </div>
                     </button>
                   ) : (
-                    <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px] font-medium">
+                    <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -208,7 +208,7 @@ const WeekSales = () => {
                       >
                         <MinusIcon />
                       </button>
-                      <div className="text-[#101840] text-[16px] leading-[24px]">
+                      <div className="text-[#101840] text-[16px] font-regular leading-[24px]">
                         {counts[index]} შეკვრა
                       </div>
                       <button
