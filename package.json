@@ -27,7 +27,6 @@
     "cookies-next": "^4.2.1",
     "i18next": "^23.15.1",
     "i18next-resources-to-backend": "^1.2.1",
-    "mui-phone-number": "^3.0.3",
     "next": "14.2.8",
     "next-auth": "^4.24.8",
     "next-i18n-router": "^5.5.1",
