@@ -217,13 +217,14 @@ const CareersList = () => {
                             },
                           "& .MuiInputLabel-root": {
                             color: "#474D66", // Default label color
-                            margin: "unset",
+                            marginLeft: "16px",
                           },
                           "& .MuiInputLabel-root.Mui-focused": {
                             color: "#8255E3", // Focused label color
                           },
                           "& .MuiInputBase-input": {
                             paddingBottom: "16px",
+                            paddingLeft: '16px',
                           },
                         }}
                       />
@@ -248,12 +249,15 @@ const CareersList = () => {
                             },
                           "& .MuiInputLabel-root": {
                             color: "#474D66",
+                            marginLeft: "16px",
                           },
                           "& .MuiInputLabel-root.Mui-focused": {
                             color: "#8255E3",
                           },
                           "& .MuiInputBase-input": {
                             paddingBottom: "16px",
+                            paddingLeft: '16px',
+
                           },
                         }}
                       />
@@ -279,12 +283,14 @@ const CareersList = () => {
                             },
                           "& .MuiInputLabel-root": {
                             color: "#474D66",
+                            marginLeft: "16px",
                           },
                           "& .MuiInputLabel-root.Mui-focused": {
                             color: "#8255E3",
                           },
                           "& .MuiInputBase-input": {
-                            paddingBottom: "15px",
+                            paddingBottom: "16px",
+                            paddingLeft: '16px',
                           },
                         }}
                       />

@@ -44,6 +44,8 @@ const PhoneNumberInput = () => {
         className="w-full h-[55px]"
         variant="standard"
         sx={{
+          paddingLeft: "16px",
+
           "& .MuiInput-underline:before": {
             borderBottom: "none",
           },
@@ -55,12 +57,14 @@ const PhoneNumberInput = () => {
           },
           "& .MuiInputLabel-root": {
             color: "#474D66",
+            marginLeft: "16px",
           },
           "& .MuiInputLabel-root.Mui-focused": {
             color: "#8255E3",
           },
           "& .MuiInputBase-input": {
             paddingBottom: "10px",
+            paddingLeft: "16px",
           },
           "& input[type='number']::-webkit-outer-spin-button, & input[type='number']::-webkit-inner-spin-button":
             {
@@ -68,7 +72,7 @@ const PhoneNumberInput = () => {
               margin: 0,
             },
           "& input[type='number']": {
-            MozAppearance: "textfield", // For Firefox
+            MozAppearance: "textfield",
           },
         }}
       />
