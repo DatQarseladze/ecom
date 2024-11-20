@@ -382,9 +382,10 @@ const CareersList = () => {
             <h1 className="text-[32px] leading-[40px] text-[#101840] font-bold mt-[24px]">
               თქვენი განაცხადი წარმატებით გაიგზავნა
             </h1>
-            <h3 className="text-[#474D66] mt-[16px] px-[429px] text-center">
+            <h3 className="text-[#474D66] mt-[16px] text-center">
               განვიხილავთ თქვენს გამოცდილებას და დაინტერესების შემთხვევაში
-              დაგიკავშირდებით. იმპექსის გუნდი გისურვებთ წარმატებას!
+              დაგიკავშირდებით. <br />
+              იმპექსის გუნდი გისურვებთ წარმატებას!
             </h3>
             <button
               onClick={() => route.push("/careers/list")}
