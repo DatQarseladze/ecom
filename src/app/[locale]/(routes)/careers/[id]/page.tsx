@@ -318,7 +318,7 @@ const CareersList = () => {
                     გავეცანი და ვეთანხმები. იხილეთ:
                   </h3>
                   <div className="flex items-center gap-[4px] mb-[24px]">
-                    <h4 className="text-[#8255E3]">
+                    <h4 className="cursor-pointer text-[#8255E3]">
                       კონფიდენციალურობის პოლიტიკა
                     </h4>
                     <Image
