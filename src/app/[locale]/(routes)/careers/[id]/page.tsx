@@ -1,360 +1,400 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { TextField, Divider, Checkbox } from "@mui/material";
-import Input from "@mui/material/Input";
-import FormControl from "@mui/material/FormControl";
+import { useRouter } from "next/navigation";
 
-import productImg from "../../../../../assets/images/careers_list.svg";
-import filterIcon from "../../../../../assets/images/filter.svg";
 import uploadIcon from "../../../../../assets/images/upload.svg";
-import SearchIcon from "@/src/icons/SearchIcon";
 import imageUpRight from "../../../../../assets/images/arrow_up_right.svg";
 
-import PaginationComponent from "@/src/components/Pagination";
-import JobPost from "@/src/components/JobPost";
-import { jobs } from "@/src/components/constants";
-import CloseTagIcon from "@/src/icons/CloseTagIcon";
-import { Check } from "@mui/icons-material";
+import grayClock from "../../../../../assets/images/gray_clock.svg";
+import grayLocation from "../../../../../assets/images/gray_location.svg";
+import grayCalendar from "../../../../../assets/images/home.svg";
+import infoIcon from "../../../../../assets/images/info.svg";
+import rightIcon from "../../../../../assets/images/right-purple-icon.svg";
+import checkMark from "../../../../../assets/images/check-mark.svg";
+import rightArrow from "../../../../../assets/images/right-purple-arrow.svg";
+
 import PhoneNumberInput from "@/src/components/PhoneInput";
 
 const CareersList = () => {
   const [search, setSearch] = useState("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [fillColor, setFillColor] = useState("white");
-
+  const [sent, setSent] = useState(false);
+  const route = useRouter();
 
   return (
     <div>
       <div className="xl:mx-[168px] web-xl:mx-[80px]">
-        <div className="pt-[80px] flex flex-row gap-[48px]">
-          <div className="flex items-center justify-center w-full flex-col">
-            <div className="text-[16px] leading-[24px] py-[1px] px-[8px] mb-[8px] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] w-auto">
-              ვაკანსიები
-            </div>
-          </div>
+        {!sent ? (
+          <div>
+            <div className="pt-[80px] pb-[96px] flex flex-row gap-[48px]">
+              <div className="flex w-full flex-col">
+                <div className="flex items-center gap-[4px]">
+                  <div className="bg-[#17875D] w-[9.75px] h-[9.75px] rounded-full" />
+                  <div className="text-[#696F8C]">
+                    29 ოქტომბერი - 29 ნოემბერი
+                  </div>
+                </div>
+                <h1 className="text-[40px] mt-[4px] font-bold leading-[48px] text-[#101840]">
+                  გაყიდვების მენეჯერი
+                </h1>
+                <div className="flex gap-[16px] flex-col pt-[24px]">
+                  <div className="flex items-center gap-[4px]">
+                    <Image
+                      src={grayLocation}
+                      alt={"gray location"}
+                      width={20}
+                      height={20}
+                    />
+                    <div className="text-[#696F8C] text-[16px]">
+                      თბილისი, გიორგი სააკაძის ქუჩა 
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-[4px]">
+                    <Image
+                      src={grayCalendar}
+                      alt={"gray calendar"}
+                      width={20}
+                      height={20}
+                    />
+                    <div className="text-[#696F8C] text-[16px]">ადგილზე</div>
+                  </div>
+                  <div className="flex items-center gap-[4px]">
+                    <Image
+                      src={grayClock}
+                      alt={"gray clock"}
+                      width={20}
+                      height={20}
+                    />
+                    <div className="text-[#696F8C] text-[16px]">
+                      10:00-19:00
+                    </div>
+                  </div>
+                </div>
 
-          <div className="border-[#1B1D201A] w-full max-w-[528px] border-[1px] border-solid rounded-[8px] p-[39px]">
-            <div className="flex flex-col">
-              <h1 className="text-[32px] leading-[40px] font-bold mb-[24px]">
-                განაცხადის გაგზავნა
+                <div className="mt-[40px]">
+                  <div className="flex flex-col mt-[16px]">
+                    <h3 className="font-medium text-[#101840]">
+                      ფუნქცია-მოვალეობები:
+                    </h3>
+                    <div className="mt-[8px]">
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          გეგმური ვიზიტების დაგეგმვა/განხორციელება და პროდუქციის
+                          პრეზენტაცია სამედიცინო დაწესებულებებში;
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          მიმდინარე ანგარიშების წარმოება
+                          ყოველდღიურად/ყოველკვირეულად;
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          გაყიდვების გეგმების შესასრულებლად აქტიური
+                          ღონისძიებების დაგეგმვა;
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          სხვადასხვა მარკეტინგულ ღონისძიებებში აქტიური
+                          მონაწილეობა (შეხვედრები, კონფერენციები);
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="font-medium text-[#101840] mt-[24px]">
+                    საკვალიფიკაციო მოთხოვნები:
+                  </h3>
+                  <div className="flex flex-col mt-[16px]">
+                    <h1 className="text-[#101840]">ცოდნა და გამოცდილება:</h1>
+                    <div className="mt-[4px]">
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          უმაღლესი განათლება, ფარმაციის ან მედიცინის
+                          მიმართულებით;
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          მინიმუმ 1 წლიანი სამუშაო გამოცდილება გაყიდვების
+                          სფეროში
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          რუსული ან ინგლისური ენების ცოდნა ჩაითვლება
+                          უპირატესობად
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          საოფისე კომპიუტერული პროგრამების ცოდნა მომხმარებლის
+                          დონეზე
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col mt-[8px]">
+                    <h1 className="text-[#101840]">პიროვნული თვისებები:</h1>
+                    <div className="mt-[4px]">
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          პრეზენტაციისა და გაყიდვების უნარები
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          ეფექტური კომუნიკაციის უნარი
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">თავდაჯერებულობა</h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">
+                          სტრესულ სიტუაციებში მუშაობის უნარი
+                        </h2>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#474D66] px-[10px]">•</span>
+                        <h2 className="text-[#474D66]">ორგანიზებულობა.</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center mt-[40px] gap-[4px]">
+                  <Image
+                    alt="info icon"
+                    src={infoIcon}
+                    width={20}
+                    height={20}
+                  />
+                  <h2 className="text-[#101840]">
+                    განაცხადების მიღების ბოლო ვადაა 29 ნოემბერი, 2024 წელი.
+                  </h2>
+                </div>
+              </div>
+
+              <div className="border-[#1B1D201A] w-full max-w-[528px] border-[1px] border-solid rounded-[8px] p-[39px]">
+                <div className="flex flex-col">
+                  <h1 className="text-[32px] leading-[40px] font-bold mb-[24px]">
+                    განაცხადის გაგზავნა
+                  </h1>
+                  <div>
+                    <div className="mb-[24px]">
+                      <TextField
+                        id="standard-basic"
+                        label="სახელი ქართულად"
+                        variant="standard"
+                        className="w-full h-[56px]"
+                        sx={{
+                          height: "56px",
+                          "& .MuiInput-underline:before": {
+                            borderBottomColor: "#1B1D201A", // Default state
+                          },
+                          "& .MuiInput-underline:after": {
+                            borderBottomColor: "#8255E3", // Focus state
+                          },
+                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
+                            {
+                              borderBottomColor: "#1B1D201A", // Hover state
+                            },
+                          "& .MuiInputLabel-root": {
+                            color: "#474D66", // Default label color
+                            margin: "unset",
+                          },
+                          "& .MuiInputLabel-root.Mui-focused": {
+                            color: "#8255E3", // Focused label color
+                          },
+                          "& .MuiInputBase-input": {
+                            paddingBottom: "16px",
+                          },
+                        }}
+                      />
+                    </div>
+                    <div className="mb-[24px]">
+                      <TextField
+                        id="standard-basic"
+                        label="გვარი ქართულად"
+                        variant="standard"
+                        className="w-full"
+                        sx={{
+                          height: "56px",
+                          "& .MuiInput-underline:before": {
+                            borderBottomColor: "#1B1D201A",
+                          },
+                          "& .MuiInput-underline:after": {
+                            borderBottomColor: "#8255E3",
+                          },
+                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
+                            {
+                              borderBottomColor: "#1B1D201A",
+                            },
+                          "& .MuiInputLabel-root": {
+                            color: "#474D66",
+                          },
+                          "& .MuiInputLabel-root.Mui-focused": {
+                            color: "#8255E3",
+                          },
+                          "& .MuiInputBase-input": {
+                            paddingBottom: "16px",
+                          },
+                        }}
+                      />
+                    </div>
+                    <div className="mb-[24px]">
+                      <TextField
+                        id="standard-basic"
+                        label="ელ.ფოსტა"
+                        variant="standard"
+                        className="w-full"
+                        sx={{
+                          height: "56px",
+                          boxSizing: "border-box", // Includes padding in height
+                          "& .MuiInput-underline:before": {
+                            borderBottomColor: "#1B1D201A",
+                          },
+                          "& .MuiInput-underline:after": {
+                            borderBottomColor: "#8255E3",
+                          },
+                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
+                            {
+                              borderBottomColor: "#1B1D201A",
+                            },
+                          "& .MuiInputLabel-root": {
+                            color: "#474D66",
+                          },
+                          "& .MuiInputLabel-root.Mui-focused": {
+                            color: "#8255E3",
+                          },
+                          "& .MuiInputBase-input": {
+                            paddingBottom: "15px",
+                          },
+                        }}
+                      />
+                    </div>
+                    <div className="mb-[24px] flex items-center">
+                      <PhoneNumberInput />
+                    </div>
+                  </div>
+
+                  <button className="rounded-[8px] w-full flex items-center py-[11px] mb-[24px] justify-center border-[1px] border-solid border-[#1B1D201A] text-[#172B4D] hover:bg-[#1B1D200F]">
+                    <Image
+                      alt="upload icon"
+                      height={20}
+                      src={uploadIcon}
+                      className="mr-[8px]"
+                      width={20}
+                    />
+                    <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
+                  </button>
+
+                  <Divider
+                    className="w-full"
+                    sx={{ backgroundColor: "##1B1D200F" }}
+                  />
+                </div>
+                <div className="flex flex-col pt-[24px]">
+                  <h3 className="text-[#474D66] font-medium mb-[4px]">
+                    განაცხადი მონაცემთა კონფიდენციალურობის შესახებ
+                  </h3>
+                  <h3 className="text-[#474D66] mb-[4px]">
+                    გავეცანი და ვეთანხმები. იხილეთ:
+                  </h3>
+                  <div className="flex items-center gap-[4px] mb-[24px]">
+                    <h4 className="text-[#8255E3]">
+                      კონფიდენციალურობის პოლიტიკა
+                    </h4>
+                    <Image
+                      src={imageUpRight}
+                      alt="image up right"
+                      width={18}
+                      height={18}
+                    />
+                  </div>
+                  <div className="flex flex-row gap-[8px] mb-[24px]">
+                    <Checkbox
+                      sx={{
+                        color: "#1B1D201A",
+                        height: "20px",
+                        width: "20px",
+                        marginTop: "5px",
+                        "&.Mui-checked": {
+                          color: "#8255E3",
+                        },
+                      }}
+                    />
+                    <span className="text-[#474D66]">
+                      ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი მონაცემების
+                      დამუშავებას
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setSent(true)}
+                    className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                  >
+                    განაცხადის გაგზავნა
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-[80px] rounded-[16px] py-[40px] flex flex-col items-center justify-center bg-[#FAFBFF]">
+              <h1 className="text-[32px] leading-[40px] text-[#101840] font-bold">
+                რატომ უნდა იმუშაო იმპექსში?
               </h1>
-              <div>
-                <div className="mb-[24px]">
-                  <TextField
-                    id="standard-basic"
-                    label="სახელი ქართულად"
-                    variant="standard"
-                    className="w-full h-[56px]"
-                    sx={{
-                      height: "56px",
-                      "& .MuiInput-underline:before": {
-                        borderBottomColor: "#1B1D201A", // Default state
-                      },
-                      "& .MuiInput-underline:after": {
-                        borderBottomColor: "#8255E3", // Focus state
-                      },
-                      "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-                        borderBottomColor: "#1B1D201A", // Hover state
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "#474D66", // Default label color
-                        margin: "unset",
-                      },
-                      "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#8255E3", // Focused label color
-                      },
-                      "& .MuiInputBase-input": {
-                        paddingBottom: "16px",
-                      },
-                    }}
-                  />
-                </div>
-                <div className="mb-[24px]">
-                  <TextField
-                    id="standard-basic"
-                    label="გვარი ქართულად"
-                    variant="standard"
-                    className="w-full"
-                    sx={{
-                      height: "56px",
-                      "& .MuiInput-underline:before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInput-underline:after": {
-                        borderBottomColor: "#8255E3",
-                      },
-                      "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "#474D66",
-                      },
-                      "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#8255E3",
-                      },
-                      "& .MuiInputBase-input": {
-                        paddingBottom: "16px",
-                      },
-                    }}
-                  />
-                </div>
-                <div className="mb-[24px]">
-                  <TextField
-                    id="standard-basic"
-                    label="ელ.ფოსტა"
-                    variant="standard"
-                    className="w-full"
-                    sx={{
-                      height: "56px",
-                      boxSizing: "border-box", // Includes padding in height
-                      "& .MuiInput-underline:before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInput-underline:after": {
-                        borderBottomColor: "#8255E3",
-                      },
-                      "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "#474D66",
-                      },
-                      "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#8255E3",
-                      },
-                      "& .MuiInputBase-input": {
-                        paddingBottom: "15px",
-                      },
-                    }}
-                  />
-                </div>
-                <div className="mb-[24px] flex items-center">
-                  <PhoneNumberInput />
-
-                  {/* <TextField
-                    id="standard-basic"
-                    variant="standard"
-                    label="მობილურის ნომერი"
-                    className="w-full"
-                    InputProps={{
-                      startAdornment: (
-                        <div className="flex">
-                          <div className="text-[#172B4D] py-[8px] px-[12px]">
-                            +995
-                          </div>
-                          <div
-                            className="mx-2 self-center"
-                            aria-hidden="true"
-                            style={{
-                              width: "1px",
-                              height: "15px",
-                              backgroundColor: "#0000000D",
-                            }}
-                          ></div>
-                        </div>
-                      ),
-                    }}
-                    InputLabelProps={{
-                      shrink: false, // Allow label to conditionally shrink
-                    }}
-                    sx={{
-                      height: "56px",
-                      boxSizing: "border-box", // Includes padding in height
-                      "& .MuiInput-underline:before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInput-underline:after": {
-                        borderBottomColor: "#8255E3",
-                      },
-                      "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-                        borderBottomColor: "#1B1D201A",
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "#474D66",
-                      },
-                      "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#8255E3",
-                      },
-                      "& .MuiInputBase-input": {
-                        paddingBottom: "15px",
-                      },
-                    }}
-                  /> */}
-                </div>
-              </div>
-
-              <button className="rounded-[8px] w-full flex items-center py-[11px] mb-[24px] justify-center border-[1px] border-solid border-[#1B1D201A] text-[#172B4D] hover:bg-[#1B1D200F]">
-                <Image
-                  alt="upload icon"
-                  height={20}
-                  src={uploadIcon}
-                  className="mr-[8px]"
-                  width={20}
-                />
-                <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
-              </button>
-
-              <Divider
-                className="w-full"
-                sx={{ backgroundColor: "##1B1D200F" }}
-              />
-            </div>
-            <div className="flex flex-col pt-[24px]">
-              <h3 className="text-[#474D66] font-medium mb-[4px]">
-                განაცხადი მონაცემთა კონფიდენციალურობის შესახებ
+              <h3 className="text-[#474D66] text-center py-[16px] px-[196px]">
+                ჩვენ ვთვლით, რომ თანამშრომლები ყველაზე მნიშვნელოვანი აქტივია.
+                ვქმნით თანაბარ შესაძლებლობებს, სადაც სხვადასხვა კულტურისა და
+                ღირებულებების მქონე ადამიანებისთვის მუშაობა საინტერესო და
+                გამოწვევებით სავსეა.
               </h3>
-              <h3 className="text-[#474D66] mb-[4px]">
-                გავეცანი და ვეთანხმები. იხილეთ:
-              </h3>
-              <div className="flex items-center gap-[4px] mb-[24px]">
-                <h4 className="text-[#8255E3]">კონფიდენციალურობის პოლიტიკა</h4>
+              <button className="text-[#8255E3] flex items-center text-[20px] leading-[28px] border-none py-[14px]">
+                <span>კარიერა იმპექსში</span>
                 <Image
-                  src={imageUpRight}
-                  alt="image up right"
-                  width={18}
-                  height={18}
+                  alt="career icon"
+                  src={rightIcon}
+                  width={24}
+                  height={24}
                 />
-              </div>
-              <div className="flex flex-row gap-[8px] mb-[24px]">
-                <Checkbox
-                  sx={{
-                    color: "#1B1D201A",
-                    height: "20px",
-                    width: "20px",
-                    marginTop: "5px",
-                    "&.Mui-checked": {
-                      color: "#8255E3",
-                    },
-                  }}
-                />
-                <span className="text-[#474D66]">
-                  ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი მონაცემების
-                  დამუშავებას
-                </span>
-              </div>
-              <button className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium">
-                განაცხადის გაგზავნა
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="relative">
-          <div className="flex  mt-[48px] gap-[16px]">
-            {/* Filter Button */}
-            <div
-              className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent the click from propagating to the outside click handler
-              }}
-            >
-              <Image
-                src={filterIcon}
-                width={20}
-                height={20}
-                alt="filter icon"
-              />
-              <div>ფილტრი</div>
-            </div>
-            <TextField
-              fullWidth
-              value={search}
-              label="მოძებნე სასურველი ვაკანსია"
-              placeholder="მოძებნე სასურველი ვაკანსია"
-              InputLabelProps={{ shrink: false }}
-              onChange={(e) => setSearch(e.target.value)}
-              sx={{
-                width: 537,
-                "& .MuiOutlinedInput-root": {
-                  height: "56px", // Fix the input height to match the container
-                  borderRadius: "8px", // Add border radius
-                  paddingRight: "4px",
-                  "& fieldset": {
-                    border: "1px solid #1B1D201A", // Default border color
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#1B1D201A", // Border on hover
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#8255E3", // Focus border color
-                  },
-                  // Add hover background color for the input root
-                  "&:hover": {
-                    backgroundColor: "#1B1D2008", // Background color on hover
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  height: "100%", // Ensure input takes full height
-                  padding: "16px 14px",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "#474D66",
-                  fontSize: "16px",
-                  lineHeight: "24px",
-                  transition: "all 0.2s ease-in-out",
-                },
-                "& .MuiInputLabel-root.Mui-focused": {
-                  transform: "translate(14px, 4px) scale(0.85)", // Keep label inside borders on focus
-                  color: "#696F8C", // Change color on focus
-                },
-                "& .MuiInputLabel-shrink": {
-                  backgroundColor: "#fff", // Keep background consistent
-                },
-              }}
-              InputProps={{
-                endAdornment: (
-                  <div
-                    className="cursor-pointer"
-                    onMouseEnter={() => setFillColor("#1B1D200F")}
-                    onMouseLeave={() => setFillColor("white")}
-                  >
-                    <SearchIcon fillColor={fillColor} />
-                  </div>
-                ),
-              }}
-            />
-
-            {/* <PhoneNumberInput /> */}
-          </div>
-
-        </div>
-        {selectedFilters?.length ? (
-          <div className="flex gap-[16px] mt-[24px] mb-[32px]">
+        ) : (
+          <div className="py-[153.5px] flex flex-col justify-center items-center">
+            <Image alt="check icon" src={checkMark} height={80} width={80} />
+            <h1 className="text-[32px] leading-[40px] text-[#101840] font-bold mt-[24px]">
+              თქვენი განაცხადი წარმატებით გაიგზავნა
+            </h1>
+            <h3 className="text-[#474D66] mt-[16px] px-[429px] text-center">
+              განვიხილავთ თქვენს გამოცდილებას და დაინტერესების შემთხვევაში
+              დაგიკავშირდებით. იმპექსის გუნდი გისურვებთ წარმატებას!
+            </h3>
             <button
-              onClick={() => setSelectedFilters([])}
-              className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033]"
+              onClick={() => route.push("/careers/list")}
+              className="mt-[24px] flex text-[#8255E3] items-center gap-[4px]"
             >
-              ფილტრის წაშლა
+              ვაკანსიების გვერდზე დაბრუნება
+              <Image alt="rightArrow" src={rightArrow} height={18} width={18} />
             </button>
-            <div className="flex gap-[8px]">
-              {selectedFilters?.map((selectedFilter) => (
-                <div className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]">
-                  {selectedFilter}
-                  <div
-                    className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
-                  >
-                    <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-        ) : null}
-        <div className="pb-[48px]">
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-[24px] mt-[32px]">
-            {jobs.map((job, index) => (
-              <JobPost key={index} {...job} />
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-center mt-[48px] mb-[80px]">
-          <PaginationComponent
-            totalPages={10}
-            currentPage={1}
-            onPageChange={() => {}}
-          />
-        </div>
+        )}
       </div>
     </div>
   );
