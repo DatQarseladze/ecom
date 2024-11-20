@@ -40,7 +40,7 @@ const CareersList = () => {
                 <h1 className="text-[40px] mt-[8px] font-bold leading-[48px] text-[#101840]">
                   გაყიდვების მენეჯერი
                 </h1>
-                <div className="flex gap-[16px] flex-col pt-[24px]">
+                <div className="flex gap-[8px] flex-col pt-[24px]">
                   <div className="flex items-center gap-[4px]">
                     <Image
                       src={grayLocation}
