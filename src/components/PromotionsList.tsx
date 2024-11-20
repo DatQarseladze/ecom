@@ -7,6 +7,7 @@ import productImg3 from "../assets/images/picture2.png";
 import productImg4 from "../assets/images/picture3.png";
 import clockImg from "../assets/images/clock.png";
 import ReusableBadge from "./ReusableBadge";
+import { Divider } from "@mui/material";
 
 const products = [
   {
@@ -47,14 +48,14 @@ const Promotions = () => {
           value={tabIndex === -1 ? false : tabIndex}
           onChange={handleTabChange}
           variant="fullWidth"
-          className="mb-[60px]"
           sx={{
             position: "relative",
             ".MuiTabs-flexContainer": {
               gap: "24px",
-              borderBottom: "1px solid #e8e8e9",
+              zIndex: 1,
             },
           }}
+          indicatorColor="primary"
           TabIndicatorProps={{
             style: {
               backgroundColor: "#8255E3",
@@ -67,7 +68,7 @@ const Promotions = () => {
                 key={label}
                 label={label}
                 sx={{
-                  color: tabIndex === index ? "#8255E3 !important" : "#8F95B2",
+                  color: tabIndex === index ? "#8255E3" : "#8F95B2", // Active tab color
                   fontWeight: 500,
                   fontSize: "20px",
                   lineHeight: "28px",
@@ -75,23 +76,31 @@ const Promotions = () => {
                   "&::after": {
                     content: '""',
                     position: "absolute",
-                    bottom: 0,
+                    bottom: -1,
                     left: 0,
                     right: 0,
-                    height: "2px",
+                    zIndex: 5000,
+                    height: "3px",
                     backgroundColor: "#696F8C",
                     transform: "scaleX(0)",
                     transition: "transform 0.3s ease-in-out",
                     transformOrigin: "center",
                   },
+                  "&:hover": {
+                    color: tabIndex !== index ? "#696F8C" : "#8255E3", // Only change color on hover for non-active tabs
+                  },
                   "&:hover::after": {
-                    transform: "scaleX(1)",
+                    transform: tabIndex !== index ? "scaleX(1)" : "scaleX(0)", // Only show the underline for non-active tabs on hover
                   },
                 }}
               />
             )
           )}
         </Tabs>
+        <Divider
+          className="w-full mb-[60px]"
+          sx={{ height: "2px", backgroundColor: "#FFFFFF00", position: 'relative', top: -2 }}
+        />
       </Box>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
