@@ -111,7 +111,7 @@ const Footer = () => {
                   color="#FFFFFF"
                   underline="none"
                   className="cursor-pointer"
-                  onClick={() => link?.redirect && route.push(link?.redirect)}
+                  onClick={() => link?.redirect && route.push(`/${link?.redirect}`)}
                 >
                   {link.text}
                 </Link>
