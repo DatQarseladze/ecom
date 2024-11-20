@@ -247,7 +247,6 @@ const CareersList = () => {
               className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
               onClick={(e) => {
                 e.stopPropagation(); // Prevent the click from propagating to the outside click handler
-                setShowData((prevState) => !prevState);
               }}
             >
               <Image
