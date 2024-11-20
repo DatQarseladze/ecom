@@ -347,7 +347,7 @@ const CareersList = () => {
                   </div>
                   <button
                     onClick={() => setSent(true)}
-                    className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                    className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg"
                   >
                     განაცხადის გაგზავნა
                   </button>
