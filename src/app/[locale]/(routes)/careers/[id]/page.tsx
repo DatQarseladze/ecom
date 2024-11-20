@@ -75,7 +75,7 @@ const CareersList = () => {
                 </div>
 
                 <div className="mt-[40px]">
-                  <div className="flex flex-col mt-[16px]">
+                  <div className="flex flex-col">
                     <h3 className="font-medium text-[#101840]">
                       ფუნქცია-მოვალეობები:
                     </h3>
