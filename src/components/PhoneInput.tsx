@@ -19,10 +19,10 @@ const PhoneNumberInput = () => {
           display: "flex",
           alignItems: "center",
           color: "#172B4D",
-          padding: "8px 12px",
+          cursor: "pointer",
         }}
       >
-        +995
+        <div className="hover:bg-[#1B1D2008] py-[8px] px-[12px] rounded-[8px]">+995</div>
         <div
           className="mx-2 self-center"
           aria-hidden="true"
