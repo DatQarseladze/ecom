@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { TextField, Divider, Checkbox } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 import uploadIcon from "../../../../../assets/images/upload.svg";
 import imageUpRight from "../../../../../assets/images/arrow_up_right.svg";
@@ -365,7 +365,10 @@ const CareersList = () => {
                 ღირებულებების მქონე ადამიანებისთვის მუშაობა საინტერესო და
                 გამოწვევებით სავსეა.
               </h3>
-              <button className="text-[#8255E3] rounded-[4px] hover:bg-[#F8F4FF] px-[12px] flex items-center text-[20px] gap-[8px] leading-[28px] border-none py-[14px]">
+              <button
+                onClick={() => route.push("/careers")}
+                className="text-[#8255E3] rounded-[4px] hover:bg-[#F8F4FF] px-[12px] flex items-center text-[20px] gap-[8px] leading-[28px] border-none py-[14px]"
+              >
                 <span>კარიერა იმპექსში</span>
                 <Image
                   alt="career icon"
