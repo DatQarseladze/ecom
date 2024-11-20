@@ -45,7 +45,7 @@ const Promotions = () => {
     <div className="xl:mx-[168px] web-xl:mx-[80px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
       <Box>
         <Tabs
-          value={tabIndex === -1 ? false : tabIndex}
+          value={tabIndex}
           onChange={handleTabChange}
           variant="fullWidth"
           sx={{
@@ -55,7 +55,6 @@ const Promotions = () => {
               zIndex: 1,
             },
           }}
-          indicatorColor="primary"
           TabIndicatorProps={{
             style: {
               backgroundColor: "#8255E3",
@@ -73,6 +72,9 @@ const Promotions = () => {
                   fontSize: "20px",
                   lineHeight: "28px",
                   paddingBottom: "9px",
+                  "&.Mui-selected": {
+                    color: "#8255E3", // Ensuring color for the selected tab
+                  },
                   "&::after": {
                     content: '""',
                     position: "absolute",
@@ -99,7 +101,12 @@ const Promotions = () => {
         </Tabs>
         <Divider
           className="w-full mb-[60px]"
-          sx={{ height: "2px", backgroundColor: "#FFFFFF00", position: 'relative', top: -2 }}
+          sx={{
+            height: "2px",
+            backgroundColor: "#FFFFFF00",
+            position: "relative",
+            top: -2,
+          }}
         />
       </Box>
 

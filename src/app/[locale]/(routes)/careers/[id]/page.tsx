@@ -19,42 +19,10 @@ import { Check } from "@mui/icons-material";
 import PhoneNumberInput from "@/src/components/PhoneInput";
 
 const CareersList = () => {
-  const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
   const [search, setSearch] = useState("");
-  const [showData, setShowData] = useState(false); // State to toggle visibility of the data
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const dataRef = useRef<any>(null); // Reference for the element to detect outside clicks
   const [fillColor, setFillColor] = useState("white");
 
-  console.log(showData, "SHOW DATA");
-
-  const handleOutsideClick = (e) => {
-    // Check if the click is outside the data element
-    if (dataRef.current && !dataRef?.current?.contains(e.target)) {
-      setShowData(false); // Close the data when clicking outside
-    }
-  };
-
-  useEffect(() => {
-    if (showData) {
-      document.addEventListener("click", handleOutsideClick);
-    }
-
-    // Clean up the event listener on component unmount
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [showData]);
-
-  const handleFilter = (filter: string) => {
-    if (selectedFilters?.includes(filter)) {
-      setSelectedFilters((prevState) =>
-        prevState?.filter((prevFilter) => prevFilter !== filter)
-      );
-    } else {
-      setSelectedFilters((prevState) => [...prevState, filter]);
-    }
-  };
 
   return (
     <div>
@@ -351,101 +319,6 @@ const CareersList = () => {
             {/* <PhoneNumberInput /> */}
           </div>
 
-          {/* Tooltip-like Data Element */}
-          {showData && (
-            <div
-              ref={dataRef}
-              style={{
-                boxShadow: "0px 8px 40px -8px #172B4D14",
-              }}
-              className="absolute flex flex-col z-[30] bg-[#fff] w-[1200px] cursor-pointer rounded-[6px] border-[1px] gap-[24px] p-[24px] border-solid border-[#1B1D201A] top-[64px]"
-            >
-              <div>
-                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
-                  სამუშაო დროის მიხედვით
-                </h3>
-                <div className="flex gap-[8px]">
-                  <div
-                    onClick={() => handleFilter("სრული განაკვეთი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("სრული განაკვეთი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    სრული განაკვეთი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("ნახევარი განაკვეთი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ნახევარი განაკვეთი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ნახევარი განაკვეთი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("მოქნილი გრაფიკი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("მოქნილი გრაფიკი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    მოქნილი გრაფიკი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("დროებითი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("დროებითი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    დროებითი
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
-                  მდებარეობის მიხედვით
-                </h3>
-                <div className="flex gap-[8px]">
-                  <div
-                    onClick={() => handleFilter("ადგილზე")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ადგილზე")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ადგილზე
-                  </div>
-                  <div
-                    onClick={() => handleFilter("ჰიბრიდული")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ჰიბრიდული")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ჰიბრიდული
-                  </div>
-                  <div
-                    onClick={() => handleFilter("დისტანციური")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("დისტანციური")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    დისტანციური
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
         {selectedFilters?.length ? (
           <div className="flex gap-[16px] mt-[24px] mb-[32px]">
@@ -460,7 +333,6 @@ const CareersList = () => {
                 <div className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]">
                   {selectedFilter}
                   <div
-                    onClick={() => handleFilter(selectedFilter)}
                     className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
                   >
                     <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
