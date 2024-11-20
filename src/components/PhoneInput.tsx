@@ -22,7 +22,9 @@ const PhoneNumberInput = () => {
           cursor: "pointer",
         }}
       >
-        <div className="hover:bg-[#1B1D2008] py-[8px] px-[12px] rounded-[8px]">+995</div>
+        <div className="hover:bg-[#1B1D2008] py-[8px] px-[12px] rounded-[8px]">
+          +995
+        </div>
         <div
           className="mx-2 self-center"
           aria-hidden="true"
@@ -36,7 +38,7 @@ const PhoneNumberInput = () => {
       <TextField
         label="მობილურის ნომერი"
         id="standard-adornment-password"
-        type={"phone"}
+        type={"number"}
         value={value}
         onChange={(e) => setValue(e.target.value)} // Update state on input change
         className="w-full"
@@ -59,6 +61,14 @@ const PhoneNumberInput = () => {
           },
           "& .MuiInputBase-input": {
             paddingBottom: "10px",
+          },
+          "& input[type='number']::-webkit-outer-spin-button, & input[type='number']::-webkit-inner-spin-button":
+            {
+              WebkitAppearance: "none",
+              margin: 0,
+            },
+          "& input[type='number']": {
+            MozAppearance: "textfield", // For Firefox
           },
         }}
       />
