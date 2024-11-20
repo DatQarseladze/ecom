@@ -40,18 +40,18 @@ const PhoneNumberInput = () => {
         id="standard-adornment-password"
         type={"number"}
         value={value}
-        onChange={(e) => setValue(e.target.value)} // Update state on input change
-        className="w-full"
+        onChange={(e) => setValue(e.target.value)}
+        className="w-full h-[55px]"
         variant="standard"
         sx={{
           "& .MuiInput-underline:before": {
-            borderBottom: "none", // Remove TextField underline
+            borderBottom: "none",
           },
           "& .MuiInput-underline:after": {
-            borderBottom: "none", // Remove active underline
+            borderBottom: "none",
           },
           "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-            borderBottom: "none", // Remove hover underline
+            borderBottom: "none",
           },
           "& .MuiInputLabel-root": {
             color: "#474D66",
