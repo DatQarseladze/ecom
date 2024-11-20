@@ -18,9 +18,9 @@ const ReusableBadge = ({
         backgroundColor: isHovered ? hoverBgColor || bgColor : bgColor,
         borderColor: isHovered ? hoverBorderColor || borderColor : borderColor,
         whiteSpace: "nowrap",
-        width: isHovered ? "auto" : "32px", // Width starts at 32px and expands when hovered
+        width: isHovered ? "auto" : "32px",
         height: "32px",
-        overflow: "hidden" // Ensures nothing overflows when the label is hidden
+        overflow: "hidden" 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -34,7 +34,7 @@ const ReusableBadge = ({
           overflow: "hidden",
           marginLeft: "8px",
           marginRight: isHovered ? "8px" : "0",
-          maxWidth: isHovered ? "300px" : "0", // Expands the text on hover
+          maxWidth: isHovered ? "300px" : "0", 
           transition: "0.5s ease-in-out",
         }}
       >
