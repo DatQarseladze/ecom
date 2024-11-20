@@ -310,7 +310,7 @@ const CareersList = () => {
                     sx={{ backgroundColor: "##1B1D200F" }}
                   />
                 </div>
-                <div className="flex flex-col pt-[24px]">
+                <div className="flex flex-col pt-[23px]">
                   <h3 className="text-[#474D66] font-medium mb-[4px]">
                     განაცხადი მონაცემთა კონფიდენციალურობის შესახებ
                   </h3>
