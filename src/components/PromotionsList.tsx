@@ -73,7 +73,7 @@ const Promotions = () => {
                   lineHeight: "28px",
                   paddingBottom: "9px",
                   "&.Mui-selected": {
-                    color: "#8255E3", // Ensuring color for the selected tab
+                    color: "#8255E3",
                   },
                   "&::after": {
                     content: '""',
@@ -81,18 +81,16 @@ const Promotions = () => {
                     bottom: -1,
                     left: 0,
                     right: 0,
-                    zIndex: 5000,
                     height: "3px",
                     backgroundColor: "#696F8C",
                     transform: "scaleX(0)",
-                    transition: "transform 0.3s ease-in-out",
                     transformOrigin: "center",
                   },
                   "&:hover": {
-                    color: tabIndex !== index ? "#696F8C" : "#8255E3", // Only change color on hover for non-active tabs
+                    color: tabIndex !== index ? "#696F8C" : "#8255E3",
                   },
                   "&:hover::after": {
-                    transform: tabIndex !== index ? "scaleX(1)" : "scaleX(0)", // Only show the underline for non-active tabs on hover
+                    transform: tabIndex !== index ? "scaleX(1)" : "scaleX(0)",
                   },
                 }}
               />

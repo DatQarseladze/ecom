@@ -1,12 +1,12 @@
 // utils/AppThemeProvider.tsx
-'use client';
+"use client";
 
-import { useEffect, useMemo } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useEffect, useMemo } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import { useSelector } from "react-redux";
 
-import { RootState } from '../store';
+import { RootState } from "../store";
 
 interface AppThemeProviderProps {
   attribute: string;
@@ -20,7 +20,7 @@ const AppThemeProvider: React.FC<AppThemeProviderProps> = ({
   const theme = useSelector((state: RootState) => state.theme.value);
 
   useEffect(() => {
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       document.documentElement.setAttribute(attribute, theme);
     }
   }, [theme, attribute]);
@@ -29,10 +29,17 @@ const AppThemeProvider: React.FC<AppThemeProviderProps> = ({
     () =>
       createTheme({
         palette: {
-          mode: theme === 'dark' ? 'dark' : 'light',
+          mode: theme === "dark" ? "dark" : "light",
+        },
+        components: {
+          MuiButtonBase: {
+            defaultProps: {
+              disableRipple: true, // Disable ripple effect for all MuiButtonBase
+            },
+          },
         },
       }),
-    [theme],
+    [theme]
   );
 
   return (
