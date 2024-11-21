@@ -269,7 +269,7 @@ const Events = () => {
                       className={`px-[11px] items-center gap-[6px]  flex py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
                         selectedFilters.includes(filter.name)
                           ? "bg-[#1B1D200F]"
-                          : "hover:bg-[#1B1D200F]"
+                          : "hover:bg-[#1B1D2008]"
                       }`}
                     >
                       <Image
@@ -301,7 +301,7 @@ const Events = () => {
                       className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
                         selectedFilters.includes(location)
                           ? "bg-[#1B1D200F]"
-                          : "hover:bg-[#1B1D200F]"
+                          : "hover:bg-[#1B1D2008]"
                       }`}
                     >
                       {location}
