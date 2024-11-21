@@ -30,7 +30,7 @@ const PhoneNumberInput = () => {
           aria-hidden="true"
           style={{
             width: "1px",
-            height: "15px",
+            height: "24px",
             backgroundColor: "#0000000D",
           }}
         ></div>
