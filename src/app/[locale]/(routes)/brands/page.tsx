@@ -344,7 +344,7 @@ const Events = () => {
             </div>
           </div>
         ) : null}
-        <div className="flex gap-[4px] mb-[48px]">
+        <div className="flex gap-[4px] my-[48px]">
           {alphabet.map((letter) => (
             <span
               key={letter}
