@@ -22,7 +22,7 @@ const PhoneNumberInput = () => {
           cursor: "pointer",
         }}
       >
-        <div className="hover:bg-[#1B1D2008] mb-[7px] ml-[16px] py-[8px] mr-[4px] px-[12px] rounded-[8px]">
+        <div className="hover:bg-[#1B1D2008] w-[57px] mb-[7px] ml-[16px] py-[8px] mr-[4px] px-[12px] rounded-[8px]">
           +995
         </div>
         <div
