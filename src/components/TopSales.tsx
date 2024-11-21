@@ -7,7 +7,6 @@ import filledHeart from "../assets/images/filled-heart.svg";
 import shoppingCartIcon from "../assets/images/shopping-cart.svg";
 import {
   products,
-  heartIcon,
   leafIcon,
   starIcon,
   clockIcon,
@@ -21,6 +20,7 @@ import {
 } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
+import HeartIcon from "@/src/icons/HeartIcon";
 
 import ReusableBadge from "./ReusableBadge";
 
@@ -217,7 +217,9 @@ const ProductList = () => {
                         width={20}
                         height={20}
                       />
-                      <div className="ml-[8px] font-normal">კალათაში დამატება</div>
+                      <div className="ml-[8px] font-normal">
+                        კალათაში დამატება
+                      </div>
                     </button>
                   ) : (
                     <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
@@ -247,7 +249,7 @@ const ProductList = () => {
                   )}
                   <div
                     onClick={() => setFilled((prevState) => !prevState)}
-                    className="p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
+                    className="group p-[11px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
                   >
                     {filled ? (
                       <Image
@@ -262,17 +264,9 @@ const ProductList = () => {
                         height={24}
                       />
                     ) : (
-                      <Image
-                        src={heartIcon}
-                        style={{
-                          outline: "none",
-                          height: "24px",
-                          width: "24px",
-                        }}
-                        alt="heart"
-                        width={24}
-                        height={24}
-                      />
+                      <div className="w-[24px] h-[24px]">
+                        <HeartIcon />
+                      </div>
                     )}
                   </div>
                 </div>

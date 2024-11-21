@@ -29,6 +29,23 @@ import FacebookIcon from "../assets/images/facebook.svg";
 import MessengerIcon from "../assets/images/messenger.svg";
 import InstagramIcon from "../assets/images/instagram.svg";
 
+import georgia from "../assets/images/Flags.svg";
+import france from "../assets/images/Flags (1).svg";
+import greece from "../assets/images/Flags (2).svg";
+import ukraine from "../assets/images/Flags (3).svg";
+import canada from "../assets/images/Flags (4).svg";
+import usa from "../assets/images/Flags (5).svg";
+import germany from "../assets/images/Flags (6).svg";
+import korea from "../assets/images/Flags (7).svg";
+import czech from "../assets/images/Flags (8).svg";
+import turkey from "../assets/images/Flags (9).svg";
+import bulgaria from "../assets/images/Flags (10).svg";
+import belarus from "../assets/images/Flags (11).svg";
+import italy from "../assets/images/Flags (12).svg";
+import spain from "../assets/images/Flags (13).svg";
+import sweden from "../assets/images/Flags (14).svg";
+import uk from "../assets/images/Flags (15).svg";
+
 import farmonaImg from "../assets/images/farmona.svg";
 import topicremImg from "../assets/images/topicrem.svg";
 import soskinImg from "../assets/images/soskin.svg";
@@ -36,8 +53,30 @@ import kloraneImg from "../assets/images/klorane.svg";
 import alphanovaImg from "../assets/images/alphanova.svg";
 import sunkissedImg from "../assets/images/sunkissed.png";
 import phytorelaxImg from "../assets/images/phytorelax.png";
+import larocheImg from "../assets/images/laroche.svg";
+import lorealImg from "../assets/images/loreal.svg";
+import aveneImg from "../assets/images/avene.svg";
+import ducrayImg from "../assets/images/ducray.svg";
+import vichyImg from "../assets/images/vichy.svg";
+import ceraveImg from "../assets/images/cerave.svg";
+import keraneImg from "../assets/images/kerane.svg";
 
 export {
+  italy,
+  sweden,
+  uk,
+  spain,
+  belarus,
+  bulgaria,
+  korea,
+  czech,
+  turkey,
+  france,
+  usa,
+  germany,
+  ukraine,
+  greece,
+  canada,
   heartIcon,
   leafIcon,
   starIcon,
@@ -55,7 +94,15 @@ export {
   kloraneImg,
   alphanovaImg,
   sunkissedImg,
+  larocheImg,
+  lorealImg,
   phytorelaxImg,
+  aveneImg,
+  vichyImg,
+  ducrayImg,
+  ceraveImg,
+  keraneImg,
+  georgia,
 };
 
 export const jobs = [
