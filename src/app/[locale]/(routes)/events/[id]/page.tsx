@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { Box, Typography, Link, Divider } from "@mui/material";
+import { useRef } from "react";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 import ProductCard from "@/src/components/ProductCard";
@@ -16,8 +16,6 @@ import rightPurple from "../../../../../assets/images/right_purple.svg";
 import saleIcon from "../../../../../assets/images/sale.svg";
 import caretRight from "../../../../../assets/images/caret-right.svg";
 import caretLeft from "../../../../../assets/images/caret-left.svg";
-
-import PaginationComponent from "@/src/components/Pagination";
 
 const products = [
   {
@@ -47,12 +45,11 @@ const products = [
 ];
 
 const Events = () => {
-  const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
+  const descriptionRef = useRef<HTMLDivElement | null>(null); // Reference to the description section
 
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab); // Update active tab on click
+  const handleScrollToDescription = () => {
+    descriptionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
   return (
     <div>
       <div className="xl:mx-[168px] web-xl:mx-[80px] pt-[48px]">
@@ -60,13 +57,15 @@ const Events = () => {
           <div className="text-[14px] text-[#8255E3] leading-[22px]">
             მთავარი
           </div>
-          <Typography color="#1B1D203D" mx={'8px'}>
+          <Typography color="#1B1D203D" mx={"8px"}>
             /
           </Typography>
           <div className="text-[14px] text-[#8255E3] leading-[22px]">
             ივენთები
           </div>
-          <Typography mx={'8px'} color="#1B1D203D">/</Typography>
+          <Typography mx={"8px"} color="#1B1D203D">
+            /
+          </Typography>
           <div className="text-[#696F8C] text-[14px] leading-[22px]">
             გლობალური პრემიუმ ბრენდის, <span className="">KORRESS</span>-ის
             ტესტირების დღეები IMPEX-ში გრძელდება!
@@ -154,7 +153,10 @@ const Events = () => {
               "საქართველოს სილამაზის დილერთა ასოციაციის" ორგანიზებით. წელს
               გამოფენას საიუბილეო თარიღი აქვს.
             </div>
-            <div className="text-[#8255E3] cursor-pointer mb-[24px]">
+            <div
+              className="text-[#8255E3] cursor-pointer mb-[24px]"
+              onClick={handleScrollToDescription}
+            >
               იხილე სრული აღწერა
             </div>
             <button className="p-[12px] w-[156px] text-[16px] bg-[#8255E3] hover:bg-[#503095] text-white rounded-lg">
@@ -162,7 +164,7 @@ const Events = () => {
             </button>
           </div>
         </div>
-        <div className="py-[48px]">
+        <div className="py-[48px]" ref={descriptionRef}>
           <h1 className="text-[32px] leading-[40px] font-bold mb-[24px]">
             აღწერა
           </h1>
@@ -201,7 +203,7 @@ const Events = () => {
         </div>
       </div>
       <div className="py-[80px] bg-[#FBFBFD]">
-        <div className='xl:mx-[168px] web-xl:mx-[80px]'>
+        <div className="xl:mx-[168px] web-xl:mx-[80px]">
           <div className="justify-between items-center flex mb-[48px]">
             <h1 className="text-[24px] leading-[32px] font-bold text-[#474D66]">
               სხვა ივენთები
