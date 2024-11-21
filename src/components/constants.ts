@@ -200,7 +200,7 @@ export const links = [
   { text: "კარიერა", redirect: "careers" },
   { text: "ვაკანსიები", redirect: "careers/list" },
   { href: "#", text: "მენეჯმენტი" },
-  { href: "#", text: "ჩვენი ბრენდები" },
+  { href: "#", text: "ჩვენი ბრენდები", redirect: "brands" },
 ];
 
 export const weekProducts = [
