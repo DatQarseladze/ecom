@@ -229,9 +229,8 @@ const Events = () => {
             </div>
           ))}
         </div>
-        <div className="relative">
-          <div className="flex  mt-[48px] gap-[16px]">
-            {/* Filter Button */}
+        <div className="relative pt-[48px]">
+          <div className="flex gap-[16px]">
             <div
               className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
               onClick={(e) => {
