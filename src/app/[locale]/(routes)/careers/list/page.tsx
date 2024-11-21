@@ -170,46 +170,24 @@ const CareersList = () => {
                   სამუშაო დროის მიხედვით
                 </h3>
                 <div className="flex gap-[8px]">
-                  <div
-                    onClick={() => handleFilter("სრული განაკვეთი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("სრული განაკვეთი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    სრული განაკვეთი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("ნახევარი განაკვეთი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ნახევარი განაკვეთი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ნახევარი განაკვეთი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("მოქნილი გრაფიკი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("მოქნილი გრაფიკი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    მოქნილი გრაფიკი
-                  </div>
-                  <div
-                    onClick={() => handleFilter("დროებითი")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("დროებითი")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    დროებითი
-                  </div>
+                  {[
+                    "სრული განაკვეთი",
+                    "ნახევარი განაკვეთი",
+                    "მოქნილი გრაფიკი",
+                    "დროებითი",
+                  ].map((filter) => (
+                    <div
+                      key={filter}
+                      onClick={() => handleFilter(filter)}
+                      className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
+                        selectedFilters.includes(filter)
+                          ? "bg-[#1B1D200F]"
+                          : "hover:bg-[#1B1D200F]"
+                      }`}
+                    >
+                      {filter}
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
@@ -217,36 +195,19 @@ const CareersList = () => {
                   მდებარეობის მიხედვით
                 </h3>
                 <div className="flex gap-[8px]">
-                  <div
-                    onClick={() => handleFilter("ადგილზე")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ადგილზე")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ადგილზე
-                  </div>
-                  <div
-                    onClick={() => handleFilter("ჰიბრიდული")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("ჰიბრიდული")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    ჰიბრიდული
-                  </div>
-                  <div
-                    onClick={() => handleFilter("დისტანციური")}
-                    className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                      selectedFilters?.includes("დისტანციური")
-                        ? "bg-[#1B1D200F]"
-                        : "hover:bg-[#1B1D200F]"
-                    }`}
-                  >
-                    დისტანციური
-                  </div>
+                  {["ადგილზე", "ჰიბრიდული", "დისტანციური"].map((location) => (
+                    <div
+                      key={location}
+                      onClick={() => handleFilter(location)}
+                      className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
+                        selectedFilters.includes(location)
+                          ? "bg-[#1B1D200F]"
+                          : "hover:bg-[#1B1D200F]"
+                      }`}
+                    >
+                      {location}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
