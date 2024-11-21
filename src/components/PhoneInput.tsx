@@ -22,11 +22,11 @@ const PhoneNumberInput = () => {
           cursor: "pointer",
         }}
       >
-        <div className="hover:bg-[#1B1D2008] py-[8px] px-[12px] rounded-[8px]">
+        <div className="hover:bg-[#1B1D2008] mb-[7px] ml-[16px] py-[8px] mr-[4px] px-[12px] rounded-[8px]">
           +995
         </div>
         <div
-          className="mx-2 self-center"
+          className="mb-[7px] self-center"
           aria-hidden="true"
           style={{
             width: "1px",
@@ -44,8 +44,8 @@ const PhoneNumberInput = () => {
         className="w-full h-[55px]"
         variant="standard"
         sx={{
-          paddingLeft: "16px",
-
+          marginLeft: "12px",
+          marginBottom: '2px',
           "& .MuiInput-underline:before": {
             borderBottom: "none",
           },
@@ -57,14 +57,15 @@ const PhoneNumberInput = () => {
           },
           "& .MuiInputLabel-root": {
             color: "#474D66",
-            marginLeft: "16px",
+            marginBottom: '50px'
+            // marginLeft: "12px",
           },
           "& .MuiInputLabel-root.Mui-focused": {
             color: "#8255E3",
           },
           "& .MuiInputBase-input": {
-            paddingBottom: "10px",
-            paddingLeft: "16px",
+            padding: "unset",
+            height: "24px",
           },
           "& input[type='number']::-webkit-outer-spin-button, & input[type='number']::-webkit-inner-spin-button":
             {
@@ -73,6 +74,9 @@ const PhoneNumberInput = () => {
             },
           "& input[type='number']": {
             MozAppearance: "textfield",
+          },
+          "& .MuiInputBase-input::placeholder": {
+            color: "red", // Set placeholder color to red
           },
         }}
       />
