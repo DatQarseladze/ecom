@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
-import farmonaImg from "../assets/images/farmona.svg";
-import topicremImg from "../assets/images/topicrem.svg";
-import soskinImg from "../assets/images/soskin.svg";
-import kloraneImg from "../assets/images/klorane.svg";
-import alphanovaImg from "../assets/images/alphanova.svg";
-import sunkissedImg from "../assets/images/sunkissed.png";
-import phytorelaxImg from "../assets/images/phytorelax.png";
+import {
+  farmonaImg,
+  topicremImg,
+  soskinImg,
+  kloraneImg,
+  alphanovaImg,
+  sunkissedImg,
+  phytorelaxImg,
+} from "@/src/components/constants";
 import rightIcon from "../assets/images/right.svg";
 
 const brandLogos = [
@@ -23,6 +26,8 @@ const brandLogos = [
 ];
 
 const BrandList = () => {
+  const route = useRouter();
+
   return (
     <div className="xl:mx-[168px] web-xl:mx-[80px] px-auto py-[48px]">
       <Box
@@ -64,6 +69,7 @@ const BrandList = () => {
             {index === brandLogos.length - 1 ? (
               <div
                 className="flex items-center justify-center"
+                onClick={() => route.push("/brands")}
                 style={{
                   whiteSpace: "nowrap",
                 }}

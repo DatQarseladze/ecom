@@ -29,6 +29,14 @@ import FacebookIcon from "../assets/images/facebook.svg";
 import MessengerIcon from "../assets/images/messenger.svg";
 import InstagramIcon from "../assets/images/instagram.svg";
 
+import farmonaImg from "../assets/images/farmona.svg";
+import topicremImg from "../assets/images/topicrem.svg";
+import soskinImg from "../assets/images/soskin.svg";
+import kloraneImg from "../assets/images/klorane.svg";
+import alphanovaImg from "../assets/images/alphanova.svg";
+import sunkissedImg from "../assets/images/sunkissed.png";
+import phytorelaxImg from "../assets/images/phytorelax.png";
+
 export {
   heartIcon,
   leafIcon,
@@ -41,6 +49,13 @@ export {
   voltIcon,
   truckIcon,
   wastingTimeIcon,
+  farmonaImg,
+  topicremImg,
+  soskinImg,
+  kloraneImg,
+  alphanovaImg,
+  sunkissedImg,
+  phytorelaxImg,
 };
 
 export const jobs = [
