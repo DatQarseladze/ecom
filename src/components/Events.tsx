@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import ProductCard from "./ProductCard";
@@ -8,7 +8,7 @@ import productImg2 from "../assets/images/zhana2.jpeg";
 import productImg3 from "../assets/images/zhana3.jpeg";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const products = [
   {
@@ -75,7 +75,13 @@ const ProductList = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              handleDetail={() => {
+                route.push("/events/2");
+              }}
+            />
           ))}
         </div>
       </div>
