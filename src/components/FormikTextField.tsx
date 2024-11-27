@@ -66,9 +66,6 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
             "& .MuiInputLabel-root.Mui-focused": {
               color: "#8255E3",
             },
-            "& .Mui-error .MuiInputBase-input": {
-              color: '#D14343'
-            },
             "& .MuiInputBase-input": {
               paddingBottom: "16px",
               paddingLeft: "16px",
