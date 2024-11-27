@@ -71,7 +71,7 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
               borderBottomColor: "#1B1D201A",
             },
             "& .MuiInputLabel-root": {
-              color: "#474D66",
+              color: "#474D66 !important",
               marginLeft: "16px",
               lineHeight: "unset",
             },
@@ -81,7 +81,7 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
             "& .MuiInputBase-input": {
               paddingBottom: "16px",
               paddingLeft: "16px",
-              color: "#101840",
+              color: "#101840 !important",
               lineHeight: "24px",
               paddingTop: "1px",
             },
