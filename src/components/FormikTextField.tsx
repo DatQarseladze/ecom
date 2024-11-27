@@ -46,7 +46,7 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
                     src={errorIcon}
                     width={18}
                     height={18}
-                    className="mr-[12px]"
+                    className="mr-[12px] w-[18px] h-[18px]"
                   />
                 </InputAdornment>
               ) : null,

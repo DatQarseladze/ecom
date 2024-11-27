@@ -298,7 +298,7 @@ const CareersList = () => {
                             />
                             <label
                               htmlFor="upload-resume"
-                              className={`rounded-[8px] w-full flex items-center py-[11px] justify-center text-[#172B4D] cursor-pointer ${values.cv ? "bg-[#F8F4FF] text-[#8255E3]" : "bg-transparent text-[#172B4D] border-[1px] border-solid border-[#1B1D201A]"}`}
+                              className={`rounded-[8px] w-full flex items-center py-[11px] justify-center text-[#172B4D] cursor-pointer ${errors.cv && touched.cv ? "border-[2px] border-solid border-[#D14343]" : ""} ${values.cv ? "bg-[#F8F4FF] text-[#8255E3]" : "bg-transparent text-[#172B4D] border-[1px] border-solid border-[#1B1D201A]"}`}
                             >
                               {values.cv ? (
                                 // Safe check: only access `name` if `cv` is not null
