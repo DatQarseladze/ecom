@@ -27,7 +27,7 @@ interface FormValues {
   email: string;
   phoneNumber: string;
   accept: boolean;
-  cv: File | null; // Correctly typed as File or null
+  cv: File | null;
 }
 
 const validationSchema = Yup.object({
@@ -363,9 +363,14 @@ const CareersList = () => {
                           <div className="flex flex-row gap-[8px]">
                             <Checkbox
                               checked={values.accept}
-                              onChange={(val) => setFieldValue('accept', !values.accept)}
+                              onChange={() =>
+                                setFieldValue("accept", !values.accept)
+                              }
                               sx={{
-                                color: errors.accept && touched.accept ? "#D14343" : "#1B1D201A",
+                                color:
+                                  errors.accept && touched.accept
+                                    ? "#D14343"
+                                    : "#1B1D201A",
                                 height: "20px",
                                 width: "20px",
                                 marginTop: "5px",

@@ -1,5 +1,6 @@
 import { Field } from "formik";
-import { TextField } from "@mui/material";
+import { TextField, InputAdornment } from "@mui/material";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline"; // Import the error icon
 
 interface FormikTextFieldProps {
   name: string;
@@ -36,6 +37,13 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
           variant={variant}
           fullWidth={fullWidth}
           error={Boolean(form.errors[name] && form.touched[name])}
+          InputProps={{
+            endAdornment: form.errors[name] && form.touched[name] ? (
+              <InputAdornment position="end">
+                <ErrorOutlineIcon className="mr-[12px]" sx={{ color: "#D14343" }} />
+              </InputAdornment>
+            ) : null,
+          }}
           helperText={
             form.errors[name] && form.touched[name]
               ? String(form.errors[name])
