@@ -362,8 +362,10 @@ const CareersList = () => {
                         <div className="flex mb-[24px] flex-col">
                           <div className="flex flex-row gap-[8px]">
                             <Checkbox
+                              checked={values.accept}
+                              onChange={(val) => setFieldValue('accept', !values.accept)}
                               sx={{
-                                color: values.accept ? "#1B1D201A" : "#D14343",
+                                color: errors.accept && touched.accept ? "#D14343" : "#1B1D201A",
                                 height: "20px",
                                 width: "20px",
                                 marginTop: "5px",
@@ -377,7 +379,7 @@ const CareersList = () => {
                               მონაცემების დამუშავებას
                             </span>
                           </div>
-                          {errors.accept && (
+                          {errors.accept && touched.accept && (
                             <div
                               style={{
                                 color: "#D14343",
