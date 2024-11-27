@@ -17,10 +17,35 @@ import rightArrow from "../../../../../assets/images/right-purple-arrow.svg";
 
 import PhoneNumberInput from "@/src/components/PhoneInput";
 
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import FormikTextField from "@/src/components/FormikTextField";
+
+const validationSchema = Yup.object({
+  firstName: Yup.string()
+    .matches(/^[ა-ჰ]+$/, "ტექსტი შეავსეთ ქართულად")
+    .required("სახელი აუცილებელია"),
+  lastName: Yup.string()
+    .matches(/^[ა-ჰ]+$/, "ტექსტი შეავსეთ ქართულად")
+    .required("გვარი აუცილებელია"),
+  email: Yup.string()
+    .email("არასწორი ელ.ფოსტა")
+    .required("ელ.ფოსტა აუცილებელია"),
+  cv: Yup.mixed()
+    .test("fileSize", "ფაილის ზომა არ უნდა აღემატებოდეს 5 MB-ს", (value) => {
+      const file = value as File;
+      return file && file.size <= 5 * 1024 * 1024; 
+    })
+    .required("ფაილის მიმაგრება სავალდებულოა"),
+  phoneNumber: Yup.string()
+    .matches(
+      /^[5][0-9]{8}$/,
+      "არასოწორი მობ.ნომერი"
+    )
+    .required("მობილური ნომერი აუცილებელია"),
+});
+
 const CareersList = () => {
-  const [search, setSearch] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const [fillColor, setFillColor] = useState("white");
   const [sent, setSent] = useState(false);
   const route = useRouter();
 
@@ -186,179 +211,168 @@ const CareersList = () => {
                     height={20}
                   />
                   <h2 className="text-[#101840]">
-                    განაცხადების მიღების ბოლო ვადაა 29 ნოემბერი, 2024 წელი.
+                    განაცხადების მიღების ბოლო ვადაა 29 ნოემბერი, 2024 წელი.
                   </h2>
                 </div>
               </div>
 
-              <div className="border-[#1B1D201A] w-full max-w-[528px] border-[1px] border-solid rounded-[8px] p-[39px]">
-                <div className="flex flex-col">
-                  <h1 className="text-[32px] leading-[40px] font-bold mb-[24px]">
-                    განაცხადის გაგზავნა
-                  </h1>
-                  <div>
-                    <div className="mb-[24px]">
-                      <TextField
-                        id="standard-basic"
-                        label="სახელი ქართულად"
-                        variant="standard"
-                        className="w-full h-[56px]"
-                        sx={{
-                          height: "56px",
-                          "& .MuiInput-underline:before": {
-                            borderBottomColor: "#1B1D201A", // Default state
-                          },
-                          "& .MuiInput-underline:after": {
-                            borderBottomColor: "#8255E3", // Focus state
-                          },
-                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
-                            {
-                              borderBottomColor: "#1B1D201A", // Hover state
-                            },
-                          "& .MuiInputLabel-root": {
-                            color: "#474D66", // Default label color
-                            marginLeft: "16px",
-                          },
-                          "& .MuiInputLabel-root.Mui-focused": {
-                            color: "#8255E3", // Focused label color
-                          },
-                          "& .MuiInputBase-input": {
-                            paddingBottom: "16px",
-                            paddingLeft: '16px',
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-[24px]">
-                      <TextField
-                        id="standard-basic"
-                        label="გვარი ქართულად"
-                        variant="standard"
-                        className="w-full"
-                        sx={{
-                          height: "56px",
-                          "& .MuiInput-underline:before": {
-                            borderBottomColor: "#1B1D201A",
-                          },
-                          "& .MuiInput-underline:after": {
-                            borderBottomColor: "#8255E3",
-                          },
-                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
-                            {
-                              borderBottomColor: "#1B1D201A",
-                            },
-                          "& .MuiInputLabel-root": {
-                            color: "#474D66",
-                            marginLeft: "16px",
-                          },
-                          "& .MuiInputLabel-root.Mui-focused": {
-                            color: "#8255E3",
-                          },
-                          "& .MuiInputBase-input": {
-                            paddingBottom: "16px",
-                            paddingLeft: '16px',
+              <Formik
+                initialValues={{
+                  firstName: "",
+                  lastName: "",
+                  email: "",
+                  cv: null,
+                  phoneNumber: "",
+                }}
+                validationSchema={validationSchema}
+                onSubmit={(values) => {
+                  setSent(true);
+                }}
+              >
+                {({ errors, touched, setFieldValue }) => {
+                  return (
+                    <Form className="border-[#1B1D201A] w-full max-w-[528px] border-[1px] border-solid rounded-[8px] p-[39px]">
+                      <div className="flex flex-col">
+                        <h1 className="text-[32px] leading-[40px] font-bold mb-[24px]">
+                          განაცხადის გაგზავნა
+                        </h1>
 
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-[24px]">
-                      <TextField
-                        id="standard-basic"
-                        label="ელ.ფოსტა"
-                        variant="standard"
-                        className="w-full"
-                        sx={{
-                          height: "56px",
-                          boxSizing: "border-box", // Includes padding in height
-                          "& .MuiInput-underline:before": {
-                            borderBottomColor: "#1B1D201A",
-                          },
-                          "& .MuiInput-underline:after": {
-                            borderBottomColor: "#8255E3",
-                          },
-                          "& .MuiInput-underline:hover:not(.Mui-disabled):before":
-                            {
-                              borderBottomColor: "#1B1D201A",
-                            },
-                          "& .MuiInputLabel-root": {
-                            color: "#474D66",
-                            marginLeft: "16px",
-                          },
-                          "& .MuiInputLabel-root.Mui-focused": {
-                            color: "#8255E3",
-                          },
-                          "& .MuiInputBase-input": {
-                            paddingBottom: "16px",
-                            paddingLeft: '16px',
-                          },
-                        }}
-                      />
-                    </div>
-                    <div className="mb-[24px] flex items-center">
-                      <PhoneNumberInput />
-                    </div>
-                  </div>
+                        <div className="mb-[24px]">
+                          <FormikTextField
+                            name="firstName"
+                            label="სახელი ქართულად"
+                          />
+                        </div>
 
-                  <button className="rounded-[8px] w-full flex items-center py-[11px] mb-[24px] justify-center border-[1px] border-solid border-[#1B1D201A] text-[#172B4D] hover:bg-[#1B1D200F]">
-                    <Image
-                      alt="upload icon"
-                      height={20}
-                      src={uploadIcon}
-                      className="mr-[8px]"
-                      width={20}
-                    />
-                    <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
-                  </button>
+                        <div className="mb-[24px]">
+                          <FormikTextField
+                            name="lastName"
+                            label="გვარი ქართულად"
+                          />
+                        </div>
 
-                  <Divider
-                    className="w-full"
-                    sx={{ backgroundColor: "##1B1D200F" }}
-                  />
-                </div>
-                <div className="flex flex-col pt-[23px]">
-                  <h3 className="text-[#474D66] font-medium mb-[4px]">
-                    განაცხადი მონაცემთა კონფიდენციალურობის შესახებ
-                  </h3>
-                  <h3 className="text-[#474D66] mb-[4px]">
-                    გავეცანი და ვეთანხმები. იხილეთ:
-                  </h3>
-                  <div className="flex items-center gap-[4px] mb-[24px]">
-                    <h4 className="cursor-pointer text-[#8255E3]">
-                      კონფიდენციალურობის პოლიტიკა
-                    </h4>
-                    <Image
-                      src={imageUpRight}
-                      alt="image up right"
-                      width={18}
-                      height={18}
-                    />
-                  </div>
-                  <div className="flex flex-row gap-[8px] mb-[24px]">
-                    <Checkbox
-                      sx={{
-                        color: "#1B1D201A",
-                        height: "20px",
-                        width: "20px",
-                        marginTop: "5px",
-                        "&.Mui-checked": {
-                          color: "#8255E3",
-                        },
-                      }}
-                    />
-                    <span className="text-[#474D66]">
-                      ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი მონაცემების
-                      დამუშავებას
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => setSent(true)}
-                    className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg"
-                  >
-                    განაცხადის გაგზავნა
-                  </button>
-                </div>
-              </div>
+                        <div className="mb-[24px]">
+                          <FormikTextField
+                            name="email"
+                            label="ელ.ფოსტა"
+                            type="email"
+                          />
+                        </div>
+
+                        <div className="mb-[24px] flex items-center flex-col">
+                          <PhoneNumberInput name="phoneNumber" />
+                          {errors.phoneNumber && touched.phoneNumber && (
+                            <div
+                              style={{
+                                color: "#D14343",
+                                fontSize: "14px",
+                                lineHeight: "22px",
+                                marginTop: "4px",
+                                paddingBottom: "8px",
+                                width: "100%",
+                                paddingLeft: "16px",
+                              }}
+                            >
+                              {errors.phoneNumber}
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="relative mb-[24px]">
+                          <div>
+                            <input
+                              type="file"
+                              accept=".csv,.doc,.docx,.xlsx"
+                              id="upload-resume"
+                              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                              onChange={(e) =>
+                                setFieldValue("cv", e.target.files?.[0])
+                              } // Add your file handling function here
+                            />
+                            <label
+                              htmlFor="upload-resume"
+                              className="rounded-[8px] w-full flex items-center py-[11px] justify-center border-[1px] border-solid border-[#1B1D201A] text-[#172B4D] hover:bg-[#1B1D200F] cursor-pointer"
+                            >
+                              <Image
+                                alt="upload icon"
+                                height={20}
+                                src={uploadIcon}
+                                className="mr-[8px]"
+                                width={20}
+                              />
+                              <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
+                            </label>
+                          </div>
+                          {errors.cv && touched.cv && (
+                            <div
+                              style={{
+                                color: "#D14343",
+                                fontSize: "14px",
+                                lineHeight: "22px",
+                                marginTop: "4px",
+                                paddingBottom: "8px",
+                                width: "100%",
+                                paddingLeft: "16px",
+                              }}
+                            >
+                              {errors.cv}
+                            </div>
+                          )}
+                        </div>
+
+                        <Divider
+                          className="w-full"
+                          sx={{ backgroundColor: "##1B1D200F" }}
+                        />
+                      </div>
+                      <div className="flex flex-col pt-[23px]">
+                        <h3 className="text-[#474D66] font-medium mb-[4px]">
+                          განაცხადი მონაცემთა კონფიდენციალურობის შესახებ
+                        </h3>
+                        <h3 className="text-[#474D66] mb-[4px]">
+                          გავეცანი და ვეთანხმები. იხილეთ:
+                        </h3>
+                        <div className="flex items-center gap-[4px] mb-[24px]">
+                          <h4 className="cursor-pointer text-[#8255E3]">
+                            კონფიდენციალურობის პოლიტიკა
+                          </h4>
+                          <Image
+                            src={imageUpRight}
+                            alt="image up right"
+                            width={18}
+                            height={18}
+                          />
+                        </div>
+                        <div className="flex flex-row gap-[8px] mb-[24px]">
+                          <Checkbox
+                            sx={{
+                              color: "#1B1D201A",
+                              height: "20px",
+                              width: "20px",
+                              marginTop: "5px",
+                              "&.Mui-checked": {
+                                color: "#8255E3",
+                              },
+                            }}
+                          />
+                          <span className="text-[#474D66]">
+                            ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი
+                            მონაცემების დამუშავებას
+                          </span>
+                        </div>
+
+                        <button
+                          type="submit"
+                          // onClick={() => setSent(true)}
+                          className="flex justify-center items-center p-[12px] flex-1 text-[16px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg"
+                        >
+                          განაცხადის გაგზავნა
+                        </button>
+                      </div>
+                    </Form>
+                  );
+                }}
+              </Formik>
             </div>
 
             <div className="my-[80px] rounded-[16px] py-[40px] flex flex-col items-center justify-center bg-[#FAFBFF]">
