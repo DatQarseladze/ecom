@@ -13,7 +13,7 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
           sx={{
             display: "flex",
             alignItems: "flex-end",
-            borderBottom: "1px solid #1B1D201A", // Add bottom border
+            borderBottom: `${Boolean(form.errors[name] && form.touched[name]) ? "2px" : "1px"} solid ${Boolean(form.errors[name] && form.touched[name]) ? "#D14343" : "#1B1D201A"}`, // Add bottom border
           }}
         >
           <Box
@@ -45,6 +45,7 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
             onChange={(e) => form.setFieldValue(name, e.target.value)} // Update formik state
             className="w-full h-[55px]"
             variant="standard"
+            error={Boolean(form.errors[name] && form.touched[name])}
             InputProps={{
               endAdornment:
                 form.errors[name] && form.touched[name] ? (
@@ -89,7 +90,14 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
               "& input[type='number']": {
                 MozAppearance: "textfield",
               },
-             
+              "& .MuiFormHelperText-root.Mui-error": {
+                color: "#D14343",
+                fontSize: "14px",
+                lineHeight: "22px",
+                marginTop: "4px",
+                paddingBottom: "8px",
+                paddingLeft: "16px",
+              },
             }}
           />
         </Box>
