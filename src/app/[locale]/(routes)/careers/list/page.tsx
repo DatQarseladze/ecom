@@ -20,7 +20,6 @@ const CareersList = () => {
   const dataRef = useRef<any>(null); // Reference for the element to detect outside clicks
   const [fillColor, setFillColor] = useState("white");
 
-  console.log(showData, "SHOW DATA");
 
   const handleOutsideClick = (e) => {
     // Check if the click is outside the data element

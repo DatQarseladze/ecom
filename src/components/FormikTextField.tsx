@@ -1,7 +1,7 @@
 import { Field } from "formik";
 import { TextField, InputAdornment } from "@mui/material";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline"; // Import the error icon
-
+import errorIcon from "@/src/assets/images/error-icon.svg";
+import Image from "next/image";
 interface FormikTextFieldProps {
   name: string;
   label: string;
@@ -38,11 +38,18 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
           fullWidth={fullWidth}
           error={Boolean(form.errors[name] && form.touched[name])}
           InputProps={{
-            endAdornment: form.errors[name] && form.touched[name] ? (
-              <InputAdornment position="end">
-                <ErrorOutlineIcon className="mr-[12px]" sx={{ color: "#D14343" }} />
-              </InputAdornment>
-            ) : null,
+            endAdornment:
+              form.errors[name] && form.touched[name] ? (
+                <InputAdornment position="end">
+                  <Image
+                    alt="error icon"
+                    src={errorIcon}
+                    width={18}
+                    height={18}
+                    className="mr-[12px]"
+                  />
+                </InputAdornment>
+              ) : null,
           }}
           helperText={
             form.errors[name] && form.touched[name]
@@ -60,16 +67,13 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
               borderBottomColor: "#D14343 !important",
               borderBottomWidth: "2px !important",
             },
-            "& .Mui-error:after": {
-              borderBottomColor: "#D14343 !important",
-            },
             "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
               borderBottomColor: "#1B1D201A",
             },
             "& .MuiInputLabel-root": {
               color: "#474D66",
               marginLeft: "16px",
-              lineHeight: 'unset',
+              lineHeight: "unset",
             },
             "& .MuiInputLabel-root.Mui-focused": {
               color: "#8255E3",
@@ -78,8 +82,8 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
               paddingBottom: "16px",
               paddingLeft: "16px",
               color: "#101840",
-              lineHeight: '24px',
-              paddingTop: '1px'
+              lineHeight: "24px",
+              paddingTop: "1px",
             },
             "& .MuiFormHelperText-root.Mui-error": {
               color: "#D14343",

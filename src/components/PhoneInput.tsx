@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, TextField } from "@mui/material";
+import { Box, InputAdornment, TextField } from "@mui/material";
 import { Field } from "formik";
+import errorIcon from "@/src/assets/images/error-icon.svg";
+import Image from "next/image";
 
 const PhoneNumberInput = ({ name }: { name: string }) => {
   return (
@@ -43,9 +45,23 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
             onChange={(e) => form.setFieldValue(name, e.target.value)} // Update formik state
             className="w-full h-[55px]"
             variant="standard"
+            InputProps={{
+              endAdornment:
+                form.errors[name] && form.touched[name] ? (
+                  <InputAdornment position="end">
+                    <Image
+                      alt="error icon"
+                      src={errorIcon}
+                      width={18}
+                      height={18}
+                      className="mr-[12px]"
+                    />
+                  </InputAdornment>
+                ) : null,
+            }}
             sx={{
               marginLeft: "12px",
-              marginBottom: '2px',
+              marginBottom: "2px",
               "& .MuiInput-underline:before": {
                 borderBottom: "none",
               },
@@ -73,11 +89,8 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
               "& input[type='number']": {
                 MozAppearance: "textfield",
               },
-              "& .MuiInputBase-input::placeholder": {
-                color: "red", // Set placeholder color to red
-              },
+             
             }}
-       
           />
         </Box>
       )}
