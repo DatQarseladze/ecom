@@ -54,7 +54,7 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
                       src={errorIcon}
                       width={18}
                       height={18}
-                      className="mr-[12px]"
+                      className="mr-[12px] h-[18px] w-[18px]"
                     />
                   </InputAdornment>
                 ) : null,
