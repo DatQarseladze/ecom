@@ -88,6 +88,7 @@ const Navigation = () => {
 
 const Header = () => {
   const [search, setSearch] = useState("");
+  const [fillColor, setFillColor] = useState("white");
 
   return (
     <header>
@@ -148,8 +149,12 @@ const Header = () => {
                 }}
                 InputProps={{
                   endAdornment: (
-                    <div className="cursor-pointer">
-                      <SearchIcon />
+                    <div
+                      className="cursor-pointer"
+                      onMouseEnter={() => setFillColor("#1B1D200F")}
+                      onMouseLeave={() => setFillColor("white")}
+                    >
+                      <SearchIcon fillColor={fillColor} />
                     </div>
                   ),
                 }}
