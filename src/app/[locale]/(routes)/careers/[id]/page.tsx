@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { TextField, Divider, Checkbox } from "@mui/material";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import uploadIcon from "../../../../../assets/images/upload.svg";
 import imageUpRight from "../../../../../assets/images/arrow_up_right.svg";
