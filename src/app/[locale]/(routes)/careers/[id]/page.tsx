@@ -21,7 +21,17 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikTextField from "@/src/components/FormikTextField";
 
+interface FormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  accept: boolean;
+  cv: File | null; // Correctly typed as File or null
+}
+
 const validationSchema = Yup.object({
+  accept: Yup.bool().isTrue("დაეთანხმეთ წესებს"),
   firstName: Yup.string()
     .matches(/^[ა-ჰ]+$/, "ტექსტი შეავსეთ ქართულად")
     .required("სახელი აუცილებელია"),
@@ -34,14 +44,11 @@ const validationSchema = Yup.object({
   cv: Yup.mixed()
     .test("fileSize", "ფაილის ზომა არ უნდა აღემატებოდეს 5 MB-ს", (value) => {
       const file = value as File;
-      return file && file.size <= 5 * 1024 * 1024; 
+      return file && file.size <= 5 * 1024 * 1024;
     })
     .required("ფაილის მიმაგრება სავალდებულოა"),
   phoneNumber: Yup.string()
-    .matches(
-      /^[5][0-9]{8}$/,
-      "არასოწორი მობ.ნომერი"
-    )
+    .matches(/^[0-9]{9}$/, "არასოწორი მობ.ნომერი")
     .required("მობილური ნომერი აუცილებელია"),
 });
 
@@ -216,9 +223,10 @@ const CareersList = () => {
                 </div>
               </div>
 
-              <Formik
+              <Formik<FormValues>
                 initialValues={{
                   firstName: "",
+                  accept: false,
                   lastName: "",
                   email: "",
                   cv: null,
@@ -229,7 +237,7 @@ const CareersList = () => {
                   setSent(true);
                 }}
               >
-                {({ errors, touched, setFieldValue }) => {
+                {({ errors, touched, setFieldValue, values }) => {
                   return (
                     <Form className="border-[#1B1D201A] w-full max-w-[528px] border-[1px] border-solid rounded-[8px] p-[39px]">
                       <div className="flex flex-col">
@@ -277,7 +285,6 @@ const CareersList = () => {
                             </div>
                           )}
                         </div>
-
                         <div className="relative mb-[24px]">
                           <div>
                             <input
@@ -291,16 +298,25 @@ const CareersList = () => {
                             />
                             <label
                               htmlFor="upload-resume"
-                              className="rounded-[8px] w-full flex items-center py-[11px] justify-center border-[1px] border-solid border-[#1B1D201A] text-[#172B4D] hover:bg-[#1B1D200F] cursor-pointer"
+                              className={`rounded-[8px] w-full flex items-center py-[11px] justify-center text-[#172B4D] cursor-pointer ${values.cv ? "bg-[#F8F4FF] text-[#8255E3]" : "bg-transparent text-[#172B4D] border-[1px] border-solid border-[#1B1D201A]"}`}
                             >
-                              <Image
-                                alt="upload icon"
-                                height={20}
-                                src={uploadIcon}
-                                className="mr-[8px]"
-                                width={20}
-                              />
-                              <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
+                              {values.cv ? (
+                                // Safe check: only access `name` if `cv` is not null
+                                <span className="truncate px-[50px]">
+                                  {(values.cv as File).name}
+                                </span>
+                              ) : (
+                                <>
+                                  <Image
+                                    alt="upload icon"
+                                    height={20}
+                                    src={uploadIcon}
+                                    className="mr-[8px]"
+                                    width={20}
+                                  />
+                                  <span>ატვირთეთ თქვენი რეზიუმე/CV</span>
+                                </>
+                              )}
                             </label>
                           </div>
                           {errors.cv && touched.cv && (
@@ -343,22 +359,39 @@ const CareersList = () => {
                             height={18}
                           />
                         </div>
-                        <div className="flex flex-row gap-[8px] mb-[24px]">
-                          <Checkbox
-                            sx={{
-                              color: "#1B1D201A",
-                              height: "20px",
-                              width: "20px",
-                              marginTop: "5px",
-                              "&.Mui-checked": {
-                                color: "#8255E3",
-                              },
-                            }}
-                          />
-                          <span className="text-[#474D66]">
-                            ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი
-                            მონაცემების დამუშავებას
-                          </span>
+                        <div className="flex mb-[24px] flex-col">
+                          <div className="flex flex-row gap-[8px]">
+                            <Checkbox
+                              sx={{
+                                color: values.accept ? "#1B1D201A" : "#D14343",
+                                height: "20px",
+                                width: "20px",
+                                marginTop: "5px",
+                                "&.Mui-checked": {
+                                  color: "#8255E3",
+                                },
+                              }}
+                            />
+                            <span className="text-[#474D66]">
+                              ვეთანხმები ამ განაცხადის მიზნებისთვის ჩემი
+                              მონაცემების დამუშავებას
+                            </span>
+                          </div>
+                          {errors.accept && (
+                            <div
+                              style={{
+                                color: "#D14343",
+                                fontSize: "14px",
+                                lineHeight: "22px",
+                                marginTop: "4px",
+                                paddingBottom: "8px",
+                                width: "100%",
+                                paddingLeft: "16px",
+                              }}
+                            >
+                              {errors.accept}
+                            </div>
+                          )}
                         </div>
 
                         <button
