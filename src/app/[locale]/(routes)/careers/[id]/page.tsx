@@ -286,7 +286,12 @@ const CareersList = () => {
                           )}
                         </div>
                         <div className="relative mb-[24px]">
-                          <div>
+                          <div
+                            className={`rounded-[8px] w-full flex items-center py-[11px] justify-center text-[#172B4D] cursor-pointer
+                            ${values.cv ? "bg-[#F8F4FF] text-[#8255E3] hover:bg-[#E0D1FF]" : "bg-transparent text-[#172B4D] border-[1px] border-solid border-[#1B1D201A]"}
+                            ${errors.cv && touched.cv ? "border-[2px] border-solid border-[#D14343]" : ""}
+                         `}
+                          >
                             <input
                               type="file"
                               accept=".csv,.doc,.docx,.xlsx"
@@ -294,15 +299,15 @@ const CareersList = () => {
                               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                               onChange={(e) =>
                                 setFieldValue("cv", e.target.files?.[0])
-                              } // Add your file handling function here
+                              }
                             />
                             <label
+                              className="w-full cursor-pointer flex items-center justify-center"
                               htmlFor="upload-resume"
-                              className={`rounded-[8px] w-full flex items-center py-[11px] justify-center text-[#172B4D] cursor-pointer ${errors.cv && touched.cv ? "border-[2px] border-solid border-[#D14343]" : ""} ${values.cv ? "bg-[#F8F4FF] text-[#8255E3]" : "bg-transparent text-[#172B4D] border-[1px] border-solid border-[#1B1D201A]"}`}
+                              // Keep hover:bg-[red] here
                             >
                               {values.cv ? (
-                                // Safe check: only access `name` if `cv` is not null
-                                <span className="truncate px-[50px]">
+                                <span className="cursor-pointer truncate px-[50px]">
                                   {(values.cv as File).name}
                                 </span>
                               ) : (
@@ -319,6 +324,7 @@ const CareersList = () => {
                               )}
                             </label>
                           </div>
+
                           {errors.cv && touched.cv && (
                             <div
                               style={{
