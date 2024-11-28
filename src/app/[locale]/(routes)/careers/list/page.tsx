@@ -1,30 +1,31 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { TextField } from "@mui/material";
 
-import productImg from "../../../../../assets/images/careers_list.svg";
-import filterIcon from "../../../../../assets/images/filter.svg";
-import closeTag from "../../../../../assets/images/close_tag.svg";
+import productImg from "@/src/assets/images/careers_list.svg";
+import filterIcon from "@/src/assets/images/filter.svg";
 import SearchIcon from "@/src/icons/SearchIcon";
 import PaginationComponent from "@/src/components/Pagination";
 import JobPost from "@/src/components/JobPost";
-import { jobs } from "@/src/components/constants";
+import {
+  categoryOptions,
+  jobs,
+  locationOptions,
+} from "@/src/components/constants";
 import CloseTagIcon from "@/src/icons/CloseTagIcon";
+import DropdownSelect from "@/src/components/Dropdown";
 
 const CareersList = () => {
-  const [activeTab, setActiveTab] = useState<string>("ongoing"); // Initial active tab
   const [search, setSearch] = useState("");
-  const [showData, setShowData] = useState(false); // State to toggle visibility of the data
+  const [showData, setShowData] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const dataRef = useRef<any>(null); // Reference for the element to detect outside clicks
+  const dataRef = useRef<any>(null);
   const [fillColor, setFillColor] = useState("white");
 
-
   const handleOutsideClick = (e) => {
-    // Check if the click is outside the data element
     if (dataRef.current && !dataRef?.current?.contains(e.target)) {
-      setShowData(false); // Close the data when clicking outside
+      setShowData(false);
     }
   };
 
@@ -33,7 +34,6 @@ const CareersList = () => {
       document.addEventListener("click", handleOutsideClick);
     }
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -48,6 +48,21 @@ const CareersList = () => {
       setSelectedFilters((prevState) => [...prevState, filter]);
     }
   };
+
+  const handleSingleFilter = useCallback((item, options) => {
+    setSelectedFilters((prevFilters) => {
+      const newFilters = [...prevFilters];
+
+      if (newFilters.includes(item)) {
+        return newFilters.filter((filter) => filter !== item);
+      } else {
+        const updatedFilters = newFilters.filter(
+          (filter) => !options.some((option) => option.name === filter)
+        );
+        return [...updatedFilters, item];
+      }
+    });
+  }, []);
 
   return (
     <div>
@@ -80,11 +95,10 @@ const CareersList = () => {
 
         <div className="relative">
           <div className="flex  mt-[48px] gap-[16px]">
-            {/* Filter Button */}
             <div
               className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
               onClick={(e) => {
-                e.stopPropagation(); // Prevent the click from propagating to the outside click handler
+                e.stopPropagation();
                 setShowData((prevState) => !prevState);
               }}
             >
@@ -106,25 +120,24 @@ const CareersList = () => {
               sx={{
                 width: 537,
                 "& .MuiOutlinedInput-root": {
-                  height: "56px", // Fix the input height to match the container
-                  borderRadius: "8px", // Add border radius
+                  height: "56px",
+                  borderRadius: "8px",
                   paddingRight: "4px",
                   "& fieldset": {
-                    border: "1px solid #1B1D201A", // Default border color
+                    border: "1px solid #1B1D201A",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#1B1D201A", // Border on hover
+                    borderColor: "#1B1D201A",
                   },
                   "&.Mui-focused fieldset": {
-                    borderColor: "#8255E3", // Focus border color
+                    borderColor: "#8255E3",
                   },
-                  // Add hover background color for the input root
                   "&:hover": {
-                    backgroundColor: "#1B1D2008", // Background color on hover
+                    backgroundColor: "#1B1D2008",
                   },
                 },
                 "& .MuiInputBase-input": {
-                  height: "100%", // Ensure input takes full height
+                  height: "100%",
                   padding: "16px 14px",
                 },
                 "& .MuiInputLabel-root": {
@@ -134,11 +147,11 @@ const CareersList = () => {
                   transition: "all 0.2s ease-in-out",
                 },
                 "& .MuiInputLabel-root.Mui-focused": {
-                  transform: "translate(14px, 4px) scale(0.85)", // Keep label inside borders on focus
-                  color: "#696F8C", // Change color on focus
+                  transform: "translate(14px, 4px) scale(0.85)",
+                  color: "#696F8C",
                 },
                 "& .MuiInputLabel-shrink": {
-                  backgroundColor: "#fff", // Keep background consistent
+                  backgroundColor: "#fff",
                 },
               }}
               InputProps={{
@@ -153,9 +166,26 @@ const CareersList = () => {
                 ),
               }}
             />
+            <div className="">
+              <DropdownSelect
+                attribute="name"
+                multiple
+                placeholder="აირჩიე კატეგორია"
+                value={selectedFilters}
+                options={categoryOptions}
+                onChange={handleFilter}
+              />
+            </div>
+            <div className="">
+              <DropdownSelect
+                attribute="name"
+                placeholder="აირჩიე მდებარეობა"
+                value={selectedFilters}
+                options={locationOptions}
+                onChange={handleSingleFilter}
+              />
+            </div>
           </div>
-
-          {/* Tooltip-like Data Element */}
           {showData && (
             <div
               ref={dataRef}
@@ -212,29 +242,31 @@ const CareersList = () => {
             </div>
           )}
         </div>
-        {selectedFilters?.length ? (
-          <div className="flex gap-[16px] mt-[24px] mb-[32px]">
-            <button
-              onClick={() => setSelectedFilters([])}
-              className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033]"
-            >
-              ფილტრის წაშლა
-            </button>
-            <div className="flex gap-[8px]">
-              {selectedFilters?.map((selectedFilter) => (
-                <div className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]">
-                  {selectedFilter}
-                  <div
-                    onClick={() => handleFilter(selectedFilter)}
-                    className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
-                  >
-                    <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
-                  </div>
+        <div className="flex gap-[16px] mt-[24px] mb-[32px] items-start">
+          <button
+            onClick={() => setSelectedFilters([])}
+            className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033] flex-shrink-0"
+          >
+            ფილტრის წაშლა
+          </button>
+          <div className="flex flex-wrap gap-[8px]">
+            {selectedFilters?.map((selectedFilter) => (
+              <div
+                key={selectedFilter}
+                className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]"
+              >
+                {selectedFilter}
+                <div
+                  onClick={() => handleFilter(selectedFilter)}
+                  className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
+                >
+                  <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        ) : null}
+        </div>
+
         <div className="pb-[48px]">
           <div className="grid grid-cols-1 md:grid-cols-1 gap-[24px] mt-[32px]">
             {jobs.map((job, index) => (
