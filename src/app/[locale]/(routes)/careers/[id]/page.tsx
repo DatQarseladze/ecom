@@ -248,6 +248,8 @@ const CareersList = () => {
                         <div className="mb-[24px]">
                           <FormikTextField
                             name="firstName"
+                            value={values.firstName}
+                            onClear={() => setFieldValue("firstName", "")}
                             label="სახელი ქართულად"
                           />
                         </div>
@@ -255,6 +257,8 @@ const CareersList = () => {
                         <div className="mb-[24px]">
                           <FormikTextField
                             name="lastName"
+                            onClear={() => setFieldValue("lastName", "")}
+                            value={values.lastName}
                             label="გვარი ქართულად"
                           />
                         </div>
@@ -262,13 +266,19 @@ const CareersList = () => {
                         <div className="mb-[24px]">
                           <FormikTextField
                             name="email"
+                            onClear={() => setFieldValue("email", "")}
+                            value={values.email}
                             label="ელ.ფოსტა"
                             type="email"
                           />
                         </div>
 
                         <div className="mb-[24px] flex items-center flex-col">
-                          <PhoneNumberInput name="phoneNumber" />
+                          <PhoneNumberInput
+                            onClear={() => setFieldValue("phoneNumber", "")}
+                            value={values.phoneNumber}
+                            name="phoneNumber"
+                          />
                           {errors.phoneNumber && touched.phoneNumber && (
                             <div
                               style={{

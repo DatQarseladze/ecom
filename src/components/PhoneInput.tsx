@@ -2,9 +2,18 @@ import React from "react";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import { Field } from "formik";
 import errorIcon from "@/src/assets/images/error-icon.svg";
+import xIcon from "@/src/assets/images/x_square.svg";
 import Image from "next/image";
 
-const PhoneNumberInput = ({ name }: { name: string }) => {
+const PhoneNumberInput = ({
+  onClear,
+  value,
+  name,
+}: {
+  name: string;
+  value: any;
+  onClear: any;
+}) => {
   return (
     <Field name={name} validateOnBlur={true} validateOnChange={true}>
       {({ field, form }: any) => (
@@ -55,7 +64,21 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
                       src={errorIcon}
                       width={18}
                       height={18}
-                      className="mr-[12px] h-[18px] w-[18px]"
+                      className="mr-[12px] w-[18px] h-[18px]"
+                    />
+                  </InputAdornment>
+                ) : value ? (
+                  <InputAdornment position="end">
+                    <Image
+                      onClick={() => {
+                        form.setFieldValue(name, ""); // Clear the value
+                        form.setFieldTouched(name, false); // Reset touched state
+                      }}
+                      alt="error icon"
+                      src={xIcon}
+                      width={20}
+                      height={20}
+                      className="cursor-pointer mr-[11px] w-[20px] h-[20px]"
                     />
                   </InputAdornment>
                 ) : null,

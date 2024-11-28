@@ -1,7 +1,9 @@
 import { Field } from "formik";
 import { TextField, InputAdornment } from "@mui/material";
 import errorIcon from "@/src/assets/images/error-icon.svg";
+import xIcon from "@/src/assets/images/x_square.svg";
 import Image from "next/image";
+
 interface FormikTextFieldProps {
   name: string;
   label: string;
@@ -11,6 +13,8 @@ interface FormikTextFieldProps {
   fullWidth?: boolean;
   validateOnBlur?: boolean;
   validateOnChange?: boolean;
+  value: any;
+  onClear: () => void;
 }
 
 const FormikTextField: React.FC<FormikTextFieldProps> = ({
@@ -22,6 +26,8 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
   fullWidth = true,
   validateOnBlur = true,
   validateOnChange = true,
+  value,
+  onClear,
 }) => {
   return (
     <Field
@@ -47,6 +53,21 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
                     width={18}
                     height={18}
                     className="mr-[12px] w-[18px] h-[18px]"
+                  />
+                </InputAdornment>
+              ) : value ? (
+                <InputAdornment position="end">
+                  <Image
+                    onClick={() => {
+                      form.setFieldValue(name, ""); // Clear the field value
+                      form.setFieldTouched(name, false); // Reset touched state
+                      // onClear();
+                    }}
+                    alt="clear icon"
+                    src={xIcon}
+                    width={20}
+                    height={20}
+                    className="cursor-pointer mr-[11px] w-[20px] h-[20px]"
                   />
                 </InputAdornment>
               ) : null,
