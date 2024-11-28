@@ -75,6 +75,9 @@ const PhoneNumberInput = ({ name }: { name: string }) => {
               "& .MuiInputLabel-root": {
                 color: "#474D66",
               },
+              "& .MuiInput-root": {
+                marginTop: "17px",
+              },
               "& .MuiInputLabel-root.Mui-focused": {
                 color: "#8255E3",
               },
