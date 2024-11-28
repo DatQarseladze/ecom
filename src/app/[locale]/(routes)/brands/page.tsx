@@ -246,7 +246,12 @@ const Events = () => {
               />
               <div>ფილტრი</div>
             </div>
-            <CustomTextField search={search} setSearch={setSearch} />
+            <CustomTextField
+              width={720}
+              placeholder={"ჩაწერე სასურველი ბრენდი"}
+              search={search}
+              setSearch={setSearch}
+            />
           </div>
           {/* Tooltip-like Data Element */}
           {showData && (
@@ -317,7 +322,7 @@ const Events = () => {
             <button
               onClick={() => setSelectedFilters([])}
               className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033] h-[34px] whitespace-nowrap"
-              >
+            >
               ფილტრის წაშლა
             </button>
             <div className="flex flex-wrap gap-[8px]">

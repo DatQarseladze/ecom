@@ -15,6 +15,7 @@ import {
 } from "@/src/components/constants";
 import CloseTagIcon from "@/src/icons/CloseTagIcon";
 import DropdownSelect from "@/src/components/Dropdown";
+import CustomTextField from "@/src/components/CustomTextfield";
 
 const CareersList = () => {
   const [search, setSearch] = useState("");
@@ -110,81 +111,28 @@ const CareersList = () => {
               />
               <div>ფილტრი</div>
             </div>
-            <TextField
-              fullWidth
-              value={search}
-              label="მოძებნე სასურველი ვაკანსია"
+            <CustomTextField
               placeholder="მოძებნე სასურველი ვაკანსია"
-              InputLabelProps={{ shrink: false }}
-              onChange={(e) => setSearch(e.target.value)}
-              sx={{
-                width: 537,
-                "& .MuiOutlinedInput-root": {
-                  height: "56px",
-                  borderRadius: "8px",
-                  paddingRight: "4px",
-                  "& fieldset": {
-                    border: "1px solid #1B1D201A",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#1B1D201A",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#8255E3",
-                  },
-                  "&:hover": {
-                    backgroundColor: "#1B1D2008",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  height: "100%",
-                  padding: "16px 14px",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "#474D66",
-                  fontSize: "16px",
-                  lineHeight: "24px",
-                  transition: "all 0.2s ease-in-out",
-                },
-                "& .MuiInputLabel-root.Mui-focused": {
-                  transform: "translate(14px, 4px) scale(0.85)",
-                  color: "#696F8C",
-                },
-                "& .MuiInputLabel-shrink": {
-                  backgroundColor: "#fff",
-                },
-              }}
-              InputProps={{
-                endAdornment: (
-                  <div
-                    className="cursor-pointer"
-                    onMouseEnter={() => setFillColor("#1B1D200F")}
-                    onMouseLeave={() => setFillColor("white")}
-                  >
-                    <SearchIcon fillColor={fillColor} />
-                  </div>
-                ),
-              }}
+              search={search}
+              setSearch={setSearch}
+              width={537}
             />
-            <div className="">
-              <DropdownSelect
-                attribute="name"
-                multiple
-                placeholder="აირჩიე კატეგორია"
-                value={selectedFilters}
-                options={categoryOptions}
-                onChange={handleFilter}
-              />
-            </div>
-            <div className="">
-              <DropdownSelect
-                attribute="name"
-                placeholder="აირჩიე მდებარეობა"
-                value={selectedFilters}
-                options={locationOptions}
-                onChange={handleSingleFilter}
-              />
-            </div>
+
+            <DropdownSelect
+              attribute="name"
+              multiple
+              placeholder="აირჩიე კატეგორია"
+              value={selectedFilters}
+              options={categoryOptions}
+              onChange={handleFilter}
+            />
+            <DropdownSelect
+              attribute="name"
+              placeholder="აირჩიე მდებარეობა"
+              value={selectedFilters}
+              options={locationOptions}
+              onChange={handleSingleFilter}
+            />
           </div>
           {showData && (
             <div

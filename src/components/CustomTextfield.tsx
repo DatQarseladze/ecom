@@ -2,20 +2,20 @@ import { useState } from "react";
 import { TextField } from "@mui/material";
 import SearchIcon from "@/src/icons/SearchIcon";
 
-const CustomTextField = ({ search, setSearch }) => {
+const CustomTextField = ({ width, placeholder, search, setSearch }) => {
   const [fillColor, setFillColor] = useState("white");
 
   return (
     <TextField
       fullWidth
       value={search}
-      label="ჩაწერე სასურველი ბრენდი"
+      label={placeholder}
       InputLabelProps={{
         shrink: !!search || undefined, // Ensure label stays inside on focus or with value
       }}
       onChange={(e) => setSearch(e.target.value)}
       sx={{
-        width: 720,
+        width: width,
         "& legend": {
           display: "none",
         },
