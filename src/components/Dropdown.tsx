@@ -10,9 +10,12 @@ const DropdownSelect = ({
   value,
   options,
   multiple = false,
+  withFlag = false,
+  withPagination = false,
 }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [optionsPerRow, setOptionsPerRow] = useState<number>(withPagination ? 9 : 1000)
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -60,7 +63,7 @@ const DropdownSelect = ({
       {dropdownVisible && (
         <div className="absolute left-0 z-10 w-full mt-[-6px] border border-t-0 rounded-b-[6px] bg-white shadow-lg max-h-[300px] overflow-y-auto">
           <div className="w-full px-[8px] pb-[16px]">
-            {options.map((option) => (
+            {options.slice(0, optionsPerRow).map((option) => (
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
@@ -87,13 +90,26 @@ const DropdownSelect = ({
                     }}
                   />
                 )}
-                <span
-                  className="text-[#101840] pl-[16px]"
-                >
-                  {option[attribute]}
-                </span>
+                {withFlag ? (
+                  <div className="pl-[16px] flex items-center gap-[8px]">
+                    <div>
+                      <Image
+                        alt="flag"
+                        src={option.flag}
+                        width="16"
+                        height="10.67"
+                      />
+                    </div>
+                    <span className="text-[#101840]">{option[attribute]}</span>
+                  </div>
+                ) : (
+                  <span className="text-[#101840] pl-[16px]">
+                    {option[attribute]}
+                  </span>
+                )}
               </div>
             ))}
+            {withPagination && <button onClick={() => setOptionsPerRow(prevState => prevState + 10)} className="font-medium text-[#8255E3] hover:bg-[#EDE3FF] rounded-[6px] py-[8px] px-[16px]">მეტის ნახვა</button>}
           </div>
         </div>
       )}

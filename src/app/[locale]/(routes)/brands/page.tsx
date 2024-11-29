@@ -32,6 +32,8 @@ import {
   spain,
   uk,
   sweden,
+  brandCategoryOptions,
+  countriesOptions,
 } from "@/src/components/constants";
 import CloseTagIcon from "@/src/icons/CloseTagIcon";
 
@@ -61,6 +63,7 @@ const countries = [
 ];
 
 import PaginationComponent from "@/src/components/Pagination";
+import DropdownSelect from "@/src/components/Dropdown";
 
 const brandlogos = [
   { name: "CeraVe", logo: ceraveImg },
@@ -231,30 +234,33 @@ const Events = () => {
         </div>
         <div className="relative pt-[48px]">
           <div className="flex gap-[16px]">
-            <div
-              className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent the click from propagating to the outside click handler
-                setShowData((prevState) => !prevState);
-              }}
-            >
-              <Image
-                src={filterIcon}
-                width={20}
-                height={20}
-                alt="filter icon"
-              />
-              <div>ფილტრი</div>
-            </div>
             <CustomTextField
               width={720}
               placeholder={"ჩაწერე სასურველი ბრენდი"}
               search={search}
               setSearch={setSearch}
             />
+            <DropdownSelect
+              attribute="name"
+              multiple
+              placeholder="კატეგორიები"
+              value={selectedFilters}
+              options={brandCategoryOptions}
+              onChange={handleFilter}
+            />
+            <DropdownSelect
+              attribute="name"
+              multiple
+              placeholder="ქვეყანა"
+              value={selectedFilters}
+              options={countriesOptions}
+              onChange={handleFilter}
+              withFlag
+              withPagination
+            />
           </div>
           {/* Tooltip-like Data Element */}
-          {showData && (
+          {/* {showData && (
             <div
               ref={dataRef}
               style={{
@@ -315,7 +321,7 @@ const Events = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
         </div>
         {selectedFilters?.length ? (
           <div className="flex gap-[16px] mt-[24px] mb-[48px] items-start">

@@ -205,6 +205,37 @@ export const links = [
 
 export const locationOptions = [{ name: "თბილისი" }, { name: "რეგიონები" }];
 
+export const brandCategoryOptions = [
+  { name: "მედიკამენტები" },
+  { name: "საკვები დანამატები და ვიტამინები" },
+  { name: "სექსუალური ჯანმრთელობა" },
+  { name: "სილამაზე და ჰიგიენა" },
+  { name: "დეკორატიული კოსმეტიკა" },
+  { name: "დედა და ბავშვი" },
+  { name: "სპეციალური მოვლა" },
+  { name: "სამედიცინო ტექნიკა" },
+  { name: "სასაჩუქრე ნაკრებები" },
+];
+
+export const countriesOptions = [
+  { name: "საქართველო", flag: georgia },
+  { name: "საფრანგეთი", flag: france },
+  { name: "საბერძნეთი", flag: greece },
+  { name: "უკრაინა", flag: ukraine },
+  { name: "კანადა", flag: canada },
+  { name: "ამერიკა", flag: usa },
+  { name: "გერმანია", flag: germany },
+  { name: "კორეა", flag: korea },
+  { name: "ჩეხეთი", flag: czech },
+  { name: "თურქეთი", flag: turkey },
+  { name: "ბულგარეთი", flag: bulgaria },
+  { name: "ბელარუსი", flag: belarus },
+  { name: "იტალია", flag: italy },
+  { name: "ესპანეთი", flag: spain },
+  { name: "დიდი ბრიტანეთი", flag: uk },
+  { name: "შვედეთი", flag: sweden },
+];
+
 export const categoryOptions = [
   { name: "მონიტორინგი და ინსპექტირება" },
   { name: "სააფთიაქო ქსელი" },
