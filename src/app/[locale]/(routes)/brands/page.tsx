@@ -197,6 +197,21 @@ const Events = () => {
     }
   };
 
+  const handleSingleFilter = (item, options) => {
+    setSelectedFilters((prevFilters) => {
+      const newFilters = [...prevFilters];
+
+      if (newFilters.includes(item)) {
+        return newFilters.filter((filter) => filter !== item);
+      } else {
+        const updatedFilters = newFilters.filter(
+          (filter) => !options.some((option) => option === filter)
+        );
+        return [...updatedFilters, item];
+      }
+    });
+  };
+
   useEffect(() => {
     if (showData) {
       document.addEventListener("click", handleOutsideClick);
@@ -247,6 +262,7 @@ const Events = () => {
               value={selectedFilters}
               options={brandCategoryOptions}
               onChange={handleFilter}
+              backgroundColor="#FFFFFF00"
             />
             <DropdownSelect
               attribute="name"
@@ -257,71 +273,9 @@ const Events = () => {
               onChange={handleFilter}
               withFlag
               withPagination
+              backgroundColor="#FFFFFF00"
             />
           </div>
-          {/* Tooltip-like Data Element */}
-          {/* {showData && (
-            <div
-              ref={dataRef}
-              style={{
-                boxShadow: "0px 8px 40px -8px #172B4D14",
-              }}
-              className="absolute flex flex-col z-[30] bg-[#fff] w-[1584px] cursor-pointer rounded-[6px] border-[1px] gap-[24px] p-[24px] border-solid border-[#1B1D201A] top-[64px]"
-            >
-              <div>
-                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
-                  ქვეყნის მიხედვით
-                </h3>
-                <div className="flex flex-wrap gap-[8px]">
-                  {countries.map((filter) => (
-                    <div
-                      key={filter.name}
-                      onClick={() => handleFilter(filter.name)}
-                      className={`px-[11px] items-center gap-[6px]  flex py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                        selectedFilters.includes(filter.name)
-                          ? "bg-[#1B1D200F]"
-                          : "hover:bg-[#1B1D2008]"
-                      }`}
-                    >
-                      <Image
-                        src={filter.flag}
-                        width={24}
-                        height={16}
-                        alt="flag"
-                      />
-                      {filter.name}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-[#474D66] font-medium pl-[4px] mb-[8px]">
-                  კატეგორიების მიხედვით
-                </h3>
-                <div className="flex gap-[8px]">
-                  {[
-                    "მედიკამენტები",
-                    "საკვები დანამატები",
-                    "სილამაზე და თავის მოვლა",
-                    "დედა და ბავშვი",
-                    "სამედიცინო ტექნიკა",
-                  ].map((location) => (
-                    <div
-                      key={location}
-                      onClick={() => handleFilter(location)}
-                      className={`px-[11px] py-[9px] border-[1px] border-solid border-[#1B1D201A] rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] ${
-                        selectedFilters.includes(location)
-                          ? "bg-[#1B1D200F]"
-                          : "hover:bg-[#1B1D2008]"
-                      }`}
-                    >
-                      {location}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )} */}
         </div>
         {selectedFilters?.length ? (
           <div className="flex gap-[16px] mt-[24px] mb-[48px] items-start">
@@ -360,11 +314,10 @@ const Events = () => {
             <span
               key={letter}
               onClick={() => {
-                setSearch((prevState) =>
-                  prevState ? prevState + letter : letter
-                );
+                handleSingleFilter(letter, alphabet);
               }}
-              className="flex justify-center items-center rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] hover:bg-[#1B1D200F] cursor-pointer w-[48px] h-[48px]"
+              className={`flex justify-center items-center rounded-[8px] text-[20px] leading-[28px] text-[#696F8C] hover:bg-[#1B1D200F] cursor-pointer w-[48px] h-[48px]
+                 ${selectedFilters?.includes(letter) ? `bg-[#1B1D200F]` : ""}`}
             >
               {letter}
             </span>

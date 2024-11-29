@@ -12,10 +12,13 @@ const DropdownSelect = ({
   multiple = false,
   withFlag = false,
   withPagination = false,
+  backgroundColor = "",
 }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [optionsPerRow, setOptionsPerRow] = useState<number>(withPagination ? 9 : 1000)
+  const [optionsPerRow, setOptionsPerRow] = useState<number>(
+    withPagination ? 9 : 1000
+  );
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -47,9 +50,9 @@ const DropdownSelect = ({
   };
 
   return (
-    <div className="relative w-[436px] h-[56px]" ref={dropdownRef}>
+    <div className={`relative w-[436px] h-[56px] : ""}`} ref={dropdownRef}>
       <button
-        className="w-full flex items-center px-[8px] h-[56px] w-[436px] border rounded-[6px] text-left bg-white"
+        className={`w-full flex items-center px-[8px] h-[56px] w-[436px] border rounded-[6px] text-left  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
         <span className="pl-[16px]">{placeholder}</span>
@@ -109,7 +112,14 @@ const DropdownSelect = ({
                 )}
               </div>
             ))}
-            {withPagination && <button onClick={() => setOptionsPerRow(prevState => prevState + 10)} className="font-medium text-[#8255E3] hover:bg-[#EDE3FF] rounded-[6px] py-[8px] px-[16px]">მეტის ნახვა</button>}
+            {withPagination && (
+              <button
+                onClick={() => setOptionsPerRow((prevState) => prevState + 10)}
+                className="font-medium text-[#8255E3] hover:bg-[#EDE3FF] rounded-[6px] py-[8px] px-[16px]"
+              >
+                მეტის ნახვა
+              </button>
+            )}
           </div>
         </div>
       )}

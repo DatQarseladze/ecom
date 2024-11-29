@@ -23,6 +23,7 @@ const CustomTextField = ({ width, placeholder, search, setSearch }) => {
           height: "56px",
           borderRadius: "8px",
           paddingRight: "4px",
+          backgroundColor: '#FFFFFF00 !important',
           border: "1px solid #1B1D201A",
           "&.Mui-focused ": {
             border: "2px solid #8255E3",
