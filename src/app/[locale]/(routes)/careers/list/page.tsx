@@ -190,30 +190,32 @@ const CareersList = () => {
             </div>
           )}
         </div>
-        <div className="flex gap-[16px] mt-[24px] mb-[32px] items-start">
-          <button
-            onClick={() => setSelectedFilters([])}
-            className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033] flex-shrink-0"
-          >
-            ფილტრის წაშლა
-          </button>
-          <div className="flex flex-wrap gap-[8px]">
-            {selectedFilters?.map((selectedFilter) => (
-              <div
-                key={selectedFilter}
-                className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]"
-              >
-                {selectedFilter}
+        {!!selectedFilters?.length && (
+          <div className="flex gap-[16px] mt-[24px] mb-[32px] items-start">
+            <button
+              onClick={() => setSelectedFilters([])}
+              className="bg-[#1B1D200F] rounded-[4px] cursor-pointer text-[14px] leading-[22px] px-[12px] py-[5px] hover:bg-[#1B1D2033] flex-shrink-0"
+            >
+              ფილტრის წაშლა
+            </button>
+            <div className="flex flex-wrap gap-[8px]">
+              {selectedFilters?.map((selectedFilter) => (
                 <div
-                  onClick={() => handleFilter(selectedFilter)}
-                  className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
+                  key={selectedFilter}
+                  className="items-center flex gap-[4px] py-[3px] pl-[9px] pr-[3px] bg-[#FFFFFF00] text-[#101840] border-[1px] border-solid border-[#1B1D201A] rounded-[6px]"
                 >
-                  <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
+                  {selectedFilter}
+                  <div
+                    onClick={() => handleFilter(selectedFilter)}
+                    className="cursor-pointer hover:bg-[#1B1D200F] w-[22px] h-[22px]"
+                  >
+                    <CloseTagIcon className="fill-white group-hover:fill-[#1B1D200F]" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="pb-[48px]">
           <div className="grid grid-cols-1 md:grid-cols-1 gap-[24px] mt-[32px]">
