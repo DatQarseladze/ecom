@@ -46,7 +46,7 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
           InputProps={{
             endAdornment:
               form.errors[name] && form.touched[name] ? (
-                <InputAdornment position="end">
+                <InputAdornment className="relative top-[-18px]" position="end">
                   <Image
                     alt="error icon"
                     src={errorIcon}
@@ -56,7 +56,7 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
                   />
                 </InputAdornment>
               ) : value ? (
-                <InputAdornment position="end">
+                <InputAdornment className="relative top-[-18px]" position="end">
                   <Image
                     onClick={() => {
                       form.setFieldValue(name, ""); // Clear the field value
@@ -100,11 +100,14 @@ const FormikTextField: React.FC<FormikTextFieldProps> = ({
               color: "#8255E3",
             },
             "& .MuiInputBase-input": {
-              paddingBottom: "8px",
+              paddingBottom: "16px",
               paddingLeft: "16px",
               color: "#101840 !important",
               lineHeight: "24px",
               paddingTop: "1px",
+            },
+            "& .MuiInputBase-input:not(:placeholder-shown)": {
+              paddingBottom: "8px",
             },
             "& .MuiFormHelperText-root.Mui-error": {
               color: "#D14343",
