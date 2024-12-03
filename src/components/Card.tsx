@@ -139,6 +139,7 @@ const Card = ({
                   onClick={(e) => {
                     e.preventDefault();
                     handleCountChange(index, -1);
+                    setIsClicked(false);
                   }}
                   className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tl-[7px] rounded-bl-[7px]"
                 >
