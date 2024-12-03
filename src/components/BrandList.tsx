@@ -29,7 +29,7 @@ const BrandList = () => {
   const route = useRouter();
 
   return (
-    <div className="xl:mx-[168px] web-xl:mx-[80px] px-auto py-[48px]">
+    <div className="xl:px-[168px] web-xl:px-[80px] px-auto py-[48px] bg-[#fff]">
       <Box
         sx={{
           display: "flex",
