@@ -53,7 +53,7 @@ const ProductList = () => {
             >
               ყველას ნახვა
             </h3>
-            <div className="flex items-center">
+            <div className="flex items-cente gap-[4px]">
               <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
                 <Image
                   src={caretLeft}
