@@ -32,6 +32,15 @@ const Card = ({
   handleCountChange,
 }: ProductCardProps) => {
   const [filled, setFilled] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMouseDown = () => {
+    setIsClicked(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsClicked(false);
+  };
 
   return (
     <Box
@@ -107,8 +116,13 @@ const Card = ({
           >
             {!counts[index] ? (
               <button
-                onClick={() => handleCountChange(index, 1)}
-                className="flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] bg-[#8255E3] hover:bg-[#7143D1] text-white rounded-lg font-medium"
+                onClick={() => {
+                  setIsClicked(true);
+                  handleCountChange(index, 1);
+                }}
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                className={`flex justify-center items-center p-[12px] flex-1 text-[16px] mr-[12px] leading-[24px] ${isClicked ? "bg-[#503095]" : "bg-[#8255E3] hover:bg-[#7143D1]"}   text-white rounded-lg font-medium`}
               >
                 <Image
                   src={shoppingCartIcon}
@@ -117,7 +131,7 @@ const Card = ({
                   height={20}
                   style={{ outline: "none", height: "20px", width: "20px" }}
                 />
-                <div className="ml-[8px] font-normal">დამატება</div>
+                <div className="ml-[8px] font-normal">დამატებაw</div>
               </button>
             ) : (
               <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
