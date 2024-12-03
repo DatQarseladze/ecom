@@ -80,7 +80,7 @@ const Card = ({
           className="w-full h-[220px] transition-transform duration-300 hover:scale-110 hover:origin-top"
           alt={product.title}
         />
-        <div className="absolute bottom-[-8px] w-[63px] bg-[#8255E3] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
+        <div className="absolute bottom-[-8px] w-[63px] bg-[#9A6DF9] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
           {product.discount}
         </div>
       </div>
