@@ -1,4 +1,4 @@
-import productImg1 from "../assets/images/product.png";
+import productImg1 from "../assets/images/product.svg";
 import productImg2 from "../assets/images/product.png";
 import productImg3 from "../assets/images/product1.png";
 import productImg4 from "../assets/images/product2.png";
@@ -325,6 +325,22 @@ export const weekProducts = [
     originalPrice: "₾97.47",
     img: weeklyProductImg3,
   },
+  {
+    id: 8,
+    discount: "-42%",
+    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
+    price: "₾58.48",
+    originalPrice: "₾97.47",
+    img: weeklyProductImg3,
+  },
+  {
+    id: 9,
+    discount: "-42%",
+    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
+    price: "₾58.48",
+    originalPrice: "₾97.47",
+    img: weeklyProductImg3,
+  },
 ];
 
 export const products = [
@@ -354,6 +370,14 @@ export const products = [
   },
   {
     id: 4,
+    discount: "-42%",
+    title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
+    price: "₾58.48",
+    originalPrice: "₾97.47",
+    img: productImg4,
+  },
+  {
+    id: 5,
     discount: "-42%",
     title: "La Roche-Posay - ლა როშ-პოზე სკრაბი მგრძნობიარე კანისთვის 50 მლ",
     price: "₾58.48",
