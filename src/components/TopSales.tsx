@@ -1,28 +1,9 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
 import Image from "next/image";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
-import filledHeart from "../assets/images/filled-heart.svg";
-import shoppingCartIcon from "../assets/images/shopping-cart.svg";
-import {
-  products,
-  leafIcon,
-  starIcon,
-  clockIcon,
-  organIcon,
-  ratingIcon,
-  bestsellerIcon,
-  dotIcon,
-  voltIcon,
-  truckIcon,
-  wastingTimeIcon,
-} from "./constants";
-import MinusIcon from "@/src/icons/MinusIcon";
-import PlusIcon from "@/src/icons/PlusIcon";
-import HeartIcon from "@/src/icons/HeartIcon";
+import { products } from "./constants";
 
-import ReusableBadge from "./ReusableBadge";
 import Card from "./Card";
 
 const ProductList = () => {

@@ -1,38 +1,9 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
-import Image from "next/image";
-import heartIcon from "../assets/images/heart.svg";
-import leafIcon from "../assets/images/leaf.svg";
-import starIcon from "../assets/images/star.svg";
-import clockIcon from "../assets/images/clock.svg";
-import organIcon from "../assets/images/organ.svg";
-import ratingIcon from "../assets/images/rating.svg";
-import bestsellerIcon from "../assets/images/bestseller.svg";
-import dotIcon from "../assets/images/dot.svg";
-import voltIcon from "../assets/images/volt.svg";
-import truckIcon from "../assets/images/truck.svg";
-import shoppingCartIcon from "../assets/images/shopping-cart.svg";
-import wastingTimeIcon from "../assets/images/wasting-time.svg";
-import filledHeart from "../assets/images/filled-heart.svg";
-import ReusableBadge from "./ReusableBadge";
 import { weekProducts } from "./constants";
-import MinusIcon from "@/src/icons/MinusIcon";
-import PlusIcon from "@/src/icons/PlusIcon";
-import HeartIcon from "@/src/icons/HeartIcon";
 import Card from "./Card";
 
 const WeekSales = () => {
   const [counts, setCounts] = useState({});
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const handleMouseDown = (index, event) => {
-    if (event.target.closest("button")) return;
-    setActiveIndex(index);
-  };
-
-  const handleMouseUp = () => {
-    setActiveIndex(null);
-  };
 
   const handleCountChange = (index, change) => {
     setCounts((prevCounts) => {
