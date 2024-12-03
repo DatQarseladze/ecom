@@ -97,7 +97,7 @@ const Card = ({
 
         <div className="relative mt-[8px]">
           <h3
-            className={`text-[#101840] font-bold overflow-hidden text-ellipsis break-words line-clamp-2 group-hover:hidden ${counts[index] ? "hidden" : ""}`}
+            className={`text-[#101840] font-medium overflow-hidden text-ellipsis break-words line-clamp-2 group-hover:hidden ${counts[index] ? "hidden" : ""}`}
           >
             {product.title}
           </h3>
