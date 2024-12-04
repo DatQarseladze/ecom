@@ -1,189 +1,34 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { Box, Typography, Link, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import Image from "next/image";
+import {} from "@/src/components/constants";
 
 import {
-  farmonaImg,
-  topicremImg,
-  soskinImg,
-  aveneImg,
-  alphanovaImg,
-  larocheImg,
-  phytorelaxImg,
-  lorealImg,
-  ducrayImg,
-  vichyImg,
-  ceraveImg,
-  keraneImg,
-  georgia,
-  france,
-  usa,
-  germany,
-  ukraine,
-  greece,
-  canada,
-  korea,
-  czech,
-  turkey,
-  belarus,
-  bulgaria,
-  italy,
-  spain,
-  uk,
-  sweden,
+  brands,
+  brandlogos,
+  countries,
   brandCategoryOptions,
   countriesOptions,
 } from "@/src/components/constants";
 import CloseTagIcon from "@/src/icons/CloseTagIcon";
 
-import { useRouter } from "next/navigation";
-import filterIcon from "../../../../assets/images/filter.svg";
-import SearchIcon from "@/src/icons/SearchIcon";
 import CustomTextField from "@/src/components/CustomTextfield";
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("");
-
-const countries = [
-  { name: "საქართველო", flag: georgia },
-  { name: "საფრანგეთი", flag: france },
-  { name: "საბერძნეთი", flag: greece },
-  { name: "უკრაინა", flag: ukraine },
-  { name: "კანადა", flag: canada },
-  { name: "ამერიკა", flag: usa },
-  { name: "გერმანია", flag: germany },
-  { name: "კორეა", flag: korea },
-  { name: "ჩეხეთი", flag: czech },
-  { name: "თურქეთი", flag: turkey },
-  { name: "ბულგარეთი", flag: bulgaria },
-  { name: "ბელარუსი", flag: belarus },
-  { name: "იტალია", flag: italy },
-  { name: "ესპანეთი", flag: spain },
-  { name: "დიდი ბრიტანეთი", flag: uk },
-  { name: "შვედეთი", flag: sweden },
-];
 
 import PaginationComponent from "@/src/components/Pagination";
 import DropdownSelect from "@/src/components/Dropdown";
 
-const brandlogos = [
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Ducray", logo: ducrayImg },
-];
-
-const brands = [
-  { name: "CeraVe", logo: ceraveImg },
-  { name: "Topicrem", logo: topicremImg },
-  { name: "La Roche-Posay", logo: larocheImg },
-  { name: "L'Oreal", logo: lorealImg },
-  { name: "Korres", logo: keraneImg },
-  { name: "PhytoRelax", logo: phytorelaxImg },
-  { name: "Avène", logo: aveneImg },
-  { name: "Ducray", logo: ducrayImg },
-  { name: "Vichy", logo: vichyImg },
-  { name: "Alphanova", logo: alphanovaImg },
-  { name: "Saskin", logo: soskinImg },
-  { name: "Farmona", logo: farmonaImg },
-];
-
 const Events = () => {
-  const route = useRouter();
   const [search, setSearch] = useState("");
-
-  const [showData, setShowData] = useState(false); // State to toggle visibility of the data
+  const [showData, setShowData] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
-  const dataRef = useRef<any>(null); // Reference for the element to detect outside clicks
-  const [fillColor, setFillColor] = useState("white");
+  const dataRef = useRef<any>(null);
 
   const handleOutsideClick = (e) => {
-    // Check if the click is outside the data element
     if (dataRef.current && !dataRef?.current?.contains(e.target)) {
-      setShowData(false); // Close the data when clicking outside
+      setShowData(false);
     }
   };
 
@@ -217,11 +62,11 @@ const Events = () => {
       document.addEventListener("click", handleOutsideClick);
     }
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [showData]);
+
   return (
     <div className="xl:px-[168px] web-xl:px-[80px] bg-[#FBFBFD]">
       <div className="pt-[80px] pb-[24px]">
@@ -328,7 +173,7 @@ const Events = () => {
             className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[24px]"
             sx={{
               width: "100%",
-              flexWrap: "wrap", // Ensure content wraps to the next line
+              flexWrap: "wrap",
               "@media (max-width: 768px)": {
                 justifyContent: "center",
               },

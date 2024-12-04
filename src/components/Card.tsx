@@ -46,11 +46,10 @@ const Card = ({
     <Box
       key={product.id}
       sx={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
-      className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
+      className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] relative"
     >
       <div className="flex items-center flex-end w-full">
         <div className="flex w-full space-x-[4px]">
-          {/* Add dynamic badges based on index */}
           <ReusableBadge
             iconSrc={dotIcon}
             bgColor="#1F8951"
@@ -63,7 +62,6 @@ const Card = ({
                   : "ორგანული"
             }
           />
-          {/* More badges depending on index */}
           {index === 3 && (
             <ReusableBadge
               iconSrc={truckIcon}
@@ -89,7 +87,7 @@ const Card = ({
           className="w-full h-[220px] transition-transform duration-300 hover:scale-110 hover:origin-top"
           alt={product.title}
         />
-        <div className="absolute bottom-[-8px] w-[63px] bg-[#9A6DF9] text-white rounded-lg py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
+        <div className="absolute bottom-[-8px] w-[63px] bg-[#9A6DF9] text-white rounded-md py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
           {product.discount}
         </div>
       </div>
