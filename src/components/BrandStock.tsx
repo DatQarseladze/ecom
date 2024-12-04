@@ -67,7 +67,7 @@ const PromotionBanner = () => {
             alt="Promotion Product"
             width={505}
             height={505}
-            className="rounded-lg shadow-md mx-auto my-auto"
+            className="mx-auto my-auto h-full"
           />
         </div>
       </div>
