@@ -31,6 +31,7 @@ const BrandList = () => {
   return (
     <div className="xl:px-[168px] web-xl:px-[80px] px-auto py-[48px] bg-[#fff]">
       <Box
+        className="rounded-[8px]"
         sx={{
           display: "flex",
           width: "100%",
