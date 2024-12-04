@@ -49,7 +49,7 @@ const Card = ({
       className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
     >
       <div className="flex items-center flex-end w-full">
-        <div className="flex w-full space-x-2">
+        <div className="flex w-full space-x-[4px]">
           {/* Add dynamic badges based on index */}
           <ReusableBadge
             iconSrc={dotIcon}
