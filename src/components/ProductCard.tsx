@@ -30,7 +30,7 @@ const ProductCard = ({ product, handleDetail }: any) => {
         activeIndex ? "bg-[#f4f4f6]" : "bg-[#FFFFFF]"
       }`}
     >
-      <div className="absolute border-[1px] border-solid border-[#9A6DF9] top-[24px] px-[7px] bg-[#754FD1] left-[24px] flex items-center flex-col rounded-[8px] ">
+      <div className="absolute border-[1px] border-solid border-[#9A6DF9] top-[24px] px-[7px] bg-[#754FD1] left-[24px] flex items-center flex-col rounded-md ">
         <div className="text-white text-[32px] font-bold leading-[28px] pt-[9px] pb-[4px]">
           24
         </div>
