@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
 import {
@@ -27,6 +27,15 @@ const brandLogos = [
 
 const BrandList = () => {
   const route = useRouter();
+  const [isClicked, setIsClicked] = useState<{ [key: number]: boolean }>({});
+
+  const handleMouseDown = (id: number) => {
+    setIsClicked((prev) => ({ ...prev, [id]: true }));
+  };
+
+  const handleMouseUp = (id: number) => {
+    setIsClicked((prev) => ({ ...prev, [id]: false }));
+  };
 
   return (
     <div className="xl:px-[168px] web-xl:px-[80px] px-auto py-[48px] bg-[#fff]">
@@ -48,7 +57,9 @@ const BrandList = () => {
         {brandLogos.map((brand, index) => (
           <Box
             key={brand.id}
-            className="hover:bg-[#1B1D200F]"
+            onMouseDown={() => handleMouseDown(brand.id)}
+            onMouseUp={() => handleMouseUp(brand.id)}
+            className={` ${isClicked[brand.id] ? "bg-[#1B1D200F]" : "hover:bg-[#1B1D2008]"} `}
             sx={{
               display: "flex",
               alignItems: "center",
