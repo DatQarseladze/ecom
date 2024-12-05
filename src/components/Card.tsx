@@ -46,7 +46,7 @@ const Card = ({
     <Box
       key={product.id}
       sx={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
-      className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] relative"
+      className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
     >
       <div className="flex items-center flex-end w-full">
         <div className="flex w-full space-x-[4px]">

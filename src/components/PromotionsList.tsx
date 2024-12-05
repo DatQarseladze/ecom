@@ -112,15 +112,12 @@ const Promotions = () => {
         {products.map((product) => (
           <Box
             key={product.id}
-            className="rounded-lg cursor-pointer relative bg-[#FFFFFF]"
+            className="rounded-lg cursor-pointer relative bg-[#FFFFFF] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
             sx={{
               boxShadow: "0px 8px 40px -8px #172B4D14",
-              "&:hover": {
-                background: "#1B1D200F",
-              },
             }}
           >
-            <div className="absolute left-[24px] top-[24px] ">
+            <div className="absolute left-[24px] top-[24px]  ">
               <ReusableBadge
                 iconSrc={clockImg}
                 bgColor={"#F1C604"}
