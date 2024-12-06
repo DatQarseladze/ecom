@@ -26,7 +26,10 @@ const ReusableBadge = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex items-center justify-center">
-        <Image src={iconSrc} width={16} height={16} alt={`${label} icon`} />
+        <div className="flex items-center justify-center w-[16px] h-[16px]">
+
+        <Image src={iconSrc} alt={`${label} icon`} />
+        </div>
       </div>
       <p
         className="leading-[28px] text-white text-[14px]"
