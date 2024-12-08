@@ -13,6 +13,7 @@ const DropdownSelect = ({
   withFlag = false,
   withPagination = false,
   backgroundColor = "",
+  wrapperClassName = "",
 }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -50,12 +51,15 @@ const DropdownSelect = ({
   };
 
   return (
-    <div className={`relative w-[436px] h-[56px] : ""}`} ref={dropdownRef}>
+    <div
+      className={`relative w-[436px] h-[56px] ${wrapperClassName}`}
+      ref={dropdownRef}
+    >
       <button
         className={`w-full flex items-center px-[8px] h-[56px] w-[436px] border rounded-[6px] text-left  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
-        <span className="pl-[16px]">{placeholder}</span>
+        <span className="pl-[16px] text-[#474D66]">{placeholder}</span>
         <div
           className={`absolute right-[7px] p-[10px] rounded-[6px] hover:bg-[#1B1D200F] ${!dropdownVisible ? "" : "rotate-180"}`}
         >
