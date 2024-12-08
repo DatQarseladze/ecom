@@ -9,7 +9,7 @@ import heartIcon from "../assets/images/heart.svg";
 import creditCardIcon from "../assets/images/credit-card.svg";
 import personIcon from "../assets/images/person.svg";
 import burgerIcon from "../assets/images/burger.svg";
-import SearchIcon from "../icons/SearchIcon";
+import SearchIcon from "@/src/icons/SearchIcon";
 
 const Navigation = () => {
   const items = [

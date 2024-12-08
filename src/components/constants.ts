@@ -509,3 +509,235 @@ export const products = [
     img: productImg4,
   },
 ];
+
+export const regionOptions = [
+  {
+    name: "თბილისი",
+  },
+  {
+    name: "აფხაზეთი",
+  },
+  {
+    name: "აჭარა",
+  },
+  {
+    name: "გურია",
+  },
+  {
+    name: "იმერეთი",
+  },
+  {
+    name: "კახეთი",
+  },
+  {
+    name: "მცხეთა/მთიანეთი",
+  },
+  {
+    name: "რაჭა",
+  },
+  {
+    name: "სამეგრელო",
+  },
+  {
+    name: "სვანეთი",
+  },
+  {
+    name: "სამცხე-ჯავახეთი",
+  },
+  {
+    name: "ქვემო ქართლი",
+  },
+  {
+    name: "შიდა ქართლი",
+  },
+  {
+    name: "ცხინვალი",
+  },
+];
+
+export const cityOptions = [
+  {
+    name: "ახალციხე",
+  },
+  {
+    name: "გორი",
+  },
+  {
+    name: "საგარეჯო",
+  },
+  {
+    name: "მარნეული",
+  },
+  {
+    name: "ხაშური",
+  },
+  {
+    name: "რუსთავი",
+  },
+  {
+    name: "ბორჯომი",
+  },
+  {
+    name: "ბოლნისი",
+  },
+  {
+    name: "თელავი",
+  },
+  {
+    name: "გურჯაანი",
+  },
+  {
+    name: "წნორი",
+  },
+  {
+    name: "ლაგოდეხი",
+  },
+  {
+    name: "ქარელი",
+  },
+  {
+    name: "ახმეტა",
+  },
+  {
+    name: "გარდაბანი",
+  },
+  {
+    name: "სამტრედია",
+  },
+  {
+    name: "ზუგდიდი",
+  },
+  {
+    name: "ქუთაისი",
+  },
+  {
+    name: "ზესტაფონი",
+  },
+  {
+    name: "ოზურგეთი",
+  },
+  {
+    name: "ხონი",
+  },
+  {
+    name: "ხობი",
+  },
+  {
+    name: "ბათუმი",
+  },
+  {
+    name: "სენაკი",
+  },
+  {
+    name: "ხელვაჩაური",
+  },
+  {
+    name: "წყალტუბო",
+  },
+  {
+    name: "ქობულეთი",
+  },
+  {
+    name: "წალენჯიხა",
+  },
+  {
+    name: "ჩოხატაური",
+  },
+  {
+    name: "ზესტაფონი",
+  },
+  {
+    name: "საჩხერე",
+  },
+  {
+    name: "ლანჩხუთი",
+  },
+  {
+    name: "ფოთი",
+  },
+  {
+    name: "ჭიათურა",
+  },
+  {
+    name: "აბაშა",
+  },
+  {
+    name: "ტყიბული",
+  },
+  {
+    name: "ამბროლაური",
+  },
+  {
+    name: "ზუგდიდი",
+  },
+  {
+    name: "ჩხოროწყუ",
+  },
+];
+
+export const branches = [
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/b3e9/cb0c/d6b241a573987f63e7cdb9847928c08c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A0XWU6abnkeBcZU36cQc~PZI7O7YeEzqBS0CDDeSnAhEC7DgsNDjXPJzWUzujkmzCTD78xwyzhLyaXGWWwno6Ji3KOJ-X6MNtCvF3daJ82cOAPoPZQwKCt8xofUdzWNZIOUqleDkqVinRfNqqRuz8u-vqhOAZHFrst2o-917Dwiaikwli-b3eB7ka4uFYMaTqW9DoYUPg8Tbve7T2Q5U988CzAJj8rwKgn8co1aAx6o4F5-8y3LT~F7Ju58deCuX8akwOhDhO7T7iNtVQqj7zg-BIG00kEPYASXXgteuc4d0cIRIUEQT-HGW7b7XbweJU00iw22h8FIkYYB9thPKoQ__",
+    city: "თბილისი",
+    district: "ვაკე",
+    address: "1234 Address St.",
+    time: "08:30 - 23:45",
+  },
+];
