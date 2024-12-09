@@ -52,24 +52,24 @@ const LocationCard: React.FC<LocationCardProps> = ({
             <span className="text-[#101840]">08:30 - 23:45</span>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center mr-[20px] rounded-md w-[40px] h-[40px] hover:bg-[#1B1D200F]">
-        <Image
-          src={phoneIcon}
-          alt="phone"
-          width={20}
-          height={20}
-          className="w-[20px] h-[20px]"
-        />
-      </div>
-      <div className="flex justify-center items-center w-[40px] rounded-md h-[40px] hover:bg-[#1B1D200F]">
-        <Image
-          src={locationIcon}
-          alt="phone"
-          width={20}
-          height={20}
-          className="w-[20px] h-[20px]"
-        />
+        <div className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D200F]">
+          <Image
+            src={phoneIcon}
+            alt="phone"
+            width={20}
+            height={20}
+            className="w-[20px] h-[20px]"
+          />
+        </div>
+        <div className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D200F]">
+          <Image
+            src={locationIcon}
+            alt="phone"
+            width={20}
+            height={20}
+            className="w-[20px] h-[20px]"
+          />
+        </div>
       </div>
     </div>
   );
