@@ -118,7 +118,7 @@ const Branches = () => {
       </h1>
       <div className="flex flex-col gap-[16px]">
         <div className="flex gap-[16px]">
-          <div className="inline-flex border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-md py-[15px] pl-[15px] pr-[23px] bg-[#fff] items-center">
+          <div className="inline-flex border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-lg hover:bg-[#1B1D201F] active:bg-[#1B1D2033] cursor-pointer py-[15px] pl-[15px] pr-[23px] bg-[#fff] items-center">
             <Image
               src={gpsIcon}
               alt="location"
@@ -136,11 +136,12 @@ const Branches = () => {
               sx={{
                 borderRadius: "8px",
                 border: "transparent",
-                "&:hover": {
-                  backgroundColor: "#ffff",
-                },
+                "&:hover": {},
                 "& .MuiOutlinedInput-root": {
                   background: "#fff",
+                  "&:hover": {
+                    background: '#1B1D2008',
+                  },
                   "& fieldset": {
                     border: "1px solid #1B1D201A",
                   },
