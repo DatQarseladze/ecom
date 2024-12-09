@@ -23,6 +23,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
         "& .MuiPaginationItem-root:not(.MuiPaginationItem-previousNext)": {
           width: "48px", // Default width for numeric page items
           height: "48px", // Default height for numeric page items
+          borderRadius: '8px',
           display: "flex", // Flexbox for centering content
           alignItems: "center", // Vertically center content
           justifyContent: "center", // Horizontally center content
@@ -36,6 +37,8 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           backgroundColor: "#8255E3 !important", // Active page background color
           color: "white", // White text color for active page
           width: "48px", // Increased width for active page
+          borderRadius: '8px',
+
           height: "48px", // Increased height for active page
           borderColor: "#8255E3",
           // Hover effect for active page
@@ -112,7 +115,6 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           {...item}
         />
       )}
-      shape="rounded"
       color="primary"
       size="small"
     />
