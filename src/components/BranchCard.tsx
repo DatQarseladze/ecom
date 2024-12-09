@@ -27,11 +27,13 @@ const LocationCard: React.FC<LocationCardProps> = ({
   return (
     <div className="flex items-center cursor-pointer justify-between p-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[2px] border-b-[#1B1D2008] transition duration-200">
       <div className="flex items-center">
-        <img
-          src={image}
-          alt="location"
-          className="w-[132px] h-[80px] object-cover rounded-md"
-        />
+        <div className="pr-[16px]">
+          <img
+            src={image}
+            alt="location"
+            className="w-[132px] h-[80px] object-cover rounded-md"
+          />
+        </div>
         <div className="w-[374px] pl-[16px]">
           <span className="text-[#101840] pl-[48px]">{city}</span>
         </div>
@@ -52,10 +54,22 @@ const LocationCard: React.FC<LocationCardProps> = ({
         </div>
       </div>
       <div className="flex justify-center items-center mr-[20px] rounded-md w-[40px] h-[40px] hover:bg-[#1B1D200F]">
-        <Image src={phoneIcon} alt="phone" width={20} height={20} className="w-[20px] h-[20px]" />
+        <Image
+          src={phoneIcon}
+          alt="phone"
+          width={20}
+          height={20}
+          className="w-[20px] h-[20px]"
+        />
       </div>
       <div className="flex justify-center items-center w-[40px] rounded-md h-[40px] hover:bg-[#1B1D200F]">
-        <Image src={locationIcon} alt="phone" width={20} height={20} className="w-[20px] h-[20px]" />
+        <Image
+          src={locationIcon}
+          alt="phone"
+          width={20}
+          height={20}
+          className="w-[20px] h-[20px]"
+        />
       </div>
     </div>
   );
