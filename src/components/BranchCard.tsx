@@ -51,11 +51,11 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex justify-center mr-[20px] rounded-md w-[40px] h-[40px] hover:bg-[#1B1D200F]">
-        <Image src={phoneIcon} alt="phone" width={24} height={24} />
+      <div className="flex justify-center items-center mr-[20px] rounded-md w-[40px] h-[40px] hover:bg-[#1B1D200F]">
+        <Image src={phoneIcon} alt="phone" width={20} height={20} className="w-[20px] h-[20px]" />
       </div>
-      <div className="flex justify-center w-[40px] rounded-md h-[40px] hover:bg-[#1B1D200F]">
-        <Image src={locationIcon} alt="phone" width={24} height={24} />
+      <div className="flex justify-center items-center w-[40px] rounded-md h-[40px] hover:bg-[#1B1D200F]">
+        <Image src={locationIcon} alt="phone" width={20} height={20} className="w-[20px] h-[20px]" />
       </div>
     </div>
   );
