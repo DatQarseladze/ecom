@@ -48,6 +48,7 @@ const DropdownSelect = ({
       onChange(item);
     } else {
       onChange(item, options);
+      setDropdownVisible(false);
     }
   };
 
