@@ -51,8 +51,10 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-[20px]">
+      <div className="flex items-center pr-[20px]">
         <Image src={phoneIcon} alt="phone" width={24} height={24} />
+      </div>
+      <div className="flex items-center">
         <Image src={locationIcon} alt="phone" width={24} height={24} />
       </div>
     </div>

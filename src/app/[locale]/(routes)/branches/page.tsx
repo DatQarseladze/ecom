@@ -19,7 +19,6 @@ import {
   useJsApiLoader,
   InfoWindow,
 } from "@react-google-maps/api";
-
 import PaginationComponent from "@/src/components/Pagination";
 
 interface Office {
@@ -65,7 +64,7 @@ const offices: Office[] = [
 
 const Branches = () => {
   const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
-
+  const [maxIndex, setMaxIndex] = useState<number>(10);
   useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
@@ -335,20 +334,25 @@ const Branches = () => {
         ) : (
           <div>
             <div className="mt-[8x] flex flex-col border border-solid border-[#1B1D201A] rounded-lg">
-              {branches?.map((branch) => (
-                <BranchCard
-                  image={branch.image}
-                  city={branch.city}
-                  district={branch.district}
-                  address={branch.address}
-                  time={branch.time}
-                  isOpen={true}
-                  onPhoneClick={() => console.log("s")}
-                />
-              ))}
+              {branches
+                ?.filter((branch, index) => index <= maxIndex)
+                ?.map((branch) => (
+                  <BranchCard
+                    image={branch.image}
+                    city={branch.city}
+                    district={branch.district}
+                    address={branch.address}
+                    time={branch.time}
+                    isOpen={true}
+                    onPhoneClick={() => console.log("s")}
+                  />
+                ))}
             </div>
             <div className="mt-[24px] flex justify-center">
-              <button className="hover:bg-[#1B1D201F] active:bg-[#1B1D2033] bg-[#1B1D200F] rounded-lg text-[#101840] px-[24px] py-[16px]">
+              <button
+                onClick={() => setMaxIndex((prevState) => prevState + 10)}
+                className="hover:bg-[#1B1D201F] active:bg-[#1B1D2033] bg-[#1B1D200F] rounded-lg text-[#101840] px-[24px] py-[16px]"
+              >
                 იხილეთ მეტი
               </button>
             </div>
