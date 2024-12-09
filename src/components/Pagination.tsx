@@ -88,7 +88,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
             next: (props) => (
               <button
                 {...props}
-                className="text-[16px] leading-[24px] rounded-[4px] text-[#101840] py-[8px] border-none"
+                className="text-[16px] leading-[24px] rounded-[8px] text-[#101840] py-[8px] border-none"
                 style={{
                   minWidth: "auto",
                 }}
@@ -100,7 +100,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
             previous: (props) => (
               <button
                 {...props}
-                className="text-[16px] leading-[24px] rounded-[4px] text-[#101840] py-[8px] border-none "
+                className="text-[16px] leading-[24px] rounded-[8px] text-[#101840] py-[8px] border-none "
                 style={{
                   minWidth: "auto",
                 }}
