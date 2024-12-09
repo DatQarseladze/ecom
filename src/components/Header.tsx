@@ -32,7 +32,7 @@ const Navigation = () => {
     <nav className="xl:mx-[168px] web-xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
-        className="hover:text-black bg-[#8255E3] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
+        className="hover:text-black bg-[#8255E3] w-[180px] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
         aria-label="Open categories"
       >
         <Image
