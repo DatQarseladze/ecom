@@ -103,7 +103,13 @@ const Header = () => {
       <div className="mx-[168px] web-xl:mx-[80px]">
         <div className="mb-[8px] mt-[24px] flex items-center justify-between">
           <a href="/" aria-label="Home" className="cursor-pointer">
-            <Image src="/logo.svg" alt="PSP" height={48} width={170} />
+            <Image
+              src="/logo.svg"
+              alt="PSP"
+              width="0"
+              height="0"
+              className="w-[170px] h-[48px]"
+            />
           </a>
 
           <div className="flex items-center space-x-[16px]">
