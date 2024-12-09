@@ -223,7 +223,7 @@ const Branches = () => {
               />
             </div>
 
-            <span className="text-[#474D66]">რუკაზე ჩვენება</span>
+            <span className="text-[#101840]">რუკაზე ჩვენება</span>
           </div>
         </div>
         <div className="flex col gap-[8px]">
