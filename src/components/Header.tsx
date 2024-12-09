@@ -37,8 +37,8 @@ const Navigation = () => {
       >
         <Image
           src={burgerIcon}
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="burger"
           className="self-center"
         />
