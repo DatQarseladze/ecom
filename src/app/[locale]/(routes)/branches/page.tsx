@@ -140,7 +140,7 @@ const Branches = () => {
                 "& .MuiOutlinedInput-root": {
                   background: "#fff",
                   "&:hover": {
-                    background: '#1B1D2008',
+                    background: "#1B1D2008",
                   },
                   "& fieldset": {
                     border: "1px solid #1B1D201A",
@@ -212,16 +212,10 @@ const Branches = () => {
                     left: 3, // Default left position when unchecked
                     transition: "transform 0.3s ease", // Smooth movement when toggling
                   },
-
                   // When the switch is in the checked state
-                  "&.Mui-checked": {
-                    "& .MuiSwitch-thumb": {
-                      transform: "translateX(20px)", // Move thumb to the right on check (20px offset)
-                      backgroundColor: "#8255E3", // Thumb color when checked
-                    },
-                    "& .MuiSwitch-track": {
-                      backgroundColor: "#8255E3", // Track color when checked
-                    },
+                  "&.MuiSwitch-root .Mui-checked+.MuiSwitch-track": {
+                    backgroundColor: "#8255E3",
+                    opacity: 1,
                   },
                 }}
               />
