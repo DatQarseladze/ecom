@@ -66,7 +66,7 @@ const offices: Office[] = [
 const Branches = () => {
   const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
 
-   useJsApiLoader({
+  useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
     libraries: ["places"], // Use your API key
@@ -159,13 +159,12 @@ const Branches = () => {
                   }))
                 }
                 sx={{
-                  width: 44, // Track width
-                  height: 24, // Track height
-                  padding: 0, // Remove extra padding
+                  width: 44,
+                  height: 24,
+                  padding: 0,
 
-                  // Styling for the track
                   "& .MuiSwitch-track": {
-                    borderRadius: 12, // Rounded track corners
+                    borderRadius: 12,
                     backgroundColor: "#E0E0E0", // Track background color when unchecked
                     opacity: 1,
                     transition: "background-color 0.2s ease", // Smooth background color transition
@@ -201,22 +200,27 @@ const Branches = () => {
           </div>
         </div>
         <div className="flex col gap-[8px]">
-          <DropdownSelect
-            attribute="name"
-            placeholder="აირჩიე თბილისი/რეგიონი"
-            value={selectedFilters}
-            options={regionOptions}
-            onChange={() => console.log("ew")}
-            wrapperClassName="w-[638px]"
-          />
-          <DropdownSelect
-            attribute="name"
-            placeholder="აირჩიე ქალაქი/რაიონი"
-            value={selectedFilters}
-            options={cityOptions}
-            onChange={() => console.log("wqe")}
-            wrapperClassName="w-[638px]"
-          />
+          <div className="flex-1">
+            <DropdownSelect
+              attribute="name"
+              placeholder="აირჩიე თბილისი/რეგიონი"
+              value={selectedFilters}
+              options={regionOptions}
+              onChange={() => console.log("ew")}
+              wrapperClassName="w-full 2xl:max-w-[638px]"
+            />
+          </div>
+          <div className="flex-1">
+            <DropdownSelect
+              attribute="name"
+              placeholder="აირჩიე ქალაქი/რაიონი"
+              value={selectedFilters}
+              options={cityOptions}
+              onChange={() => console.log("wqe")}
+              wrapperClassName="w-full 2xl:max-w-[638px]"
+            />
+          </div>
+
           <div className="py-[15px] px-[15px] flex gap-[22px] bg-[#fff] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg">
             <div className="flex items-center gap-[8px]">
               <Checkbox
