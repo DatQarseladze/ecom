@@ -25,7 +25,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   onPhoneClick,
 }) => {
   return (
-    <div className="flex items-center cursor-pointer justify-between p-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[1px] border-b-[#1B1D2008] transition duration-200">
+    <div className="flex items-center cursor-pointer justify-between p-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200">
       <div className="flex items-center">
         <div className="pr-[16px]">
           <img
