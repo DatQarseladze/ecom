@@ -16,12 +16,12 @@ const Navigation = () => {
     { url: "en/meds", name: "მედიკამენტები" },
     { url: "en/beauty", name: "სილამაზე და მოვლა" },
     { url: "/en/parents", name: "დედა და ბავშვი" },
-    { url: "/en/events", name: "ივენთები" },
+    { url: "/events", name: "ივენთები" },
     { url: "/en/blogs", name: "ბლოგი" },
     { url: "en/spots", name: "აქციები" },
     { url: "en/outlets", name: "OUTLET" },
     { url: "en/contacts", name: "კონტაქტი" },
-    { url: "en/filials", name: "ფილიალები" },
+    { url: "/branches", name: "ფილიალები" },
   ];
 
   const route = useRouter();
@@ -56,8 +56,8 @@ const Navigation = () => {
                 : "text-gray-700 border-b-[2px] border-b-transparent"
             } ${item?.name === "OUTLET" ? "font-medium" : ""}`}
             onClick={() => {
-              if (item?.url === "/en/events") {
-                route.push("/events");
+              if (item?.url) {
+                route.push(item.url);
               }
               setActiveTab(item?.url);
             }}

@@ -13,16 +13,17 @@ const config: Config = {
       screens: {
         ...require("tailwindcss/defaultTheme").screens,
         "web-xl": { max: "1890px" },
+        "2xl": "1920px",
       },
       spacing: {
-        "22.47": "22.47px", // Custom inner padding
+        "22.47": "22.47px",
       },
       borderWidth: {
-        "5.62": "5.62px", // Custom border width
+        "5.62": "5.62px",
       },
       boxShadow: {
         "outer-borders":
-          "0 0 0 10px #ffffff, 0 0 0 20px #dcdcdc, 0 0 0 30px #ffffff", // Custom outer borders
+          "0 0 0 10px #ffffff, 0 0 0 20px #dcdcdc, 0 0 0 30px #ffffff",
       },
       variants: {
         fill: ["hover", "focus"],

@@ -20,8 +20,6 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-import markerIcon from "@/src/assets/images/marker-icon.svg";
-import markerIcon1 from "@/src/assets/images/marker-icon.png";
 import PaginationComponent from "@/src/components/Pagination";
 
 interface Office {
@@ -36,7 +34,7 @@ interface Office {
 
 const containerStyle = {
   width: "100%",
-  height: "500px",
+  height: "704px",
 };
 
 const center = {
@@ -65,18 +63,10 @@ const offices: Office[] = [
   },
 ];
 
-const label = { inputProps: { "aria-label": "Switch demo" } };
-
 const Branches = () => {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
   const [selectedMarker, setSelectedMarker] = useState<Office | null>(null);
 
-  const { isLoaded } = useJsApiLoader({
+   useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyCN9z63mq21nLn8zCiqs_TS5nRtZfw17uM",
     libraries: ["places"], // Use your API key
@@ -106,13 +96,13 @@ const Branches = () => {
             />
             <span>ჩემთან ახლოს</span>
           </div>
-          <div>
+          <div className="flex-1">
             <TextField
               variant="outlined"
               placeholder="მოძებნე აფთიაქი"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-[1153px] h-[56px] xs:w-[120px] sm:w-[200px] md:w-[300px] lg:w-[500px] xl:w-[1153px]"
+              className="w-full max-w-[1153px] min-w-[300px] h-[56px] 2xl:max-w-[1532px]"
               sx={{
                 borderRadius: "8px",
                 border: "transparent",
