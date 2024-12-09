@@ -193,12 +193,14 @@ const Branches = () => {
                   width: 44,
                   height: 24,
                   padding: 0,
-
+                  "&:hover .MuiSwitch-track": {
+                    backgroundColor: "#1B1D201F",
+                  },
                   "& .MuiSwitch-track": {
                     borderRadius: 12,
-                    backgroundColor: "#E0E0E0", // Track background color when unchecked
+                    backgroundColor: "#1B1D200F",
                     opacity: 1,
-                    transition: "background-color 0.2s ease", // Smooth background color transition
+                    transition: "background-color 0.2s ease",
                   },
 
                   // Styling for the thumb (the circular part)
@@ -304,20 +306,20 @@ const Branches = () => {
               <Marker
                 key={office.id}
                 icon={{
-                  url: "https://i.ibb.co/b5RHMzp/impex-branded-map-pin.png", // Correct path to the icon
-                  scaledSize: new window.google.maps.Size(40, 40), // You can scale it if needed
-                  origin: new window.google.maps.Point(0, 0), // Adjust if necessary
-                  anchor: new window.google.maps.Point(20, 40), // Anchor at the bottom of the icon
+                  url: "https://i.ibb.co/b5RHMzp/impex-branded-map-pin.png",
+                  scaledSize: new window.google.maps.Size(40, 40),
+                  origin: new window.google.maps.Point(0, 0),
+                  anchor: new window.google.maps.Point(20, 40),
                 }}
                 position={office.position}
-                onClick={() => setSelectedMarker(office)} // Set selected marker on click
+                onClick={() => setSelectedMarker(office)}
               />
             ))}
 
             {selectedMarker && (
               <InfoWindow
                 position={selectedMarker.position}
-                onCloseClick={() => setSelectedMarker(null)} // Clear selection on close
+                onCloseClick={() => setSelectedMarker(null)}
               >
                 <div>
                   <h3>{selectedMarker.name}</h3>
