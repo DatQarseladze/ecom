@@ -73,6 +73,7 @@ const Branches = () => {
   });
 
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [selectedCity, setSelectedCity] = useState<string[]>([]);
   const [values, setValues] = useState({
     24: false,
     openNow: false,
@@ -80,6 +81,36 @@ const Branches = () => {
   });
   const [search, setSearch] = useState("");
   const [fillColor, setFillColor] = useState("white");
+
+  const handleSingleFilter = (item, options) => {
+    setSelectedFilters((prevFilters) => {
+      const newFilters = [...prevFilters];
+
+      if (newFilters.includes(item)) {
+        return newFilters.filter((filter) => filter !== item);
+      } else {
+        const updatedFilters = newFilters.filter(
+          (filter) => !options.some((option) => option.name === filter)
+        );
+        return [...updatedFilters, item];
+      }
+    });
+  };
+
+  const handleSingleCityFilter = (item, options) => {
+    setSelectedCity((prevFilters) => {
+      const newFilters = [...prevFilters];
+
+      if (newFilters.includes(item)) {
+        return newFilters.filter((filter) => filter !== item);
+      } else {
+        const updatedFilters = newFilters.filter(
+          (filter) => !options.some((option) => option.name === filter)
+        );
+        return [...updatedFilters, item];
+      }
+    });
+  };
 
   return (
     <div className="xl:px-[168px] web-xl:px-[80px] bg-[#FBFBFD]">
@@ -206,18 +237,20 @@ const Branches = () => {
               placeholder="აირჩიე თბილისი/რეგიონი"
               value={selectedFilters}
               options={regionOptions}
-              onChange={() => console.log("ew")}
+              onChange={handleSingleFilter}
               wrapperClassName="w-full 2xl:max-w-[638px]"
+              showValue
             />
           </div>
           <div className="flex-1">
             <DropdownSelect
               attribute="name"
               placeholder="აირჩიე ქალაქი/რაიონი"
-              value={selectedFilters}
+              value={selectedCity}
               options={cityOptions}
-              onChange={() => console.log("wqe")}
+              onChange={handleSingleCityFilter}
               wrapperClassName="w-full 2xl:max-w-[638px]"
+              showValue
             />
           </div>
 
