@@ -68,7 +68,7 @@ const Events = () => {
   }, [showData]);
 
   return (
-    <div className="2xl:px-[168px] max-2xl:px-[80px] bg-[#FBFBFD]">
+    <div className="2xl:px-[168px] max-2xl:px-[168px] bg-[#FBFBFD]">
       <div className="pt-[80px] pb-[24px]">
         <h1 className="text-[40px] leading-[48px] text-[#101840] font-bold text-center">
           ბრენდები

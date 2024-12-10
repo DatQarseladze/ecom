@@ -29,7 +29,7 @@ const Navigation = () => {
   const [activeTab, setActiveTab] = useState<any>(path);
 
   return (
-    <nav className="2xl:mx-[168px] max-2xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="2xl:mx-[168px] max-2xl:mx-[168px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] w-[180px] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
@@ -100,7 +100,7 @@ const Header = () => {
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
       </section>
 
-      <div className="2xl:mx-[168px] max-2xl:mx-[80px]">
+      <div className="2xl:mx-[168px] max-2xl:mx-[168px]">
         <div className="mb-[8px] mt-[24px] flex items-center justify-between">
           <a href="/" aria-label="Home" className="cursor-pointer">
             <Image

@@ -38,7 +38,7 @@ const BrandList = () => {
   };
 
   return (
-    <div className="2xl:px-[168px] max-2xl:px-[80px] px-auto py-[48px] bg-[#fff]">
+    <div className="2xl:px-[168px] max-2xl:px-[168px] px-auto py-[48px] bg-[#fff]">
       <Box
         className="rounded-[8px]"
         sx={{
