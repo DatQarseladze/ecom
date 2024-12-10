@@ -95,7 +95,6 @@ const Events = () => {
         <div className="relative pt-[48px]">
           <div className="flex gap-[16px]">
             <CustomTextField
-              width={720}
               placeholder={"ჩაწერე სასურველი ბრენდი"}
               search={search}
               setSearch={setSearch}
