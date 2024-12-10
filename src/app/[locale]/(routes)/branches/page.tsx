@@ -191,7 +191,7 @@ const Branches = () => {
               value={selectedFilters}
               options={regionOptions}
               onChange={handleSingleFilter}
-              wrapperClassName="w-full 2xl:max-w-[638px]"
+              wrapperClassName="w-full 2xl:min-w-[638px]"
               showValue
               backgroundColor="#FFFFFF00"
             />
@@ -203,7 +203,7 @@ const Branches = () => {
               value={selectedCity}
               options={cityOptions}
               onChange={handleSingleCityFilter}
-              wrapperClassName="w-full 2xl:max-w-[638px]"
+              wrapperClassName="w-full 2xl:min-w-[638px]"
               showValue
               backgroundColor="#FFFFFF00"
             />

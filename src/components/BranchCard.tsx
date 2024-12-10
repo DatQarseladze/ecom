@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { IconButton } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
 import phoneIcon from "@/src/assets/images/phone-card.svg";
 import locationIcon from "@/src/assets/images/location.svg";
 import Image from "next/image";
@@ -24,26 +23,54 @@ const LocationCard: React.FC<LocationCardProps> = ({
   isOpen,
   onPhoneClick,
 }) => {
+  const [activeIcon, setActiveIcon] = useState<"phone" | "location" | null>(
+    null
+  );
+
+  const handleMouseDownPhone = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveIcon("phone");
+  };
+
+  const handleMouseUpPhone = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveIcon(null);
+    onPhoneClick();
+  };
+
+  const handleMouseDownLocation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveIcon("location");
+  };
+
+  const handleMouseUpLocation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveIcon(null);
+  };
+
   return (
-    <div className="flex w-full items-center cursor-pointer pt-[15px] pb-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200">
-      <div className="flex items-center w-full">
-        <div className="px-[16px]">
+    <div
+      className={`flex w-full items-center cursor-pointer justify-between pt-[15px] pb-[15px] hover:bg-[#1B1D2008] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200 ${activeIcon === null ? "active:bg-[#1B1D200F]" : ""}`}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="flex flex-1 items-center w-full">
+        <div className="2xl:min-w-[164px] px-[16px] flex-grow">
           <img
             src={image}
             alt="location"
             className="w-[132px] h-[80px] object-cover rounded-md"
           />
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{city}</span>
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{district}</span>
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{address}</span>
         </div>
-        <div className="2xl:min-w-[184px] pl-[16px] flex flex-col">
+        <div className="2xl:min-w-[184px] pl-[16px] flex flex-col flex-grow">
           <span className="text-[14px] leading-[22px] text-[#101840]">
             ორშაბათი - კვირა
           </span>
@@ -52,8 +79,14 @@ const LocationCard: React.FC<LocationCardProps> = ({
             <span className="text-[#101840]">08:30 - 23:45</span>
           </div>
         </div>
-        <div className="2xl-min-w-[52px]">
-          <div className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
+
+        {/* Phone Icon */}
+        <div className={`2xl:min-w-[52px]`}>
+          <div
+            className={`flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] ${activeIcon === "phone" ? "bg-[#1B1D200F]" : ""}`}
+            onMouseDown={handleMouseDownPhone}
+            onMouseUp={handleMouseUpPhone}
+          >
             <Image
               src={phoneIcon}
               alt="phone"
@@ -64,11 +97,15 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         </div>
 
-        <div className="2xl-min-w-[102px]">
-          <div className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
+        <div className={`2xl:min-w-[60px]`}>
+          <div
+            className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
+            onMouseDown={handleMouseDownLocation}
+            onMouseUp={handleMouseUpLocation}
+          >
             <Image
               src={locationIcon}
-              alt="phone"
+              alt="location"
               width={20}
               height={20}
               className="w-[20px] h-[20px]"
