@@ -228,7 +228,7 @@ const Branches = () => {
                   },
                 }}
               />
-              <span className="text-[#474D66] nowrap"> 24 საათიანი</span>
+              <span className="text-[#474D66] text-nowrap"> 24 საათიანი</span>
             </div>
             <div className="flex items-center gap-[8px]">
               <Checkbox
@@ -248,7 +248,7 @@ const Branches = () => {
                   },
                 }}
               />
-              <span className="text-[#474D66] nowrap">ღიაა ახლა</span>
+              <span className="text-[#474D66] text-nowrap">ღიაა ახლა</span>
             </div>
           </div>
         </div>
