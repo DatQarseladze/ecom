@@ -183,33 +183,32 @@ const Branches = () => {
             <span className="text-[#101840]">რუკაზე ჩვენება</span>
           </div>
         </div>
-        <div className="flex col 2xl:gap-[8px] gap-[6px]">
-          <div className="flex-1">
-            <DropdownSelect
-              attribute="name"
-              placeholder="აირჩიე თბილისი/რეგიონი"
-              value={selectedFilters}
-              options={regionOptions}
-              onChange={handleSingleFilter}
-              wrapperClassName="w-full max-2xl:max-w-[638px] 2xl:min-w-[638px]"
-              showValue
-              backgroundColor="#FFFFFF00"
-            />
-          </div>
-          <div className="flex-1">
-            <DropdownSelect
-              attribute="name"
-              placeholder="აირჩიე ქალაქი/რაიონი"
-              value={selectedCity}
-              options={cityOptions}
-              onChange={handleSingleCityFilter}
-              wrapperClassName="w-full max-2xl:max-w-[638px] 2xl:min-w-[638px] "
-              showValue
-              backgroundColor="#FFFFFF00"
-            />
-          </div>
+        <div className="flex 2xl:gap-[8px] gap-[6px] pb-[24px]">
+          <DropdownSelect
+            attribute="name"
+            placeholder="აირჩიე თბილისი/რეგიონი"
+            value={selectedFilters}
+            options={regionOptions}
+            onChange={handleSingleFilter}
+            wrapperClassName="w-full flex-grow flex 2xl:min-w-[638px]"
+            showValue
+            backgroundColor="#FFFFFF00"
+          />
+          <DropdownSelect
+            attribute="name"
+            placeholder="აირჩიე ქალაქი/რაიონი"
+            value={selectedCity}
+            options={cityOptions}
+            onChange={handleSingleCityFilter}
+            wrapperClassName="w-full flex flex-grow 2xl:min-w-[638px]"
+            showValue
+            backgroundColor="#FFFFFF00"
+          />
 
-          <div className="py-[15px] px-[15px] flex gap-[22px] bg-[#FFFFFF00] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg">
+          <div
+            className="py-[15px] px-[15px] flex gap-[22px] bg-[#FFFFFF00] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg 
+            max-w-[292px] 2xl:w-[292px]"
+          >
             <div className="flex items-center gap-[8px]">
               <Checkbox
                 checked={values[24]}
@@ -252,7 +251,6 @@ const Branches = () => {
             </div>
           </div>
         </div>
-        <div></div>
       </div>
       <div className="pb-[80px]">
         {values?.checked ? (
