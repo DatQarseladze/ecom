@@ -19,6 +19,7 @@ import {
   useJsApiLoader,
   InfoWindow,
 } from "@react-google-maps/api";
+import CustomTextField from "@/src/components/CustomTextfield";
 import PaginationComponent from "@/src/components/Pagination";
 
 interface Office {
@@ -127,56 +128,12 @@ const Branches = () => {
             <span>ჩემთან ახლოს</span>
           </div>
           <div className="flex-1">
-            <TextField
-              variant="outlined"
+            <CustomTextField
               placeholder="მოძებნე აფთიაქი"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full max-w-[1153px] min-w-[300px] h-[56px] 2xl:max-w-[1532px]"
-              sx={{
-                borderRadius: "8px",
-                border: "transparent",
-                "&:hover": {},
-                "& .MuiOutlinedInput-root": {
-                  background: "#fff",
-                  "&:hover": {
-                    background: "#1B1D2008",
-                  },
-                  "& fieldset": {
-                    border: "1px solid #1B1D201A",
-                  },
-                  "&:hover fieldset": { borderColor: "#1B1D201A" },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#8255E3",
-                  },
-                  "&.Mui-focused": {
-                    backgroundColor: "#fff",
-                  },
-                },
-                "& .MuiInputBase-root": {
-                  height: "100%",
-                  paddingRight: "3px",
-                },
-                "& input::placeholder": {
-                  fontSize: "16px",
-                  fontWeight: 400,
-                  lineHeight: "24px",
-                  textAlign: "left",
-                  color: "#474D66",
-                  opacity: 1,
-                },
-              }}
-              InputProps={{
-                endAdornment: (
-                  <div
-                    className="cursor-pointer"
-                    onMouseEnter={() => setFillColor("#1B1D200F")}
-                    onMouseLeave={() => setFillColor("white")}
-                  >
-                    <SearchIcon fillColor={fillColor} />
-                  </div>
-                ),
-              }}
+              search={search}
+              focusedPlaceholder="ჩაწერე სასურველი ლოკაცია"
+              setSearch={setSearch}
+              className="bg-[#fff] w-full min-w-[300px] h-[56px] 2xl:min-w-[1532px]"
             />
           </div>
           <div className="border-[1px] border-solid border-[#1B1D201A] bg-[#fff] p-[15px] flex gap-[12px] rounded-lg items-center">

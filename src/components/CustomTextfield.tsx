@@ -2,20 +2,29 @@ import { useState } from "react";
 import { TextField } from "@mui/material";
 import SearchIcon from "@/src/icons/SearchIcon";
 
-const CustomTextField = ({ width, placeholder, search, setSearch }) => {
+const CustomTextField = ({
+  placeholder,
+  search,
+  setSearch,
+  className = "",
+  focusedPlaceholder = placeholder,
+}) => {
   const [fillColor, setFillColor] = useState("white");
+  const [isFocused, setIsFocused] = useState(false); // Track focus state
 
   return (
     <TextField
       fullWidth
       value={search}
-      label={placeholder}
+      className={className}
+      label={isFocused ? focusedPlaceholder || placeholder : placeholder} // Dynamically change label
       InputLabelProps={{
         shrink: !!search || undefined, // Ensure label stays inside on focus or with value
       }}
+      onFocus={() => setIsFocused(true)} // Update focus state
+      onBlur={() => setIsFocused(false)} // Reset focus state on blur
       onChange={(e) => setSearch(e.target.value)}
       sx={{
-        width: width,
         "& legend": {
           display: "none",
         },
@@ -23,7 +32,7 @@ const CustomTextField = ({ width, placeholder, search, setSearch }) => {
           height: "56px",
           borderRadius: "8px",
           paddingRight: "4px",
-          backgroundColor: '#FFFFFF00 !important',
+          backgroundColor: "#FFFFFF00 !important",
           border: "1px solid #1B1D201A",
           "&.Mui-focused ": {
             border: "2px solid #8255E3",

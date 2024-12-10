@@ -115,7 +115,6 @@ const CareersList = () => {
               placeholder="მოძებნე სასურველი ვაკანსია"
               search={search}
               setSearch={setSearch}
-              width={537}
             />
 
             <DropdownSelect
