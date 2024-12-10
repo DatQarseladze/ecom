@@ -58,7 +58,7 @@ const DropdownSelect = ({
       ref={dropdownRef}
     >
       <button
-        className={`w-full flex items-center px-[8px] h-[56px] w-[436px] border rounded-[6px] text-left  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
+        className={`w-full flex items-center px-[8px] h-[56px] border rounded-[6px] text-left  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
         <span className="pl-[16px] text-[#474D66]">{showValue && value?.length ? value : placeholder}</span>
