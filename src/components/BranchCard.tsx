@@ -83,7 +83,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
         {/* Phone Icon */}
         <div className={`2xl:min-w-[52px]`}>
           <div
-            className={`flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] ${activeIcon === "phone" ? "bg-[#1B1D200F]" : ""}`}
+            className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
             onMouseDown={handleMouseDownPhone}
             onMouseUp={handleMouseUpPhone}
           >
