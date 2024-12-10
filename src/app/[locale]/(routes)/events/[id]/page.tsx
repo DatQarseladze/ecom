@@ -52,7 +52,7 @@ const Events = () => {
   };
   return (
     <div>
-      <div className="xl:mx-[168px] max-2xl:mx-[80px] pt-[48px]">
+      <div className="2xl:mx-[168px] max-2xl:mx-[80px] pt-[48px]">
         <Box display="flex" alignItems="center">
           <div className="text-[14px] text-[#8255E3] leading-[22px]">
             მთავარი
@@ -203,7 +203,7 @@ const Events = () => {
         </div>
       </div>
       <div className="py-[80px] bg-[#FBFBFD]">
-        <div className="xl:mx-[168px] max-2xl:mx-[80px]">
+        <div className="2xl:mx-[168px] max-2xl:mx-[80px]">
           <div className="justify-between items-center flex mb-[48px]">
             <h1 className="text-[24px] leading-[32px] font-bold text-[#474D66]">
               სხვა ივენთები

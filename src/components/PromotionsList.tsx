@@ -42,7 +42,7 @@ const Promotions = () => {
   };
 
   return (
-    <div className="xl:px-[168px] max-2xl:px-[80px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
+    <div className="2xl:px-[168px] max-2xl:px-[80px] bg-[#fff] px-auto pt-[64px] pb-[80px]">
       <Box>
         <Tabs
           value={tabIndex}

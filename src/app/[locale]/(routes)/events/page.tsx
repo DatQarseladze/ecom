@@ -93,7 +93,7 @@ const Events = () => {
 
   return (
     <div className="bg-[#FBFBFD] pt-[56px] pb-[40px]">
-      <div className="xl:mx-[168px] max-2xl:mx-[80px] ">
+      <div className="2xl:mx-[168px] max-2xl:mx-[80px] ">
         <h1 className="mb-[40px] text-center text-[40px] text-[#474D66] leading-[48px] font-bold">
           ივენთები
         </h1>

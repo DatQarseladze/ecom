@@ -84,7 +84,7 @@ const Events = () => {
 
   return (
     <div>
-      <div className="xl:mx-[168px] max-2xl:mx-[80px]">
+      <div className="2xl:mx-[168px] max-2xl:mx-[80px]">
         <div className="pt-[96px] pb-[64px] flex gap-[64px]">
           <div className="flex justify-center flex-col">
             <h1 className="text-[40px] font-bold leading-[48px] text-[#101840]">
