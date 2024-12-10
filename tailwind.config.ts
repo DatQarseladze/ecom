@@ -12,8 +12,7 @@ const config: Config = {
       },
       screens: {
         ...require("tailwindcss/defaultTheme").screens,
-        "web-xl": { max: "1890px" },
-        "2xl": "1920px",
+        "2xl": { min: "1920px" },
         "max-2xl": { max: "1919px" },
       },
       spacing: {
