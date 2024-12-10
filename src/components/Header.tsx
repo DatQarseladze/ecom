@@ -112,7 +112,7 @@ const Header = () => {
             />
           </a>
 
-          <div className="flex items-center space-x-[16px]">
+          <div className="flex items-center space-x-[16px] overflow-y-hidden overflow-x-auto">
             <div className="flex-grow">
               <TextField
                 fullWidth

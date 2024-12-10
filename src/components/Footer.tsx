@@ -91,7 +91,7 @@ const Footer = () => {
         sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }}
       />
       <div className="2xl:mx-[168px] max-2xl:mx-[80px] mx-auto">
-        <Box className="flex my-[64px] justify-between">
+        <Box className="flex my-[64px] justify-between overflow-y-hidden overflow-x-auto">
           <Box>
             <Image src={logo} alt="Impex Logo" width={234} height={66} />
             <Typography
