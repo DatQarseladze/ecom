@@ -58,7 +58,7 @@ const CareersList = () => {
 
   return (
     <div>
-      <div className="xl:mx-[168px] web-xl:mx-[80px]">
+      <div className="xl:mx-[168px] max-2xl:mx-[80px]">
         {!sent ? (
           <div>
             <div className="pt-[80px] pb-[96px] flex flex-row gap-[48px]">

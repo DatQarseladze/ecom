@@ -113,7 +113,7 @@ const Branches = () => {
   };
 
   return (
-    <div className="xl:px-[168px] web-xl:px-[80px] bg-[#FBFBFD]">
+    <div className="xl:px-[168px] max-2xl:px-[80px] bg-[#FBFBFD]">
       <h1 className="pt-[80px] mb-[48px] text-[40px] leading-[48px] text-center text-[#474D66] font-bold">
         ფილიალები
       </h1>

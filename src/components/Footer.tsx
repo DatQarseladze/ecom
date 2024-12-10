@@ -24,7 +24,7 @@ const Footer = () => {
         color: "#FFFFFF",
       }}
     >
-      <div className="flex justify-between items-center xl:mx-[168px] web-xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
+      <div className="flex justify-between items-center xl:mx-[168px] max-2xl:mx-[80px] mx-auto pt-[48px] pb-[47px]">
         <div className="flex-col ">
           <div className="font-bold text-[20px] mb-[8px] leading-[30px]">
             გამოიწერე ჩვენი სიახლეები
@@ -90,7 +90,7 @@ const Footer = () => {
         className="w-full"
         sx={{ backgroundColor: "#FFFFFF", opacity: 0.2 }}
       />
-      <div className="xl:mx-[168px] web-xl:mx-[80px] mx-auto">
+      <div className="xl:mx-[168px] max-2xl:mx-[80px] mx-auto">
         <Box className="flex my-[64px] justify-between">
           <Box>
             <Image src={logo} alt="Impex Logo" width={234} height={66} />

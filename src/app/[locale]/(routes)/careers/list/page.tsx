@@ -67,7 +67,7 @@ const CareersList = () => {
 
   return (
     <div>
-      <div className="xl:mx-[168px] web-xl:mx-[80px]">
+      <div className="xl:mx-[168px] max-2xl:mx-[80px]">
         <div className="pt-[80px] flex flex-col gap-[48px]">
           <div className="flex items-center justify-center w-full flex-col">
             <div className="text-[16px] leading-[24px] py-[1px] px-[8px] mb-[8px] border-[1px] border-solid border-[#1B1D201A] rounded-[6px] w-auto">

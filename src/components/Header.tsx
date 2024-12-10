@@ -29,7 +29,7 @@ const Navigation = () => {
   const [activeTab, setActiveTab] = useState<any>(path);
 
   return (
-    <nav className="xl:mx-[168px] web-xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
+    <nav className="xl:mx-[168px] max-2xl:mx-[80px] mx-auto justify-between flex overflow-y-hidden overflow-x-auto items-center space-x-4 text-gray-700 font-medium mt-2">
       <a
         href="#"
         className="hover:text-black bg-[#8255E3] w-[180px] text-[#fff] rounded-[8px] flex px-[16px] h-[48px] items-center justify-center"
@@ -42,7 +42,7 @@ const Navigation = () => {
           alt="burger"
           className="self-center"
         />
-        <div className="self-center text-[18px] web-xl:text-[16px] ml-[8px] font-[400] text-[#fff]">
+        <div className="self-center text-[18px] max-2xl:text-[16px] ml-[8px] font-[400] text-[#fff]">
           კატეგორიები
         </div>
       </a>
@@ -50,7 +50,7 @@ const Navigation = () => {
         <React.Fragment key={item?.name}>
           <a
             href="#"
-            className={`relative text-[18px] web-xl:text-[16px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] web-xl:py-[6px] group transition-colors duration-300 ${
+            className={`relative text-[18px] max-2xl:text-[16px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] max-2xl:py-[6px] group transition-colors duration-300 ${
               path === item?.url
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700 border-b-[2px] border-b-transparent"
@@ -100,7 +100,7 @@ const Header = () => {
         უფასო მიწოდება 100 ლარიან შენაძენზე თბილისის მასშტაბით
       </section>
 
-      <div className="mx-[168px] web-xl:mx-[80px]">
+      <div className="mx-[168px] max-2xl:mx-[80px]">
         <div className="mb-[8px] mt-[24px] flex items-center justify-between">
           <a href="/" aria-label="Home" className="cursor-pointer">
             <Image
