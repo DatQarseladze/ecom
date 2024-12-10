@@ -63,7 +63,7 @@ const DropdownSelect = ({
       >
         <span className="pl-[16px] text-[#474D66]">{showValue && value?.length ? value : placeholder}</span>
         <div
-          className={`absolute right-[7px] p-[10px] rounded-[6px] hover:bg-[#1B1D200F] active:bg-[#1B1D201F] ${!dropdownVisible ? "" : "rotate-180"}`}
+          className={`absolute right-[7px] p-[10px] rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D200F] ${!dropdownVisible ? "" : "rotate-180"}`}
         >
           <Image alt="down arrow" src={downArrow} width={20} height={20} />
         </div>

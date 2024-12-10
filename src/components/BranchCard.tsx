@@ -25,25 +25,25 @@ const LocationCard: React.FC<LocationCardProps> = ({
   onPhoneClick,
 }) => {
   return (
-    <div className="flex items-center cursor-pointer justify-between p-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200">
-      <div className="flex items-center">
-        <div className="pr-[16px]">
+    <div className="flex w-full items-center cursor-pointer pt-[15px] pb-[15px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200">
+      <div className="flex items-center w-full">
+        <div className="px-[16px]">
           <img
             src={image}
             alt="location"
             className="w-[132px] h-[80px] object-cover rounded-md"
           />
         </div>
-        <div className="w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px]">
           <span className="text-[#101840] pl-[48px]">{city}</span>
         </div>
-        <div className="w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px]">
           <span className="text-[#101840] pl-[48px]">{district}</span>
         </div>
-        <div className="w-[374px] pl-[16px]">
+        <div className="2xl:min-w-[374px] pl-[16px]">
           <span className="text-[#101840] pl-[48px]">{address}</span>
         </div>
-        <div className="w-[184px] pl-[16px] flex flex-col">
+        <div className="2xl:min-w-[184px] pl-[16px] flex flex-col">
           <span className="text-[14px] leading-[22px] text-[#101840]">
             ორშაბათი - კვირა
           </span>
@@ -52,23 +52,28 @@ const LocationCard: React.FC<LocationCardProps> = ({
             <span className="text-[#101840]">08:30 - 23:45</span>
           </div>
         </div>
-        <div className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
-          <Image
-            src={phoneIcon}
-            alt="phone"
-            width={20}
-            height={20}
-            className="w-[20px] h-[20px]"
-          />
+        <div className="2xl-min-w-[52px]">
+          <div className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
+            <Image
+              src={phoneIcon}
+              alt="phone"
+              width={20}
+              height={20}
+              className="w-[20px] h-[20px]"
+            />
+          </div>
         </div>
-        <div className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
-          <Image
-            src={locationIcon}
-            alt="phone"
-            width={20}
-            height={20}
-            className="w-[20px] h-[20px]"
-          />
+
+        <div className="2xl-min-w-[102px]">
+          <div className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
+            <Image
+              src={locationIcon}
+              alt="phone"
+              width={20}
+              height={20}
+              className="w-[20px] h-[20px]"
+            />
+          </div>
         </div>
       </div>
     </div>
