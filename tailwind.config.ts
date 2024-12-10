@@ -14,6 +14,7 @@ const config: Config = {
         ...require("tailwindcss/defaultTheme").screens,
         "web-xl": { max: "1890px" },
         "2xl": "1920px",
+        "max-2xl": { max: "1920px" },
       },
       spacing: {
         "22.47": "22.47px",
