@@ -183,7 +183,7 @@ const Branches = () => {
             <span className="text-[#101840]">რუკაზე ჩვენება</span>
           </div>
         </div>
-        <div className="flex col gap-[8px]">
+        <div className="flex col 2xl:gap-[8px] gap-[6px]">
           <div className="flex-1">
             <DropdownSelect
               attribute="name"
