@@ -207,7 +207,7 @@ const Branches = () => {
 
           <div
             className="py-[15px] px-[15px] flex gap-[22px] bg-[#FFFFFF00] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg 
-            max-w-[292px] 2xl:w-[292px]"
+            max-w-[292px]"
           >
             <div className="flex items-center gap-[8px]">
               <Checkbox
