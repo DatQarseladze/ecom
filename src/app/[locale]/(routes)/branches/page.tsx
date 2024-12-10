@@ -119,7 +119,7 @@ const Branches = () => {
       </h1>
       <div className="flex flex-col gap-[16px]">
         <div className="flex gap-[16px]">
-          <div className="inline-flex border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D2033] cursor-pointer py-[15px] pl-[15px] pr-[23px] bg-[#fff] items-center">
+          <div className="inline-flex border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D2033] cursor-pointer py-[15px] pl-[15px] pr-[23px] bg-[#FFFFFF00] items-center">
             <Image
               src={gpsIcon}
               alt="location"
@@ -133,10 +133,10 @@ const Branches = () => {
               search={search}
               focusedPlaceholder="ჩაწერე სასურველი ლოკაცია"
               setSearch={setSearch}
-              className="bg-[#fff] w-full min-w-[300px] h-[56px] 2xl:min-w-[1532px]"
+              className="bg-[#FFFFFF00] w-full min-w-[300px] h-[56px] 2xl:min-w-[1532px]"
             />
           </div>
-          <div className="border-[1px] border-solid border-[#1B1D201A] bg-[#fff] p-[15px] flex gap-[12px] rounded-lg items-center">
+          <div className="border-[1px] border-solid border-[#1B1D201A] bg-[#FFFFFF00] p-[15px] flex gap-[12px] rounded-lg items-center">
             <div>
               <Switch
                 checked={values.checked}
@@ -193,6 +193,7 @@ const Branches = () => {
               onChange={handleSingleFilter}
               wrapperClassName="w-full 2xl:max-w-[638px]"
               showValue
+              backgroundColor="#FFFFFF00"
             />
           </div>
           <div className="flex-1">
@@ -204,10 +205,11 @@ const Branches = () => {
               onChange={handleSingleCityFilter}
               wrapperClassName="w-full 2xl:max-w-[638px]"
               showValue
+              backgroundColor="#FFFFFF00"
             />
           </div>
 
-          <div className="py-[15px] px-[15px] flex gap-[22px] bg-[#fff] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg">
+          <div className="py-[15px] px-[15px] flex gap-[22px] bg-[#FFFFFF00] items-center border-[1px] border-solid border-[#1B1D201A] rounded-lg">
             <div className="flex items-center gap-[8px]">
               <Checkbox
                 checked={values[24]}
