@@ -183,7 +183,7 @@ const Branches = () => {
             <span className="text-[#101840]">რუკაზე ჩვენება</span>
           </div>
         </div>
-        <div className="flex 2xl:gap-[16px] gap-[8px] pb-[24px]">
+        <div className="flex 2xl:gap-[16px] pb-[24px]">
           <DropdownSelect
             attribute="name"
             placeholder="აირჩიე თბილისი/რეგიონი"
