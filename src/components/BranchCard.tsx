@@ -62,7 +62,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
           />
         </div>
         <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
-          <span className="text-[#101840] pl-[48px]">{city}</span>
+          <span className="text-[#101840]">{city}</span>
         </div>
         <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{district}</span>
