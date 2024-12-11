@@ -16,6 +16,7 @@ import heartIcon from "../assets/images/heart.svg";
 import leafIcon from "../assets/images/leaf.svg";
 import starIcon from "../assets/images/star.svg";
 import clockIcon from "../assets/images/clock.svg";
+import dissapearingIcon from '../assets/images/dissapearing_clock.svg'
 import organIcon from "../assets/images/organ.svg";
 import ratingIcon from "../assets/images/rating.svg";
 import bestsellerIcon from "../assets/images/bestseller.svg";
@@ -81,6 +82,7 @@ export {
   leafIcon,
   starIcon,
   clockIcon,
+  dissapearingIcon,
   organIcon,
   ratingIcon,
   bestsellerIcon,

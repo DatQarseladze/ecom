@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import ReusableBadge from "./ReusableBadge";
-import { dotIcon, truckIcon } from "./constants";
+import { dotIcon, truckIcon, dissapearingIcon } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
 import HeartIcon from "@/src/icons/HeartIcon";
@@ -54,13 +54,7 @@ const Card = ({
             iconSrc={dotIcon}
             bgColor="#1F8951"
             borderColor="#A3E6CD"
-            label={
-              index === 0
-                ? "მხოლოდ ონლაინ"
-                : index === 1
-                  ? "შეზღუდული მარაგი"
-                  : "ორგანული"
-            }
+            label={index === 0 ? "მხოლოდ ონლაინ" : "ორგანული"}
           />
           {index === 3 && (
             <ReusableBadge
@@ -70,18 +64,18 @@ const Card = ({
               label="უფასო მიწოდება"
             />
           )}
+            {index === 4 && (
+            <ReusableBadge
+              iconSrc={dissapearingIcon}
+              bgColor="#BB3F43"
+              borderColor="#EE9191"
+              label="შეზღუდული მარაგი"
+            />
+          )}
         </div>
       </div>
 
       <div className="relative flex rounded-md">
-        {/* <Image
-          src={product.img}
-          alt={product.title}
-          width={278.4}
-          height={220}
-          style={{ objectFit: "cover", height: "220px" }}
-          className="w-full transition-transform duration-300 hover:scale-110 hover:origin-top"
-        /> */}
         <img
           src={product.img.src}
           className="w-full h-[220px] transition-transform duration-300 hover:scale-110 hover:origin-top"
