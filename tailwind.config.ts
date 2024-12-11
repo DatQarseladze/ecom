@@ -1,9 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // Make sure all your JSX files are included here
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -12,14 +10,8 @@ const config: Config = {
       },
       screens: {
         ...require("tailwindcss/defaultTheme").screens,
-        "2xl": { min: "1920px" },
-        "max-2xl": { max: "1919px" },
-      },
-      spacing: {
-        "22.47": "22.47px",
-      },
-      borderWidth: {
-        "5.62": "5.62px",
+        "2xl": { min: "1921px" },
+        "max-2xl": { max: "1920px" },
       },
       boxShadow: {
         "outer-borders":

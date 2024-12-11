@@ -54,23 +54,23 @@ const LocationCard: React.FC<LocationCardProps> = ({
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex flex-1 items-center w-full">
-        <div className="2xl:min-w-[164px] px-[16px] flex-grow">
+        <div className="max-2xl:min-w-[164px] px-[16px] flex-grow">
           <img
             src={image}
             alt="location"
             className="w-[132px] h-[80px] object-cover rounded-md"
           />
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
+        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840]">{city}</span>
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
+        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{district}</span>
         </div>
-        <div className="2xl:min-w-[374px] pl-[16px] flex-grow">
+        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
           <span className="text-[#101840] pl-[48px]">{address}</span>
         </div>
-        <div className="2xl:min-w-[184px] pl-[16px] flex flex-col flex-grow">
+        <div className="max-2xl:min-w-[184px] pl-[16px] flex flex-col flex-grow">
           <span className="text-[14px] leading-[22px] text-[#101840]">
             ორშაბათი - კვირა
           </span>
@@ -81,7 +81,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
         </div>
 
         {/* Phone Icon */}
-        <div className={`2xl:min-w-[52px]`}>
+        <div className={`max-2xl:min-w-[52px]`}>
           <div
             className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
             onMouseDown={handleMouseDownPhone}
@@ -97,7 +97,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         </div>
 
-        <div className={`2xl:min-w-[60px]`}>
+        <div className={`max-2xl:min-w-[60px]`}>
           <div
             className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
             onMouseDown={handleMouseDownLocation}
