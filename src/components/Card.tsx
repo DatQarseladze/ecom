@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import ReusableBadge from "./ReusableBadge";
-import { dotIcon, truckIcon, dissapearingIcon } from "./constants";
+import { dotIcon, truckIcon, dissapearingIcon, leafIcon } from "./constants";
 import MinusIcon from "@/src/icons/MinusIcon";
 import PlusIcon from "@/src/icons/PlusIcon";
 import HeartIcon from "@/src/icons/HeartIcon";
@@ -51,9 +51,9 @@ const Card = ({
       <div className="flex items-center flex-end w-full">
         <div className="flex w-full space-x-[4px]">
           <ReusableBadge
-            iconSrc={dotIcon}
-            bgColor="#1F8951"
-            borderColor="#A3E6CD"
+            iconSrc={index === 0 ? dotIcon : leafIcon}
+            bgColor={index === 0 ? "#1F8951" : "#03A222"}
+            borderColor={index === 0 ? "#A3E6CD" : "#A3E6CD"}
             label={index === 0 ? "მხოლოდ ონლაინ" : "ორგანული"}
           />
           {index === 3 && (
@@ -64,7 +64,7 @@ const Card = ({
               label="უფასო მიწოდება"
             />
           )}
-            {index === 4 && (
+          {index === 4 && (
             <ReusableBadge
               iconSrc={dissapearingIcon}
               bgColor="#BB3F43"
