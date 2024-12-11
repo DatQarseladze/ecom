@@ -119,7 +119,7 @@ const Branches = () => {
       </h1>
       <div className="flex flex-col gap-[16px]">
         <div className="flex gap-[16px]">
-          <div className="inline-flex border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D2033] cursor-pointer py-[15px] pl-[15px] pr-[23px] bg-[#FFFFFF00] items-center">
+          <div className="inline-flex h-[56px] border-[1px] border-solid border-[#1B1D201A] gap-[8px] rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D2033] cursor-pointer py-[15px] pl-[15px] pr-[23px] bg-[#FFFFFF00] items-center">
             <Image
               src={gpsIcon}
               alt="location"
@@ -136,7 +136,7 @@ const Branches = () => {
               className="bg-[#FFFFFF00] w-full min-w-[300px] h-[56px] 2xl:min-w-[1532px]"
             />
           </div>
-          <div className="border-[1px] border-solid border-[#1B1D201A] bg-[#FFFFFF00] p-[15px] flex gap-[12px] rounded-lg items-center">
+          <div className="border-[1px] border-solid border-[#1B1D201A] h-[56px] bg-[#FFFFFF00] p-[15px] flex gap-[12px] rounded-lg items-center">
             <div>
               <Switch
                 checked={values.checked}
