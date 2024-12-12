@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ProductCard from "@/src/components/ProductCard";
 import productImg from "../../../../../assets/images/event1.jpeg";
@@ -46,6 +47,7 @@ const products = [
 
 const Events = () => {
   const descriptionRef = useRef<HTMLDivElement | null>(null); // Reference to the description section
+  const route = useRouter();
 
   const handleScrollToDescription = () => {
     descriptionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -54,13 +56,13 @@ const Events = () => {
     <div>
       <div className="2xl:mx-[168px] max-2xl:mx-[168px] pt-[48px]">
         <Box display="flex" alignItems="center">
-          <div className="text-[14px] text-[#8255E3] leading-[22px]">
+          <div onClick={() => route.push("/")} className="text-[14px] text-[#8255E3] cursor-pointer leading-[22px]">
             მთავარი
           </div>
           <Typography color="#1B1D203D" mx={"8px"}>
             /
           </Typography>
-          <div className="text-[14px] text-[#8255E3] leading-[22px]">
+          <div onClick={() => route.push("/events")} className="text-[14px] cursor-pointer text-[#8255E3] leading-[22px]">
             ივენთები
           </div>
           <Typography mx={"8px"} color="#1B1D203D">
