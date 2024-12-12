@@ -43,7 +43,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           borderColor: "#8255E3",
           // Hover effect for active page
           "&:hover": {
-            backgroundColor: "#7143D1 !important", // Hover background for active page
+            backgroundColor: "#1B1D200F !important", // Hover background for active page
           },
         },
 
@@ -64,7 +64,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
 
         // Hover effect on all page buttons
         "& .MuiPaginationItem-root:hover": {
-          backgroundColor: "#1B1D201F", // Hover background color
+          backgroundColor: "#1B1D200F", // Hover background color
         },
 
         // Hover effect on previous/next buttons
