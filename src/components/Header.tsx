@@ -50,7 +50,7 @@ const Navigation = () => {
         <React.Fragment key={item?.name}>
           <a
             href="#"
-            className={`relative text-[18px] max-2xl:text-[16px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] max-2xl:py-[6px] group transition-colors duration-300 ${
+            className={`relative text-[18px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] py-[12px] px-[8px] max-2xl:py-[6px] group transition-colors duration-300 ${
               path === item?.url
                 ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
                 : "text-gray-700 border-b-[2px] border-b-transparent"
