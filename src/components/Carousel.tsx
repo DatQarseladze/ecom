@@ -24,7 +24,7 @@ const Page = () => {
 
   return (
     <div
-      className="mt-[24px]"
+      className="pt-[24px] bg-[#FBFBFD]"
       style={{ height: "552px", position: "relative" }}
     >
       <div className="swiper-button image-swiper-button-next">
