@@ -54,7 +54,7 @@ const Events = () => {
   };
   return (
     <div>
-      <div className="2xl:mx-[168px] max-2xl:mx-[168px] pt-[48px]">
+      <div className="2xl:px-[168px] max-2xl:px-[168px] bg-[#FBFBFD] pt-[48px]">
         <Box display="flex" alignItems="center">
           <div onClick={() => route.push("/")} className="text-[14px] text-[#8255E3] cursor-pointer leading-[22px]">
             მთავარი
