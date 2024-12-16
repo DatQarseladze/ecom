@@ -240,7 +240,7 @@ const ProductList = () => {
           <div className="pt-[40px] max-w-[1180px]">
             <div className="py-[4px] flex items-center justify-between mb-[24px]">
               <h2 className="text-[24px] leading-[32px] text-[#474D66] font-bold">
-                მსგავსი პროდუქტები
+                რეკომენდირებულია თქვენთვის
               </h2>
               <div className="flex items-center gap-[4px]">
                 <div className="cursor-pointer border-[1px] p-[9px] border-[#1B1D2008] flex items-center justify-center rounded-[8px]">
@@ -475,7 +475,7 @@ const ProductList = () => {
               </div>
             </div>
             <button
-              className={`flex w-full justify-center items-center p-[12px] text-[16px] leading-[24px] text-white rounded-lg font-medium active:bg-[#503095] bg-[#8255E3] hover:bg-[#7143D1] mt-[12px]`}
+              className={`flex w-full justify-center items-center p-[12px] text-[16px] leading-[24px] text-white rounded-lg active:bg-[#503095] bg-[#8255E3] hover:bg-[#7143D1] mt-[12px]`}
             >
               ყიდვა
             </button>
