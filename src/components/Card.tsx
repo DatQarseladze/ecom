@@ -31,7 +31,7 @@ const Card = ({
   index,
   counts,
   handleCountChange,
-  onClick
+  onClick,
 }: ProductCardProps) => {
   const [filled, setFilled] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -111,7 +111,8 @@ const Card = ({
           >
             {!counts[index] ? (
               <button
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   setIsClicked(true);
                   handleCountChange(index, 1);
                 }}
@@ -156,7 +157,10 @@ const Card = ({
               </div>
             )}
             <div
-              onClick={() => setFilled((prevState) => !prevState)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setFilled((prevState) => !prevState);
+              }}
               className="p-[11px] border-[1px] group/svg border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
             >
               {filled ? (
