@@ -193,7 +193,7 @@ const ProductList = () => {
               </h4>
               <h4
                 onClick={handleMoveToDescription}
-                className="text-[#8255E3] cursor-pointer font-medium mt-[8px]"
+                className="text-[#8255E3] cursor-pointer hover:text-[#7143D1] font-medium mt-[8px]"
               >
                 სრული ანოტაცია
               </h4>
@@ -408,7 +408,7 @@ const ProductList = () => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                    setCounts((prevState) => (prevState - 1));
+                  setCounts((prevState) => prevState - 1);
                 }}
                 className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tl-[7px] rounded-bl-[7px]"
               >
@@ -420,8 +420,7 @@ const ProductList = () => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  setCounts((prevState) => (prevState + 1));
-
+                  setCounts((prevState) => prevState + 1);
                 }}
                 className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tr-[7px] rounded-br-[7px] `}
               >
