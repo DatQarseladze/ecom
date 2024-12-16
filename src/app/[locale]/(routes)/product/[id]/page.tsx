@@ -20,7 +20,7 @@ import Map from "@/src/components/Map";
 import InnerImageZoom from "react-inner-image-zoom";
 
 const ProductList = () => {
-  const [counts, setCounts] = useState({});
+  const [counts, setCounts] = useState(0);
   const pharmacyRef = useRef<HTMLDivElement | null>(null);
   const route = useRouter();
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -46,13 +46,13 @@ const ProductList = () => {
 
   const [filled, setFilled] = useState(false);
 
-  const handleCountChange = (index, change) => {
-    setCounts((prevCounts) => {
-      const currentCount = prevCounts[index] || 0;
-      const newCount = Math.max(0, Math.min(10, currentCount + change));
-      return { ...prevCounts, [index]: newCount };
-    });
-  };
+  // const handleCountChange = (index, change) => {
+  //   setCounts((prevCounts) => {
+  //     const currentCount = prevCounts[index] || 0;
+  //     const newCount = Math.max(0, Math.min(10, currentCount + change));
+  //     return { ...prevCounts, [index]: newCount };
+  //   });
+  // };
   return (
     <div className="2xl:mx-[168px] max-2xl:mx-[168px] px-auto pt-[40px] pb-[80px]">
       <Box display="flex" alignItems="center">
@@ -408,17 +408,20 @@ const ProductList = () => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
+                    setCounts((prevState) => (prevState - 1));
                 }}
                 className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tl-[7px] rounded-bl-[7px]"
               >
                 <MinusIcon />
               </button>
               <div className="text-[#101840] text-[16px] leading-[24px]">
-                1 შეკვრა
+                {counts} შეკვრა
               </div>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
+                  setCounts((prevState) => (prevState + 1));
+
                 }}
                 className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tr-[7px] rounded-br-[7px] `}
               >
