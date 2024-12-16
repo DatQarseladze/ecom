@@ -116,14 +116,8 @@ const LocationCard: React.FC<LocationCardProps> = ({
           {showPopup && (
             <div
               ref={popupRef}
-              className="absolute top-[0px] left-[50%] transform -translate-x-[50%] bg-white shadow-lg rounded-lg px-[15px] py-[20px] z-[9999] whitespace-nowrap overflow-visible will-change-transform"
-              style={{
-                pointerEvents: "auto", // Ensures interaction works properly
-                position: "fixed",
-                top: `${(phoneIconRef?.current?.getBoundingClientRect()?.top || 0) + 45}px`,
-                left: `${(phoneIconRef.current?.getBoundingClientRect().left || 0) - 25}px`,
-              }}
-            >
+              className="absolute top-[30px] left-[25px] transform -translate-x-[50%] shadow-lg rounded-lg px-[15px] py-[12px] bg-[#fff] z-[9999] whitespace-nowrap hover:bg-[#f5f5f5] active:bg-[#e0e0e0]"
+              >
               <span
                 onClick={() => {
                   navigator.clipboard.writeText("0322 123 123");
