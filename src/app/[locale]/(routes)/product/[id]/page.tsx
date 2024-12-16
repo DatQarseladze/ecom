@@ -386,7 +386,7 @@ const ProductList = () => {
           </div>
         </div>
         <div className="flex items-start">
-          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] w-[364px] sticky top-[0px]">
+          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[23px] w-[364px] sticky top-[0px]">
             <div className="flex justify-between">
               <div className="flex items-center gap-[2px]">
                 <Image
@@ -405,7 +405,7 @@ const ProductList = () => {
                 მოიძიე აფთიაქში
               </span>
             </div>
-            <div className="flex-1 mt-[24px] items-center justify-between flex text-[16px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
+            <div className="flex-1 mt-[24px] h-[48px] items-center justify-between flex text-[16px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
               <button
                 onClick={(e) => {
                   e.preventDefault();
