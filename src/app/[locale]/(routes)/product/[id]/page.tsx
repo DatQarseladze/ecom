@@ -165,7 +165,7 @@ const ProductList = () => {
                       "https://s3-alpha-sig.figma.com/img/52ae/6852/5123d4ca619bf65125b0963e0e54e661?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GJu0UdK9Jc56jtspCYcq-dshhBe-89WbWqoZz~--zl24iDDanDmuvAmYpudVsA7FoYQqPnx5MZ5Qze9rXzmeUohllAeXxgVvNXncg1ynkgHd8Kops2imQu5EtMxuxE2sedmcPVXOrxO3z4KHBMh~OT2Hu8fOVI3Y7~JDIs8WvFd7ycuZJ2eb2CsQm2tBkOFt-~YMI12kk2DLudtJbRzA7hXxHy-HSEu2lzjdvdAb0NqAfXMy5QUhX2rmxZkZooZEojmnxlOF~fIJ1leVqXJetFNaJ85GgrQvVwjKfmecgQZw1qrs98tFe5WUAvU6M2o1clfR7RhnFvjGyLKoQd-Gpw__"
                     );
                   }}
-                  className={`border-solid ${selectedIndex === 2 ? "border-[2px] border-[#CBB2FF] hover:border-[1px] hover:border-[#1B1D203D]" : "border-[1px] border-[#1B1D201A]"} rounded-lg w-[112px] p-[8px] h-[112px]`}
+                  className={`border-solid ${selectedIndex === 2 ? "border-[2px] border-[#CBB2FF]" : "border-[1px] border-[#1B1D201A] hover:border-[1px] hover:border-[#1B1D203D]"} rounded-lg w-[112px] p-[8px] h-[112px]`}
                 >
                   <Image
                     src={
