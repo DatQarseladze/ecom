@@ -182,7 +182,7 @@ const Events = () => {
               <Box
                 key={brand.name}
                 style={{
-                  boxShadow: "box-shadow: 0px 8px 40px -8px #172B4D14",
+                  boxShadow: "0px 8px 40px -8px #172B4D14",
                 }}
                 className="hover:bg-[#1B1D2008] border-solid hover:border-[1px] hover:border-[#1B1D201A] active:bg-[#1B1D200F] active:border-[#1B1D203D] bg-[#fff] rounded-[8px] "
                 sx={{
