@@ -3,9 +3,8 @@ import Image from "next/image";
 import caretRight from "../assets/images/caret-right.svg";
 import caretLeft from "../assets/images/caret-left.svg";
 import { useRouter } from "next/navigation";
-import { products } from "./constants";
+import { products } from "@/src/components/constants";
 
-import Card from "./Card";
 
 const ProductList = () => {
   const [counts, setCounts] = useState({});
@@ -44,18 +43,7 @@ const ProductList = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[8px]">
-        {products.map((product, index) => (
-          <Card
-            key={product.id}
-            product={product}
-            index={index}
-            onClick={() => route.push('/product/1')}
-            counts={counts}
-            handleCountChange={handleCountChange}
-          />
-        ))}
-      </div>
+
     </div>
   );
 };

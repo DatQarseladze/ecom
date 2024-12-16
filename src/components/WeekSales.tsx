@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { weekProducts } from "./constants";
 import Card from "./Card";
+import { useRouter } from "next/navigation";
 
 const WeekSales = () => {
   const [counts, setCounts] = useState({});
+  const route = useRouter();
 
   const handleCountChange = (index, change) => {
     setCounts((prevCounts) => {
@@ -33,6 +35,7 @@ const WeekSales = () => {
             index={index}
             counts={counts}
             handleCountChange={handleCountChange}
+            onClick={() => route.push('/product/1')}
           />
         ))}
       </div>
