@@ -12,6 +12,7 @@ type LocationCardProps = {
   time: string;
   isOpen: boolean;
   onPhoneClick: () => void;
+  hideImage ?: boolean
 };
 
 const LocationCard: React.FC<LocationCardProps> = ({
@@ -22,6 +23,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   time,
   isOpen,
   onPhoneClick,
+  hideImage = false,
 }) => {
   const [activeIcon, setActiveIcon] = useState<"phone" | "location" | null>(
     null
@@ -53,24 +55,34 @@ const LocationCard: React.FC<LocationCardProps> = ({
       className={`flex w-full items-center cursor-pointer justify-between pt-[15px] pb-[15px] hover:bg-[#1B1D2008] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200 ${activeIcon === null ? "active:bg-[#1B1D200F]" : ""}`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex flex-1 items-center w-full">
-        <div className="max-2xl:min-w-[164px] px-[16px] flex-grow">
-          <img
-            src={image}
-            alt="location"
-            className="w-[132px] h-[80px] object-cover rounded-md"
-          />
-        </div>
-        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
+      <div className="flex flex-1 items-center w-full overflow-auto">
+        {!hideImage && (
+          <div className="max-2xl:min-w-[164px] px-[16px] flex-grow">
+            <img
+              src={image}
+              alt="location"
+              className="w-[132px] h-[80px] object-cover rounded-md"
+            />
+          </div>
+        )}
+        <div
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+        >
           <span className="text-[#101840]">{city}</span>
         </div>
-        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
+        <div
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+        >
           <span className="text-[#101840] pl-[48px]">{district}</span>
         </div>
-        <div className="max-2xl:min-w-[374px] pl-[16px] flex-grow">
+        <div
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+        >
           <span className="text-[#101840] pl-[48px]">{address}</span>
         </div>
-        <div className="max-2xl:min-w-[184px] pl-[16px] flex flex-col flex-grow">
+        <div
+          className={`${hideImage ? "" : "max-2xl:min-w-[184px]"} ?  pl-[16px] flex flex-col flex-grow`}
+        >
           <span className="text-[14px] leading-[22px] text-[#101840]">
             ორშაბათი - კვირა
           </span>

@@ -22,6 +22,7 @@ interface ProductCardProps {
   product: Product;
   index: number;
   counts: any;
+  onClick?: () => void;
   handleCountChange: (index: number, delta: number) => void;
 }
 
@@ -30,6 +31,7 @@ const Card = ({
   index,
   counts,
   handleCountChange,
+  onClick
 }: ProductCardProps) => {
   const [filled, setFilled] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -45,6 +47,7 @@ const Card = ({
   return (
     <Box
       key={product.id}
+      onClick={onClick}
       sx={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
       className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
     >
