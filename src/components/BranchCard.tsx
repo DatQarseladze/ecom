@@ -30,6 +30,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   );
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
+  const phoneIconRef = useRef<HTMLDivElement>(null);
 
   const handlePhoneClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -60,7 +61,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
       }`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex flex-1 items-center w-full pt-[15px] pb-[15px] relative overflow-x-auto overflow-y-visible">
+      <div className="flex flex-1 items-center w-full pt-[15px] pb-[15px] relative">
         {!hideImage && (
           <div className="max-2xl:min-w-[164px] px-[16px] flex-grow">
             <img
@@ -98,7 +99,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
         </div>
 
         {/* Phone Icon */}
-        <div className="relative min-w-[52px]">
+        <div className="relative min-w-[52px]" ref={phoneIconRef}>
           <div
             className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
             onClick={handlePhoneClick}
@@ -115,10 +116,23 @@ const LocationCard: React.FC<LocationCardProps> = ({
           {showPopup && (
             <div
               ref={popupRef}
-              className="absolute top-[40px] right-[20px] bg-white shadow-lg rounded-lg px-[15px] py-[20px] z-[9999] whitespace-nowrap will-change-transform"
-              style={{ pointerEvents: "auto", position: "fixed" }} // Ensure the popup stays visible even when scrolling
+              className="absolute top-[0px] left-[50%] transform -translate-x-[50%] bg-white shadow-lg rounded-lg px-[15px] py-[20px] z-[9999] whitespace-nowrap overflow-visible will-change-transform"
+              style={{
+                pointerEvents: "auto", // Ensures interaction works properly
+                position: "fixed",
+                top: `${(phoneIconRef?.current?.getBoundingClientRect()?.top || 0) + 45}px`,
+                left: `${(phoneIconRef.current?.getBoundingClientRect().left || 0) - 25}px`,
+              }}
             >
-              <span className="text-[#101840] font-medium">0322 123 123</span>
+              <span
+                onClick={() => {
+                  navigator.clipboard.writeText("0322 123 123");
+                  setShowPopup(false);
+                }}
+                className="text-[#101840] font-medium"
+              >
+                0322 123 123
+              </span>
             </div>
           )}
         </div>
