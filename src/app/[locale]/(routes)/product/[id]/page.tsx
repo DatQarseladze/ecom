@@ -46,13 +46,13 @@ const ProductList = () => {
 
   const [filled, setFilled] = useState(false);
 
-  // const handleCountChange = (index, change) => {
-  //   setCounts((prevCounts) => {
-  //     const currentCount = prevCounts[index] || 0;
-  //     const newCount = Math.max(0, Math.min(10, currentCount + change));
-  //     return { ...prevCounts, [index]: newCount };
-  //   });
-  // };
+  const handleCountChange = (index, change) => {
+    // setCounts((prevCounts) => {
+    //   const currentCount = prevCounts[index] || 0;
+    //   const newCount = Math.max(0, Math.min(10, currentCount + change));
+    //   return { ...prevCounts, [index]: newCount };
+    // });
+  };
   return (
     <div className="2xl:mx-[168px] max-2xl:mx-[168px] px-auto pt-[40px] pb-[80px]">
       <Box display="flex" alignItems="center">
