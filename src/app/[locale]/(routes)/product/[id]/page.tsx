@@ -423,7 +423,7 @@ const ProductList = () => {
                   e.stopPropagation();
                   setCounts((prevState) => prevState + 1);
                 }}
-                className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tr-[7px] rounded-br-[7px] `}
+                className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tr-[7px] rounded-br-[7px] `}
               >
                 <PlusIcon width={24} height={24} />
               </button>
