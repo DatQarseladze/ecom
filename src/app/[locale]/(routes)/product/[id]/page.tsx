@@ -399,7 +399,7 @@ const ProductList = () => {
                 <span className="text-[#696F8C]">მარაგშია</span>
               </div>
               <span
-                className="font-medium cursor-pointer text-[#8255E3]"
+                className="font-medium cursor-pointer text-[#8255E3] hover:text-[#7143D1]"
                 onClick={handleSearchForPharmacy}
               >
                 მოიძიე აფთიაქში
