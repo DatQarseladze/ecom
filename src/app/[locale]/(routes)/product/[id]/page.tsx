@@ -408,6 +408,7 @@ const ProductList = () => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
+                  if(counts === 0) return;
                   setCounts((prevState) => prevState - 1);
                 }}
                 className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tl-[7px] rounded-bl-[7px]"
