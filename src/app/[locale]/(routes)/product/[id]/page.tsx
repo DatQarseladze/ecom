@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 import { dissapearingIcon } from "@/src/components/constants";
 import { Box, Typography, Tab, Tabs, Divider } from "@mui/material";
 import ReusableBadge from "@/src/components/ReusableBadge";
-import productImg from "@/src/assets/images/product.jpeg";
-import product2Img from "@/src/assets/images/product2.jpeg";
 import { weekProducts } from "@/src/components/constants";
 import Card from "@/src/components/Card";
 import MinusIcon from "@/src/icons/MinusIcon";
