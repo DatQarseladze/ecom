@@ -438,7 +438,7 @@ const ProductList = () => {
             </div>
             <div className="flex items-center gap-[12px] mt-[24px]">
               <button
-                className={`flex justify-center w-[256px] bg-[#EDE3FF] items-center p-[12px] flex-1 text-[16px] leading-[24px] text-white rounded-lg font-medium active:bg-[red]`}
+                className={`flex justify-center w-[256px] bg-[#EDE3FF] items-center p-[12px] flex-1 text-[16px] leading-[24px] text-white rounded-lg font-medium hover:bg-[#E0D1FF] active:bg-[#CBB2FF]`}
               >
                 <Image
                   src={shoppingCartIcon}
