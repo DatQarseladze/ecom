@@ -77,7 +77,7 @@ const Events = () => {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="flex rounded-[8px] bg-[#fff] w-[378px] items-center justify-center py-[30px] px-[65px] h-[140px] overflow-visible"
+              className="flex rounded-[8px] bg-[#fff] w-[378px] items-center justify-center py-[30px] px-[65px] h-[140px] overflow-visible hover:border-[1px] hover:border-[#1B1D201A] active:bg-[#1B1D200F] active:border-[#1B1D203D] hover:bg-[#1B1D2008]"
               style={{
                 boxShadow: "0px 8px 40px -8px #172B4D14",
               }}
@@ -184,7 +184,7 @@ const Events = () => {
                 style={{
                   boxShadow: "box-shadow: 0px 8px 40px -8px #172B4D14",
                 }}
-                className="hover:bg-[#1B1D2008] border-solid hover:border-[1px] hover:border-[#1B1D201A] active:bg[#1B1D200F] active:border-[#1B1D203D] bg-[#fff] rounded-[8px]"
+                className="hover:bg-[#1B1D2008] border-solid hover:border-[1px] hover:border-[#1B1D201A] active:bg-[#1B1D200F] active:border-[#1B1D203D] bg-[#fff] rounded-[8px] "
                 sx={{
                   display: "flex",
                   alignItems: "center",
