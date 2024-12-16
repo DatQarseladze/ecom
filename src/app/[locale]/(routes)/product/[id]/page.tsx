@@ -238,7 +238,7 @@ const ProductList = () => {
               </div>
             </div>
           </div>
-          <div className="pt-[40px] max-w-[1180px]">
+          <div className="pt-[80px] max-w-[1180px]">
             <div className="py-[4px] flex items-center justify-between mb-[24px]">
               <h2 className="text-[24px] leading-[32px] text-[#474D66] font-bold">
                 რეკომენდირებულია თქვენთვის
