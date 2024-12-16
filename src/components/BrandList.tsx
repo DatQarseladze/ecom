@@ -57,6 +57,8 @@ const BrandList = () => {
         {brandLogos.map((brand, index) => (
           <Box
             key={brand.id}
+            onClick={() => route.push("/brands")}
+
             onMouseDown={() => handleMouseDown(brand.id)}
             onMouseUp={() => handleMouseUp(brand.id)}
             className={` ${isClicked[brand.id] ? "bg-[#1B1D200F]" : "hover:bg-[#1B1D2008]"} `}
@@ -81,7 +83,6 @@ const BrandList = () => {
             {index === brandLogos.length - 1 ? (
               <div
                 className="flex items-center justify-center"
-                onClick={() => route.push("/brands")}
                 style={{
                   whiteSpace: "nowrap",
                 }}
@@ -105,7 +106,6 @@ const BrandList = () => {
               </div>
             ) : (
               <Image
-                onClick={() => route.push("/brands")}
                 src={brand.src}
                 alt={brand.name}
                 width={148}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IconButton } from "@mui/material";
 import phoneIcon from "@/src/assets/images/phone-card.svg";
 import locationIcon from "@/src/assets/images/location.svg";
@@ -12,7 +12,7 @@ type LocationCardProps = {
   time: string;
   isOpen: boolean;
   onPhoneClick: () => void;
-  hideImage ?: boolean
+  hideImage?: boolean;
 };
 
 const LocationCard: React.FC<LocationCardProps> = ({
@@ -28,34 +28,39 @@ const LocationCard: React.FC<LocationCardProps> = ({
   const [activeIcon, setActiveIcon] = useState<"phone" | "location" | null>(
     null
   );
+  const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseDownPhone = (e: React.MouseEvent) => {
+  const handlePhoneClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setActiveIcon("phone");
+    setShowPopup((prev) => !prev);
   };
 
-  const handleMouseUpPhone = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveIcon(null);
-    onPhoneClick();
-  };
+  // Close popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
+        setShowPopup(false);
+      }
+    };
 
-  const handleMouseDownLocation = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveIcon("location");
-  };
-
-  const handleMouseUpLocation = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveIcon(null);
-  };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div
-      className={`flex w-full items-center cursor-pointer justify-between pt-[15px] pb-[15px] hover:bg-[#1B1D2008] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200 ${activeIcon === null ? "active:bg-[#1B1D200F]" : ""}`}
+      className={`flex w-full items-center cursor-pointer justify-between hover:bg-[#1B1D2008] border-b-solid border-b-[1px] border-b-[#1B1D201A] transition duration-200 ${
+        activeIcon === null ? "active:bg-[#1B1D200F]" : ""
+      }`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex flex-1 items-center w-full overflow-auto">
+      <div className="flex flex-1 items-center w-full pt-[15px] pb-[15px] relative overflow-x-auto overflow-y-visible">
         {!hideImage && (
           <div className="max-2xl:min-w-[164px] px-[16px] flex-grow">
             <img
@@ -66,22 +71,22 @@ const LocationCard: React.FC<LocationCardProps> = ({
           </div>
         )}
         <div
-          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} pl-[16px] flex-grow`}
         >
           <span className="text-[#101840]">{city}</span>
         </div>
         <div
-          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} pl-[16px] flex-grow`}
         >
           <span className="text-[#101840] pl-[48px]">{district}</span>
         </div>
         <div
-          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} ?  pl-[16px] flex-grow`}
+          className={`${hideImage ? "" : "max-2xl:min-w-[374px]"} pl-[16px] flex-grow`}
         >
           <span className="text-[#101840] pl-[48px]">{address}</span>
         </div>
         <div
-          className={`${hideImage ? "" : "max-2xl:min-w-[184px]"} ?  pl-[16px] flex flex-col flex-grow`}
+          className={`${hideImage ? "" : "max-2xl:min-w-[184px]"} pl-[16px] flex flex-col flex-grow`}
         >
           <span className="text-[14px] leading-[22px] text-[#101840]">
             ორშაბათი - კვირა
@@ -93,11 +98,10 @@ const LocationCard: React.FC<LocationCardProps> = ({
         </div>
 
         {/* Phone Icon */}
-        <div className={`max-2xl:min-w-[52px]`}>
+        <div className="relative min-w-[52px]">
           <div
             className="flex justify-center items-center cursor-pointer rounded-md w-[40px] h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
-            onMouseDown={handleMouseDownPhone}
-            onMouseUp={handleMouseUpPhone}
+            onClick={handlePhoneClick}
           >
             <Image
               src={phoneIcon}
@@ -107,14 +111,21 @@ const LocationCard: React.FC<LocationCardProps> = ({
               className="w-[20px] h-[20px]"
             />
           </div>
+
+          {showPopup && (
+            <div
+              ref={popupRef}
+              className="absolute top-[40px] right-[20px] bg-white shadow-lg rounded-lg px-[15px] py-[20px] z-[9999] whitespace-nowrap will-change-transform"
+              style={{ pointerEvents: "auto", position: "fixed" }} // Ensure the popup stays visible even when scrolling
+            >
+              <span className="text-[#101840] font-medium">0322 123 123</span>
+            </div>
+          )}
         </div>
 
-        <div className={`max-2xl:min-w-[60px]`}>
-          <div
-            className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]"
-            onMouseDown={handleMouseDownLocation}
-            onMouseUp={handleMouseUpLocation}
-          >
+        {/* Location Icon */}
+        <div className="min-w-[60px]">
+          <div className="flex justify-center items-center cursor-pointer w-[40px] rounded-md h-[40px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F]">
             <Image
               src={locationIcon}
               alt="location"
