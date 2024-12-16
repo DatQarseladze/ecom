@@ -18,6 +18,7 @@ import caretRight from "@/src/assets/images/caret-right.svg";
 import caretLeft from "@/src/assets/images/caret-left.svg";
 import Map from "@/src/components/Map";
 import InnerImageZoom from "react-inner-image-zoom";
+import ShoppingCartIcon from "@/src/icons/ShoppingCartIcon";
 
 const ProductList = () => {
   const [counts, setCounts] = useState(0);
@@ -440,17 +441,7 @@ const ProductList = () => {
               <button
                 className={`flex justify-center w-[256px] bg-[#EDE3FF] items-center p-[12px] flex-1 text-[16px] leading-[24px] text-white rounded-lg font-medium hover:bg-[#E0D1FF] active:bg-[#CBB2FF]`}
               >
-                <Image
-                  src={shoppingCartIcon}
-                  alt="cart"
-                  width={20}
-                  height={20}
-                  style={{
-                    outline: "none",
-                    height: "20px",
-                    width: "20px",
-                  }}
-                />
+                <ShoppingCartIcon fill={"#7143D1"} />
                 <div className="ml-[8px] text-[#7143D1] font-normal">
                   დამატება
                 </div>
