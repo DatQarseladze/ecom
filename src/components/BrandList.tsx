@@ -105,6 +105,7 @@ const BrandList = () => {
               </div>
             ) : (
               <Image
+                onClick={() => route.push("/brands")}
                 src={brand.src}
                 alt={brand.name}
                 width={148}
