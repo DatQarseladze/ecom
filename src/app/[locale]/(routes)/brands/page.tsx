@@ -184,7 +184,7 @@ const Events = () => {
                 style={{
                   boxShadow: "0px 8px 40px -8px #172B4D14",
                 }}
-                className="hover:bg-[#1B1D200F] bg-[#fff] rounded-[8px]"
+                className="hover:bg-[#1B1D200F] border-solid hover:border-[1px] hover:border-[#1B1D201A] active:bg-[#1B1D200F] active:border-[#1B1D203D] bg-[#fff] rounded-[8px]"
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -195,6 +195,7 @@ const Events = () => {
                   boxSizing: "border-box",
                   width: "297.6px",
                   cursor: "pointer",
+                  boxშhadow: "0px 8px 40px -8px #172B4D14",
                   filter: "grayscale(100%)",
                   transition: "filter 0.3s ease",
                   "&:hover": {
