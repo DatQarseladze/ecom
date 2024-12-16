@@ -38,6 +38,12 @@ const ProductList = () => {
     setTabIndex(1);
     pharmacyRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const handleMoveToDescription = () => {
+    setTabIndex(0);
+    pharmacyRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [filled, setFilled] = useState(false);
 
   const handleCountChange = (index, change) => {
@@ -185,7 +191,10 @@ const ProductList = () => {
                 4/2 ბი ვიზიბალ - Be Visible, წარმოადგენს პროფესიონალურ თმის
                 საღებავს.
               </h4>
-              <h4 className="text-[#8255E3] font-medium mt-[8px]">
+              <h4
+                onClick={handleMoveToDescription}
+                className="text-[#8255E3] cursor-pointer font-medium mt-[8px]"
+              >
                 სრული ანოტაცია
               </h4>
               <div className="flex flex-col mt-[8px]">
