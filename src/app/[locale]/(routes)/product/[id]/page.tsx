@@ -408,12 +408,12 @@ const ProductList = () => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  if(counts === 0) return;
+                  if (counts === 0) return;
                   setCounts((prevState) => prevState - 1);
                 }}
-                className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tl-[7px] rounded-bl-[7px]"
+                className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tl-[7px] rounded-bl-[7px]"
               >
-                <MinusIcon />
+                <MinusIcon width={24} height={24} />
               </button>
               <div className="text-[#101840] text-[16px] leading-[24px]">
                 {counts} შეკვრა
@@ -425,7 +425,7 @@ const ProductList = () => {
                 }}
                 className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D201F] px-[14px] py-[13px] rounded-tr-[7px] rounded-br-[7px] `}
               >
-                <PlusIcon />
+                <PlusIcon width={24} height={24} />
               </button>
             </div>
             <div className="mt-[24px] flex items-center gap-[8px]">
