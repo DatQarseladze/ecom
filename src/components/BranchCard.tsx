@@ -116,8 +116,11 @@ const LocationCard: React.FC<LocationCardProps> = ({
           {showPopup && (
             <div
               ref={popupRef}
+              style={{
+                boxShadow: "0px 3px 5px 0px #1B1D200D",
+              }}
               className="absolute top-[30px] left-[25px] transform -translate-x-[50%] shadow-lg rounded-lg px-[15px] py-[12px] bg-[#fff] z-[9999] whitespace-nowrap hover:bg-[#f5f5f5] active:bg-[#e0e0e0]"
-              >
+            >
               <span
                 onClick={() => {
                   navigator.clipboard.writeText("0322 123 123");
