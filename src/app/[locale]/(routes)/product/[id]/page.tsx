@@ -412,7 +412,8 @@ const ProductList = () => {
                   if (counts === 0) return;
                   setCounts((prevState) => prevState - 1);
                 }}
-                className="bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tl-[7px] rounded-bl-[7px]"
+                disabled={!counts}
+                className={`bg-[#1B1D2008]  ${!counts ? "opacity-50" : ""} cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tl-[7px] rounded-bl-[7px]`}
               >
                 <MinusIcon width={24} height={24} />
               </button>
