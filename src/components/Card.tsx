@@ -133,7 +133,7 @@ const Card = ({
               <div className="flex-1 items-center justify-between flex text-[16px] mr-[12px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
                 <button
                   onClick={(e) => {
-                    e.preventDefault();
+                    e.stopPropagation();
                     handleCountChange(index, -1);
                     setIsClicked(false);
                   }}
