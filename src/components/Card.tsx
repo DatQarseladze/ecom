@@ -46,7 +46,7 @@ const Card = ({
 
   return (
     <a
-      href={`product/${product.id}`}
+      href={`product/${product}`}
       key={product.id}
       onClick={onClick}
       style={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}

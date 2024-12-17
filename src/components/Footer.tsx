@@ -108,6 +108,7 @@ const Footer = () => {
               {links.map((link, index) => (
                 <Link
                   key={index}
+                  href={link?.redirect}
                   color="#FFFFFF"
                   underline="none"
                   className="cursor-pointer"
@@ -125,6 +126,7 @@ const Footer = () => {
               {promoLinks.map((link, index) => (
                 <Link
                   key={index}
+                  href={link?.redirect}
                   color="#FFFFFF"
                   underline="none"
                   className="cursor-pointer"
