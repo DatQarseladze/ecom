@@ -142,7 +142,7 @@ const Card = ({
                   <MinusIcon />
                 </button>
                 <div className="text-[#101840] text-[16px] leading-[24px]">
-                  {counts[index]} შეკვრა
+                  {counts[index]}
                 </div>
                 <button
                   onClick={(e) => {
