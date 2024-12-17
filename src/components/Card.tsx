@@ -45,14 +45,11 @@ const Card = ({
   };
 
   return (
-    <div>
-      <a
-        href={`product/${product}`}
-        key={product.id}
-        onClick={onClick}
-        style={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
-        className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
-      >
+    <div
+      className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
+      style={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
+    >
+      <a href={`product/${product}`} key={product.id} onClick={onClick}>
         <div className="flex items-center flex-end w-full">
           <div className="flex w-full space-x-[4px]">
             <ReusableBadge
@@ -137,6 +134,7 @@ const Card = ({
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
+                      e.preventDefault();
                       handleCountChange(index, -1);
                       setIsClicked(false);
                     }}
@@ -150,6 +148,7 @@ const Card = ({
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
+                      e.preventDefault();
                       handleCountChange(index, 1);
                     }}
                     disabled={counts[index] === 10}
@@ -162,6 +161,7 @@ const Card = ({
               <div
                 onClick={(e) => {
                   e.stopPropagation();
+                  e.preventDefault();
                   setFilled((prevState) => !prevState);
                 }}
                 className="p-[11px] border-[1px] group/svg border-solid border-[#1B1D201A] rounded-[8px] hover:bg-[#1B1D2008]"
