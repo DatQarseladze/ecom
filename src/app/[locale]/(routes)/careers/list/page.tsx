@@ -86,6 +86,7 @@ const CareersList = () => {
               src={productImg}
               alt="careers list"
               width={0}
+              className="max-w-[unset]"
               height={464}
               style={{ width: "100%" }}
               layout="responsive"

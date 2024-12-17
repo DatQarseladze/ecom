@@ -122,7 +122,7 @@ const Events = () => {
             <Image
               src={productImg}
               alt={"product"}
-              className="rounded-[8px]"
+              className="rounded-[8px] max-w-[unset]"
               width={792}
               height={560}
             />
@@ -133,7 +133,7 @@ const Events = () => {
             <Image
               src={careersImg}
               alt={"product"}
-              className="rounded-[8px]"
+              className="rounded-[8px] max-w-[unset]"
               width={792}
               height={560}
             />
