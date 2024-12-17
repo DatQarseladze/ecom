@@ -16,7 +16,7 @@ import heartIcon from "../assets/images/heart.svg";
 import leafIcon from "../assets/images/leaf.svg";
 import starIcon from "../assets/images/star.svg";
 import clockIcon from "../assets/images/clock.svg";
-import dissapearingIcon from '../assets/images/dissapearing_clock.svg'
+import dissapearingIcon from "../assets/images/dissapearing_clock.svg";
 import organIcon from "../assets/images/organ.svg";
 import ratingIcon from "../assets/images/rating.svg";
 import bestsellerIcon from "../assets/images/bestseller.svg";
@@ -217,6 +217,12 @@ export const brandCategoryOptions = [
   { name: "სპეციალური მოვლა" },
   { name: "სამედიცინო ტექნიკა" },
   { name: "სასაჩუქრე ნაკრებები" },
+];
+
+export const milligramOptions = [
+  { name: "100 მლ" },
+  { name: "50 მლ" },
+  { name: "30 მლ" },
 ];
 
 export const countriesOptions = [
@@ -838,5 +844,4 @@ export const branches = [
     address: "1234 Address St.",
     time: "08:30 - 23:45",
   },
-  
 ];
