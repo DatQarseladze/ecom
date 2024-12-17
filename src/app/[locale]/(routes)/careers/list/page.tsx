@@ -96,7 +96,7 @@ const CareersList = () => {
         </div>
 
         <div className="relative">
-          <div className="flex  mt-[48px] gap-[16px]">
+          <div className="flex mt-[48px] gap-[16px]">
             <div
               className="cursor-pointer w-[127px] filter-button rounded-[8px] border-[1px] flex items-center gap-[8px] p-[15px] pl-[11px] border-solid border-[#1B1D201A] hover:bg-[#1B1D200F]"
               onClick={(e) => {
@@ -116,6 +116,7 @@ const CareersList = () => {
               placeholder="მოძებნე სასურველი ვაკანსია"
               search={search}
               setSearch={setSearch}
+              className="max-2xl:max-w-[527px]"
             />
 
             <DropdownSelect
