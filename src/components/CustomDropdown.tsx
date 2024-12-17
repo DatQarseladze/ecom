@@ -53,7 +53,7 @@ const CustomDropdown = ({
 
   return (
     <div
-      className={`relative ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
+      className={`relative w-[326px] ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
       ref={dropdownRef}
     >
       <button
