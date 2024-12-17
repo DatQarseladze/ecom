@@ -83,7 +83,7 @@ const CustomDropdown = ({
 
       {dropdownVisible && (
         <div
-          className={`absolute top-[36px] left-[-16px] w-full rounded-lg border border-t-0 rounded-b-[6px] shadow-lg max-h-[300px] overflow-y-auto ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"} z-[9999]`}
+          className={`absolute top-[36px] border-t-[1px] border-t-[solid] border-[#1B1D200F] left-[-16px] w-full rounded-lg border border-t-0 rounded-b-[6px] shadow-lg max-h-[300px] overflow-y-auto ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"} z-[9999]`}
           style={{
             boxShadow: "0px 3px 5px 0px #1B1D200D",
           }}

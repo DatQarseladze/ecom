@@ -209,7 +209,7 @@ const ProductList = () => {
                 სრული ანოტაცია
               </h4>
               <div className="flex flex-col mt-[8px]">
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">ბრენდი</h2>
                   </div>
@@ -219,7 +219,7 @@ const ProductList = () => {
                     </h2>
                   </div>
                 </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">სკალპის ტიპი</h2>
                   </div>
@@ -227,7 +227,7 @@ const ProductList = () => {
                     <h2 className="text-[#101840]">ყველა</h2>
                   </div>
                 </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">
                       მწარმოებელი ქვეყანა
@@ -244,11 +244,11 @@ const ProductList = () => {
                     <h2 className="text-[#101840]">საფრანგეთი</h2>
                   </div>
                 </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">მოცულობა</h2>
                   </div>
-                  <div className="p-[16px] w-[326px]">
+                  <div className="p-[16px] py-[12px] w-[326px]">
                     <CustomDropdown
                       attribute="name"
                       onChange={setMiligram}
@@ -257,11 +257,11 @@ const ProductList = () => {
                     />
                   </div>
                 </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">ფერი</h2>
                   </div>
-                  <div className="p-[16px] w-[326px]">
+                  <div className="p-[16px] py-[12px] w-[326px]">
                     <CustomDropdown
                       attribute="name"
                       onChange={setColor}
@@ -271,7 +271,7 @@ const ProductList = () => {
                     />
                   </div>
                 </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                <div className="flex border-b-[1px] h-[56px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">ჩვენება</h2>
                   </div>
@@ -451,6 +451,15 @@ const ProductList = () => {
                 მოიძიე აფთიაქში
               </span>
             </div>
+            <div className="flex w-full mt-[24px] cursor-pointer">
+              <div className="flex items-center justify-center leading-[22px] border-[1px] border-solid border-[#EDE3FF] bg-[#F8F4FF] text-[#7143D1] rounded-l-[12px] px-4 py-2 w-1/2">
+                სრული შეკვრა
+              </div>
+              <div className="flex hover:bg-[#1B1D2008] active:bg-[#1B1D200F] items-center justify-center leading-[22px] border-[1px] border-solid border-[#EDE3FF] bg-[#FFFFFF] text-[#1A1A1A] rounded-r-[12px] px-4 py-2 w-1/2">
+                ტაბლეტი
+              </div>
+            </div>
+
             <div className="flex-1 mt-[24px] h-[48px] items-center justify-between flex text-[16px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
               <button
                 onClick={(e) => {
