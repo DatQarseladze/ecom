@@ -45,16 +45,11 @@ const Card = ({
   };
 
   return (
-    <Box
+    <a
+      href={`product/${product.id}`}
       key={product.id}
       onClick={onClick}
-      sx={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
-      onMouseUp={(e) => {
-        if (e.button === 1) {
-          e.preventDefault();
-          window.open(`/product/${product.id}`, "_blank");
-        }
-      }}
+      style={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
       className="rounded-lg group p-[16px] cursor-pointer bg-[#FFFFFF] relative"
     >
       <div className="flex items-center flex-end w-full">
@@ -186,7 +181,7 @@ const Card = ({
           </div>
         </div>
       </div>
-    </Box>
+    </a>
   );
 };
 
