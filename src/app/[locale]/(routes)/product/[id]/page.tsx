@@ -240,7 +240,7 @@ const ProductList = () => {
                   </div>
                   <div className="p-[16px] w-[326px]">
                     <h2 className="text-[#8255E3] cursor-pointer">
-                      100 მლ
+                      100 მლ 
                     </h2>
                   </div>
                 </div>
