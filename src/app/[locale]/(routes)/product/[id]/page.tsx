@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
+  colorOptions,
   dissapearingIcon,
   france,
   milligramOptions,
@@ -31,6 +32,7 @@ const ProductList = () => {
   const route = useRouter();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [milligram, setMiligram] = useState('100 მლ')
+  const [color, setColor] = useState('N 4/2 3275')
   const [selectedImage, setSelectedImage] = useState(
     "https://s3-alpha-sig.figma.com/img/739a/ecd8/76273b43eba237cb8a343eca676c5bff?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iE7Krq675y~OOpH~NuJ8~G-LQ3INvYNWbcjyQX~kRzSYZ0EslS0WvSA9PQDNKQuzCT~aa1ZkFiNe-kdsHXq4kCiaTmzzMDrT~60V8c7lrpMIlO4xoCyKn5T2p3Ipzq~wYPfr~9FXiLW2u21Ues8IStMtjMwBjAY6yGPWLQTE6YXDE4w7YQSk5T3wD7y2oRFLhdjiExBSrua3fZMzBV77g28zrZFw~nObe50qTDByjURKLsGzO6QlOEJr~LGlF9xyVStaxrfrnjANvVmoXN67-qFAdkj6lrLhKWOJZYJp6RkYXKXgOAdgWFzZQr~t3dASrX6Ba0~RrNtxgc0NBf5~7Q__"
   );
@@ -251,17 +253,20 @@ const ProductList = () => {
                       value={milligram}
                       options={milligramOptions}
                     />
-                    {/* <div className="cursor-pointer flex items-center gap-[4px] w-fit">
-                      <h2 className="text-[#101840]">100 მლ</h2>
-                      <div className="flex w-[32px] h-[32px] items-center justify-center">
-                        <Image
-                          alt="down arrow"
-                          src={downArrow}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                    </div> */}
+                  </div>
+                </div>
+                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                  <div className="p-[16px] w-[326px]">
+                    <h2 className="font-medium text-[#101840]">ფერი</h2>
+                  </div>
+                  <div className="p-[16px] w-[326px]">
+                    <CustomDropdown
+                      attribute="name"
+                      onChange={setColor}
+                      value={color}
+                      options={colorOptions}
+                      withIcon
+                    />
                   </div>
                 </div>
                 <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">

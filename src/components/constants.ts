@@ -225,6 +225,14 @@ export const milligramOptions = [
   { name: "30 მლ" },
 ];
 
+export const colorOptions = [
+  { color: "#7D2828", name: "N 4/2 3275" },
+  { color: "#A73636", name: "N 4/2 3276" },
+  { color: "#D14343", name: "N 4/2 3277" },
+  { color: "#A47D16", name: "N 4/2 3278" },
+  { color: "#E5BD09", name: "N 4/2 3279" },
+];
+
 export const countriesOptions = [
   { name: "საქართველო", flag: georgia },
   { name: "საფრანგეთი", flag: france },

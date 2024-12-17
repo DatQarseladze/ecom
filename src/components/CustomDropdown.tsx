@@ -10,7 +10,7 @@ const CustomDropdown = ({
   value,
   options,
   multiple = false,
-  withFlag = false,
+  withIcon = false,
   withPagination = false,
   backgroundColor = "",
   wrapperClassName = "",
@@ -51,6 +51,10 @@ const CustomDropdown = ({
     }
   };
 
+  const colorValue = withIcon
+    ? options.find((option) => option?.name === value)?.color
+    : "";
+
   return (
     <div
       className={`relative w-[326px] ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
@@ -60,7 +64,16 @@ const CustomDropdown = ({
         className="cursor-pointer flex items-center gap-[4px] w-fit"
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
-        <h2 className="text-[#101840]">{value}</h2>
+        <div className="flex items-center gap-[8px]">
+          {withIcon && (
+            <div
+              className="w-[24px] h-[24px] rounded-lg"
+              style={{ backgroundColor: colorValue || "transparent" }}
+            />
+          )}
+
+          <h2 className="text-[#101840]">{value}</h2>
+        </div>
         <div
           className={`flex w-[32px] h-[32px] items-center justify-center rounded-lg hover:bg-[#1B1D2008] active:bg-[#1B1D200F] ${!dropdownVisible ? "" : "rotate-180"}`}
         >
@@ -106,9 +119,15 @@ const CustomDropdown = ({
                   />
                 )}
                 <div className="flex items-center justify-between w-full">
-                  <span className="text-[#101840] pl-[16px]">
-                    {option[attribute]}
-                  </span>
+                  <div className="items-center flex pl-[16px] gap-[16px]">
+                    {withIcon && (
+                      <div
+                        className={`w-[20px] h-[20px] rounded-lg`}
+                        style={{ backgroundColor: option?.color }}
+                      />
+                    )}
+                    <span className="text-[#101840]">{option[attribute]}</span>
+                  </div>
                   <div className="mr-[16px] flex items-center justify-center w-[20px] h-[24px]">
                     <Image
                       alt="check icon"
