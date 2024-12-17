@@ -51,6 +51,7 @@ const Card = ({
       sx={{ boxShadow: "0px 8px 40px -8px #172B4D14" }}
       onMouseUp={(e) => {
         if (e.button === 1) {
+          e.preventDefault();
           window.open(`/product/${product.id}`, "_blank");
         }
       }}
