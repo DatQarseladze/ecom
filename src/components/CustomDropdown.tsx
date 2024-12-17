@@ -95,7 +95,7 @@ const CustomDropdown = ({
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex hover:bg-[#1B1D2008] ${index !== options?.length - 1 ? "border-b-[1px]" : ""} border-b-[solid] border-[#1B1D200F] ${value.includes(option[attribute]) ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
+                className={`active:bg-[#1B1D200F] flex hover:bg-[#1B1D2008] ${index !== options?.length - 1 ? "border-b-[1px]" : ""} border-b-[solid] border-[#1B1D200F] ${value.includes(option[attribute]) ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
               >
                 {multiple && (
                   <Checkbox
