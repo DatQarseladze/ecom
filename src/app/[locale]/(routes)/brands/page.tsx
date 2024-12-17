@@ -106,7 +106,7 @@ const Events = () => {
               value={selectedFilters}
               options={brandCategoryOptions}
               onChange={handleFilter}
-              backgroundColor="#FFFFFF00"
+              backgroundColor="#FBFBFD"
             />
             <DropdownSelect
               attribute="name"
@@ -117,7 +117,7 @@ const Events = () => {
               onChange={handleFilter}
               withFlag
               withPagination
-              backgroundColor="#FFFFFF00"
+              backgroundColor="#FBFBFD"
             />
           </div>
         </div>
