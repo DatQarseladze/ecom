@@ -54,7 +54,7 @@ const DropdownSelect = ({
 
   return (
     <div
-      className={`relative w-[436px] h-[56px] ${wrapperClassName}`}
+      className={`relative w-[436px] h-[56px] ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
       ref={dropdownRef}
     >
       <button
@@ -70,13 +70,16 @@ const DropdownSelect = ({
       </button>
 
       {dropdownVisible && (
-        <div className="absolute top-[55px] left-0 z-10 w-full mt-[-6px] border border-t-0 rounded-b-[6px] bg-white shadow-lg max-h-[300px] overflow-y-auto">
-          <div className="w-full px-[8px] pb-[16px]">
+        <div 
+        
+        className={`absolute top-[55px] left-0 w-full mt-[-6px] border border-t-0 rounded-b-[6px] shadow-lg max-h-[300px] overflow-y-auto ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"} z-[9999]`}
+        >
+          <div className={`w-full px-[8px] pb-[16px]  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}>
             {options.slice(0, optionsPerRow).map((option) => (
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex rounded-[8px] hover:bg-[#1B1D2008] ${value.includes(option[attribute]) ? "bg-[#1B1D2008]" : "bg-[#1B1D2008"} cursor-pointer h-[48px] w-full items-center`}
+                className={`flex rounded-[8px] hover:bg-[#1B1D2008] ${value.includes(option[attribute]) ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
               >
                 {multiple && (
                   <Checkbox
