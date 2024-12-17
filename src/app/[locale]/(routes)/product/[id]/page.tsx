@@ -28,11 +28,13 @@ import CustomDropdown from "@/src/components/CustomDropdown";
 
 const ProductList = () => {
   const [counts, setCounts] = useState(0);
+  const [count, setCount] = useState({});
   const pharmacyRef = useRef<HTMLDivElement | null>(null);
+
   const route = useRouter();
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [milligram, setMiligram] = useState('100 მლ')
-  const [color, setColor] = useState('N 4/2 3275')
+  const [milligram, setMiligram] = useState("100 მლ");
+  const [color, setColor] = useState("N 4/2 3275");
   const [selectedImage, setSelectedImage] = useState(
     "https://s3-alpha-sig.figma.com/img/739a/ecd8/76273b43eba237cb8a343eca676c5bff?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iE7Krq675y~OOpH~NuJ8~G-LQ3INvYNWbcjyQX~kRzSYZ0EslS0WvSA9PQDNKQuzCT~aa1ZkFiNe-kdsHXq4kCiaTmzzMDrT~60V8c7lrpMIlO4xoCyKn5T2p3Ipzq~wYPfr~9FXiLW2u21Ues8IStMtjMwBjAY6yGPWLQTE6YXDE4w7YQSk5T3wD7y2oRFLhdjiExBSrua3fZMzBV77g28zrZFw~nObe50qTDByjURKLsGzO6QlOEJr~LGlF9xyVStaxrfrnjANvVmoXN67-qFAdkj6lrLhKWOJZYJp6RkYXKXgOAdgWFzZQr~t3dASrX6Ba0~RrNtxgc0NBf5~7Q__"
   );
@@ -56,11 +58,11 @@ const ProductList = () => {
   const [filled, setFilled] = useState(false);
 
   const handleCountChange = (index, change) => {
-    // setCounts((prevCounts) => {
-    //   const currentCount = prevCounts[index] || 0;
-    //   const newCount = Math.max(0, Math.min(10, currentCount + change));
-    //   return { ...prevCounts, [index]: newCount };
-    // });
+    setCount((prevCounts) => {
+      const currentCount = prevCounts[index] || 0;
+      const newCount = Math.max(0, Math.min(10, currentCount + change));
+      return { ...prevCounts, [index]: newCount };
+    });
   };
   return (
     <div className="2xl:mx-[168px] max-2xl:mx-[168px] px-auto pt-[40px] pb-[80px]">
@@ -314,7 +316,7 @@ const ProductList = () => {
                     key={product.id}
                     product={product}
                     index={index}
-                    counts={counts}
+                    counts={count}
                     handleCountChange={handleCountChange}
                   />
                 ))}
