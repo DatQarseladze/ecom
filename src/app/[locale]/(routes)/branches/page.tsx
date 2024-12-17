@@ -192,7 +192,6 @@ const Branches = () => {
             onChange={handleSingleFilter}
             wrapperClassName="w-full flex-grow flex 2xl:min-w-[638px] max-2xl:min-w-unset"
             showValue
-            backgroundColor="#FFFFFF00"
           />
           <DropdownSelect
             attribute="name"

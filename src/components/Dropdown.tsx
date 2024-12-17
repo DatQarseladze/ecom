@@ -70,7 +70,7 @@ const DropdownSelect = ({
       </button>
 
       {dropdownVisible && (
-        <div className="absolute left-0 z-10 w-full mt-[-6px] border border-t-0 rounded-b-[6px] bg-white shadow-lg max-h-[300px] overflow-y-auto">
+        <div className="absolute top-[55px] left-0 z-10 w-full mt-[-6px] border border-t-0 rounded-b-[6px] bg-white shadow-lg max-h-[300px] overflow-y-auto">
           <div className="w-full px-[8px] pb-[16px]">
             {options.slice(0, optionsPerRow).map((option) => (
               <div

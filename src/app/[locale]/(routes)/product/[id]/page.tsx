@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { dissapearingIcon } from "@/src/components/constants";
+import { dissapearingIcon, france } from "@/src/components/constants";
 import { Box, Typography, Tab, Tabs, Divider } from "@mui/material";
 import ReusableBadge from "@/src/components/ReusableBadge";
 import { weekProducts } from "@/src/components/constants";
@@ -219,20 +219,39 @@ const ProductList = () => {
                 </div>
                 <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
                   <div className="p-[16px] w-[326px]">
+                    <h2 className="font-medium text-[#101840]">
+                      მწარმოებელი ქვეყანა
+                    </h2>
+                  </div>
+                  <div className="p-[16px] w-[326px] flex items-center gap-[16px]">
+                    <Image
+                      src={france}
+                      width={24}
+                      height={16}
+                      className="w-[24px] h-[16px]"
+                      alt="country"
+                    />
+                    <h2 className="text-[#101840]">საფრანგეთი</h2>
+                  </div>
+                </div>
+                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                  <div className="p-[16px] w-[326px]">
+                    <h2 className="font-medium text-[#101840]">მოცულობა</h2>
+                  </div>
+                  <div className="p-[16px] w-[326px]">
+                    <h2 className="text-[#8255E3] cursor-pointer">
+                      100 მლ
+                    </h2>
+                  </div>
+                </div>
+                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
+                  <div className="p-[16px] w-[326px]">
                     <h2 className="font-medium text-[#101840]">ჩვენება</h2>
                   </div>
                   <div className="p-[16px] w-[326px]">
                     <h2 className="text-[#8255E3] cursor-pointer">
                       ჩვილის საფენი
                     </h2>
-                  </div>
-                </div>
-                <div className="flex border-b-[1px] border-b-[#1B1D201A] border-b-solid">
-                  <div className="p-[16px] w-[326px]">
-                    <h2 className="font-medium text-[#101840]">სკალპის ტიპი</h2>
-                  </div>
-                  <div className="p-[16px] w-[326px]">
-                    <h2 className="text-[#101840]">ყველა</h2>
                   </div>
                 </div>
               </div>
