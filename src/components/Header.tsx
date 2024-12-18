@@ -13,14 +13,14 @@ import SearchIcon from "@/src/icons/SearchIcon";
 
 const Navigation = () => {
   const items = [
-    { url: "en/meds", name: "მედიკამენტები" },
-    { url: "en/beauty", name: "სილამაზე და მოვლა" },
-    { url: "/en/parents", name: "დედა და ბავშვი" },
+    { url: "/meds", name: "მედიკამენტები" },
+    { url: "/beauty", name: "სილამაზე და მოვლა" },
+    { url: "/parents", name: "დედა და ბავშვი" },
     { url: "/events", name: "ივენთები" },
-    { url: "/en/blogs", name: "ბლოგი" },
-    { url: "en/spots", name: "აქციები" },
-    { url: "en/outlets", name: "OUTLET" },
-    { url: "en/contacts", name: "კონტაქტი" },
+    { url: "//blogs", name: "ბლოგი" },
+    { url: "/spots", name: "აქციები" },
+    { url: "/outlets", name: "OUTLET" },
+    { url: "/contacts", name: "კონტაქტი" },
     { url: "/branches", name: "ფილიალები" },
   ];
 
@@ -50,14 +50,16 @@ const Navigation = () => {
         <React.Fragment key={item?.name}>
           <a
             href="#"
-            className={`relative text-[18px] h-[48px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] items-center px-[8px] flex group transition-colors duration-300 ${
-              path === item?.url
-                ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
-                : "text-gray-700 border-b-[2px] border-b-transparent"
-            } ${item?.name === "OUTLET" ? "font-medium" : ""}`}
+            className={`relative text-[18px] h-[48px] font-[400] hover:bg-[#1B1D2008] rounded-[2px] leading-[24px] items-center px-[8px] flex group transition-colors duration-300
+              ${
+                activeTab === item?.url
+                  ? "text-[#8255E3] border-b-[2px] border-b-[#dfd2ff]"
+                  : "text-gray-700 border-b-[2px] border-b-transparent"
+              } ${item?.name === "OUTLET" ? "font-medium" : ""}`}
             onClick={() => {
               if (item?.url) {
                 route.push(item.url);
+                setActiveTab(item?.url);
               }
               setActiveTab(item?.url);
             }}
