@@ -138,11 +138,16 @@ const TabletDropdown = ({
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex rounded-[8px] hover:bg-[#1B1D2008] ${value === option["value"] ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
+                className={`flex gap-[8px] rounded-[8px] hover:bg-[#1B1D2008] ${value === option["value"] ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
               >
                 <span className="text-[#101840] pl-[15px]">
                   {option["name"]}
                 </span>
+                <div className="">
+                  (<span className="text-[#8255E3] text-[16px] font-medium leading-[24px]">{option.newPrice}</span>
+                    <span className="ml-[4px] text-[#696F8C] text-[14px] leading-[22px] line-through">{option.oldPrice}</span>
+                  )
+                </div>
               </div>
             ))}
             {withPagination && (

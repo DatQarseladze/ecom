@@ -226,13 +226,13 @@ export const milligramOptions = [
 ];
 
 export const tabletOptions = [
-  { name: "1 ტაბლეტი", value: 1 },
-  { name: "5 ტაბლეტი", value: 5 },
-  { name: "10 ტაბლეტი", value: 10 },
-  { name: "20 ტაბლეტი", value: 20 },
-  { name: "30 ტაბლეტი", value: 30 },
-  { name: "40 ტაბლეტი", value: 40 },
-  { name: "50 ტაბლეტი", value: 50 },
+  { name: "1 ტაბლეტი", value: 1, oldPrice: "1.09₾", newPrice: "1.02₾" },
+  { name: "5 ტაბლეტი", value: 5, oldPrice: "5.09₾", newPrice: "5.05₾" },
+  { name: "10 ტაბლეტი", value: 10, oldPrice: "10.90₾", newPrice: "10.10₾" },
+  { name: "20 ტაბლეტი", value: 20, oldPrice: "20.90₾", newPrice: "20.20₾" },
+  { name: "30 ტაბლეტი", value: 30, oldPrice: "32.09₾", newPrice: "30.38₾" },
+  { name: "40 ტაბლეტი", value: 40, oldPrice: "48.09₾", newPrice: "40.45₾" },
+  { name: "50 ტაბლეტი", value: 50, oldPrice: "59.09₾", newPrice: "50.55₾" },
 ];
 
 export const colorOptions = [
