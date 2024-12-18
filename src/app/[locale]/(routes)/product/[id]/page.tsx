@@ -29,7 +29,7 @@ import CustomDropdown from "@/src/components/CustomDropdown";
 import TabletDropdown from "@/src/components/TabletDropdown";
 
 const ProductList = () => {
-  const [counts, setCounts] = useState(0);
+  const [counts, setCounts] = useState(1);
   const [count, setCount] = useState({});
   const pharmacyRef = useRef<HTMLDivElement | null>(null);
 
@@ -37,7 +37,7 @@ const ProductList = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [milligram, setMiligram] = useState("100 მლ");
   const [color, setColor] = useState("N 4/2 3275");
-  const [tabletValue, setTabletValue] = useState<number>(1);
+  const [tabletValue, setTabletValue] = useState<number>(0);
   const [selectedImage, setSelectedImage] = useState(
     "https://s3-alpha-sig.figma.com/img/739a/ecd8/76273b43eba237cb8a343eca676c5bff?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iE7Krq675y~OOpH~NuJ8~G-LQ3INvYNWbcjyQX~kRzSYZ0EslS0WvSA9PQDNKQuzCT~aa1ZkFiNe-kdsHXq4kCiaTmzzMDrT~60V8c7lrpMIlO4xoCyKn5T2p3Ipzq~wYPfr~9FXiLW2u21Ues8IStMtjMwBjAY6yGPWLQTE6YXDE4w7YQSk5T3wD7y2oRFLhdjiExBSrua3fZMzBV77g28zrZFw~nObe50qTDByjURKLsGzO6QlOEJr~LGlF9xyVStaxrfrnjANvVmoXN67-qFAdkj6lrLhKWOJZYJp6RkYXKXgOAdgWFzZQr~t3dASrX6Ba0~RrNtxgc0NBf5~7Q__"
   );
@@ -435,7 +435,7 @@ const ProductList = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-fullitems-start">
+        <div className="flex w-full items-start">
           <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[21px] w-[364px] sticky top-[0px]">
             <div className="flex justify-between">
               <div className="flex items-center gap-[2px]">

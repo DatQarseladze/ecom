@@ -85,10 +85,16 @@ const TabletDropdown = ({
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
         {dropdownVisible ? (
-          <div className="flex">
+          <div className="flex relative">
             <input
-              className={`pl-[23px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} no-arrows`}
-              value={value}
+              className={`pl-[23px] caret-transparent ${
+                dropdownVisible && !value
+                  ? "text-[#8255E3]"
+                  : value
+                    ? "text-[#101840]"
+                    : "text-[#474D66]"
+              } no-arrows`}
+              value={value || ""}
               onChange={(e) => onChange(e.target.value)}
               type="number"
               ref={inputRef}
@@ -98,16 +104,31 @@ const TabletDropdown = ({
                   : "100%",
               }}
             />
-            {/* {value && <span>ტაბლეტი</span>} */}
+            {/* Custom caret */}
+            {!value && (
+              <span
+                className={`left-[23px] absolute top-1/2 left-[calc(23px+${inputRef?.current?.selectionStart || 0}ch)] -translate-y-1/2 w-[2px] h-[18px] bg-[#8255E3]`}
+                style={{
+                  animation: "blink 1s step-start infinite",
+                }}
+              ></span>
+            )}
           </div>
         ) : (
           <span
-            className={`pl-[23px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} }`}
+            className={`pl-[23px] ${
+              dropdownVisible && !value
+                ? "text-[#8255E3]"
+                : value
+                  ? "text-[#101840]"
+                  : "text-[#474D66]"
+            }`}
           >
-            {dropdownVisible && !value ? "|" : value || placeholder}
+            {Boolean(dropdownVisible && !value) ? "|" : value || placeholder}
           </span>
         )}
-        {(dropdownVisible || value) && (
+
+        {Boolean(dropdownVisible || value) && (
           <div className={`absolute right-[6px] flex items-center gap-[12px] `}>
             <button
               onClick={handleDecrement}
@@ -144,8 +165,13 @@ const TabletDropdown = ({
                   {option["name"]}
                 </span>
                 <div className="">
-                  (<span className="text-[#8255E3] text-[16px] font-medium leading-[24px]">{option.newPrice}</span>
-                    <span className="ml-[4px] text-[#696F8C] text-[14px] leading-[22px] line-through">{option.oldPrice}</span>
+                  (
+                  <span className="text-[#8255E3] text-[16px] font-medium leading-[24px]">
+                    {option.newPrice}
+                  </span>
+                  <span className="ml-[4px] text-[#696F8C] text-[14px] leading-[22px] line-through">
+                    {option.oldPrice}
+                  </span>
                   )
                 </div>
               </div>
