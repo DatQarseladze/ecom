@@ -20,6 +20,7 @@ const TabletDropdown = ({
 }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [optionsPerRow, setOptionsPerRow] = useState<number>(
     withPagination ? 9 : 1000
   );
@@ -36,7 +37,9 @@ const TabletDropdown = ({
   const handleDecrement = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    onChange(options[index - 1]?.name);
+    if (Number(value) !== 0) {
+      onChange(Number(value) - 1);
+    }
   };
 
   const index = options?.findIndex((option) => option?.name === value);
@@ -44,7 +47,7 @@ const TabletDropdown = ({
   const handleIncrement = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    onChange(options[index + 1]?.name);
+    onChange(Number(value) + 1);
   };
 
   useEffect(() => {
@@ -68,6 +71,10 @@ const TabletDropdown = ({
     }
   };
 
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, [dropdownVisible]);
+
   return (
     <div
       className={`relative w-full h-[48px] rounded-lg ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
@@ -77,12 +84,30 @@ const TabletDropdown = ({
         className={`w-full border-solid border-[1px] border-[#1B1D201A] flex items-center h-[48px] rounded-lg text-left`}
         onClick={() => setDropdownVisible(!dropdownVisible)}
       >
-        <span
-          className={`pl-[20px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} }`}
-        >
-          {dropdownVisible && !value ? "|" : value || placeholder}
-        </span>
-        {value && (
+        {dropdownVisible ? (
+          <div className="flex">
+            <input
+              className={`pl-[23px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} no-arrows`}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+              type="number"
+              ref={inputRef}
+              style={{
+                width: value
+                  ? `${Math.max(value?.toString().length || 1, placeholder.length || 1)}ch`
+                  : "100%",
+              }}
+            />
+            {/* {value && <span>ტაბლეტი</span>} */}
+          </div>
+        ) : (
+          <span
+            className={`pl-[20px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} }`}
+          >
+            {dropdownVisible && !value ? "|" : value || placeholder}
+          </span>
+        )}
+        {(dropdownVisible || value) && (
           <div className={`absolute right-[6px] flex items-center gap-[12px] `}>
             <button
               onClick={handleDecrement}
@@ -113,32 +138,10 @@ const TabletDropdown = ({
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex rounded-[8px] hover:bg-[#1B1D2008] ${value.includes(option[attribute]) ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
+                className={`flex rounded-[8px] hover:bg-[#1B1D2008] ${value === option["value"] ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[48px] w-full items-center`}
               >
-                {multiple && (
-                  <Checkbox
-                    key={option[attribute]}
-                    checked={value.includes(option[attribute])}
-                    onChange={() => handleChange(option[attribute])}
-                    color="primary"
-                    className="pl-[16px]"
-                    size="medium"
-                    sx={{
-                      borderRadius: "4px",
-                      color: "#1B1D201A",
-                      height: "20px",
-                      marginLeft: "16px",
-                      width: "20px",
-                      "&.Mui-checked": {
-                        color: "#8255E3",
-                        border: "1px solid #8255E3",
-                      },
-                    }}
-                  />
-                )}
-
-                <span className="text-[#101840] pl-[16px]">
-                  {option[attribute]}
+                <span className="text-[#101840] pl-[15px]">
+                  {option["name"]}
                 </span>
               </div>
             ))}

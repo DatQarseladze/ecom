@@ -226,13 +226,13 @@ export const milligramOptions = [
 ];
 
 export const tabletOptions = [
-  { name: "1 ტაბლეტი" },
-  { name: "5 ტაბლეტი" },
-  { name: "10 ტაბლეტი" },
-  { name: "20 ტაბლეტი" },
-  { name: "30 ტაბლეტი" },
-  { name: "40 ტაბლეტი" },
-  { name: "50 ტაბლეტი" },
+  { name: "1 ტაბლეტი", value: 1 },
+  { name: "5 ტაბლეტი", value: 5 },
+  { name: "10 ტაბლეტი", value: 10 },
+  { name: "20 ტაბლეტი", value: 20 },
+  { name: "30 ტაბლეტი", value: 30 },
+  { name: "40 ტაბლეტი", value: 40 },
+  { name: "50 ტაბლეტი", value: 50 },
 ];
 
 export const colorOptions = [
