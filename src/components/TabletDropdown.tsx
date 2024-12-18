@@ -102,7 +102,7 @@ const TabletDropdown = ({
           </div>
         ) : (
           <span
-            className={`pl-[20px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} }`}
+            className={`pl-[23px] ${dropdownVisible && !value ? "text-[#8255E3]" : value ? "text-[#101840]" : "text-[#474D66]"} }`}
           >
             {dropdownVisible && !value ? "|" : value || placeholder}
           </span>
