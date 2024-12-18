@@ -225,6 +225,16 @@ export const milligramOptions = [
   { name: "30 მლ" },
 ];
 
+export const tabletOptions = [
+  { name: "1 ტაბლეტი" },
+  { name: "5 ტაბლეტი" },
+  { name: "10 ტაბლეტი" },
+  { name: "20 ტაბლეტი" },
+  { name: "30 ტაბლეტი" },
+  { name: "40 ტაბლეტი" },
+  { name: "50 ტაბლეტი" },
+];
+
 export const colorOptions = [
   { color: "#7D2828", name: "N 4/2 3275" },
   { color: "#A73636", name: "N 4/2 3276" },

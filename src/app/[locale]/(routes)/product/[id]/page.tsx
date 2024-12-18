@@ -7,6 +7,7 @@ import {
   dissapearingIcon,
   france,
   milligramOptions,
+  tabletOptions,
 } from "@/src/components/constants";
 import { Box, Typography, Tab, Tabs, Divider } from "@mui/material";
 import ReusableBadge from "@/src/components/ReusableBadge";
@@ -25,6 +26,7 @@ import Map from "@/src/components/Map";
 import InnerImageZoom from "react-inner-image-zoom";
 import ShoppingCartIcon from "@/src/icons/ShoppingCartIcon";
 import CustomDropdown from "@/src/components/CustomDropdown";
+import TabletDropdown from "@/src/components/TabletDropdown";
 
 const ProductList = () => {
   const [counts, setCounts] = useState(0);
@@ -35,11 +37,13 @@ const ProductList = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [milligram, setMiligram] = useState("100 მლ");
   const [color, setColor] = useState("N 4/2 3275");
+  const [tabletValue, setTabletValue] = useState("");
   const [selectedImage, setSelectedImage] = useState(
     "https://s3-alpha-sig.figma.com/img/739a/ecd8/76273b43eba237cb8a343eca676c5bff?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iE7Krq675y~OOpH~NuJ8~G-LQ3INvYNWbcjyQX~kRzSYZ0EslS0WvSA9PQDNKQuzCT~aa1ZkFiNe-kdsHXq4kCiaTmzzMDrT~60V8c7lrpMIlO4xoCyKn5T2p3Ipzq~wYPfr~9FXiLW2u21Ues8IStMtjMwBjAY6yGPWLQTE6YXDE4w7YQSk5T3wD7y2oRFLhdjiExBSrua3fZMzBV77g28zrZFw~nObe50qTDByjURKLsGzO6QlOEJr~LGlF9xyVStaxrfrnjANvVmoXN67-qFAdkj6lrLhKWOJZYJp6RkYXKXgOAdgWFzZQr~t3dASrX6Ba0~RrNtxgc0NBf5~7Q__"
   );
 
   const [tabIndex, setTabIndex] = React.useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
@@ -107,7 +111,7 @@ const ProductList = () => {
             <div>
               <div className="rounded-[8px] relative border-[1px] border-solid border-[#EDEFF5] w-[488px] h-[488px] cursor-pointer p-[16px]">
                 <div className="absolute top-[16px] w-[63px] bg-[#9A6DF9] text-white rounded-md py-[2px] px-[8px] text-[20px] leading-[28px] font-bold">
-                  42%
+                  -42%
                 </div>
                 <div className="absolute top-[16px] right-[16px]">
                   <ReusableBadge
@@ -431,8 +435,8 @@ const ProductList = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-start">
-          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[23px] w-[364px] sticky top-[0px]">
+        <div className="flex w-fullitems-start">
+          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[21px] w-[364px] sticky top-[0px]">
             <div className="flex justify-between">
               <div className="flex items-center gap-[2px]">
                 <Image
@@ -452,38 +456,57 @@ const ProductList = () => {
               </span>
             </div>
             <div className="flex w-full mt-[24px] cursor-pointer">
-              <div className="flex items-center justify-center leading-[22px] border-[1px] border-solid border-[#EDE3FF] bg-[#F8F4FF] text-[#7143D1] rounded-l-[12px] px-4 py-2 w-1/2">
+              <div
+                onClick={() => setActiveTab(0)}
+                className={`flex items-center justify-center leading-[22px] border-[1px] border-solid ${activeTab === 0 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"} rounded-l-[12px] px-4 py-[4px] w-1/2`}
+              >
                 სრული შეკვრა
               </div>
-              <div className="flex hover:bg-[#1B1D2008] active:bg-[#1B1D200F] items-center justify-center leading-[22px] border-[1px] border-solid border-[#EDE3FF] bg-[#FFFFFF] text-[#1A1A1A] rounded-r-[12px] px-4 py-2 w-1/2">
+              <div
+                onClick={() => setActiveTab(1)}
+                className={`flex active:bg-[#1B1D200F] items-center justify-center leading-[22px] border-[1px] border-solid  ${activeTab === 1 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"}  rounded-r-[12px] px-4 py-[4px] w-1/2`}
+              >
                 ტაბლეტი
               </div>
             </div>
 
-            <div className="flex-1 mt-[24px] h-[48px] items-center justify-between flex text-[16px] leading-[24px] overflow-hidden border-solid border-[1px] border-[#1B1D201A] text-white rounded-[8px]">
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (counts === 0) return;
-                  setCounts((prevState) => prevState - 1);
-                }}
-                disabled={!counts}
-                className={`bg-[#1B1D2008]  ${!counts ? "opacity-50" : ""} cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tl-[7px] rounded-bl-[7px]`}
-              >
-                <MinusIcon width={24} height={24} />
-              </button>
-              <div className="text-[#101840] text-[16px] leading-[24px]">
-                {counts} შეკვრა
-              </div>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCounts((prevState) => prevState + 1);
-                }}
-                className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tr-[7px] rounded-br-[7px] `}
-              >
-                <PlusIcon width={24} height={24} />
-              </button>
+            <div className="mt-[24px] ">
+              {activeTab === 0 ? (
+                <div className="border-solid border-[1px] border-[#1B1D201A] rounded-[8px] flex-1 h-[48px] items-center justify-between flex text-[16px] leading-[24px]">
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (counts === 0) return;
+                      setCounts((prevState) => prevState - 1);
+                    }}
+                    disabled={!counts}
+                    className={`bg-[#1B1D2008] ${!counts ? "opacity-50" : ""} cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tl-[7px] rounded-bl-[7px]`}
+                  >
+                    <MinusIcon width={24} height={24} />
+                  </button>
+                  <div className="text-[#101840] text-[16px] leading-[24px]">
+                    {counts} შეკვრა
+                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCounts((prevState) => prevState + 1);
+                    }}
+                    className={`bg-[#1B1D2008] cursor-pointer hover:bg-[#1B1D200F] active:bg-[#1B1D201F] px-[16px] py-[12px] rounded-tr-[7px] rounded-br-[7px] `}
+                  >
+                    <PlusIcon width={24} height={24} />
+                  </button>
+                </div>
+              ) : (
+                <TabletDropdown
+                  value={tabletValue}
+                  attribute={"name"}
+                  placeholder="აირჩიე რაოდენობა"
+                  onChange={setTabletValue}
+                  wrapperClassName=""
+                  options={tabletOptions}
+                />
+              )}
             </div>
             <div className="mt-[24px] flex items-center gap-[8px]">
               <div className="text-[#101840] text-[32px] leading-[40px] font-bold">
