@@ -436,7 +436,7 @@ const ProductList = () => {
           </div>
         </div>
         <div className="flex w-full items-start">
-          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[21px] w-[364px] sticky top-[0px]">
+          <div className="rounded-lg border-[1px] border-solid border-[#1B1D201A] p-[24px] px-[23px] w-[364px] sticky top-[0px]">
             <div className="flex justify-between">
               <div className="flex items-center gap-[2px]">
                 <Image
@@ -462,7 +462,7 @@ const ProductList = () => {
                   setMiligram("");
                   setCounts(1);
                 }}
-                className={`flex items-center justify-center leading-[22px] border-[1px] border-solid ${activeTab === 0 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"} rounded-l-[12px] px-4 py-[4px] w-1/2`}
+                className={`flex items-center justify-center leading-[22px] border-[1px] border-solid ${activeTab === 0 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"} rounded-l-[6px] px-4 py-[4px] w-1/2`}
               >
                 სრული შეკვრა
               </div>
@@ -472,7 +472,7 @@ const ProductList = () => {
                   setMiligram("");
                   setCounts(1);
                 }}
-                className={`flex active:bg-[#1B1D200F] items-center justify-center leading-[22px] border-[1px] border-solid  ${activeTab === 1 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"}  rounded-r-[12px] px-4 py-[4px] w-1/2`}
+                className={`flex active:bg-[#1B1D200F] items-center justify-center leading-[22px] border-[1px] border-solid  ${activeTab === 1 ? "bg-[#F8F4FF] border-[#EDE3FF] text-[#7143D1]" : "bg-[#FFFFFF] border-[#1B1D201A] text-[#1A1A1A] hover:bg-[#1B1D2008]"}  rounded-r-[6px] px-4 py-[4px] w-1/2`}
               >
                 ტაბლეტი
               </div>
