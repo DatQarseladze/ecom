@@ -68,8 +68,6 @@ const TabletDropdown = ({
     }
   };
 
-  console.log(dropdownVisible, "oe");
-
   return (
     <div
       className={`relative w-full h-[48px] rounded-lg ${wrapperClassName} ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}`}
