@@ -153,7 +153,7 @@ const TabletDropdown = ({
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex gap-[8px] rounded-[8px] hover:bg-[#1B1D2008] active:bg-[#1B1D2033] ${value === option["value"] ? "bg-[#1B1D2033]" : ""} cursor-pointer h-[40px] w-full items-center`}
+                className={`flex gap-[8px] rounded-[8px] hover:bg-[#1B1D2008] active:bg-[#1B1D200F] cursor-pointer h-[40px] w-full items-center`}
               >
                 <span className="text-[#101840] pl-[15px]">
                   {option["name"]}
