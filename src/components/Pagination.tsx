@@ -45,6 +45,7 @@ const PaginationComponent = ({ totalPages, currentPage, onPageChange }) => {
           "&:hover": {
             backgroundColor: "#7143D1 !important", // Hover background for active page
           },
+          boxShadow: '0px 0px 0px 4px #B692F62B, 0px 1px 2px 0px #7268C20D'
         },
 
         // Previous/Next buttons: Adjust height only (width will remain auto)
