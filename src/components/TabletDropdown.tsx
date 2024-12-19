@@ -12,18 +12,12 @@ const TabletDropdown = ({
   options,
   placeholder,
   multiple = false,
-  withFlag = false,
-  withPagination = false,
   backgroundColor = "",
   wrapperClassName = "",
-  showValue = false,
 }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [optionsPerRow, setOptionsPerRow] = useState<number>(
-    withPagination ? 9 : 1000
-  );
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -155,11 +149,11 @@ const TabletDropdown = ({
           <div
             className={`w-full px-[8px] pb-[16px]  ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-red"}`}
           >
-            {options.slice(0, optionsPerRow).map((option) => (
+            {options.map((option) => (
               <div
                 key={option[attribute]}
                 onClick={() => handleChange(option[attribute])}
-                className={`flex gap-[8px] rounded-[8px] hover:bg-[#1B1D2008] ${value === option["value"] ? "bg-[#1B1D2008]" : ""} cursor-pointer h-[40px] w-full items-center`}
+                className={`flex gap-[8px] rounded-[8px] hover:bg-[#1B1D2008] active:bg-[#1B1D2033] ${value === option["value"] ? "bg-[#1B1D2033]" : ""} cursor-pointer h-[40px] w-full items-center`}
               >
                 <span className="text-[#101840] pl-[15px]">
                   {option["name"]}
@@ -176,14 +170,6 @@ const TabletDropdown = ({
                 </div>
               </div>
             ))}
-            {withPagination && (
-              <button
-                onClick={() => setOptionsPerRow((prevState) => prevState + 10)}
-                className="font-medium text-[#8255E3] hover:bg-[#EDE3FF] rounded-[6px] py-[8px] px-[16px]"
-              >
-                მეტის ნახვა
-              </button>
-            )}
           </div>
         </div>
       )}
